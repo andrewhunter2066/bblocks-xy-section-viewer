@@ -1,0 +1,160 @@
+@prefix bblocks: <https://www.opengis.net/def/bblocks/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://www.w3.org/ns/oa#> .
+@prefix ns2: <http://www.iana.org/assignments/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix role: <http://www.w3.org/ns/dx/prof/role/> .
+@prefix schema: <https://schema.org/> .
+@prefix shacl: <https://www.w3.org/TR/shacl/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<bblocks://ogc.bbr.template.myFeature> a skos:Concept,
+        dcat:Dataset,
+        bblocks:BBlock,
+        bblocks:Schema ;
+    rdfs:label "Custom Feature" ;
+    dct:abstract "This examples shows a simple customisation for OGC API Feature schemas"^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+    dct:created "2023-05-19T00:00:00+00:00"^^xsd:dateTime ;
+    dct:description [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/bblock/ogc.bbr.template.myFeature> ],
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/generateddocs/json-full/bbr/template/myFeature/index.json> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/generateddocs/markdown/bbr/template/myFeature/index.md> ] ;
+    dct:hasVersion "1.0" ;
+    dct:modified "2023-05-19"^^xsd:date ;
+    dct:source <https://docs.ogc.org/is/17-069r3/17-069r3.html#_response_7> ;
+    skos:inScheme <https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/> ;
+    skos:prefLabel "Custom Feature" ;
+    skos:topConceptOf <https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/> ;
+    dcat:keyword "examples",
+        "feature" ;
+    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/annotated/bbr/template/myFeature/schema.json> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ogc.bbr.template.mySchema> ;
+            prof:hasArtifact <https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/mySchema/shapes.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/annotated/bbr/template/myFeature/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/annotated/bbr/template/myFeature/context.jsonld> ;
+            prof:hasRole role:mapping ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ogc.geo.features.feature> ;
+            prof:hasArtifact <https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl> ;
+            prof:hasRole role:validation ] ;
+    bblocks:dependsOn <bblocks://ogc.bbr.template.mySchema>,
+        <bblocks://ogc.geo.features.feature> ;
+    bblocks:status <http://www.opengis.net/def/status/under-development> ;
+    bblocks:validationPassed true .
+
+<https://docs.ogc.org/is/17-069r3/17-069r3.html#_response_7> rdfs:label "OGC API - Features, Part 1, 7.16.2: Feature Response" .
+
+<https://example.com/sources/1> rdfs:label "Sample source document" .
+
+<https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/bblocks.ttl> a prov:Entity ;
+    dct:format "text/turtle" ;
+    prov:wasAttributedTo _:N5690ea7e1ed8423c8b7a459f4c49976b ;
+    prov:wasGeneratedBy [ a prov:Activity ;
+            prov:endedAtTime "2026-09-30T17:03:49.938263"^^xsd:dateTime ;
+            prov:startedAtTime "2026-09-30T17:03:49.830446"^^xsd:dateTime ;
+            prov:used [ a prov:Entity ;
+                    dct:format "application/json" ;
+                    dct:hasVersion "git:83079e3b6d5023cb20ab41db2a19a8c3e6ec6617" ;
+                    rdfs:seeAlso <https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/register.json> ],
+                [ a prov:Entity ;
+                    dct:format "application/yaml" ;
+                    rdfs:seeAlso <file:///src/ogc/bblocks/register-context.yaml> ] ;
+            prov:wasAssociatedWith _:N5690ea7e1ed8423c8b7a459f4c49976b ] .
+
+<bblocks://ogc.bbr.template.mySchema> a skos:Concept,
+        dcat:Dataset,
+        bblocks:BBlock,
+        bblocks:Schema ;
+    rdfs:label "My Schema" ;
+    dct:abstract "An example schema defining the set of properties of any type of object."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+    dct:created "2023-04-05T00:00:00+00:00"^^xsd:dateTime ;
+    dct:description [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/generateddocs/json-full/bbr/template/mySchema/index.json> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/bblock/ogc.bbr.template.mySchema> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/generateddocs/markdown/bbr/template/mySchema/index.md> ] ;
+    dct:hasVersion "0.1" ;
+    dct:modified "2023-04-05"^^xsd:date ;
+    dct:source <https://example.com/sources/1> ;
+    skos:inScheme <https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/> ;
+    skos:prefLabel "My Schema" ;
+    skos:topConceptOf <https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/> ;
+    dcat:keyword "templates" ;
+    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/annotated/bbr/template/mySchema/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ogc.bbr.template.mySchema> ;
+            prof:hasArtifact <https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/mySchema/shapes.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/annotated/bbr/template/mySchema/schema.json> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/annotated/bbr/template/mySchema/context.jsonld> ;
+            prof:hasRole role:mapping ] ;
+    bblocks:hasSourceJsonLdContext <https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/mySchema/context.jsonld> ;
+    bblocks:status <http://www.opengis.net/def/status/under-development> ;
+    bblocks:validationPassed true .
+
+<https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/> a skos:ConceptScheme,
+        dcat:Catalog,
+        bblocks:BBlocksRegister ;
+    rdfs:label "Building Blocks - My OGC Building Blocks repository" ;
+    dct:abstract """This is an example text for the abstract. It should be short and to the point.
+A "Tell me more" link will appear if there is an additional description with a longer explanation.
+"""^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+    dct:description """The description can be longer. Both **the abstract** *and the description* support Markdown,
+including [links](https://google.es).
+"""^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+    dct:modified "2026-09-30T17:03:48.743483"^^xsd:dateTime ;
+    owl:imports <https://opengeospatial.github.io/bblocks/register.json> ;
+    skos:hasTopConcept <bblocks://ogc.bbr.template.myFeature>,
+        <bblocks://ogc.bbr.template.mySchema> ;
+    skos:prefLabel "Building Blocks - My OGC Building Blocks repository" ;
+    prof:hasResource [ rdfs:label "This Building Blocks Register in JSON format" ;
+            dct:type "application/json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/self> ;
+            ns1:hasTarget <https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/register.json> ],
+        [ rdfs:label "This Building Blocks Register in JSON-LD format" ;
+            dct:type "application/ld+json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/self> ;
+            ns1:hasTarget <https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/bblocks.jsonld> ],
+        [ rdfs:label "This Building Blocks Register in RDF Turtle format" ;
+            dct:type "text/turtle" ;
+            ns2:relation <http://www.iana.org/assignments/relation/self> ;
+            ns1:hasTarget <https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/bblocks.ttl> ] ;
+    foaf:homepage <https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/> ;
+    bblocks:hasValidationReport <https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/tests/report.html> .
+
+_:N5690ea7e1ed8423c8b7a459f4c49976b a prov:Agent,
+        schema:SoftwareApplication ;
+    rdfs:label "OGC-NA tools" ;
+    dct:hasVersion "0.5.35.dev2+g67607e7aa" ;
+    rdfs:seeAlso <https://github.com/opengeospatial/ogc-na-tools> .
+
