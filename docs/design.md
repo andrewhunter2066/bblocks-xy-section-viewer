@@ -44,8 +44,14 @@ each face polygon with the plane and chaining the segments into loops — no geo
 
 ### Rule engine
 
-_To be written (Stage 1)._ Copied, not depended on, from bblocks-viewer-topo-feature-plugin
-(branch `refactor/parameterised-viewer`, commit `d94018b`), with provenance headers.
+Which features are drawn, and how, is decided by the Three.js plugin's rule engine, **copied**
+rather than depended on — that plugin is not published as a package, and this view must be able to
+ship on its own schedule. `rules.js`, `curie.js`, `config.js`, `resolve-config.js` and
+`default-config.js` (with their tests) and `mime-type-match.js` were copied from
+bblocks-viewer-topo-feature-plugin (branch `refactor/parameterised-viewer`, commit `d94018b`) into
+`src/js/utils/`, unchanged apart from a two-line provenance header. Later upstream fixes are
+ported by hand. XY-specific behaviour (role lookup, `xySection` options, how each rule `geometry`
+maps to a 2D section) lives in this plugin's own modules, so the copies stay unchanged.
 
 ### Per-block configuration
 
