@@ -92,19 +92,55 @@ maps to a 2D section) lives in this plugin's own modules, so the copies stay unc
 
 ### Per-block configuration
 
-_To be written (Stage 4)._ `resources[]` role
-`https://github.com/ogcincubator/bblocks-xy-section-viewer/role/viewer-config`, falling back to
-the Three.js plugin's role. XY-only options live under a top-level `xySection` key (`levelProperty`,
-`levelLabels`, `sectionZ`, `showContext`, `padding`, `grid`, `boundary`, `exclude`). The JSON
-Schema is the `xySectionViewerConfig` building block.
+A block configures its XY Section view through the same `bblock.json` `resources` mechanism as
+the Three.js and Cesium plugins, delivered to the plugin as `context.bblock.resources`, under the
+role `https://github.com/ogcincubator/bblocks-xy-section-viewer/role/viewer-config`
+(`src/js/utils/load-config.js`, adapted from the Cesium plugin's). A block that only has a
+Three.js view configuration (that plugin's role) gets the same rules in its sections, so existing
+configurations need no duplication; an XY-specific resource wins when both exist.
+
+The rule configuration (`rules`, `defaults`, `kindOrder`) is unchanged; a rule's `elevation` is
+ignored. XY-only options live under a top-level `xySection` key, which the copied rule parser
+ignores (`src/js/utils/xy-options.js`):
+
+| Option | Default | Meaning |
+|---|---|---|
+| `levelProperty` | `"properties.floors"` | Dot-path on each solid giving its level number(s) |
+| `levelLabels` | `{}` | Tab label per level, e.g. `{ "1": "Ground floor" }`; otherwise `Level <n>` |
+| `sectionZ` | `{}` | Section height per level, overriding the mid-height rule |
+| `showContext` | `false` | Whether lower levels start out drawn, faded, under each section |
+| `padding` | `2` | Metres of margin around the drawing |
+| `grid` | `true` | `true` (automatic spacing), `false`, or a spacing in metres |
+| `boundary` | `[{ "source": "parcels" }]` | Ordered boundary-parcel choices (below); `[]` for none |
+| `exclude` | occupation features | Solids never sectioned (`{ source, property }` entries); `[]` for none |
+
+Nothing in a configuration can break the view: an unreachable or invalid file, or an invalid
+option, falls back to the defaults with a console warning, one invalid entry at a time where the
+option is a list or map. An explicit empty `boundary` or `exclude` list means "none"; a list whose entries are all invalid falls back to the default instead.
+
+Without a block configuration the built-in rules (`src/js/utils/xy-default-config.js`) section
+solids and open shells ("surfaces") and draw no parcels, since the boundary parcel is drawn
+separately. No built-in rule fixes a colour, so each feature gets its own palette colour, as in
+`section_topology.py`. The JSON Schema for the whole configuration is the `xySectionViewerConfig`
+building block.
 
 ### Parcel boundary
 
-_To be written (Stage 4)._ Every section shows one boundary parcel, chosen by the ordered
-`xySection.boundary` match list (first parcel with an outline wins). Built-in default: the first
-`Polygon`/`Ring` parcel. The WA demo configurations prefer the strata-scheme parcel's
-`containingPrimaryParcel`, then a `former-tenure` parcel, then any lot outline. `AggregateSolid`
-parcels are not drawn.
+Every section is drawn inside one boundary parcel, chosen by `src/js/utils/boundary.js` from the
+ordered `xySection.boundary` entries: the first entry that yields an outline wins, and within an
+entry the first matching feature in document order. An entry names a `source` collection and
+optionally a `match` (compared like a rule's: literal, CURIE or full URI). With
+`follow: { "role": … }`, the matched feature is not drawn itself: its `topology.relationships`
+entry with that role is followed to the feature its `href` names. Outlines come from the
+feature's topology type — `Polygon`, `Ring` or `Face`; an `AggregateSolid` or `ParcelAggregate`
+has none.
+
+The built-in default is the first parcel with an outline. The WA configuration
+(`harness/fixtures/wa-strata-config.json`, and the demo blocks) prefers the strata-scheme
+parcel's `containingPrimaryParcel`, then a `former-tenure` parcel, then any parcel with an
+outline. On the built-strata fixture the first entry resolves (to the former-tenure lot, via the
+scheme); on the 4-unit fixture only the third does (its `created` lot `Polygon`). A strata-scheme
+parcel has no outline of its own: it aggregates the strata lots (`AggregateSolid`).
 
 ### User interface
 
