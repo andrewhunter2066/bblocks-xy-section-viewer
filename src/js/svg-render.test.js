@@ -72,6 +72,16 @@ test('grid lines fall on whole multiples of the spacing in world coordinates', (
   [...xs, ...ys].forEach(v => assert.ok(Math.abs(v / 5 - Math.round(v / 5)) < 1e-6, String(v)));
 });
 
+test('the grid reaches far beyond the drawing (wide tabs, zooming out), with a cap on line count', () => {
+  const m = fourUnit();
+  const d = /class="xys-grid" d="([^"]+)"/.exec(renderSectionSvg(m, 1))[1];
+  const xs = [...d.matchAll(/M(-?[\d.]+) -?[\d.]+V/g)].map(match => Number(match[1]));
+  const width = m.bounds.maxX;
+  assert.ok(Math.min(...xs) <= -9 * width && Math.max(...xs) >= 10 * width, 'ten drawing widths either side');
+  const fine = /class="xys-grid" d="([^"]+)"/.exec(renderSectionSvg(m, 1, { grid: 0.1 }))[1];
+  assert.ok(fine.match(/V/g).length <= 2 * 200 + 1000, 'a tiny spacing is capped by line count');
+});
+
 test('northing runs up the drawing: the north side has the smaller SVG y', () => {
   const doc = topoDocument([box({ id: 'a', min: [0, 0, 0], max: [10, 4, 3], properties: { floors: [1] } })]);
   const m = buildSectionModel(doc, { config: buildXYDefaultConfig(), xySection: resolveXYOptions({}).options });

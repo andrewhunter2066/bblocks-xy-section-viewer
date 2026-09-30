@@ -38,11 +38,16 @@ export function gridStep(model, grid) {
   return niceStep(Math.max(model.bounds.maxX, model.bounds.maxY));
 }
 
+// How far the grid reaches beyond the drawing, in drawing extents and (as a cap) in grid lines.
+// A short, wide tab shows far more than the drawing's width, and the view can zoom out 4×.
+const GRID_REACH_EXTENTS = 10;
+const GRID_REACH_MAX_LINES = 200;
+
 function gridMarkup(model, step) {
-  // Lines on whole multiples of `step` in world coordinates, over the drawing plus one drawing
-  // extent either side, so panning a little never runs off the grid.
+  // Lines on whole multiples of `step` in world coordinates, over the drawing and well beyond it,
+  // so neither a wide view nor panning runs off the grid.
   const { maxX, maxY } = model.bounds;
-  const span = Math.max(maxX, maxY);
+  const span = Math.min(Math.max(maxX, maxY, step) * GRID_REACH_EXTENTS, step * GRID_REACH_MAX_LINES);
   const [originE, originN] = model.origin;
   const lines = [];
   const firstE = Math.ceil((originE - span) / step) * step;

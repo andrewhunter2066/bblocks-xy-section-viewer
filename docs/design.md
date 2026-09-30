@@ -168,7 +168,8 @@ All floors share one pan/zoom view, so switching floors keeps the same area in v
 
 **Drawing.** Coordinates are converted to a local frame in metres (x east from the drawing's west
 edge, y south from its north edge) to keep SVG numbers small. Grid north is up; the grid falls on
-whole multiples of its spacing in easting/northing. Layers, bottom to top: grid, lower floors
+whole multiples of its spacing in easting/northing and reaches ten drawing extents beyond the
+drawing (at most 200 lines each way), so a short, wide tab or a zoomed-out view never runs off it. Layers, bottom to top: grid, lower floors
 (context: every lower level, outlines only at 40% opacity), flat outlines, this floor's sections
 (`fill-rule="evenodd"`, so holes show), the dashed boundary parcel, labels. Lower floors start
 hidden (`showContext: false`) and the toolbar toggles them. Strokes use
@@ -193,6 +194,15 @@ the current floor are dimmed. As in the Cesium and Three.js plugins, layout foll
 host gives the view: at 400 px or taller (the host's expand dialog, or fullscreen) the layers
 panel is docked beside the drawing; in the compact ~300 px tab it is a pop-over behind the layers
 button, and the toolbar wraps into two columns.
+
+**Development harness.** `harness/` (`npm run dev`) drives the real plugin class from `src/js/`
+with Vite's live reload, the way the host does: candidates + context, `matches()`, `render()`,
+`destroy()` before the next document. A config is delivered as a `context.bblock.resources`
+entry — a picked file as a `blob:` URL — under this plugin's role, or optionally under the
+Three.js plugin's role to check the fallback. "Tab size" mimics the host's ~300 px tab. The
+starting state can be bookmarked (`?fixture=…&config=…|none&tabsize=1&topo=1`). There is no token
+box: nothing here loads tiles. The fixture/config lists live in `harness/js/catalog.js` and are
+checked by `src/js/harness-catalog.test.js`.
 
 **Robustness.** Every string from the document is XML-escaped before it reaches markup. Config
 loading is async, so render failures are caught and shown in the tab (with details in the
