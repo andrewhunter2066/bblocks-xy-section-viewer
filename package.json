@@ -10,7 +10,8 @@
     "dev": "vite",
     "build": "vite build",
     "typecheck": "tsc --noEmit",
-    "test": "node --import ./scripts/test-raw-loader.mjs --test \"src/js/**/*.test.js\""
+    "test": "node --import ./scripts/test-raw-loader.mjs --test \"src/js/**/*.test.js\"",
+    "local-register": "node scripts/use-local-plugin.mjs"
   },
   "devDependencies": {
     "@ogc/bblocks-viewer-plugin-types": "github:ogcincubator/bblocks-viewer-plugin-types",

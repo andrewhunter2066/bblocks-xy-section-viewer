@@ -138,7 +138,9 @@ export function renderSectionSvg(model, level, options = {}) {
       if (!anchor) return '';
       return `<text x="${num(anchor[0])}" y="${num(anchor[1])}" data-key="${record.key}">${escapeXml(record.label)}</text>`;
     });
-    layers.push(`<g class="xys-labels" font-family="system-ui, sans-serif" font-size="${size}" text-anchor="middle" dominant-baseline="central" fill="${INK.primary}" stroke="${INK.surface}" stroke-width="${num(size / 5)}" paint-order="stroke" pointer-events="none">${labels.join('')}</g>`);
+    // Explicit letter/word spacing: a host page's own letter-spacing (a screen length) is inherited
+    // by SVG text otherwise, and at label sizes of a metre or so it pulls the letters far apart.
+    layers.push(`<g class="xys-labels" font-family="system-ui, sans-serif" font-size="${size}" letter-spacing="0" word-spacing="0" text-anchor="middle" dominant-baseline="central" fill="${INK.primary}" stroke="${INK.surface}" stroke-width="${num(size / 5)}" paint-order="stroke" pointer-events="none">${labels.join('')}</g>`);
   }
 
   const head = standalone

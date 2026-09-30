@@ -18,6 +18,10 @@
   flex-direction: column;
   overflow: hidden;
   font: 12px/1.4 system-ui, sans-serif;
+  /* The host page's own text settings (e.g. Vuetify's letter-spacing) would otherwise be inherited. */
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
   color: var(--xys-ink);
   background: var(--xys-surface);
 }

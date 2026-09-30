@@ -1,7 +1,10 @@
 # Harness fixtures
 
-Real topo-feature documents, copied unchanged (the plugin reads each point's projected `place`;
-their WGS84 `geometry` is never used). Both are also used by the unit tests
+Real topo-feature documents, with their content unchanged (the plugin reads each point's projected
+`place`; their WGS84 `geometry` is never used). `built-strata-example-1.json` is re-indented with
+one space instead of two — 898 KB instead of 1.1 MB — because bblocks-viewer does not preview, or
+hand to view plugins, an example over 1 MiB; its parsed content is identical to the source file.
+`block-schema.test.js` keeps both demo examples under that limit. Both are also used by the unit tests
 (`src/js/test-support/fixtures.js`).
 
 | File | Source | Notes |

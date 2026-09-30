@@ -244,4 +244,34 @@ fetches it in the real viewer.
 
 ## Verified integration behaviour
 
-_To be confirmed in Stage 8._
+Checked in the real bblocks-viewer (`ghcr.io/ogcincubator/bblocks-viewer`, revision `799c86c`),
+driven by headless Chrome, on 2026-09-30:
+
+- **Loading the local build.** `view.sh`'s container serves the whole repository under
+  `/register/`, so after `npm run build` the plugin is reachable same-origin at
+  `http://localhost:9090/register/dist/index.js`, served as `application/javascript` — no separate
+  server or CORS setup. The viewer reads `/register/build-local/register.json`.
+  `npm run local-register` (`scripts/use-local-plugin.mjs`) points that file's
+  `viewer.viewPlugins` entry at the local build; re-run it after every `./build.sh`, which rewrites
+  the file from `bblocks-config.yaml`. `bblocks-config-local.yml` is not needed.
+- **The tab.** Both demo blocks' examples get an **XY SECTION** tab (with the floor-plan icon) next
+  to JSON. Inside it the floor tabs, drawing, legend and caption render with the demo configs
+  applied; the host's ~300 px tab gives the compact layout, and the host's own *Full screen*
+  dialog (titled "XY Section") gives the expanded one with the legend docked. No exceptions and no
+  plugin warnings in the console.
+- **Relative `resources[].ref`.** The postprocessor rewrites a demo block's `viewer-config.json` to
+  an absolute URL under `--base-url` (`…/register/_sources/xySectionViewerDemo/<block>/viewer-config.json`)
+  in `register.json` and the document the viewer passes as `context.bblock`; the plugin fetched it
+  (HTTP 200) and applied it. Whether a *published* register serves `_sources/` at that URL is to be
+  confirmed after the first publish.
+- **Preview size limit.** The viewer neither fetches nor previews an example snippet larger than
+  1 MiB (1,048,576 bytes; `BuildingBlockExamples.js`/`ExampleViewer.js`) — it shows "This file is too
+  large to preview" and a download button — so no view plugin sees it. The built-strata example
+  was 1.1 MB as copied; it is re-indented (one space) to 898 KB with identical content, and
+  `block-schema.test.js` keeps demo examples under the limit. Registers adding this plugin should
+  keep topo-feature examples under 1 MiB too.
+- **Host text styles.** The host page's `letter-spacing` is inherited by SVG text, where it is a
+  screen length against labels about a metre high, spreading the letters apart; the plugin root
+  and the label layer reset letter and word spacing.
+- **Known limitation.** Labels of small, adjacent features can overlap (e.g. a courtyard beside a
+  unit); the labels toggle, tooltips and legend remain.

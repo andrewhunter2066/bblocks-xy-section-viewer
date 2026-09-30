@@ -47,6 +47,7 @@ test('the boundary is drawn dashed with its label, unless turned off', () => {
 
 test('labels can be turned off', () => {
   const m = fourUnit();
+  assert.match(renderSectionSvg(m, 1), /class="xys-labels"[^>]* letter-spacing="0" word-spacing="0"/, 'host letter-spacing is not inherited');
   assert.equal(count(renderSectionSvg(m, 1), /<text /g), 3);
   assert.equal(count(renderSectionSvg(m, 1, { showLabels: false }), /<text /g), 0);
 });

@@ -5,7 +5,7 @@
 // bblocks-cesium-viewer's src/js/block-schema.test.js.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync, readdirSync } from 'node:fs';
+import { readFileSync, readdirSync, statSync } from 'node:fs';
 import Ajv2020 from 'ajv/dist/2020.js';
 import { parse as parseYaml } from 'yaml';
 import { parseConfig } from './utils/config.js';
@@ -98,6 +98,22 @@ test('each demo block\'s example is a harness fixture that validates against the
     assert.equal(refs.length, 1, block);
     assert.match(refs[0], /^\.\.\/\.\.\/\.\.\/harness\/fixtures\//, block);
     assert.ok(check(readJson(new URL(refs[0], dir))), `${block}: ${JSON.stringify(check.errors)}`);
+  }
+});
+
+// bblocks-viewer neither fetches nor previews an example snippet over 1 MiB (it offers a
+// download instead), so no view plugin — this one included — ever sees it.
+const VIEWER_PREVIEW_LIMIT_BYTES = 1024 * 1024;
+
+test('each demo block\'s example is small enough for the viewer to hand to view plugins', () => {
+  for (const block of ['builtStrata', 'fourUnit']) {
+    const dir = new URL(`${block}/`, demoDir);
+    for (const example of readYaml(new URL('examples.yaml', dir)).examples) {
+      for (const { ref } of example.snippets) {
+        const size = statSync(new URL(ref, dir)).size;
+        assert.ok(size < VIEWER_PREVIEW_LIMIT_BYTES, `${block}: ${ref} is ${size} bytes`);
+      }
+    }
   }
 });
 
