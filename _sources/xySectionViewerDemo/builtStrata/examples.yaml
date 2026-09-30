@@ -1,8 +1,8 @@
 examples:
   - title: Strata plan SP83687
     content: |
-      Open the **XY Section** tab. The document is the harness fixture
-      `built-strata-example-1.json`, shared with the plugin's own tests.
+      Open the **XY Section** tab.
+      The document is the harness fixture `built-strata-example-1.json`, shared with the plugin's own tests.
     snippets:
       - language: json
         ref: ../../../harness/fixtures/built-strata-example-1.json

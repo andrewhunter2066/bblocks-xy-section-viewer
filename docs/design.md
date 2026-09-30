@@ -4,7 +4,7 @@ This repository is both an OGC Building Blocks register (`_sources/`) and the ho
 It is a sibling of the Three.js `TopoFeaturePlugin` in [bblocks-viewer-topo-feature-plugin](https://github.com/ogcincubator/bblocks-viewer-topo-feature-plugin) and of [bblocks-cesium-viewer](https://github.com/ogcincubator/bblocks-cesium-viewer), and is added to other registers the same way.
 This page records why things are the way they are; the [README](../README.md) covers how to use and develop them.
 
-The plugin replaces the Python/OpenCascade `section_topology.py` from waTestData.
+The plugin replaces the Python/OpenCascade `section_topology.py` from waTestData (a private repository).
 That module is treated as a specification, not a reference implementation: it predates the current topo-feature encoding (faces referencing rings through `topology.rings` rather than `topology.directed_references`).
 
 ## Decisions
@@ -124,7 +124,7 @@ Layers, bottom to top: grid, lower floors (context: every lower level, outlines 
 Lower floors start hidden (`showContext: false`) and the toolbar toggles them.
 Strokes use `vector-effect="non-scaling-stroke"`, so line widths stay constant while zooming; labels are sized in drawing units (1/70 of the drawing) and scale with it, readable once zoomed in on a large lot.
 
-**Colour.** The dataviz skill's validated 8-hue categorical palette, in its fixed order.
+**Colour.** A fixed 8-hue categorical palette, used in its fixed order, which keeps neighbouring hues distinguishable, including under common colour-vision deficiencies.
 Colour follows the feature: each takes the first slot not used by an earlier feature sharing any floor with it, so no two features on one floor share a colour (up to 8), and a feature spanning floors (the 4-unit stairwell) keeps its colour on each.
 A rule's own `style.color` wins; colours from a config are checked against a safe pattern before they reach SVG attributes.
 Identity never rests on colour alone: every feature has a tooltip, a legend row, and (by default) a label.

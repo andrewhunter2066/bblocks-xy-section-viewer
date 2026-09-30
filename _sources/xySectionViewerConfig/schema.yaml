@@ -1,23 +1,19 @@
 "$schema": https://json-schema.org/draft/2020-12/schema
 title: XY section viewer configuration
 description: |
-  Per-block configuration for the XYSectionPlugin, the bblocks-viewer "XY Section" view of
-  topo-feature documents (one horizontal section per floor level). A block declares it as a
-  `resources` entry in its `bblock.json` with the role
-  `https://github.com/ogcincubator/bblocks-xy-section-viewer/role/viewer-config`.
+  Per-block configuration for the XYSectionPlugin, the bblocks-viewer "XY Section" view of topo-feature documents (one horizontal section per floor level).
+  A block declares it as a `resources` entry in its `bblock.json` with the role `https://github.com/ogcincubator/bblocks-xy-section-viewer/role/viewer-config`.
 
-  `rules`, `defaults` and `kindOrder` are the rule-engine configuration shared with the Three.js
-  TopoFeaturePlugin and the Cesium globe view, so a configuration written for either validates
-  here; `xySection` holds the section-only options. Every member is optional: an omitted `rules`
-  keeps the plugin's built-in rules (solids and open shells sectioned, no parcels).
+  `rules`, `defaults` and `kindOrder` are the rule-engine configuration shared with the Three.js TopoFeaturePlugin and the Cesium globe view, so a configuration written for either validates here; `xySection` holds the section-only options.
+  Every member is optional: an omitted `rules` keeps the plugin's built-in rules (solids and open shells sectioned, no parcels).
 type: object
 additionalProperties: false
 properties:
   rules:
     description: |
-      Ordered rules. For each feature, the first rule whose `source` is the collection it came from
-      and whose `match` (if any) applies decides how it is drawn; a feature no rule claims is not
-      drawn. A non-empty list replaces the built-in rules entirely.
+      Ordered rules.
+      For each feature, the first rule whose `source` is the collection it came from and whose `match` (if any) applies decides how it is drawn; a feature no rule claims is not drawn.
+      A non-empty list replaces the built-in rules entirely.
     type: array
     items:
       $ref: "#/$defs/rule"
@@ -46,8 +42,7 @@ $defs:
     properties:
       source:
         description: |
-          Top-level collection of the document to classify, e.g. `solids`, `parcels`, `faces`,
-          `rings`, or the derived `surfaces` (shells no solid uses).
+          Top-level collection of the document to classify, e.g. `solids`, `parcels`, `faces`, `rings`, or the derived `surfaces` (shells no solid uses).
         type: string
         minLength: 1
       kind:
@@ -63,17 +58,15 @@ $defs:
         type: string
       geometry:
         description: |
-          How the feature's topology is turned into a shape. `solid`, `open-shell` and `face` are
-          sectioned at each floor's height; `polygon` (a Polygon-topology parcel) and `ring` are
-          drawn flat, as outlines, on every floor.
+          How the feature's topology is turned into a shape.
+          `solid`, `open-shell` and `face` are sectioned at each floor's height; `polygon` (a Polygon-topology parcel) and `ring` are drawn flat, as outlines, on every floor.
         enum: [solid, open-shell, polygon, face, ring]
       match:
         $ref: "#/$defs/match"
       label:
         description: |
-          Where a feature's label comes from: the first of `properties` (dot-separated paths) that
-          resolves to a non-empty value or to an object with a string `label`, else `fallback`
-          (default `id`). Omitted, the view uses appellation, description, then name.
+          Where a feature's label comes from: the first of `properties` (dot-separated paths) that resolves to a non-empty value or to an object with a string `label`, else `fallback` (default `id`).
+          Omitted, the view uses appellation, description, then name.
         type: object
         additionalProperties: false
         properties:
@@ -93,10 +86,9 @@ $defs:
 
   match:
     description: |
-      Restricts to features whose property value (or any value, for an array) equals one of
-      `values`. String values may be literals, CURIEs expanded against the document's own
-      `@context`, or full URIs; both sides are expanded before comparing. Numbers and booleans
-      compare as themselves (e.g. `properties.floors` values).
+      Restricts to features whose property value (or any value, for an array) equals one of `values`.
+      String values may be literals, CURIEs expanded against the document's own `@context`, or full URIs; both sides are expanded before comparing.
+      Numbers and booleans compare as themselves (e.g. `properties.floors` values).
     type: object
     additionalProperties: false
     required: [property, values]
@@ -117,8 +109,8 @@ $defs:
     properties:
       color:
         description: |
-          Fill and outline colour: `#hex`, a CSS colour name, or `rgb()`/`hsl()` notation. Default:
-          each feature its own colour from a fixed palette.
+          Fill and outline colour: `#hex`, a CSS colour name, or `rgb()`/`hsl()` notation.
+          Default: each feature its own colour from a fixed palette.
         type: string
       opacity:
         description: Fill opacity, 0 (transparent) to 1 (opaque). Default 0.45 for sections.
@@ -133,8 +125,8 @@ $defs:
 
   elevation:
     description: |
-      Used by the 3D and globe views; ignored by the XY Section view, which always sections at
-      each floor's height. Accepted so that shared configurations validate.
+      Used by the 3D and globe views; ignored by the XY Section view, which always sections at each floor's height.
+      Accepted so that shared configurations validate.
     oneOf:
       - enum: [preserve, flatten]
       - type: object
@@ -156,8 +148,8 @@ $defs:
     properties:
       levelProperty:
         description: |
-          Dot-separated path on each solid giving the floor level number(s) it is on — a number or
-          an array of numbers. Default `properties.floors`.
+          Dot-separated path on each solid giving the floor level number(s) it is on — a number or an array of numbers.
+          Default `properties.floors`.
         type: string
         minLength: 1
       levelLabels:
@@ -170,8 +162,8 @@ $defs:
           minLength: 1
       sectionZ:
         description: |
-          Section height in metres per level, on the document's vertical datum. Default: the
-          mid-height of the solids listed on that level alone.
+          Section height in metres per level, on the document's vertical datum.
+          Default: the mid-height of the solids listed on that level alone.
         type: object
         propertyNames:
           $ref: "#/$defs/levelKey"
@@ -192,17 +184,15 @@ $defs:
             exclusiveMinimum: 0
       boundary:
         description: |
-          Ordered choices for the one boundary parcel drawn on every floor; the first entry that
-          yields an outline wins. Default `[{ "source": "parcels" }]` (the first parcel with an
-          outline); `[]` draws no boundary.
+          Ordered choices for the one boundary parcel drawn on every floor; the first entry that yields an outline wins.
+          Default `[{ "source": "parcels" }]` (the first parcel with an outline); `[]` draws no boundary.
         type: array
         items:
           $ref: "#/$defs/boundaryEntry"
       exclude:
         description: |
-          Solids never sectioned: every feature of `source` excludes the solid(s) whose id is the
-          value at `property`. Default: the geometry of every `occupationFeatures` item (walls,
-          slabs, ceilings); `[]` excludes nothing.
+          Solids never sectioned: every feature of `source` excludes the solid(s) whose id is the value at `property`.
+          Default: the geometry of every `occupationFeatures` item (walls, slabs, ceilings); `[]` excludes nothing.
         type: array
         items:
           type: object
@@ -228,9 +218,7 @@ $defs:
         $ref: "#/$defs/match"
       follow:
         description: |
-          Instead of drawing the matched feature, follow its `topology.relationships` entry with
-          this `role` to the feature its `href` names (in `source`, default the same collection),
-          e.g. from a strata scheme to its containing primary parcel.
+          Instead of drawing the matched feature, follow its `topology.relationships` entry with this `role` to the feature its `href` names (in `source`, default the same collection), e.g. from a strata scheme to its containing primary parcel.
         type: object
         additionalProperties: false
         required: [role]

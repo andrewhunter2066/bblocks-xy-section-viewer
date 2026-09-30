@@ -10,7 +10,7 @@ hand to view plugins, an example over 1 MiB; its parsed content is identical to 
 | File | Source | Notes |
 |---|---|---|
 | `built-strata-example-1.json` | `3d-csdm-profile-wa` `proposals/development/built-strata/examples/example-1.json` @ `319a965` | Strata plan SP83687: 18 solids on floors 1–2, 9 of them `occupationFeatures` geometry (walls, slabs, ceiling), 9 faces with holes; parcels: former-tenure `Ring` lot, strata-scheme `ParcelAggregate`, two `AggregateSolid` strata lots. `horizontalCRS` `epsg:7850`, `verticalCRS` `epsg:5711`. |
-| `4-unit-up-down-with-parcel.json` | `waTestData` `data/output/4-unit-up-down-with-parcel.json` @ `1bfe46a` | 5 solids on floors 1–2 (the stairwell spans both); one `Polygon` lot parcel whose 19 boundary points have a 2D `place`. |
+| `4-unit-up-down-with-parcel.json` | `waTestData` (a private repository of generated test surveys) `data/output/4-unit-up-down-with-parcel.json` @ `1bfe46a`, published here with permission | 5 solids on floors 1–2 (the stairwell spans both); one `Polygon` lot parcel whose 19 boundary points have a 2D `place`. |
 
 Hand-made fixture:
 

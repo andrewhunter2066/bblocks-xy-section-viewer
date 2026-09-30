@@ -1,12 +1,9 @@
-The **XY Section** view (`XYSectionPlugin`) draws [topo-feature](https://github.com/ogcincubator/topo-feature)
-documents as horizontal sections — plan views — one per floor level, in a tab of the Building
-Blocks viewer. Each point is placed by its projected `place` coordinates (the document's
-`horizontalCRS`; heights on its `verticalCRS`), and edges, rings, faces, shells, solids and parcels
-are assembled from their topology references. No coordinates are transformed. This block is the
-JSON Schema for the optional per-block configuration that tunes that view.
+The **XY Section** view (`XYSectionPlugin`) draws [topo-feature](https://github.com/ogcincubator/topo-feature) documents as horizontal sections — plan views — one per floor level, in a tab of the Building Blocks viewer.
+Each point is placed by its projected `place` coordinates (the document's `horizontalCRS`; heights on its `verticalCRS`), and edges, rings, faces, shells, solids and parcels are assembled from their topology references.
+No coordinates are transformed.
+This block is the JSON Schema for the optional per-block configuration that tunes that view.
 
-The view appears for a document that is a topo-feature document, has at least one point with a 3D
-`place`, and has at least one floor level (by default from each solid's `properties.floors`).
+The view appears for a document that is a topo-feature document, has at least one point with a 3D `place`, and has at least one floor level (by default from each solid's `properties.floors`).
 
 ## Attaching a configuration to a block
 
@@ -23,16 +20,13 @@ Add a `resources` entry to the block's `bblock.json`, next to its examples:
 ]
 ```
 
-A block that already has a configuration for the Three.js topology view (role
-`https://github.com/ogcincubator/bblocks-viewer-topo-feature-plugin/role/viewer-config`) gets the
-same rules in its sections; an XY-specific resource takes precedence when both are present. See the
-[demo blocks](bblocks://ogc.bbr.xysection.xySectionViewerDemo.builtStrata) for complete examples.
+A block that already has a configuration for the Three.js topology view (role `https://github.com/ogcincubator/bblocks-viewer-topo-feature-plugin/role/viewer-config`) gets the same rules in its sections; an XY-specific resource takes precedence when both are present.
+See the [demo blocks](bblocks://ogc.bbr.xysection.xySectionViewerDemo.builtStrata) for complete examples.
 
 ## Rules
 
-`rules` is an ordered list, shared with the Three.js and globe views. For each feature in a rule's
-`source` collection (`solids`, `parcels`, `faces`, `rings`, …, or the derived `surfaces` — shells
-that no solid uses) the first rule whose `match` applies decides how it is drawn:
+`rules` is an ordered list, shared with the Three.js and globe views.
+For each feature in a rule's `source` collection (`solids`, `parcels`, `faces`, `rings`, …, or the derived `surfaces` — shells that no solid uses) the first rule whose `match` applies decides how it is drawn:
 
 | Member | Meaning |
 |---|---|
@@ -44,8 +38,8 @@ that no solid uses) the first rule whose `match` applies decides how it is drawn
 | `initiallyVisible` | `false` hides the feature until it is ticked in the layers panel. |
 | `elevation` | Used by the 3D and globe views; ignored here. |
 
-A feature no rule claims is not drawn. A non-empty `rules` list replaces the view's built-in rules
-(solids and open shells sectioned; parcels only as the boundary).
+A feature no rule claims is not drawn.
+A non-empty `rules` list replaces the view's built-in rules (solids and open shells sectioned; parcels only as the boundary).
 
 ## Section options (`xySection`)
 
@@ -60,5 +54,4 @@ A feature no rule claims is not drawn. A non-empty `rules` list replaces the vie
 | `boundary` | first parcel with an outline | Ordered choices for the one boundary parcel drawn on every floor: `{ "source", "match", "follow": { "role" } }`. `[]` draws none. |
 | `exclude` | `occupationFeatures` geometry | Solids never sectioned: `{ "source", "property" }` naming the solid ids to leave out. `[]` excludes nothing. |
 
-Nothing in a configuration can break the view: an unreachable or invalid file, or an invalid
-option, falls back to the defaults with a warning in the browser console.
+Nothing in a configuration can break the view: an unreachable or invalid file, or an invalid option, falls back to the defaults with a warning in the browser console.

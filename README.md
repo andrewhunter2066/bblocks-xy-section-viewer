@@ -59,7 +59,6 @@ Why things are the way they are, coordinates, sectioning, levels, colours, the v
 ## Development
 
 Requires Node.js 22 or later and, for the register, Docker.
-(On Windows with WSL: the repository lives on `C:`, and `npm` in WSL may be the Windows shim — then use `node.exe` for direct `node` commands, and run `./build.sh`/`./view.sh` in an interactive terminal.)
 
 ```bash
 npm install
@@ -90,8 +89,6 @@ npm run local-register  # point build-local/register.json at the local dist/ (af
 Open a demo block → **Examples** → **XY SECTION**.
 Keep the browser console open: errors from the plugin's asynchronous work only appear there (and as a message in the tab).
 
-`node scripts/preview-sections.mjs [file.json …]` writes bare SVGs of every floor straight from the geometry modules to `dist/`, for a quick look without a browser session.
-
 ### Layout
 
 | Path | What |
@@ -102,7 +99,7 @@ Keep the browser console open: errors from the plugin's asynchronous work only a
 | `src/js/utils/` | Topology, levels, sectioning, boundary, options, config loading; the rule engine copied from the Three.js plugin (`rules.js`, `curie.js`, `config.js`, `resolve-config.js`, `default-config.js`, `mime-type-match.js`, with provenance headers; must port upstream fixes by hand) |
 | `harness/` | Dev harness and real-data fixtures (see `harness/fixtures/README.md`) |
 | `_sources/` | The register: the configuration schema block and two demo blocks |
-| `scripts/` | `use-local-plugin.mjs` (`npm run local-register`), the test loader for `?raw` CSS imports, `preview-sections.mjs` |
+| `scripts/` | `use-local-plugin.mjs` (`npm run local-register`), the test loader for `?raw` CSS imports |
 | `docs/` | Design notes and the handover checklist |
 
 ## Publishing

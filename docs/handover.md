@@ -28,7 +28,7 @@ Tick items off in the PR or move them to GitHub issues.
 - [ ] Open an issue: port later upstream fixes to the copied rule engine by hand (bblocks-viewer-topo-feature-plugin, from `d94018b` on `refactor/parameterised-viewer`; `src/js/utils/{rules,curie,config,resolve-config,default-config,mime-type-match}.js` and their tests).
       Each file's header names its origin.
 - [ ] Tell other registers how to add the plugin (README "Adding the plugin to a register"), including the 1 MiB example limit, and agree a `weight` relative to the Three.js and Globe tabs.
-- [ ] Record fixture permissions: `built-strata-example-1.json` (3d-csdm-profile-wa, strata plan SP83687) and `4-unit-up-down-with-parcel.json` (waTestData) are published in this repository.
+- [x] Fixture permissions: `built-strata-example-1.json` comes from the public `surroundaustralia/3d-csdm-profile-wa` (strata plan SP83687); `4-unit-up-down-with-parcel.json` comes from the private `waTestData` and is published with permission.
 
 ## Known limitations (candidate issues)
 
