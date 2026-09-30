@@ -9,7 +9,7 @@ bblocks-config-local.yaml
 node_modules/
 dist/
 
-# Local secrets — Cesium ion tokens etc. must never be committed
+# Local secrets must never be committed
 .env
 .env.*
 !.env.example
