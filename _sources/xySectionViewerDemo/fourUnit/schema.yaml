@@ -1,0 +1,15 @@
+"$schema": https://json-schema.org/draft/2020-12/schema
+title: Topo-feature document with floor levels
+description: |
+  The minimum the XY Section view needs: `points` (with projected `place` coordinates) and
+  `solids` (with floor levels). This is a demo block for the view, not a topo-feature schema; see
+  https://github.com/ogcincubator/topo-feature for the data model itself.
+type: object
+required: [points, solids]
+properties:
+  points:
+    type: array
+    minItems: 1
+  solids:
+    type: array
+    minItems: 1

@@ -1,0 +1,22 @@
+{
+  "rules": [
+    {
+      "source": "parcels",
+      "kind": "parcel-created",
+      "group": "parcel",
+      "kindLabel": "Created",
+      "geometry": "polygon",
+      "match": { "property": "properties.parcelState", "values": ["wa-parcel-state:created"] },
+      "elevation": "flatten",
+      "style": { "color": "#0a6ff6", "opacity": 0.5, "lineColor": "#06102b" }
+    },
+    {
+      "source": "solids",
+      "kind": "solid",
+      "geometry": "solid",
+      "elevation": { "flattenTo": 12 }
+    }
+  ],
+  "defaults": { "style": { "opacity": 0.8 } },
+  "kindOrder": ["solid", "parcel-created"]
+}

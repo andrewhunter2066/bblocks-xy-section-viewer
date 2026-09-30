@@ -1,0 +1,38 @@
+examples:
+  - title: WA built strata
+    content: |
+      Western Australian level names, and the WA boundary order: the strata scheme's containing
+      primary parcel, else a former-tenure parcel, else any parcel with an outline. Walls, slabs
+      and ceilings (the geometry of `occupationFeatures`) are excluded, as by default. The built-in
+      rules still apply. This is the configuration of the
+      [built strata demo block](bblocks://ogc.bbr.xysection.xySectionViewerDemo.builtStrata).
+    snippets:
+      - language: json
+        ref: ../xySectionViewerDemo/builtStrata/viewer-config.json
+
+  - title: Styled rules
+    content: |
+      Rules as well as options: the stairwell as its own dashed kind with a fixed colour, other
+      solids as units, and lot parcels drawn flat as outlines on every floor, initially hidden.
+      Floors are labelled Lower and Upper, lower floors show from the start, the grid is 5 m and
+      no boundary is drawn. This is the configuration of the
+      [four units demo block](bblocks://ogc.bbr.xysection.xySectionViewerDemo.fourUnit).
+    snippets:
+      - language: json
+        ref: ../xySectionViewerDemo/fourUnit/viewer-config.json
+
+  - title: Level options
+    content: |
+      Options only, so the built-in rules still apply: named levels, a fixed section height for
+      level 1 instead of its mid-height, lower floors shown from the start, and a 2 m grid.
+    snippets:
+      - language: json
+        ref: examples/level-options.json
+
+  - title: Every solid, no boundary
+    content: |
+      Section every solid — including the walls, slabs and ceilings that `occupationFeatures`
+      describe, which are excluded by default — and draw no boundary parcel.
+    snippets:
+      - language: json
+        ref: examples/no-exclusions.json

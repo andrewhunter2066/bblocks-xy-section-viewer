@@ -2,11 +2,13 @@
 // harness/index.html (the page fetch()es them). Plain data, so src/js/harness-catalog.test.js can
 // check every entry exists and behaves as its label says. See fixtures/README.md for sources.
 //
-// A fixture's `config` is applied automatically when it is selected; `matches` is what the plugin
-// is expected to answer.
+// The sample configs are the register's own files: the demo blocks' viewer configs and the
+// xySectionViewerConfig block's examples. A fixture's `config` is applied automatically when it
+// is selected; `matches` is what the plugin is expected to answer. A config's `key` names it in
+// the harness URL (?config=<key>).
 
-export const WA_STRATA_CONFIG = 'fixtures/wa-strata-config.json';
-export const STYLED_RULES_CONFIG = 'fixtures/styled-rules-config.json';
+export const WA_STRATA_CONFIG = '../_sources/xySectionViewerDemo/builtStrata/viewer-config.json';
+export const STYLED_RULES_CONFIG = '../_sources/xySectionViewerDemo/fourUnit/viewer-config.json';
 
 export const FIXTURES = [
   {
@@ -30,6 +32,8 @@ export const FIXTURES = [
 ];
 
 export const SAMPLE_CONFIGS = [
-  { label: 'WA strata: level names, scheme → former tenure → lot boundary', file: WA_STRATA_CONFIG },
-  { label: 'Styled rules: dashed stairwell, lot outlines, context on, 5 m grid, no boundary', file: STYLED_RULES_CONFIG },
+  { key: 'wa-strata', label: 'WA strata: level names, scheme → former tenure → lot boundary', file: WA_STRATA_CONFIG },
+  { key: 'styled-rules', label: 'Styled rules: dashed stairwell, lot outlines, context on, 5 m grid, no boundary', file: STYLED_RULES_CONFIG },
+  { key: 'level-options', label: 'Level options: labels, a fixed section height, context on, 2 m grid', file: '../_sources/xySectionViewerConfig/examples/level-options.json' },
+  { key: 'everything', label: 'Everything: no exclusions (walls, slabs), no boundary', file: '../_sources/xySectionViewerConfig/examples/no-exclusions.json' },
 ];

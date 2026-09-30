@@ -1,0 +1,8 @@
+examples:
+  - title: Four units up/down with a stairwell
+    content: |
+      Open the **XY Section** tab. The document is the harness fixture
+      `4-unit-up-down-with-parcel.json`, shared with the plugin's own tests.
+    snippets:
+      - language: json
+        ref: ../../../harness/fixtures/4-unit-up-down-with-parcel.json

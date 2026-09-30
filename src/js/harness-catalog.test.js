@@ -47,7 +47,7 @@ test('the WA config gives the built-strata fixture named floors and the former-t
 
 test('the styled-rules config reshapes the 4-unit view: kinds, hidden lot outline, no boundary', async () => {
   const fixture = FIXTURES.find(f => f.file.endsWith('4-unit-up-down-with-parcel.json'));
-  const config = SAMPLE_CONFIGS.find(c => c.file.endsWith('styled-rules-config.json')).file;
+  const config = SAMPLE_CONFIGS.find(c => c.key === 'styled-rules').file;
   const result = await loaded(config);
   const model = buildSectionModel(JSON.parse(read(fixture.file)), result);
   assert.deepEqual(model.levels.map(l => l.label), ['Lower', 'Upper']);

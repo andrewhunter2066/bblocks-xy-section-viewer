@@ -5,7 +5,7 @@ import { buildSectionModel } from '../xy-scene.js';
 import { buildXYDefaultConfig } from '../utils/xy-default-config.js';
 import { resolveXYOptions } from '../utils/xy-options.js';
 import { FakeDocument } from '../test-support/fake-dom.js';
-import { BUILT_STRATA, FOUR_UNIT, loadFixture } from '../test-support/fixtures.js';
+import { BUILT_STRATA, FOUR_UNIT, loadDemoConfig, loadFixture } from '../test-support/fixtures.js';
 
 // Builds a view over a fixture inside a fake root of the given height; returns what tests poke at.
 function setup({ fixture = FOUR_UNIT, raw = {}, height = 300, config = buildXYDefaultConfig() } = {}) {
@@ -238,7 +238,7 @@ test('expanded layout (≥ 400 px): the layers panel is always shown; resizing s
 });
 
 test('the layers panel lists the boundary and every feature under its group', () => {
-  const { view } = setup({ fixture: BUILT_STRATA, raw: loadFixture('wa-strata-config.json').xySection });
+  const { view } = setup({ fixture: BUILT_STRATA, raw: loadDemoConfig('builtStrata').xySection });
   const text = view.layers.allText;
   assert.match(text, /^Boundary Lot 1 on Plan DP 413673 Solids /);
   assert.equal(view.layerInputs.items.size, 9);

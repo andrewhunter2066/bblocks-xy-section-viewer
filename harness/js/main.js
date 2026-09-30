@@ -81,6 +81,12 @@ function renderCurrentDocument() {
   }
 }
 
+// A short name for a config path: its key in the sample list, else its last two path segments.
+function configName(path) {
+  if (!path) return 'none';
+  return SAMPLE_CONFIGS.find(c => c.file === path)?.key ?? path.split('/').slice(-2).join('/');
+}
+
 function setDocument(content, label, mimeType = 'application/json') {
   currentDocument = { content, label, mimeType };
   renderCurrentDocument();
@@ -100,7 +106,7 @@ async function loadDocumentUrl(url, label, config = null) {
   statusEl.textContent = `Loading ${label}…`;
   try {
     const content = await fetchText(url);
-    setConfig(config, config?.split('/').pop());
+    setConfig(config, configName(config));
     setDocument(content, label, detectMimeType(url));
   } catch (e) {
     statusEl.textContent = `Failed to load ${label}: ${e.message}`;
@@ -131,7 +137,7 @@ $('urlLoad').addEventListener('click', () => {
 
 sampleConfigSelect.addEventListener('change', () => {
   const file = sampleConfigSelect.value;
-  setConfig(file || null, file.split('/').pop());
+  setConfig(file || null, configName(file));
   renderCurrentDocument();
 });
 
@@ -162,13 +168,12 @@ $('tabSize').addEventListener('change', e => {
 });
 
 // The starting state can come from the page URL, for bookmarkable checks:
-//   ?fixture=<fixture file name>&config=<sample config file name | none>&tabsize=1&topo=1
+//   ?fixture=<fixture file name>&config=<sample config key | none>&tabsize=1&topo=1
 function initialState() {
   const params = new URLSearchParams(location.search);
-  const byName = (list, name) => list.find(entry => entry.file.split('/').pop() === name)?.file;
-  const fixture = byName(FIXTURES, params.get('fixture')) ?? FIXTURES[0].file;
+  const fixture = FIXTURES.find(f => f.file.split('/').pop() === params.get('fixture'))?.file ?? FIXTURES[0].file;
   const configParam = params.get('config');
-  const config = configParam === null ? undefined : (configParam === 'none' ? null : byName(SAMPLE_CONFIGS, configParam) ?? null);
+  const config = configParam === null ? undefined : (SAMPLE_CONFIGS.find(c => c.key === configParam)?.file ?? null);
   topoRole.checked = params.get('topo') === '1';
   if (params.get('tabsize') === '1') {
     $('tabSize').checked = true;

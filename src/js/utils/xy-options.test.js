@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { DEFAULT_XY_OPTIONS, levelLabel, resolveXYOptions } from './xy-options.js';
-import { loadFixture } from '../test-support/fixtures.js';
+import { loadDemoConfig, loadFixture } from '../test-support/fixtures.js';
 
 test('no xySection gives the defaults with no warnings', () => {
   const { options, warnings } = resolveXYOptions(undefined);
@@ -36,8 +36,8 @@ test('a fully specified xySection is taken as given', () => {
   });
 });
 
-test('the WA sample config parses without warnings', () => {
-  const { options, warnings } = resolveXYOptions(loadFixture('wa-strata-config.json').xySection);
+test('the built-strata demo block\'s WA config parses without warnings', () => {
+  const { options, warnings } = resolveXYOptions(loadDemoConfig('builtStrata').xySection);
   assert.deepEqual(warnings, []);
   assert.equal(options.boundary.length, 3);
   assert.deepEqual(options.boundary[0].follow, { role: 'containingPrimaryParcel', source: 'parcels' });

@@ -22,8 +22,8 @@ import { XY_DEFAULT_LABEL } from './utils/xy-default-config.js';
 // Categorical palette, in fixed order (the dataviz skill's validated reference order).
 export const PALETTE = Object.freeze(['#2a78d6', '#eb6834', '#1baf7a', '#eda100', '#e87ba4', '#008300', '#4a3aa7', '#e34948']);
 
-const SECTIONED_GEOMETRIES = new Set(['solid', 'open-shell', 'face']);
-const OUTLINED_GEOMETRIES = new Set(['polygon', 'ring']);
+export const SECTIONED_GEOMETRIES = new Set(['solid', 'open-shell', 'face']);
+export const OUTLINED_GEOMETRIES = new Set(['polygon', 'ring']);
 
 // A CSS colour safe to put in an SVG attribute: #hex, a named colour, or rgb()/hsl() notation.
 const SAFE_COLOR = /^(#[0-9a-f]{3,8}|[a-z]+|(rgb|rgba|hsl|hsla)\([0-9.,%\s/+-]+\))$/i;

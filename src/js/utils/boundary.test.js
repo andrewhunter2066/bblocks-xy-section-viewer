@@ -3,10 +3,10 @@ import assert from 'node:assert/strict';
 import { featureOutline, resolveBoundary } from './boundary.js';
 import { buildMaps, getFeatures } from './topology.js';
 import { DEFAULT_BOUNDARY, resolveXYOptions } from './xy-options.js';
-import { BUILT_STRATA, FOUR_UNIT, loadFixture } from '../test-support/fixtures.js';
+import { BUILT_STRATA, FOUR_UNIT, loadDemoConfig, loadFixture } from '../test-support/fixtures.js';
 
 const FORMER_TENURE_LOT = 'uuid:5090f295-249f-4d10-83d1-0068646e484a';
-const waBoundary = () => resolveXYOptions(loadFixture('wa-strata-config.json').xySection).options.boundary;
+const waBoundary = () => resolveXYOptions(loadDemoConfig('builtStrata').xySection).options.boundary;
 const resolve = (doc, entries) => resolveBoundary(doc, entries, buildMaps(doc));
 
 test('built-strata, WA order: the strata scheme\'s containing primary parcel wins (entry 0)', () => {

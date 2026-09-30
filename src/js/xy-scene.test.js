@@ -5,10 +5,10 @@ import { buildXYDefaultConfig } from './utils/xy-default-config.js';
 import { resolveXYOptions } from './utils/xy-options.js';
 import { loopArea } from './utils/section.js';
 import { box, topoDocument } from './test-support/topo-builder.js';
-import { BUILT_STRATA, FOUR_UNIT, loadFixture } from './test-support/fixtures.js';
+import { BUILT_STRATA, FOUR_UNIT, loadDemoConfig, loadFixture } from './test-support/fixtures.js';
 
 const options = raw => resolveXYOptions(raw).options;
-const waOptions = () => options(loadFixture('wa-strata-config.json').xySection);
+const waOptions = () => options(loadDemoConfig('builtStrata').xySection);
 const model = (doc, { config = buildXYDefaultConfig(), xySection = options() } = {}) => buildSectionModel(doc, { config, xySection });
 const byLabel = (m, label) => m.records.find(r => r.label === label);
 

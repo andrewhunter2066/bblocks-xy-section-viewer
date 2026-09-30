@@ -136,7 +136,7 @@ feature's topology type — `Polygon`, `Ring` or `Face`; an `AggregateSolid` or 
 has none.
 
 The built-in default is the first parcel with an outline. The WA configuration
-(`harness/fixtures/wa-strata-config.json`, and the demo blocks) prefers the strata-scheme
+(the built-strata demo block's `viewer-config.json`) prefers the strata-scheme
 parcel's `containingPrimaryParcel`, then a `former-tenure` parcel, then any parcel with an
 outline. On the built-strata fixture the first entry resolves (to the former-tenure lot, via the
 scheme); on the 4-unit fixture only the third does (its `created` lot `Polygon`). A strata-scheme
@@ -211,8 +211,36 @@ still loading.
 
 ### The register
 
-_To be written (Stage 7)._ Declares its own plugin under `viewer.view-plugins`; demo blocks carry
-topo-feature examples so the XY Section tab appears in this register.
+The register declares its own plugin under `viewer.view-plugins` in `bblocks-config.yaml`
+(dogfooding), served from the repository's `dist` branch through jsDelivr. Its identifier prefix is
+`ogc.bbr.xysection.`. Besides the `xySectionViewerConfig` schema block it has two demo blocks:
+without examples that are topo-feature documents, the XY Section tab would never appear in this
+register.
+
+- `xySectionViewerDemo/builtStrata` — strata plan SP83687 with the WA configuration (level names,
+  scheme → former tenure → lot boundary, occupation features excluded).
+- `xySectionViewerDemo/fourUnit` — the 4-unit test survey with the styled-rules configuration (a
+  stairwell kind, lot outlines, context on, 5 m grid, no boundary).
+
+Each demo block's example is a harness fixture (by `ref`, not a copy) and its `viewer-config.json` is
+the single copy of that sample configuration, shared with the harness and the unit tests; one block
+per document, because a block has a single viewer configuration. The demo blocks' schemas only
+require `points` and `solids`: they demonstrate the view, they are not topo-feature schemas.
+
+The configuration schema's rule part is the one the Cesium register publishes, so configurations
+shared between the three viewers validate here, with two differences: `match.values` also accepts
+numbers and booleans (floor numbers are numbers), and `elevation` is documented as ignored.
+`src/js/block-schema.test.js` keeps schema and code in step: the block's examples and tests
+validate or fail as named, every `xySection` value the schema rejects the plugin also drops with a
+warning, the schema's geometry names and `xySection` members equal the code's, the demo blocks
+declare their config under the plugin's role, and every `bblocks://` link names a block that
+exists.
+
+Checked with the postprocessor (`--base-url http://localhost:9090/register/`): all 3 blocks build and
+all 20 validations pass (the 11 `-fail` test resources rejected, as required). The demo blocks'
+relative `resources[].ref` comes out in `register.json` as an absolute URL under the base URL
+(`…/register/_sources/xySectionViewerDemo/<block>/viewer-config.json`); Stage 8 checks the plugin
+fetches it in the real viewer.
 
 ## Verified integration behaviour
 
