@@ -1,0 +1,302 @@
+/* XYSectionPlugin UI. Plain CSS, no host framework: the plugin runs outside the host's component
+   tree. Everything is scoped under .xys-root, the plugin's own wrapper element. The drawing has
+   its own light surface (a plan sheet), whatever the host's theme. */
+
+.xys-root {
+  --xys-surface: #fcfcfb;
+  --xys-panel: #ffffff;
+  --xys-ink: #0b0b0b;
+  --xys-ink-2: #52514e;
+  --xys-muted: #898781;
+  --xys-border: rgba(11, 11, 11, 0.12);
+  --xys-accent: #2a78d6;
+  --xys-hover: #eef3fa;
+
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font: 12px/1.4 system-ui, sans-serif;
+  color: var(--xys-ink);
+  background: var(--xys-surface);
+}
+
+.xys-root:fullscreen {
+  width: 100vw;
+  height: 100vh;
+}
+
+/* ─── Floor tabs ──────────────────────────────────────────────────────────────── */
+
+.xys-tabs {
+  display: flex;
+  flex: none;
+  gap: 2px;
+  padding: 4px 8px 0;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--xys-border);
+  background: var(--xys-panel);
+}
+
+.xys-tab {
+  flex: none;
+  padding: 6px 12px;
+  border: none;
+  border-bottom: 2px solid transparent;
+  background: none;
+  color: var(--xys-ink-2);
+  font: inherit;
+  cursor: pointer;
+}
+
+.xys-tab:hover {
+  background: var(--xys-hover);
+}
+
+.xys-tab[aria-selected="true"] {
+  border-bottom-color: var(--xys-accent);
+  color: var(--xys-ink);
+  font-weight: 600;
+}
+
+.xys-tab:focus-visible,
+.xys-button:focus-visible,
+.xys-layers input:focus-visible {
+  outline: 2px solid var(--xys-accent);
+  outline-offset: 1px;
+}
+
+/* ─── Drawing area ────────────────────────────────────────────────────────────── */
+
+.xys-body {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+}
+
+.xys-stage {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+
+.xys-stage.xys-dragging {
+  cursor: grabbing;
+}
+
+.xys-panel {
+  position: absolute;
+  inset: 0;
+}
+
+.xys-panel[hidden] {
+  display: none;
+}
+
+.xys-svg {
+  display: block;
+}
+
+.xys-north {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--xys-ink-2);
+  font-weight: 600;
+  pointer-events: none;
+}
+
+.xys-north svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ─── Toolbar ─────────────────────────────────────────────────────────────────── */
+
+/* Wraps into a second column when the compact tab is too short for one. */
+.xys-toolbar {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  bottom: 8px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 4px;
+  pointer-events: none;
+}
+
+.xys-toolbar > * {
+  pointer-events: auto;
+}
+
+.xys-button {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--xys-border);
+  border-radius: 4px;
+  background: var(--xys-panel);
+  color: var(--xys-ink-2);
+  cursor: pointer;
+}
+
+.xys-button:hover {
+  background: var(--xys-hover);
+}
+
+.xys-button[aria-pressed="true"] {
+  background: var(--xys-accent);
+  border-color: var(--xys-accent);
+  color: #fff;
+}
+
+.xys-button svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* The layers button is only needed while the panel is a pop-over. */
+.xys-expanded .xys-button[data-key="layers"] {
+  display: none;
+}
+
+/* ─── Layers panel ────────────────────────────────────────────────────────────── */
+
+.xys-layers {
+  position: absolute;
+  top: 8px;
+  left: 76px;
+  z-index: 11;
+  width: 230px;
+  max-height: calc(100% - 16px);
+  overflow-y: auto;
+  padding: 8px;
+  border: 1px solid var(--xys-border);
+  border-radius: 4px;
+  background: var(--xys-panel);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.xys-layers[hidden] {
+  display: none;
+}
+
+.xys-expanded .xys-layers,
+.xys-expanded .xys-layers[hidden] {
+  position: static;
+  display: block;
+  flex: none;
+  width: 250px;
+  max-height: none;
+  border: none;
+  border-left: 1px solid var(--xys-border);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.xys-layers h3 {
+  margin: 8px 0 4px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--xys-muted);
+}
+
+.xys-layers h3:first-child {
+  margin-top: 0;
+}
+
+.xys-layers h4 {
+  margin: 6px 0 2px 18px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--xys-ink-2);
+}
+
+.xys-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 0;
+  cursor: pointer;
+}
+
+.xys-row.xys-item {
+  padding-left: 18px;
+}
+
+.xys-row input {
+  margin: 0;
+}
+
+.xys-row.xys-absent {
+  color: var(--xys-muted);
+}
+
+.xys-swatch {
+  flex: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  border: 1.5px solid currentColor;
+}
+
+.xys-swatch-boundary {
+  border: 2px dashed var(--xys-ink-2);
+  background: none;
+}
+
+/* ─── Caption ─────────────────────────────────────────────────────────────────── */
+
+.xys-caption {
+  flex: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2px 12px;
+  padding: 4px 8px;
+  border-top: 1px solid var(--xys-border);
+  background: var(--xys-panel);
+  color: var(--xys-ink-2);
+}
+
+.xys-readout {
+  font-variant-numeric: tabular-nums;
+  color: var(--xys-muted);
+}
+
+/* ─── Messages ────────────────────────────────────────────────────────────────── */
+
+.xys-message {
+  padding: 16px;
+  color: var(--xys-ink-2);
+}
+
+.xys-error {
+  margin: 16px;
+  padding: 12px;
+  border-left: 4px solid #e34948;
+  background: #fdf0f0;
+  color: var(--xys-ink);
+}
+
+.xys-error-hint {
+  margin-top: 4px;
+  color: var(--xys-ink-2);
+}

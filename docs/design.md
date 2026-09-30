@@ -144,9 +144,60 @@ parcel has no outline of its own: it aggregates the strata lots (`AggregateSolid
 
 ### User interface
 
-_To be written (Stage 5)._ Plain DOM and SVG. One host tab containing an ARIA tab component: one
-tab per floor, each panel holding that floor's section (built on first open). Lower floors are
-hidden initially and can be toggled on as faded context.
+Plain DOM, CSS and SVG (`src/js/ui/`, `src/css/`), with no host framework: a plugin runs outside
+the viewer's component tree. The CSS is bundled into `dist/index.js` through a static `?raw`
+import; the Node test runner resolves those through `scripts/test-raw-loader.mjs` (copied from the
+Cesium plugin). The code is layered so almost all of it is testable without a DOM:
+
+- `src/js/xy-scene.js` — the model: levels, one record per feature the rules claim, the boundary,
+  colours, and each level's sections, computed the first time that level is asked for and cached.
+- `src/js/svg-render.js` — one level as SVG markup, a pure function. The view re-renders a floor
+  when a toggle changes; "Download SVG" saves the same markup as a standalone file.
+- `src/js/ui/section-view.js` — the DOM: tabs, toolbar, layers panel, caption, pan/zoom.
+
+**How rules map to the drawing.** A rule's `geometry` `solid`, `open-shell` or `face` is sectioned
+at each level's height (a face gives lines); `polygon` or `ring` is drawn flat, as an outline, on
+every level; anything else is ignored. A section feature no level's height cuts is left out
+altogether. A rule with no `label` of its own gets the built-in label chain (appellation,
+description, name) instead of the rule engine's bare-id fallback.
+
+**Tabs.** The host gives the plugin one tab ("XY Section"); inside it is a tab component with one
+tab per floor, following the WAI-ARIA tabs pattern (`role="tablist"`/`tab`/`tabpanel`, arrow keys
+wrap, Home/End, automatic activation). A floor's SVG is built the first time its tab is opened.
+All floors share one pan/zoom view, so switching floors keeps the same area in view.
+
+**Drawing.** Coordinates are converted to a local frame in metres (x east from the drawing's west
+edge, y south from its north edge) to keep SVG numbers small. Grid north is up; the grid falls on
+whole multiples of its spacing in easting/northing. Layers, bottom to top: grid, lower floors
+(context: every lower level, outlines only at 40% opacity), flat outlines, this floor's sections
+(`fill-rule="evenodd"`, so holes show), the dashed boundary parcel, labels. Lower floors start
+hidden (`showContext: false`) and the toolbar toggles them. Strokes use
+`vector-effect="non-scaling-stroke"`, so line widths stay constant while zooming; labels are
+sized in drawing units (1/70 of the drawing) and scale with it — readable once zoomed in on a
+large lot.
+
+**Colour.** The dataviz skill's validated 8-hue categorical palette, in its fixed order. Colour
+follows the feature: each takes the first slot not used by an earlier feature sharing any floor
+with it, so no two features on one floor share a colour (up to 8), and a feature spanning floors
+(the 4-unit stairwell) keeps its colour on each. A rule's own `style.color` wins; colours from a
+config are checked against a safe pattern before they reach SVG attributes. Identity never rests
+on colour alone: every feature has a tooltip, a legend row and (by default) a label. The drawing
+has its own light surface, like a plan sheet, whatever the host's theme.
+
+**Controls.** Toolbar: zoom in/out, fit (also double-click), lower floors, labels, layers,
+download, fullscreen. Wheel zooms about the pointer; dragging pans; the caption shows the level's
+section height and datum, the horizontal CRS, grid spacing, the (unapplied) bearing rotation, and
+the easting/northing under the pointer. The layers panel lists the boundary, then every feature
+by rule group (and kind, when a group has several) with select-all checkboxes; features not on
+the current floor are dimmed. As in the Cesium and Three.js plugins, layout follows the space the
+host gives the view: at 400 px or taller (the host's expand dialog, or fullscreen) the layers
+panel is docked beside the drawing; in the compact ~300 px tab it is a pop-over behind the layers
+button, and the toolbar wraps into two columns.
+
+**Robustness.** Every string from the document is XML-escaped before it reaches markup. Config
+loading is async, so render failures are caught and shown in the tab (with details in the
+console) rather than thrown; `destroy()` is safe at any point, including while the config is
+still loading.
 
 ### The register
 
