@@ -27,15 +27,31 @@ reference, faces through `topology.directed_references`. `bearingRotation` is di
 applied.
 
 A document matches — gets an **XY Section** tab — only if it is a topo-feature document, at least
-one point carries a numeric 3D `place`, and at least one floor level is found.
+one point carries a numeric 3D `place`, and at least one floor level with a section height is
+found. `matches()` is synchronous and runs before any per-block configuration is fetched, so it
+always uses the built-in level options: a block's `levelProperty` or `exclude` changes what is
+drawn, not whether the tab appears.
+
+Topology is resolved in `src/js/utils/topology.js` (adapted from the Three.js plugin by way of
+the Cesium plugin). A point with no usable `place` is left out, and anything referencing it is
+skipped. A 2D `place` (as on the 4-unit fixture's parcel points) gives a vertex with no Z — fine
+for an outline, ignored for heights. Besides edge rings, a `Ring`-topology feature may reference
+rings (the built-strata former-tenure parcel does), and then resolves like a face. `Polygon`
+parcels list an unordered bag of edges per ring, which is walked into order. `AggregateSolid`
+parcels have no outline of their own and resolve to nothing.
 
 ### Floor levels and section heights
 
-_To be written (Stage 2)._ Levels come from `properties.floors` on solids (path configurable);
-a solid listed on several floors appears on each. Each level is cut at the mid-height of the
-solids exclusively on that level (overridable per level). Solids referenced by
-`occupationFeatures[].properties.geometryRef` are excluded from sections, from the level list and
-from the height calculation (configurable via `xySection.exclude`).
+`src/js/utils/levels.js`. Levels come from `properties.floors` on solids (path configurable,
+array or single number); a solid listed on several floors appears on each. Each level is cut at
+the mid-height of the Z range of the solids listed on that level alone — the rule from
+`section_topology.py` — or at a configured per-level height. A level with neither (only
+multi-floor solids, no override) is left out.
+
+Solids referenced by `occupationFeatures[].properties.geometryRef` (walls, slabs, ceilings) are
+excluded from sections, from the level list and from the height calculation, via the default
+`exclude` entry `{ source: "occupationFeatures", property: "properties.geometryRef" }`. On the
+built-strata fixture this removes 9 of 18 solids and moves level 2 from 26.015 m to 26.090 m.
 
 ### Sectioning
 
