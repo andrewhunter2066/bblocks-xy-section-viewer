@@ -1,107 +1,73 @@
 # Design notes
 
-This repository is both an OGC Building Blocks register (`_sources/`) and the home of a
-[bblocks-viewer](https://github.com/opengeospatial/bblocks-viewer) **view plugin** (`src/`) that
-renders [topo-feature](https://github.com/ogcincubator/topo-feature) topology documents as
-horizontal (XY) sections, one per floor level, in a tabbed SVG/HTML view. It is a sibling of the
-Three.js `TopoFeaturePlugin` in
-[bblocks-viewer-topo-feature-plugin](https://github.com/ogcincubator/bblocks-viewer-topo-feature-plugin)
-and of [bblocks-cesium-viewer](https://github.com/ogcincubator/bblocks-cesium-viewer), and is added
-to other registers the same way. This page records why things are the way they are; the
-[README](../README.md) covers how to use and develop them.
+This repository is both an OGC Building Blocks register (`_sources/`) and the home of a [bblocks-viewer](https://github.com/opengeospatial/bblocks-viewer) **view plugin** (`src/`) that renders [topo-feature](https://github.com/ogcincubator/topo-feature) topology documents as horizontal (XY) sections, one per floor level, in a tabbed SVG/HTML view.
+It is a sibling of the Three.js `TopoFeaturePlugin` in [bblocks-viewer-topo-feature-plugin](https://github.com/ogcincubator/bblocks-viewer-topo-feature-plugin) and of [bblocks-cesium-viewer](https://github.com/ogcincubator/bblocks-cesium-viewer), and is added to other registers the same way.
+This page records why things are the way they are; the [README](../README.md) covers how to use and develop them.
 
-The plugin replaces the Python/OpenCascade `section_topology.py` from waTestData. That module is
-treated as a specification, not a reference implementation: it predates the current topo-feature
-encoding (faces referencing rings through `topology.rings` rather than
-`topology.directed_references`).
+The plugin replaces the Python/OpenCascade `section_topology.py` from waTestData.
+That module is treated as a specification, not a reference implementation: it predates the current topo-feature encoding (faces referencing rings through `topology.rings` rather than `topology.directed_references`).
 
 ## Decisions
 
 ### Coordinates
 
-Each point feature's `place` — projected horizontal coordinates (CRS named by the document's
-`horizontalCRS`) and a height on the datum named by `verticalCRS` — is used as-is. There is no
-proj4 and no geoid model, and WGS84 `geometry` is never read. Higher-order features (edges, rings,
-faces, shells, solids, parcels — all `geometry: null`) are assembled from the points they
-reference, faces through `topology.directed_references`. `bearingRotation` is displayed, not
-applied.
+Each point feature's `place`, projected horizontal coordinates (CRS named by the document's `horizontalCRS`) and a height on the datum named by `verticalCRS`, is used as-is.
+There is no proj4 and no geoid model, and GeoJSON (WGS84) `geometry` element is never read.
+Higher-order features (edges, rings, faces, shells, solids, parcels, all `geometry: null`) are assembled from the points they reference, faces through `topology.directed_references`.
+`bearingRotation` is displayed, not applied.
 
-A document matches — gets an **XY Section** tab — only if it is a topo-feature document, at least
-one point carries a numeric 3D `place`, and at least one floor level with a section height is
-found. `matches()` is synchronous and runs before any per-block configuration is fetched, so it
-always uses the built-in level options: a block's `levelProperty` or `exclude` changes what is
-drawn, not whether the tab appears.
+A document matches, gets an **XY Section** tab, only if it is a topo-feature document, at least one point carries a numeric 3D `place` element, and at least one floor level with a section height is found.
+`matches()` is synchronous and runs before any per-block configuration is fetched, so it always uses the built-in level options: a block's `levelProperty` or `exclude` changes what is drawn, not whether the tab appears.
 
-Topology is resolved in `src/js/utils/topology.js` (adapted from the Three.js plugin by way of
-the Cesium plugin). A point with no usable `place` is left out, and anything referencing it is
-skipped. A 2D `place` (as on the 4-unit fixture's parcel points) gives a vertex with no Z — fine
-for an outline, ignored for heights. Besides edge rings, a `Ring`-topology feature may reference
-rings (the built-strata former-tenure parcel does), and then resolves like a face. `Polygon`
-parcels list an unordered bag of edges per ring, which is walked into order. `AggregateSolid`
-parcels have no outline of their own and resolve to nothing.
+Topology is resolved in `src/js/utils/topology.js` (adapted from the Three.js plugin by way of the Cesium plugin).
+A point with no usable `place` is left out, and anything referencing it is skipped.
+A 2D `place` (as on the 4-unit fixture's parcel points) gives a vertex with no Z, fine for an outline, ignored for heights.
+Besides edge rings, a `Ring`-topology feature may reference rings (the built-strata former-tenure parcel does), and then resolves like a face.
+`Polygon` parcels list an unordered bag of edges per ring, which is walked into order.
+`AggregateSolid` parcels have no outline of their own and resolve to nothing.
 
 ### Floor levels and section heights
 
-`src/js/utils/levels.js`. Levels come from `properties.floors` on solids (path configurable,
-array or single number); a solid listed on several floors appears on each. Each level is cut at
-the mid-height of the Z range of the solids listed on that level alone — the rule from
-`section_topology.py` — or at a configured per-level height. A level with neither (only
-multi-floor solids, no override) is left out.
+`src/js/utils/levels.js`.
+Levels come from `properties.floors` on solids (path configurable, array or single number); a solid listed on several floors appears on each.
+Each level is cut at the mid-height of the Z range of the solids listed on that level alone, the rule from `section_topology.py`, or at a configured per-level height.
+A level with neither (only multi-floor solids, no override) is left out.
 
-Solids referenced by `occupationFeatures[].properties.geometryRef` (walls, slabs, ceilings) are
-excluded from sections, from the level list and from the height calculation, via the default
-`exclude` entry `{ source: "occupationFeatures", property: "properties.geometryRef" }`. On the
-built-strata fixture this removes 9 of 18 solids and moves level 2 from 26.015 m to 26.090 m.
+Solids referenced by `occupationFeatures[].properties.geometryRef` (walls, slabs, ceilings) are excluded from sections, from the level list, and from the height calculation, via the default `exclude` entry `{ source: "occupationFeatures", property: "properties.geometryRef" }`.
+On the built-strata fixture this removes 9 of 18 solids and moves level 2 from 26.015 m to 26.090 m.
 
 ### Sectioning
 
-`src/js/utils/section.js` replaces the Python module's OpenCascade solid building and
-`BRepAlgoAPI_Section`; there is no geometry kernel. Every face is planar, so a solid's section is
-the union of its faces' sections. A face (outer ring plus holes) meets the plane Z = z along one
-straight line — direction normal × ẑ, the normal by Newell's method — and the parts of that line
-inside the face are found by sorting the ring crossings along it and pairing them even-odd, which
-handles holes (windows, courtyard voids) with no special case. The segments of all a solid's
-faces are then chained into closed loops, dropping vertices where coplanar faces meet, and any
-leftover open polylines. The sections are drawn from the loops with `fill-rule="evenodd"`, so a
-loop inside another is a hole.
+`src/js/utils/section.js` replaces the Python module's OpenCascade solid building and `BRepAlgoAPI_Section`; there is no geometry kernel.
+Every face is planar, so a solid's section is the union of its faces' sections.
+A face (outer ring plus holes) meets the plane Z = z along one straight line, direction normal × ẑ, the normal by Newell's method. 
+The parts of that line inside the face are found by sorting the ring crossings along it and pairing them even-odd, which handles holes (windows, courtyard voids) with no special case.
+The segments of all a solid's faces are then chained into closed loops, dropping vertices where coplanar faces meet, and any leftover open polylines.
+The sections are drawn from the loops with `fill-rule="evenodd"`, so a loop inside another is a hole.
 
-- **On-plane vertices**: a half-open rule (z ≥ plane counts as above). A ring crossing the plane at
-  a vertex counts it once; a ring only touching it yields nothing; a plane exactly at a floor/ceiling
-  boundary cuts the solid below it, not the one above.
-- **Shared edges**: an edge's crossing is interpolated from its endpoints in a canonical order, so
-  the two faces either side of it produce bit-identical points; chaining still merges endpoints
-  within 1 µm.
-- **Skipped**: a face with any 2D vertex, and a warped (non-planar) face whose overall normal is
-  vertical — its crossings cannot be ordered along a line.
-- **Checked against the data**: every non-excluded solid in both fixtures closes into loops at its
-  level's height, with no open polylines. For the prism-shaped solids, section area × height matches
-  the fixture's own recorded `volume` to within 0.03% (1% for one courtyard with a sloping floor). The
-  4-unit stairwell's two floor sections × 3 m sum to its volume. Walls in the 4-unit fixture lean
-  by up to 1 mm, so section corners can sit 0.5 mm from the floor corners.
+- **On-plane vertices**: a half-open rule (z ≥ plane counts as above).
+  A ring crossing the plane at a vertex counts it once; a ring only touching it yields nothing; a plane exactly at a floor/ceiling boundary cuts the solid below it, not the one above.
+- **Shared edges**: an edge's crossing is interpolated from its endpoints in a canonical order, so the two faces either side of it produce bit-identical points; chaining still merges endpoints within 1 µm.
+- **Skipped**: a face with any 2D vertex, and a warped (non-planar) face whose overall normal is vertical, its crossings cannot be ordered along a line.
+- **Checked against the data**: every non-excluded solid in both fixtures closes into loops at its level's height, with no open polylines.
+  For the prism-shaped solids, section area × height matches the fixture's own recorded `volume` to within 0.03% (1% for one courtyard with a sloping floor).
+  The 4-unit stairwell's two floor sections × 3 m sum to its volume.
+  Walls in the 4-unit fixture lean by up to 1 mm, so section corners can sit 0.5 mm from the floor corners.
 
 ### Rule engine
 
-Which features are drawn, and how, is decided by the Three.js plugin's rule engine, **copied**
-rather than depended on — that plugin is not published as a package, and this view must be able to
-ship on its own schedule. `rules.js`, `curie.js`, `config.js`, `resolve-config.js` and
-`default-config.js` (with their tests) and `mime-type-match.js` were copied from
-bblocks-viewer-topo-feature-plugin (branch `refactor/parameterised-viewer`, commit `d94018b`) into
-`src/js/utils/`, unchanged apart from a two-line provenance header. Later upstream fixes are
-ported by hand. XY-specific behaviour (role lookup, `xySection` options, how each rule `geometry`
-maps to a 2D section) lives in this plugin's own modules, so the copies stay unchanged.
+Which features are drawn, and how, is decided by the Three.js plugin's rule engine, **copied** rather than depended on, that plugin is not published as a package, and this view must be able to ship on its own schedule.
+`rules.js`, `curie.js`, `config.js`, `resolve-config.js` and `default-config.js` (with their tests) and `mime-type-match.js` were copied from bblocks-viewer-topo-feature-plugin (branch `refactor/parameterised-viewer`, commit `d94018b`) into `src/js/utils/`, unchanged apart from a two-line provenance header.
+Later upstream fixes are ported by hand.
+XY-specific behaviour (role lookup, `xySection` options, how each rule `geometry` maps to a 2D section) lives in this plugin's own modules, so the copies stay unchanged.
 
 ### Per-block configuration
 
-A block configures its XY Section view through the same `bblock.json` `resources` mechanism as
-the Three.js and Cesium plugins, delivered to the plugin as `context.bblock.resources`, under the
-role `https://github.com/ogcincubator/bblocks-xy-section-viewer/role/viewer-config`
-(`src/js/utils/load-config.js`, adapted from the Cesium plugin's). A block that only has a
-Three.js view configuration (that plugin's role) gets the same rules in its sections, so existing
-configurations need no duplication; an XY-specific resource wins when both exist.
+A block configures its XY Section view through the same `bblock.json` `resources` mechanism as the Three.js and Cesium plugins, delivered to the plugin as `context.bblock.resources`, under the role `https://github.com/ogcincubator/bblocks-xy-section-viewer/role/viewer-config` (`src/js/utils/load-config.js`, adapted from the Cesium plugin's).
+A block that only has a Three.js view configuration (that plugin's role) gets the same rules in its sections, so existing configurations need no duplication; an XY-specific resource wins when both exist.
 
-The rule configuration (`rules`, `defaults`, `kindOrder`) is unchanged; a rule's `elevation` is
-ignored. XY-only options live under a top-level `xySection` key, which the copied rule parser
-ignores (`src/js/utils/xy-options.js`):
+The rule configuration (`rules`, `defaults`, `kindOrder`) is unchanged; a rule's `elevation` is ignored.
+XY-only options live under a top-level `xySection` key, which the copied rule parser ignores (`src/js/utils/xy-options.js`):
 
 | Option | Default | Meaning |
 |---|---|---|
@@ -114,164 +80,104 @@ ignores (`src/js/utils/xy-options.js`):
 | `boundary` | `[{ "source": "parcels" }]` | Ordered boundary-parcel choices (below); `[]` for none |
 | `exclude` | occupation features | Solids never sectioned (`{ source, property }` entries); `[]` for none |
 
-Nothing in a configuration can break the view: an unreachable or invalid file, or an invalid
-option, falls back to the defaults with a console warning, one invalid entry at a time where the
-option is a list or map. An explicit empty `boundary` or `exclude` list means "none"; a list whose entries are all invalid falls back to the default instead.
+Nothing in a configuration can break the view: an unreachable or invalid file, or an invalid option, falls back to the defaults with a console warning, one invalid entry at a time where the option is a list or map.
+An explicit empty `boundary` or `exclude` list means "none"; a list whose entries are all invalid falls back to the default instead.
 
-Without a block configuration the built-in rules (`src/js/utils/xy-default-config.js`) section
-solids and open shells ("surfaces") and draw no parcels, since the boundary parcel is drawn
-separately. No built-in rule fixes a colour, so each feature gets its own palette colour, as in
-`section_topology.py`. The JSON Schema for the whole configuration is the `xySectionViewerConfig`
-building block.
+Without a block configuration the built-in rules (`src/js/utils/xy-default-config.js`) section solids and open shells ("surfaces") and draw no parcels, since the boundary parcel is drawn separately.
+No built-in rule fixes a colour, so each feature gets its own palette colour, as in `section_topology.py`.
+The JSON Schema for the whole configuration is the `xySectionViewerConfig` building block.
 
 ### Parcel boundary
 
-Every section is drawn inside one boundary parcel, chosen by `src/js/utils/boundary.js` from the
-ordered `xySection.boundary` entries: the first entry that yields an outline wins, and within an
-entry the first matching feature in document order. An entry names a `source` collection and
-optionally a `match` (compared like a rule's: literal, CURIE or full URI). With
-`follow: { "role": … }`, the matched feature is not drawn itself: its `topology.relationships`
-entry with that role is followed to the feature its `href` names. Outlines come from the
-feature's topology type — `Polygon`, `Ring` or `Face`; an `AggregateSolid` or `ParcelAggregate`
-has none.
+Every section is drawn inside one boundary parcel, chosen by `src/js/utils/boundary.js` from the ordered `xySection.boundary` entries: the first entry that yields an outline wins, and within an entry the first matching feature in document order.
+An entry names a `source` collection and optionally a `match` (compared like a rule's: literal, CURIE, or full URI).
+With `follow: { "role": … }`, the matched feature is not drawn itself: its `topology.relationships` entry with that role is followed to the feature its `href` names.
+Outlines come from the feature's topology type, `Polygon`, `Ring` or `Face`; an `AggregateSolid` or `ParcelAggregate` has none.
 
-The built-in default is the first parcel with an outline. The WA configuration
-(the built-strata demo block's `viewer-config.json`) prefers the strata-scheme
-parcel's `containingPrimaryParcel`, then a `former-tenure` parcel, then any parcel with an
-outline. On the built-strata fixture the first entry resolves (to the former-tenure lot, via the
-scheme); on the 4-unit fixture only the third does (its `created` lot `Polygon`). A strata-scheme
-parcel has no outline of its own: it aggregates the strata lots (`AggregateSolid`).
+The built-in default is the first parcel with an outline.
+The WA configuration (the built-strata demo block's `viewer-config.json`) prefers the strata-scheme parcel's `containingPrimaryParcel`, then a `former-tenure` parcel, then any parcel with an outline.
+On the built-strata fixture the first entry resolves (to the former-tenure lot, via the scheme); on the 4-unit fixture only the third does (its `created` lot `Polygon`).
+A strata-scheme parcel has no outline of its own: it aggregates the strata lots (`AggregateSolid`).
 
 ### User interface
 
-Plain DOM, CSS and SVG (`src/js/ui/`, `src/css/`), with no host framework: a plugin runs outside
-the viewer's component tree. The CSS is bundled into `dist/index.js` through a static `?raw`
-import; the Node test runner resolves those through `scripts/test-raw-loader.mjs` (copied from the
-Cesium plugin). The code is layered so almost all of it is testable without a DOM:
+Plain DOM, CSS, and SVG (`src/js/ui/`, `src/css/`), with no host framework: a plugin runs outside the viewer's component tree.
+The CSS is bundled into `dist/index.js` through a static `?raw` import; the Node test runner resolves those through `scripts/test-raw-loader.mjs` (copied from the Cesium plugin).
+The code is layered so almost all of it is testable without a DOM:
 
-- `src/js/xy-scene.js` — the model: levels, one record per feature the rules claim, the boundary,
-  colours, and each level's sections, computed the first time that level is asked for and cached.
-- `src/js/svg-render.js` — one level as SVG markup, a pure function. The view re-renders a floor
-  when a toggle changes; "Download SVG" saves the same markup as a standalone file.
-- `src/js/ui/section-view.js` — the DOM: tabs, toolbar, layers panel, caption, pan/zoom.
+- `src/js/xy-scene.js`, the model: levels, one record per feature the rules claim, the boundary, colours, and each level's sections, computed the first time that level is asked for and cached.
+- `src/js/svg-render.js`, one level as SVG markup, a pure function.
+  The view re-renders a floor when a toggle changes; "Download SVG" saves the same markup as a standalone file.
+- `src/js/ui/section-view.js`, the DOM: tabs, toolbar, layers panel, caption, pan/zoom.
 
-**How rules map to the drawing.** A rule's `geometry` `solid`, `open-shell` or `face` is sectioned
-at each level's height (a face gives lines); `polygon` or `ring` is drawn flat, as an outline, on
-every level; anything else is ignored. A section feature no level's height cuts is left out
-altogether. A rule with no `label` of its own gets the built-in label chain (appellation,
-description, name) instead of the rule engine's bare-id fallback.
+**How rules map to the drawing.** A rule's `geometry` `solid`, `open-shell` or `face` is sectioned at each level's height (a face gives lines); `polygon` or `ring` is drawn flat, as an outline, on every level; anything else is ignored.
+A section feature no level's height cuts is left out altogether.
+A rule with no `label` of its own gets the built-in label chain (appellation, description, name) instead of the rule engine's bare-id fallback.
 
-**Tabs.** The host gives the plugin one tab ("XY Section"); inside it is a tab component with one
-tab per floor, following the WAI-ARIA tabs pattern (`role="tablist"`/`tab`/`tabpanel`, arrow keys
-wrap, Home/End, automatic activation). A floor's SVG is built the first time its tab is opened.
+**Tabs.** The host gives the plugin one tab ("XY Section"); inside it is a tab component with one tab per floor, following the WAI-ARIA tabs pattern (`role="tablist"`/`tab`/`tabpanel`, arrow keys wrap, Home/End, automatic activation).
+A floor's SVG is built the first time its tab is opened.
 All floors share one pan/zoom view, so switching floors keeps the same area in view.
 
-**Drawing.** Coordinates are converted to a local frame in metres (x east from the drawing's west
-edge, y south from its north edge) to keep SVG numbers small. Grid north is up; the grid falls on
-whole multiples of its spacing in easting/northing and reaches ten drawing extents beyond the
-drawing (at most 200 lines each way), so a short, wide tab or a zoomed-out view never runs off it. Layers, bottom to top: grid, lower floors
-(context: every lower level, outlines only at 40% opacity), flat outlines, this floor's sections
-(`fill-rule="evenodd"`, so holes show), the dashed boundary parcel, labels. Lower floors start
-hidden (`showContext: false`) and the toolbar toggles them. Strokes use
-`vector-effect="non-scaling-stroke"`, so line widths stay constant while zooming; labels are
-sized in drawing units (1/70 of the drawing) and scale with it — readable once zoomed in on a
-large lot.
+**Drawing.** Coordinates are converted to a local frame in metres (x east from the drawing's west edge, y south from its north edge) to keep SVG numbers small.
+Grid north is up; the grid falls on whole multiples of its spacing in easting/northing and reaches ten drawing extents beyond the drawing (at most 200 lines each way), so a short, wide tab or a zoomed-out view never runs off it.
+Layers, bottom to top: grid, lower floors (context: every lower level, outlines only at 40% opacity), flat outlines, this floor's sections (`fill-rule="evenodd"`, so holes show), the dashed boundary parcel, labels.
+Lower floors start hidden (`showContext: false`) and the toolbar toggles them.
+Strokes use `vector-effect="non-scaling-stroke"`, so line widths stay constant while zooming; labels are sized in drawing units (1/70 of the drawing) and scale with it, readable once zoomed in on a large lot.
 
-**Colour.** The dataviz skill's validated 8-hue categorical palette, in its fixed order. Colour
-follows the feature: each takes the first slot not used by an earlier feature sharing any floor
-with it, so no two features on one floor share a colour (up to 8), and a feature spanning floors
-(the 4-unit stairwell) keeps its colour on each. A rule's own `style.color` wins; colours from a
-config are checked against a safe pattern before they reach SVG attributes. Identity never rests
-on colour alone: every feature has a tooltip, a legend row and (by default) a label. The drawing
-has its own light surface, like a plan sheet, whatever the host's theme.
+**Colour.** The dataviz skill's validated 8-hue categorical palette, in its fixed order.
+Colour follows the feature: each takes the first slot not used by an earlier feature sharing any floor with it, so no two features on one floor share a colour (up to 8), and a feature spanning floors (the 4-unit stairwell) keeps its colour on each.
+A rule's own `style.color` wins; colours from a config are checked against a safe pattern before they reach SVG attributes.
+Identity never rests on colour alone: every feature has a tooltip, a legend row, and (by default) a label.
+The drawing has its own light surface, like a plan sheet, whatever the host's theme.
 
-**Controls.** Toolbar: zoom in/out, fit (also double-click), lower floors, labels, layers,
-download, fullscreen. Wheel zooms about the pointer; dragging pans; the caption shows the level's
-section height and datum, the horizontal CRS, grid spacing, the (unapplied) bearing rotation, and
-the easting/northing under the pointer. The layers panel lists the boundary, then every feature
-by rule group (and kind, when a group has several) with select-all checkboxes; features not on
-the current floor are dimmed. As in the Cesium and Three.js plugins, layout follows the space the
-host gives the view: at 400 px or taller (the host's expand dialog, or fullscreen) the layers
-panel is docked beside the drawing; in the compact ~300 px tab it is a pop-over behind the layers
-button, and the toolbar wraps into two columns.
+**Controls.** Toolbar: zoom in/out, fit (also double-click), lower floors, labels, layers, download, fullscreen.
+Wheel zooms about the pointer; dragging pans; the caption shows the level's section height and datum, the horizontal CRS, grid spacing, the (unapplied) bearing rotation, and the easting/northing under the pointer.
+The layers panel lists the boundary, then every feature by rule group (and kind, when a group has several) with select-all checkboxes; features not on the current floor are dimmed.
+As in the Cesium and Three.js plugins, layout follows the space the host gives the view: at 400 px or taller (the host's expand dialog, or fullscreen) the layers panel is docked beside the drawing; in the compact ~300 px tab it is a pop-over behind the layers button, and the toolbar wraps into two columns.
 
-**Development harness.** `harness/` (`npm run dev`) drives the real plugin class from `src/js/`
-with Vite's live reload, the way the host does: candidates + context, `matches()`, `render()`,
-`destroy()` before the next document. A config is delivered as a `context.bblock.resources`
-entry — a picked file as a `blob:` URL — under this plugin's role, or optionally under the
-Three.js plugin's role to check the fallback. "Tab size" mimics the host's ~300 px tab. The
-starting state can be bookmarked (`?fixture=…&config=…|none&tabsize=1&topo=1`). There is no token
-box: nothing here loads tiles. The fixture/config lists live in `harness/js/catalog.js` and are
-checked by `src/js/harness-catalog.test.js`.
+**Development harness.** `harness/` (`npm run dev`) drives the real plugin class from `src/js/` with Vite's live reload, the way the host does: candidates + context, `matches()`, `render()`, `destroy()` before the next document.
+A config is delivered as a `context.bblock.resources` entry, a picked file as a `blob:` URL, under this plugin's role, or optionally under the Three.js plugin's role to check the fallback.
+"Tab size" mimics the host's ~300 px tab.
+The starting state can be bookmarked (`?fixture=…&config=…|none&tabsize=1&topo=1`).
+There is no token box: nothing here loads tiles.
+The fixture/config lists live in `harness/js/catalog.js` and are checked by `src/js/harness-catalog.test.js`.
 
-**Robustness.** Every string from the document is XML-escaped before it reaches markup. Config
-loading is async, so render failures are caught and shown in the tab (with details in the
-console) rather than thrown; `destroy()` is safe at any point, including while the config is
-still loading.
+**Robustness.** Every string from the document is XML-escaped before it reaches markup.
+Config loading is async, so render failures are caught and shown in the tab (with details in the console) rather than thrown; `destroy()` is safe at any point, including while the config is still loading.
 
 ### The register
 
-The register declares its own plugin under `viewer.view-plugins` in `bblocks-config.yaml`
-(dogfooding), served from the repository's `dist` branch through jsDelivr. Its identifier prefix is
-`ogc.bbr.xysection.`. Besides the `xySectionViewerConfig` schema block it has two demo blocks:
-without examples that are topo-feature documents, the XY Section tab would never appear in this
-register.
+The register declares its own plugin under `viewer.view-plugins` in `bblocks-config.yaml` (dogfooding), served from the repository's `dist` branch through jsDelivr.
+Its identifier prefix is `ogc.bbr.xysection.`.
+Besides the `xySectionViewerConfig` schema block it has two demo blocks: without examples that are topo-feature documents, the XY Section tab would never appear in this register.
 
-- `xySectionViewerDemo/builtStrata` — strata plan SP83687 with the WA configuration (level names,
-  scheme → former tenure → lot boundary, occupation features excluded).
-- `xySectionViewerDemo/fourUnit` — the 4-unit test survey with the styled-rules configuration (a
-  stairwell kind, lot outlines, context on, 5 m grid, no boundary).
+- `xySectionViewerDemo/builtStrata`, strata plan SP83687 with the WA configuration (level names, scheme → former tenure → lot boundary, occupation features excluded).
+- `xySectionViewerDemo/fourUnit`, the 4-unit test survey with the styled-rules configuration (a stairwell kind, lot outlines, context on, 5 m grid, no boundary).
 
-Each demo block's example is a harness fixture (by `ref`, not a copy) and its `viewer-config.json` is
-the single copy of that sample configuration, shared with the harness and the unit tests; one block
-per document, because a block has a single viewer configuration. The demo blocks' schemas only
-require `points` and `solids`: they demonstrate the view, they are not topo-feature schemas.
+Each demo block's example is a harness fixture (by `ref`, not a copy) and its `viewer-config.json` is the single copy of that sample configuration, shared with the harness and the unit tests; one block per document, because a block has a single viewer configuration.
+The demo blocks' schemas only require `points` and `solids`: they demonstrate the view, they are not topo-feature schemas.
 
-The configuration schema's rule part is the one the Cesium register publishes, so configurations
-shared between the three viewers validate here, with two differences: `match.values` also accepts
-numbers and booleans (floor numbers are numbers), and `elevation` is documented as ignored.
-`src/js/block-schema.test.js` keeps schema and code in step: the block's examples and tests
-validate or fail as named, every `xySection` value the schema rejects the plugin also drops with a
-warning, the schema's geometry names and `xySection` members equal the code's, the demo blocks
-declare their config under the plugin's role, and every `bblocks://` link names a block that
-exists.
+The configuration schema's rule part is the one the Cesium register publishes, so configurations shared between the three viewers validate here, with two differences: `match.values` also accepts numbers and booleans (floor numbers are numbers), and `elevation` is documented as ignored.
+`src/js/block-schema.test.js` keeps schema and code in step: the block's examples and tests validate or fail as named, every `xySection` value the schema rejects the plugin also drops with a warning, the schema's geometry names and `xySection` members equal the code's, the demo blocks declare their config under the plugin's role, and every `bblocks://` link names a block that exists.
 
-Checked with the postprocessor (`--base-url http://localhost:9090/register/`): all 3 blocks build and
-all 20 validations pass (the 11 `-fail` test resources rejected, as required). The demo blocks'
-relative `resources[].ref` comes out in `register.json` as an absolute URL under the base URL
-(`…/register/_sources/xySectionViewerDemo/<block>/viewer-config.json`); Stage 8 checks the plugin
-fetches it in the real viewer.
+Checked with the postprocessor (`--base-url http://localhost:9090/register/`): all 3 blocks build and all 20 validations pass (the 11 `-fail` test resources rejected, as required).
+The demo blocks' relative `resources[].ref` comes out in `register.json` as an absolute URL under the base URL (`…/register/_sources/xySectionViewerDemo/<block>/viewer-config.json`); Stage 8 checks the plugin fetches it in the real viewer.
 
 ## Verified integration behaviour
 
-Checked in the real bblocks-viewer (`ghcr.io/ogcincubator/bblocks-viewer`, revision `799c86c`),
-driven by headless Chrome, on 2026-09-30:
+Checked in the real bblocks-viewer (`ghcr.io/ogcincubator/bblocks-viewer`, revision `799c86c`), driven by headless Chrome, on 2026-09-30:
 
-- **Loading the local build.** `view.sh`'s container serves the whole repository under
-  `/register/`, so after `npm run build` the plugin is reachable same-origin at
-  `http://localhost:9090/register/dist/index.js`, served as `application/javascript` — no separate
-  server or CORS setup. The viewer reads `/register/build-local/register.json`.
-  `npm run local-register` (`scripts/use-local-plugin.mjs`) points that file's
-  `viewer.viewPlugins` entry at the local build; re-run it after every `./build.sh`, which rewrites
-  the file from `bblocks-config.yaml`. `bblocks-config-local.yml` is not needed.
-- **The tab.** Both demo blocks' examples get an **XY SECTION** tab (with the floor-plan icon) next
-  to JSON. Inside it the floor tabs, drawing, legend and caption render with the demo configs
-  applied; the host's ~300 px tab gives the compact layout, and the host's own *Full screen*
-  dialog (titled "XY Section") gives the expanded one with the legend docked. No exceptions and no
-  plugin warnings in the console.
-- **Relative `resources[].ref`.** The postprocessor rewrites a demo block's `viewer-config.json` to
-  an absolute URL under `--base-url` (`…/register/_sources/xySectionViewerDemo/<block>/viewer-config.json`)
-  in `register.json` and the document the viewer passes as `context.bblock`; the plugin fetched it
-  (HTTP 200) and applied it. Whether a *published* register serves `_sources/` at that URL is to be
-  confirmed after the first publish.
-- **Preview size limit.** The viewer neither fetches nor previews an example snippet larger than
-  1 MiB (1,048,576 bytes; `BuildingBlockExamples.js`/`ExampleViewer.js`) — it shows "This file is too
-  large to preview" and a download button — so no view plugin sees it. The built-strata example
-  was 1.1 MB as copied; it is re-indented (one space) to 898 KB with identical content, and
-  `block-schema.test.js` keeps demo examples under the limit. Registers adding this plugin should
-  keep topo-feature examples under 1 MiB too.
-- **Host text styles.** The host page's `letter-spacing` is inherited by SVG text, where it is a
-  screen length against labels about a metre high, spreading the letters apart; the plugin root
-  and the label layer reset letter and word spacing.
-- **Known limitation.** Labels of small, adjacent features can overlap (e.g. a courtyard beside a
-  unit); the labels toggle, tooltips and legend remain.
+- **Loading the local build.** `view.sh`'s container serves the whole repository under `/register/`, so after `npm run build` the plugin is reachable same-origin at `http://localhost:9090/register/dist/index.js`, served as `application/javascript`, no separate server or CORS setup.
+  The viewer reads `/register/build-local/register.json`.
+  `npm run local-register` (`scripts/use-local-plugin.mjs`) points that file's `viewer.viewPlugins` entry at the local build; re-run it after every `./build.sh`, which rewrites the file from `bblocks-config.yaml`.
+  `bblocks-config-local.yml` is not needed.
+- **The tab.** Both demo blocks' examples get an **XY SECTION** tab (with the floor-plan icon) next to JSON.
+  Inside it the floor tabs, drawing, legend, and caption render with the demo configs applied; the host's ~300 px tab gives the compact layout, and the host's own *Full screen* dialog (titled "XY Section") gives the expanded one with the legend docked.
+  No exceptions and no plugin warnings in the console.
+- **Relative `resources[].ref`.** The postprocessor rewrites a demo block's `viewer-config.json` to an absolute URL under `--base-url` (`…/register/_sources/xySectionViewerDemo/<block>/viewer-config.json`) in `register.json` and the document the viewer passes as `context.bblock`; the plugin fetched it (HTTP 200) and applied it.
+  Whether a *published* register serves `_sources/` at that URL is to be confirmed after the first publish.
+- **Preview size limit.** The viewer neither fetches nor previews an example snippet larger than 1 MiB (1,048,576 bytes; `BuildingBlockExamples.js`/`ExampleViewer.js`), it shows "This file is too large to preview" and a download button, so no view plugin sees it.
+  The built-strata example was 1.1 MB as copied; it is re-indented (one space) to 898 KB with identical content, and `block-schema.test.js` keeps demo examples under the limit.
+  Registers adding this plugin should keep topo-feature examples under 1 MiB too.
+- **Host text styles.** The host page's `letter-spacing` is inherited by SVG text, where it is a screen length against labels about a metre high, spreading the letters apart; the plugin root and the label layer reset letter and word spacing.
+- **Known limitation.** Labels of small, adjacent features can overlap (e.g. a courtyard beside a unit); the labels toggle, tooltips and legend remain.
