@@ -55,8 +55,29 @@ built-strata fixture this removes 9 of 18 solids and moves level 2 from 26.015 m
 
 ### Sectioning
 
-_To be written (Stage 3)._ All faces are planar, so cutting a solid at Z reduces to intersecting
-each face polygon with the plane and chaining the segments into loops — no geometry kernel.
+`src/js/utils/section.js` replaces the Python module's OpenCascade solid building and
+`BRepAlgoAPI_Section`; there is no geometry kernel. Every face is planar, so a solid's section is
+the union of its faces' sections. A face (outer ring plus holes) meets the plane Z = z along one
+straight line — direction normal × ẑ, the normal by Newell's method — and the parts of that line
+inside the face are found by sorting the ring crossings along it and pairing them even-odd, which
+handles holes (windows, courtyard voids) with no special case. The segments of all a solid's
+faces are then chained into closed loops, dropping vertices where coplanar faces meet, and any
+leftover open polylines. The sections are drawn from the loops with `fill-rule="evenodd"`, so a
+loop inside another is a hole.
+
+- **On-plane vertices**: a half-open rule (z ≥ plane counts as above). A ring crossing the plane at
+  a vertex counts it once; a ring only touching it yields nothing; a plane exactly at a floor/ceiling
+  boundary cuts the solid below it, not the one above.
+- **Shared edges**: an edge's crossing is interpolated from its endpoints in a canonical order, so
+  the two faces either side of it produce bit-identical points; chaining still merges endpoints
+  within 1 µm.
+- **Skipped**: a face with any 2D vertex, and a warped (non-planar) face whose overall normal is
+  vertical — its crossings cannot be ordered along a line.
+- **Checked against the data**: every non-excluded solid in both fixtures closes into loops at its
+  level's height, with no open polylines. For the prism-shaped solids, section area × height matches
+  the fixture's own recorded `volume` to within 0.03% (1% for one courtyard with a sloping floor). The
+  4-unit stairwell's two floor sections × 3 m sum to its volume. Walls in the 4-unit fixture lean
+  by up to 1 mm, so section corners can sit 0.5 mm from the floor corners.
 
 ### Rule engine
 
