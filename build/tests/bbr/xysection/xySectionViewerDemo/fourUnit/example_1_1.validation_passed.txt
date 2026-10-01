@@ -1,5 +1,5 @@
 Validation report for ogc.bbr.xysection.xySectionViewerDemo.fourUnit - XY Section demo: four units with a stairwell
-Generated 2026-10-01T00:47:50.300745+00:00
+Generated 2026-10-01T01:08:08.130172+00:00
 === Files ===
 Using ../../../harness/fixtures/4-unit-up-down-with-parcel.json from examples
 === End Files ===
