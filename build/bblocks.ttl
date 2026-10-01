@@ -43,12 +43,12 @@
             prof:hasArtifact <https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerDemo/builtStrata/viewer-config.json> ;
             prof:hasRole <https://github.com/ogcincubator/bblocks-xy-section-viewer/role/viewer-config> ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/annotated/bbr/xysection/xySectionViewerDemo/builtStrata/schema.json> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/annotated/bbr/xysection/xySectionViewerDemo/builtStrata/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/annotated/bbr/xysection/xySectionViewerDemo/builtStrata/schema.json> ;
             prof:hasRole role:schema ] ;
     bblocks:status <http://www.opengis.net/def/status/under-development> ;
     bblocks:validationPassed true .
@@ -60,12 +60,12 @@
     rdfs:label "XY Section demo: four units with a stairwell" ;
     dct:abstract "A small test survey — four units on two floors with a stairwell spanning both, inside a lot parcel — shown as one plan section per floor, with rules that single out the stairwell and draw the lot as an outline."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/generateddocs/markdown/bbr/xysection/xySectionViewerDemo/fourUnit/index.md> ],
+    dct:description [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/bblock/ogc.bbr.xysection.xySectionViewerDemo.fourUnit> ],
         [ dct:format "application/json" ;
             rdfs:isDefinedBy <https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/generateddocs/json-full/bbr/xysection/xySectionViewerDemo/fourUnit/index.json> ],
-        [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/bblock/ogc.bbr.xysection.xySectionViewerDemo.fourUnit> ] ;
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/generateddocs/markdown/bbr/xysection/xySectionViewerDemo/fourUnit/index.md> ] ;
     dct:hasVersion "0.1" ;
     dct:modified "2026-09-30"^^xsd:date ;
     rdfs:seeAlso <bblocks://ogc.bbr.xysection.xySectionViewerConfig> ;
@@ -81,30 +81,30 @@
             dct:format "application/yaml" ;
             prof:hasArtifact <https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/annotated/bbr/xysection/xySectionViewerDemo/fourUnit/schema.yaml> ;
             prof:hasRole role:schema ],
-        [ dct:format "application/json" ;
-            prof:hasArtifact <https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerDemo/fourUnit/viewer-config.json> ;
-            prof:hasRole <https://github.com/ogcincubator/bblocks-xy-section-viewer/role/viewer-config> ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
             prof:hasArtifact <https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/annotated/bbr/xysection/xySectionViewerDemo/fourUnit/schema.json> ;
-            prof:hasRole role:schema ] ;
+            prof:hasRole role:schema ],
+        [ dct:format "application/json" ;
+            prof:hasArtifact <https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerDemo/fourUnit/viewer-config.json> ;
+            prof:hasRole <https://github.com/ogcincubator/bblocks-xy-section-viewer/role/viewer-config> ] ;
     bblocks:status <http://www.opengis.net/def/status/under-development> ;
     bblocks:validationPassed true .
 
 <https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/bblocks.ttl> a prov:Entity ;
     dct:format "text/turtle" ;
-    prov:wasAttributedTo _:Na7c623ca798345da81ab20711a6122dd ;
+    prov:wasAttributedTo _:N790ef9e6c3e046d591b91573176c96df ;
     prov:wasGeneratedBy [ a prov:Activity ;
-            prov:endedAtTime "2026-10-01T00:47:50.755008"^^xsd:dateTime ;
-            prov:startedAtTime "2026-10-01T00:47:50.325928"^^xsd:dateTime ;
+            prov:endedAtTime "2026-10-01T01:08:08.360989"^^xsd:dateTime ;
+            prov:startedAtTime "2026-10-01T01:08:08.151868"^^xsd:dateTime ;
             prov:used [ a prov:Entity ;
                     dct:format "application/yaml" ;
                     rdfs:seeAlso <file:///src/ogc/bblocks/register-context.yaml> ],
                 [ a prov:Entity ;
                     dct:format "application/json" ;
-                    dct:hasVersion "git:d676f4f0fb2a662c0365da65deae96fd9a21f9ce" ;
+                    dct:hasVersion "git:7be854cefd0df7ad1113cb9eb92a12a6e98d3e6f" ;
                     rdfs:seeAlso <https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/register.json> ] ;
-            prov:wasAssociatedWith _:Na7c623ca798345da81ab20711a6122dd ] .
+            prov:wasAssociatedWith _:N790ef9e6c3e046d591b91573176c96df ] .
 
 <bblocks://ogc.bbr.xysection.xySectionViewerConfig> a skos:Concept,
         dcat:Dataset,
@@ -113,10 +113,10 @@
     rdfs:label "XY section viewer configuration" ;
     dct:abstract "Per-block configuration for the bblocks-viewer XY Section view of topo-feature documents: which features are drawn and how (rules shared with the Three.js and globe views), plus floor levels, section heights, the boundary parcel and excluded solids."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/generateddocs/json-full/bbr/xysection/xySectionViewerConfig/index.json> ],
-        [ dct:format "text/html" ;
+    dct:description [ dct:format "text/html" ;
             rdfs:isDefinedBy <https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/bblock/ogc.bbr.xysection.xySectionViewerConfig> ],
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/generateddocs/json-full/bbr/xysection/xySectionViewerConfig/index.json> ],
         [ dct:format "text/markdown" ;
             rdfs:isDefinedBy <https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/generateddocs/markdown/bbr/xysection/xySectionViewerConfig/index.md> ] ;
     dct:hasVersion "0.1" ;
@@ -131,21 +131,21 @@
         "viewer",
         "xy-section" ;
     prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/annotated/bbr/xysection/xySectionViewerConfig/schema.json> ;
-            prof:hasRole role:schema ],
-        [ rdfs:label "topo-feature" ;
-            ns1:hasTarget <https://github.com/ogcincubator/topo-feature> ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/annotated/bbr/xysection/xySectionViewerConfig/schema.yaml> ;
             prof:hasRole role:schema ],
         [ rdfs:label "XYSectionPlugin source" ;
             ns1:hasTarget <https://github.com/andrewhunter2066/bblocks-xy-section-viewer> ],
+        [ rdfs:label "Cesium globe viewer (shares the rule configuration)" ;
+            ns1:hasTarget <https://github.com/ogcincubator/bblocks-cesium-viewer> ],
         [ rdfs:label "Three.js TopoFeaturePlugin (shares the rule configuration)" ;
             ns1:hasTarget <https://github.com/ogcincubator/bblocks-viewer-topo-feature-plugin> ],
-        [ rdfs:label "Cesium globe viewer (shares the rule configuration)" ;
-            ns1:hasTarget <https://github.com/ogcincubator/bblocks-cesium-viewer> ] ;
+        [ rdfs:label "topo-feature" ;
+            ns1:hasTarget <https://github.com/ogcincubator/topo-feature> ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/annotated/bbr/xysection/xySectionViewerConfig/schema.json> ;
+            prof:hasRole role:schema ] ;
     bblocks:status <http://www.opengis.net/def/status/under-development> ;
     bblocks:validationPassed true .
 
@@ -162,7 +162,7 @@ Which features are drawn and how is set by rules shared with the Three.js topolo
 This register declares the plugin itself, so the demo blocks' examples open in the XY Section tab here.
 Source, harness and instructions for adding the plugin to another register: [bblocks-xy-section-viewer](https://github.com/andrewhunter2066/bblocks-xy-section-viewer).
 """^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
-    dct:modified "2026-10-01T00:47:49.556836"^^xsd:dateTime ;
+    dct:modified "2026-10-01T01:08:07.709821"^^xsd:dateTime ;
     owl:imports <https://opengeospatial.github.io/bblocks/register.json> ;
     skos:hasTopConcept <bblocks://ogc.bbr.xysection.xySectionViewerConfig>,
         <bblocks://ogc.bbr.xysection.xySectionViewerDemo.builtStrata>,
@@ -183,7 +183,7 @@ Source, harness and instructions for adding the plugin to another register: [bbl
     foaf:homepage <https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/> ;
     bblocks:hasValidationReport <https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/tests/report.html> .
 
-_:Na7c623ca798345da81ab20711a6122dd a prov:Agent,
+_:N790ef9e6c3e046d591b91573176c96df a prov:Agent,
         schema:SoftwareApplication ;
     rdfs:label "OGC-NA tools" ;
     dct:hasVersion "0.5.35.dev2+g67607e7aa" ;
