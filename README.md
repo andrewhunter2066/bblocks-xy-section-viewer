@@ -100,10 +100,9 @@ Keep the browser console open: errors from the plugin's asynchronous work only a
 | `harness/` | Dev harness and real-data fixtures (see `harness/fixtures/README.md`) |
 | `_sources/` | The register: the configuration schema block and two demo blocks |
 | `scripts/` | `use-local-plugin.mjs` (`npm run local-register`), the test loader for `?raw` CSS imports |
-| `docs/` | Design notes and the handover checklist |
+| `docs/` | Design notes |
 
 ## Publishing
 
 `.github/workflows/ci.yml` runs the tests, typecheck and build on every push and PR; `pr-check.yml` validates the building blocks on PRs.
 On every push to `master`, `publish-dist.yml` builds the plugin and force-pushes `dist/` to the orphan `dist` branch, which jsDelivr serves at the URL above (`dist/` is never committed to `master`), and `process-bblocks.yml` builds and publishes the register.
-See [`docs/handover.md`](docs/handover.md) for what to check after the first publish and after the move to `ogcincubator`.
