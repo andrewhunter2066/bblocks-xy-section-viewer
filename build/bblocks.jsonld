@@ -210,10 +210,10 @@
     }
   ],
   "metaRegistry": "https://w3id.org/ogc/bblocks/meta-register.json",
-  "name": "Building Blocks - My OGC Building Blocks repository",
-  "abstract": "This is an example text for the abstract. It should be short and to the point.\nA \"Tell me more\" link will appear if there is an additional description with a longer explanation.\n",
-  "description": "The description can be longer. Both **the abstract** *and the description* support Markdown,\nincluding [links](https://google.es).\n",
-  "modified": "2026-09-30T17:03:48.743483",
+  "name": "Building Blocks - XY section viewer for topo-feature documents",
+  "abstract": "An **XY Section** view for topo-feature topology documents in the Building Blocks viewer \u2014 one horizontal section (plan view) per floor level \u2014 the JSON Schema for its per-block configuration, and demo blocks that use it.\n",
+  "description": "The `XYSectionPlugin` is a [bblocks-viewer](https://github.com/opengeospatial/bblocks-viewer) view plugin.\nIt adds an **XY Section** tab to any example or transform output that is a [topo-feature](https://github.com/ogcincubator/topo-feature) document whose points carry projected `place` coordinates and whose solids carry floor levels.\nInside the tab there is one tab per floor, each showing the solids cut at that floor's height, drawn from `place` exactly as surveyed (no coordinate transformation), inside a chosen boundary parcel.\nWhich features are drawn and how is set by rules shared with the Three.js topology view ([bblocks-viewer-topo-feature-plugin](https://github.com/ogcincubator/bblocks-viewer-topo-feature-plugin)) and the [Cesium globe view](https://github.com/ogcincubator/bblocks-cesium-viewer), optionally configured per block; see the *XY section viewer configuration* block.\nThis register declares the plugin itself, so the demo blocks' examples open in the XY Section tab here.\nSource, harness and instructions for adding the plugin to another register: [bblocks-xy-section-viewer](https://github.com/andrewhunter2066/bblocks-xy-section-viewer).\n",
+  "modified": "2026-10-01T00:47:49.556836",
   "tooling": {
     "bblocks-postprocess": {
       "commitId": "\"6411aed037da38c6d9079d9350eca33d004a4d0c",
@@ -230,6 +230,14 @@
   "imports": [
     "https://opengeospatial.github.io/bblocks/register.json"
   ],
+  "viewer": {
+    "viewPlugins": [
+      {
+        "url": "https://cdn.jsdelivr.net/gh/andrewhunter2066/bblocks-xy-section-viewer@dist/index.js",
+        "export": "XYSectionPlugin"
+      }
+    ]
+  },
   "remoteCacheDir": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/annotated/_cache",
   "links": [
     {
@@ -256,88 +264,88 @@
     "dcat:Catalog",
     "bblocks:BBlocksRegister"
   ],
-  "skos:prefLabel": "Building Blocks - My OGC Building Blocks repository",
+  "skos:prefLabel": "Building Blocks - XY section viewer for topo-feature documents",
   "hasConcepts": [
     {
-      "itemIdentifier": "ogc.bbr.template.mySchema",
-      "$schema": "metaschema.yaml",
-      "name": "My Schema",
-      "abstract": "An example schema defining the set of properties of any type of object.",
+      "itemIdentifier": "ogc.bbr.xysection.xySectionViewerConfig",
+      "name": "XY section viewer configuration",
+      "abstract": "Per-block configuration for the bblocks-viewer XY Section view of topo-feature documents: which features are drawn and how (rules shared with the Three.js and globe views), plus floor levels, section heights, the boundary parcel and excluded solids.",
       "status": "under-development",
-      "dateTimeAddition": "2023-04-05T00:00:00Z",
+      "dateTimeAddition": "2026-09-30T00:00:00Z",
       "itemClass": "schema",
-      "register": "ogc-building-block-register",
       "version": "0.1",
-      "link": "https://github.com/opengeospatial/bblock-template",
-      "sources": [
-        {
-          "title": "Sample source document",
-          "link": "https://example.com/sources/1"
-        }
-      ],
       "tags": [
-        "templates"
+        "viewer",
+        "view-plugin",
+        "xy-section",
+        "floor-plan",
+        "topo-feature",
+        "configuration"
       ],
-      "shaclShapes": [
+      "group": "XY section viewer",
+      "highlighted": true,
+      "links": [
         {
-          "prof:hasArtifact": [
-            "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/mySchema/shapes.shacl"
-          ],
-          "rdfs:seeAlso": "bblocks://ogc.bbr.template.mySchema",
-          "prof:hasRole": "role:validation",
-          "dct:format": "text/turtle",
-          "dct:conformsTo": "shacl:"
+          "title": "XYSectionPlugin source",
+          "href": "https://github.com/andrewhunter2066/bblocks-xy-section-viewer"
+        },
+        {
+          "title": "Three.js TopoFeaturePlugin (shares the rule configuration)",
+          "href": "https://github.com/ogcincubator/bblocks-viewer-topo-feature-plugin"
+        },
+        {
+          "title": "Cesium globe viewer (shares the rule configuration)",
+          "href": "https://github.com/ogcincubator/bblocks-cesium-viewer"
+        },
+        {
+          "title": "topo-feature",
+          "href": "https://github.com/ogcincubator/topo-feature"
         }
       ],
-      "ldContext": {
-        "prof:hasArtifact": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/annotated/bbr/template/mySchema/context.jsonld",
-        "prof:hasRole": "role:mapping",
-        "dct:format": "application/ld+json",
-        "dct:conformsTo": "https://www.w3.org/TR/json-ld11/"
-      },
-      "dateOfLastChange": "2023-04-05",
+      "shaclShapes": null,
+      "dateOfLastChange": "2026-09-30",
       "schema": [
         {
-          "prof:hasArtifact": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/annotated/bbr/template/mySchema/schema.yaml",
+          "prof:hasArtifact": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/annotated/bbr/xysection/xySectionViewerConfig/schema.yaml",
           "prof:hasRole": "role:schema",
           "dct:format": "application/yaml",
           "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
         },
         {
-          "prof:hasArtifact": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/annotated/bbr/template/mySchema/schema.json",
+          "prof:hasArtifact": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/annotated/bbr/xysection/xySectionViewerConfig/schema.json",
           "prof:hasRole": "role:schema",
           "dct:format": "application/json",
           "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
         }
       ],
-      "sourceSchema": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/mySchema/schema.yaml",
-      "sourceLdContext": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/mySchema/context.jsonld",
-      "resolvedSchemaProperties": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/annotated/bbr/template/mySchema/resolvedProperties.json",
-      "sourceFiles": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/mySchema/",
+      "sourceSchema": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerConfig/schema.yaml",
+      "resolvedSchemaProperties": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/annotated/bbr/xysection/xySectionViewerConfig/resolvedProperties.json",
+      "sourceFiles": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerConfig/",
       "validationPassed": true,
-      "testOutputs": "https://github.com/andrewhunter2066/bblocks-xy-section-viewer/blob/master/build/tests/bbr/template/mySchema/",
+      "testOutputs": "https://github.com/andrewhunter2066/bblocks-xy-section-viewer/blob/master/build/tests/bbr/xysection/xySectionViewerConfig/",
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/generateddocs/markdown/bbr/template/mySchema/index.md"
+          "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/generateddocs/markdown/bbr/xysection/xySectionViewerConfig/index.md"
         },
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/generateddocs/json-full/bbr/template/mySchema/index.json"
+          "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/generateddocs/json-full/bbr/xysection/xySectionViewerConfig/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/bblock/ogc.bbr.template.mySchema"
+          "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/bblock/ogc.bbr.xysection.xySectionViewerConfig"
         }
       },
-      "@id": "bblocks://ogc.bbr.template.mySchema",
+      "@id": "bblocks://ogc.bbr.xysection.xySectionViewerConfig",
       "@type": [
         "bblocks:Schema",
         "skos:Concept",
         "dcat:Dataset",
         "bblocks:BBlock"
       ],
-      "skos:prefLabel": "My Schema",
+      "skos:prefLabel": "XY section viewer configuration",
+      "ldContext": null,
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
@@ -348,101 +356,162 @@
       }
     },
     {
-      "itemIdentifier": "ogc.bbr.template.myFeature",
-      "name": "Custom Feature",
-      "abstract": "This examples shows a simple customisation for OGC API Feature schemas",
+      "itemIdentifier": "ogc.bbr.xysection.xySectionViewerDemo.builtStrata",
+      "name": "XY Section demo: built strata",
+      "abstract": "A Western Australian built-strata survey (strata plan SP83687) as a topo-feature document \u2014 two floors of units and courtyards with walls, slabs and ceiling as occupation features \u2014 shown as one plan section per floor with WA level names and the former-tenure lot as the boundary.",
       "status": "under-development",
-      "dateTimeAddition": "2023-05-19T00:00:00Z",
+      "dateTimeAddition": "2026-09-30T00:00:00Z",
       "itemClass": "schema",
-      "register": "ogc-building-block-examples",
-      "version": "1.0",
-      "sources": [
-        {
-          "title": "OGC API - Features, Part 1, 7.16.2: Feature Response",
-          "link": "https://docs.ogc.org/is/17-069r3/17-069r3.html#_response_7"
-        }
-      ],
-      "dependsOn": [
-        "bblocks://ogc.bbr.template.mySchema",
-        "bblocks://ogc.geo.features.feature"
-      ],
+      "version": "0.1",
       "tags": [
-        "feature",
-        "examples"
+        "viewer",
+        "xy-section",
+        "floor-plan",
+        "topo-feature",
+        "cadastre",
+        "strata",
+        "demo"
       ],
-      "group": "Examples",
-      "highlighted": true,
-      "shaclShapes": [
+      "group": "XY section viewer",
+      "seeAlso": [
+        "bblocks://ogc.bbr.xysection.xySectionViewerConfig"
+      ],
+      "resources": [
         {
-          "prof:hasArtifact": [
-            "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/mySchema/shapes.shacl"
-          ],
-          "rdfs:seeAlso": "bblocks://ogc.bbr.template.mySchema",
-          "prof:hasRole": "role:validation",
-          "dct:format": "text/turtle",
-          "dct:conformsTo": "shacl:"
-        },
-        {
-          "prof:hasArtifact": [
-            "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
-          ],
-          "rdfs:seeAlso": "bblocks://ogc.geo.features.feature",
-          "prof:hasRole": "role:validation",
-          "dct:format": "text/turtle",
-          "dct:conformsTo": "shacl:"
+          "role": "https://github.com/ogcincubator/bblocks-xy-section-viewer/role/viewer-config",
+          "ref": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerDemo/builtStrata/viewer-config.json",
+          "format": "application/json",
+          "title": "XY Section view configuration"
         }
       ],
-      "dateOfLastChange": "2023-05-19",
+      "shaclShapes": null,
+      "dateOfLastChange": "2026-09-30",
       "schema": [
         {
-          "prof:hasArtifact": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/annotated/bbr/template/myFeature/schema.yaml",
+          "prof:hasArtifact": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/annotated/bbr/xysection/xySectionViewerDemo/builtStrata/schema.yaml",
           "prof:hasRole": "role:schema",
           "dct:format": "application/yaml",
           "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
         },
         {
-          "prof:hasArtifact": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/annotated/bbr/template/myFeature/schema.json",
+          "prof:hasArtifact": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/annotated/bbr/xysection/xySectionViewerDemo/builtStrata/schema.json",
           "prof:hasRole": "role:schema",
           "dct:format": "application/json",
           "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
         }
       ],
-      "sourceSchema": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/myFeature/schema.yaml",
-      "ldContext": {
-        "prof:hasArtifact": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/annotated/bbr/template/myFeature/context.jsonld",
-        "prof:hasRole": "role:mapping",
-        "dct:format": "application/ld+json",
-        "dct:conformsTo": "https://www.w3.org/TR/json-ld11/"
-      },
-      "resolvedSchemaProperties": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/annotated/bbr/template/myFeature/resolvedProperties.json",
-      "sourceFiles": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/myFeature/",
+      "sourceSchema": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerDemo/builtStrata/schema.yaml",
+      "resolvedSchemaProperties": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/annotated/bbr/xysection/xySectionViewerDemo/builtStrata/resolvedProperties.json",
+      "sourceFiles": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerDemo/builtStrata/",
       "validationPassed": true,
-      "testOutputs": "https://github.com/andrewhunter2066/bblocks-xy-section-viewer/blob/master/build/tests/bbr/template/myFeature/",
+      "testOutputs": "https://github.com/andrewhunter2066/bblocks-xy-section-viewer/blob/master/build/tests/bbr/xysection/xySectionViewerDemo/builtStrata/",
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/generateddocs/markdown/bbr/template/myFeature/index.md"
+          "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/generateddocs/markdown/bbr/xysection/xySectionViewerDemo/builtStrata/index.md"
         },
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/generateddocs/json-full/bbr/template/myFeature/index.json"
+          "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/generateddocs/json-full/bbr/xysection/xySectionViewerDemo/builtStrata/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/bblock/ogc.bbr.template.myFeature"
+          "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/bblock/ogc.bbr.xysection.xySectionViewerDemo.builtStrata"
         }
       },
-      "@id": "bblocks://ogc.bbr.template.myFeature",
+      "@id": "bblocks://ogc.bbr.xysection.xySectionViewerDemo.builtStrata",
       "@type": [
         "bblocks:Schema",
         "skos:Concept",
         "dcat:Dataset",
         "bblocks:BBlock"
       ],
-      "skos:prefLabel": "Custom Feature",
+      "skos:prefLabel": "XY Section demo: built strata",
+      "ldContext": null,
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "dependsOn": null,
+      "isProfileOf": null,
+      "skos:topConceptOf": {
+        "@id": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/"
+      }
+    },
+    {
+      "itemIdentifier": "ogc.bbr.xysection.xySectionViewerDemo.fourUnit",
+      "name": "XY Section demo: four units with a stairwell",
+      "abstract": "A small test survey \u2014 four units on two floors with a stairwell spanning both, inside a lot parcel \u2014 shown as one plan section per floor, with rules that single out the stairwell and draw the lot as an outline.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-09-30T00:00:00Z",
+      "itemClass": "schema",
+      "version": "0.1",
+      "tags": [
+        "viewer",
+        "xy-section",
+        "floor-plan",
+        "topo-feature",
+        "demo"
+      ],
+      "group": "XY section viewer",
+      "seeAlso": [
+        "bblocks://ogc.bbr.xysection.xySectionViewerConfig"
+      ],
+      "resources": [
+        {
+          "role": "https://github.com/ogcincubator/bblocks-xy-section-viewer/role/viewer-config",
+          "ref": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerDemo/fourUnit/viewer-config.json",
+          "format": "application/json",
+          "title": "XY Section view configuration"
+        }
+      ],
+      "shaclShapes": null,
+      "dateOfLastChange": "2026-09-30",
+      "schema": [
+        {
+          "prof:hasArtifact": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/annotated/bbr/xysection/xySectionViewerDemo/fourUnit/schema.yaml",
+          "prof:hasRole": "role:schema",
+          "dct:format": "application/yaml",
+          "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
+        },
+        {
+          "prof:hasArtifact": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/annotated/bbr/xysection/xySectionViewerDemo/fourUnit/schema.json",
+          "prof:hasRole": "role:schema",
+          "dct:format": "application/json",
+          "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
+        }
+      ],
+      "sourceSchema": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerDemo/fourUnit/schema.yaml",
+      "resolvedSchemaProperties": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/annotated/bbr/xysection/xySectionViewerDemo/fourUnit/resolvedProperties.json",
+      "sourceFiles": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerDemo/fourUnit/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/andrewhunter2066/bblocks-xy-section-viewer/blob/master/build/tests/bbr/xysection/xySectionViewerDemo/fourUnit/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/generateddocs/markdown/bbr/xysection/xySectionViewerDemo/fourUnit/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/generateddocs/json-full/bbr/xysection/xySectionViewerDemo/fourUnit/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/bblock/ogc.bbr.xysection.xySectionViewerDemo.fourUnit"
+        }
+      },
+      "@id": "bblocks://ogc.bbr.xysection.xySectionViewerDemo.fourUnit",
+      "@type": [
+        "bblocks:Schema",
+        "skos:Concept",
+        "dcat:Dataset",
+        "bblocks:BBlock"
+      ],
+      "skos:prefLabel": "XY Section demo: four units with a stairwell",
+      "ldContext": null,
+      "openAPIDocument": null,
+      "ontology": null,
+      "rdfData": [],
+      "dependsOn": null,
       "isProfileOf": null,
       "skos:topConceptOf": {
         "@id": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/"
@@ -451,10 +520,13 @@
   ],
   "skos:hasTopConcept": [
     {
-      "@id": "bblocks://ogc.bbr.template.mySchema"
+      "@id": "bblocks://ogc.bbr.xysection.xySectionViewerConfig"
     },
     {
-      "@id": "bblocks://ogc.bbr.template.myFeature"
+      "@id": "bblocks://ogc.bbr.xysection.xySectionViewerDemo.builtStrata"
+    },
+    {
+      "@id": "bblocks://ogc.bbr.xysection.xySectionViewerDemo.fourUnit"
     }
   ]
 }

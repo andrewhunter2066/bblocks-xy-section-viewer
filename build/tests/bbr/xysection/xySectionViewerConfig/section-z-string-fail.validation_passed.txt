@@ -1,0 +1,22 @@
+Validation report for ogc.bbr.xysection.xySectionViewerConfig - XY section viewer configuration
+Generated 2026-10-01T00:47:50.202443+00:00
+=== General ===
+Test was expected to fail and it did.
+=== End General ===
+
+=== Files ===
+Using section-z-string-fail.json from test resources
+=== End Files ===
+
+=== JSON Schema ===
+
+** Validation error **
+ValidationError: '21.5' is not of type 'number'
+
+Failed validating 'type' in schema['properties']['xySection']['properties']['sectionZ']['additionalProperties']:
+    {'type': 'number'}
+
+On instance['xySection']['sectionZ']['1']:
+    '21.5'
+=== End JSON Schema ===
+

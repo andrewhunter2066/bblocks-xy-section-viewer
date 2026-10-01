@@ -1,0 +1,59 @@
+
+
+{
+  "itemIdentifier": "ogc.bbr.xysection.xySectionViewerDemo.fourUnit",
+  "name": "XY Section demo: four units with a stairwell",
+  "abstract": "A small test survey \u2014 four units on two floors with a stairwell spanning both, inside a lot parcel \u2014 shown as one plan section per floor, with rules that single out the stairwell and draw the lot as an outline.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-09-30T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "tags": [
+    "viewer",
+    "xy-section",
+    "floor-plan",
+    "topo-feature",
+    "demo"
+  ],
+  "group": "XY section viewer",
+  "seeAlso": [
+    "bblocks://ogc.bbr.xysection.xySectionViewerConfig"
+  ],
+  "resources": [
+    {
+      "role": "https://github.com/ogcincubator/bblocks-xy-section-viewer/role/viewer-config",
+      "ref": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerDemo/fourUnit/viewer-config.json",
+      "format": "application/json",
+      "title": "XY Section view configuration"
+    }
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-09-30",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/annotated/bbr/xysection/xySectionViewerDemo/fourUnit/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/annotated/bbr/xysection/xySectionViewerDemo/fourUnit/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerDemo/fourUnit/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/annotated/bbr/xysection/xySectionViewerDemo/fourUnit/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerDemo/fourUnit/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/andrewhunter2066/bblocks-xy-section-viewer/blob/master/build/tests/bbr/xysection/xySectionViewerDemo/fourUnit/",
+  "description": "Demonstrates the **XY Section** view with rules as well as options.\nOpen the example below and choose its **XY Section** tab: one tab per floor, *Lower* and *Upper*.\n\nThe block's `resources` attach an [XY Section view configuration](bblocks://ogc.bbr.xysection.xySectionViewerConfig) (`viewer-config.json`) that:\n\n- lists the **stairwell**, which spans both floors, as its own kind \u2014 dashed, in a fixed colour \u2014 and every other solid as a unit;\n- draws the **lot parcel** flat as an outline on every floor, initially hidden (tick it in the layers panel);\n- shows **lower floors** faded from the start, uses a **5 m grid**, and draws **no boundary**.\n\nThe document is the `4-unit-up-down-with-parcel.json` test survey, generated in the (private) `waTestData` repository and published here with permission.\nIts lot boundary points have 2D `place` coordinates, which is enough for an outline.\n",
+  "examples": [
+    {
+      "title": "Four units up/down with a stairwell",
+      "content": "Open the **XY Section** tab.\nThe document is the harness fixture `4-unit-up-down-with-parcel.json`, shared with the plugin's own tests.\n",
+      "snippets": [
+        {
+          "language": "json",
+          "ref": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/harness/fixtures/4-unit-up-down-with-parcel.json",
+          "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/tests/bbr/xysection/xySectionViewerDemo/fourUnit/example_1_1.json",
+          "sizeBytes": 170407
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ntitle: Topo-feature document with floor levels\ndescription: 'The minimum the XY Section view needs: `points` (with projected `place`\n  coordinates) and\n\n  `solids` (with floor levels). This is a demo block for the view, not a topo-feature\n  schema; see\n\n  https://github.com/ogcincubator/topo-feature for the data model itself.\n\n  '\ntype: object\nrequired:\n- points\n- solids\nproperties:\n  points:\n    type: array\n    minItems: 1\n  solids:\n    type: array\n    minItems: 1\n",
+  "gitRepository": "https://github.com/andrewhunter2066/bblocks-xy-section-viewer",
+  "gitPath": "_sources/xySectionViewerDemo/fourUnit"
+}

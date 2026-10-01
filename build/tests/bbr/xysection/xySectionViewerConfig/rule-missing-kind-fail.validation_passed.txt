@@ -1,0 +1,86 @@
+Validation report for ogc.bbr.xysection.xySectionViewerConfig - XY section viewer configuration
+Generated 2026-10-01T00:47:50.201860+00:00
+=== General ===
+Test was expected to fail and it did.
+=== End General ===
+
+=== Files ===
+Using rule-missing-kind-fail.json from test resources
+=== End Files ===
+
+=== JSON Schema ===
+
+** Validation error **
+ValidationError: 'kind' is a required property
+
+Failed validating 'required' in schema['properties']['rules']['items']:
+    {'additionalProperties': False,
+     'properties': {'elevation': {'$ref': '#/$defs/elevation'},
+                    'geometry': {'description': "How the feature's "
+                                                'topology is turned into a '
+                                                'shape.\n'
+                                                '`solid`, `open-shell` and '
+                                                '`face` are sectioned at '
+                                                "each floor's height; "
+                                                '`polygon` (a '
+                                                'Polygon-topology parcel) '
+                                                'and `ring` are drawn '
+                                                'flat, as outlines, on '
+                                                'every floor.\n',
+                                 'enum': ['solid',
+                                          'open-shell',
+                                          'polygon',
+                                          'face',
+                                          'ring']},
+                    'group': {'description': 'Groups several kinds under '
+                                             'one heading and select-all. '
+                                             'Defaults to `kind`.',
+                              'minLength': 1,
+                              'type': 'string'},
+                    'initiallyVisible': {'description': 'Whether the '
+                                                        'feature is shown '
+                                                        'when the view '
+                                                        'opens. Default '
+                                                        'true.',
+                                         'type': 'boolean'},
+                    'kind': {'description': 'Identifier grouping this '
+                                            "rule's features, e.g. `unit`.",
+                             'minLength': 1,
+                             'type': 'string'},
+                    'kindLabel': {'description': 'Human-readable name for '
+                                                 'this kind, e.g. '
+                                                 '`Principal units`.',
+                                  'type': 'string'},
+                    'label': {'additionalProperties': False,
+                              'description': "Where a feature's label "
+                                             'comes from: the first of '
+                                             '`properties` (dot-separated '
+                                             'paths) that resolves to a '
+                                             'non-empty value or to an '
+                                             'object with a string '
+                                             '`label`, else `fallback` '
+                                             '(default `id`).\n'
+                                             'Omitted, the view uses '
+                                             'appellation, description, '
+                                             'then name.\n',
+                              'properties': {'fallback': {'type': 'string'},
+                                             'properties': {'items': {'type': 'string'},
+                                                            'type': 'array'}},
+                              'type': 'object'},
+                    'match': {'$ref': '#/$defs/match'},
+                    'source': {'description': 'Top-level collection of the '
+                                              'document to classify, e.g. '
+                                              '`solids`, `parcels`, '
+                                              '`faces`, `rings`, or the '
+                                              'derived `surfaces` (shells '
+                                              'no solid uses).\n',
+                               'minLength': 1,
+                               'type': 'string'},
+                    'style': {'$ref': '#/$defs/style'}},
+     'required': ['source', 'kind', 'geometry'],
+     'type': 'object'}
+
+On instance['rules'][0]:
+    {'geometry': 'solid', 'source': 'solids'}
+=== End JSON Schema ===
+

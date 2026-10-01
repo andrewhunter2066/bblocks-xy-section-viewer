@@ -1,0 +1,61 @@
+
+
+{
+  "itemIdentifier": "ogc.bbr.xysection.xySectionViewerDemo.builtStrata",
+  "name": "XY Section demo: built strata",
+  "abstract": "A Western Australian built-strata survey (strata plan SP83687) as a topo-feature document \u2014 two floors of units and courtyards with walls, slabs and ceiling as occupation features \u2014 shown as one plan section per floor with WA level names and the former-tenure lot as the boundary.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-09-30T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "tags": [
+    "viewer",
+    "xy-section",
+    "floor-plan",
+    "topo-feature",
+    "cadastre",
+    "strata",
+    "demo"
+  ],
+  "group": "XY section viewer",
+  "seeAlso": [
+    "bblocks://ogc.bbr.xysection.xySectionViewerConfig"
+  ],
+  "resources": [
+    {
+      "role": "https://github.com/ogcincubator/bblocks-xy-section-viewer/role/viewer-config",
+      "ref": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerDemo/builtStrata/viewer-config.json",
+      "format": "application/json",
+      "title": "XY Section view configuration"
+    }
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-09-30",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/annotated/bbr/xysection/xySectionViewerDemo/builtStrata/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/annotated/bbr/xysection/xySectionViewerDemo/builtStrata/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerDemo/builtStrata/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/annotated/bbr/xysection/xySectionViewerDemo/builtStrata/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerDemo/builtStrata/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/andrewhunter2066/bblocks-xy-section-viewer/blob/master/build/tests/bbr/xysection/xySectionViewerDemo/builtStrata/",
+  "description": "Demonstrates the **XY Section** view of a topo-feature document.\nOpen the example below and choose its **XY Section** tab: there is one tab per floor \u2014 *Ground floor* and *First floor* \u2014 each showing that floor cut at its mid-height, inside the dashed outline of the original lot.\n\nThe block's `resources` attach an [XY Section view configuration](bblocks://ogc.bbr.xysection.xySectionViewerConfig) (`viewer-config.json`):\n\n- **Level names** for floors 1 and 2.\n- **Boundary**: the strata scheme's *containing primary parcel* (followed through its `topology.relationships`), else a former-tenure parcel, else any parcel with an outline.\n  Here the first choice resolves, to Lot 1 on Plan DP 413673.\n- **Exclusions**: the walls, slabs and ceiling that the document's `occupationFeatures` describe are not sectioned (also the default), leaving the principal units and courtyards.\n\nThe upper units are drawn with the voids above their courtyards as holes.\nUse the toolbar's *lower floors* toggle on the First floor tab to see the ground floor faded beneath it.\n\nThe document is strata plan SP83687 from the WA 3D cadastral survey data model profile (`3d-csdm-profile-wa`, `proposals/development/built-strata/examples/example-1.json`).\nEach point carries both projected `place` coordinates (`epsg:7850`, heights on `epsg:5711`) and a WGS84 `geometry`; the XY Section view uses only `place`.\n",
+  "examples": [
+    {
+      "title": "Strata plan SP83687",
+      "content": "Open the **XY Section** tab.\nThe document is the harness fixture `built-strata-example-1.json`, shared with the plugin's own tests.\n",
+      "snippets": [
+        {
+          "language": "json",
+          "ref": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/harness/fixtures/built-strata-example-1.json",
+          "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/tests/bbr/xysection/xySectionViewerDemo/builtStrata/example_1_1.json",
+          "sizeBytes": 898342
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ntitle: Topo-feature document with floor levels\ndescription: 'The minimum the XY Section view needs: `points` (with projected `place`\n  coordinates) and\n\n  `solids` (with floor levels). This is a demo block for the view, not a topo-feature\n  schema; see\n\n  https://github.com/ogcincubator/topo-feature for the data model itself.\n\n  '\ntype: object\nrequired:\n- points\n- solids\nproperties:\n  points:\n    type: array\n    minItems: 1\n  solids:\n    type: array\n    minItems: 1\n",
+  "gitRepository": "https://github.com/andrewhunter2066/bblocks-xy-section-viewer",
+  "gitPath": "_sources/xySectionViewerDemo/builtStrata"
+}

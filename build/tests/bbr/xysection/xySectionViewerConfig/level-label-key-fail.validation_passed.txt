@@ -1,0 +1,25 @@
+Validation report for ogc.bbr.xysection.xySectionViewerConfig - XY section viewer configuration
+Generated 2026-10-01T00:47:50.198603+00:00
+=== General ===
+Test was expected to fail and it did.
+=== End General ===
+
+=== Files ===
+Using level-label-key-fail.json from test resources
+=== End Files ===
+
+=== JSON Schema ===
+
+** Validation error **
+ValidationError: 'ground' does not match '^-?[0-9]+(\\.[0-9]+)?$'
+
+Failed validating 'pattern' in schema['properties']['xySection']['properties']['levelLabels']['propertyNames']:
+    {'description': 'A level number, as an object key, e.g. `"1"` or '
+                    '`"-1"`.',
+     'pattern': '^-?[0-9]+(\\.[0-9]+)?$',
+     'type': 'string'}
+
+On instance['xySection']['levelLabels']:
+    'ground'
+=== End JSON Schema ===
+

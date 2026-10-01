@@ -1,0 +1,31 @@
+Validation report for ogc.bbr.xysection.xySectionViewerConfig - XY section viewer configuration
+Generated 2026-10-01T00:47:50.197960+00:00
+=== General ===
+Test was expected to fail and it did.
+=== End General ===
+
+=== Files ===
+Using follow-without-role-fail.json from test resources
+=== End Files ===
+
+=== JSON Schema ===
+
+** Validation error **
+ValidationError: 'role' is a required property
+
+Failed validating 'required' in schema['properties']['xySection']['properties']['boundary']['items']['properties']['follow']:
+    {'additionalProperties': False,
+     'description': 'Instead of drawing the matched feature, follow its '
+                    '`topology.relationships` entry with this `role` to '
+                    'the feature its `href` names (in `source`, default '
+                    'the same collection), e.g. from a strata scheme to '
+                    'its containing primary parcel.\n',
+     'properties': {'role': {'minLength': 1, 'type': 'string'},
+                    'source': {'minLength': 1, 'type': 'string'}},
+     'required': ['role'],
+     'type': 'object'}
+
+On instance['xySection']['boundary'][0]['follow']:
+    {'source': 'parcels'}
+=== End JSON Schema ===
+

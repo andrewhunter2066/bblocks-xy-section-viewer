@@ -1,0 +1,536 @@
+Validation report for ogc.bbr.xysection.xySectionViewerConfig - XY section viewer configuration
+Generated 2026-10-01T00:47:50.216423+00:00
+=== General ===
+Test was expected to fail and it did.
+=== End General ===
+
+=== Files ===
+Using unknown-member-fail.json from test resources
+=== End Files ===
+
+=== JSON Schema ===
+
+** Validation error **
+ValidationError: Additional properties are not allowed ('ruls' was unexpected)
+
+Failed validating 'additionalProperties' in schema:
+    {'$defs': {'boundaryEntry': {'additionalProperties': False,
+                                 'properties': {'follow': {'additionalProperties': False,
+                                                           'description': 'Instead '
+                                                                          'of '
+                                                                          'drawing '
+                                                                          'the '
+                                                                          'matched '
+                                                                          'feature, '
+                                                                          'follow '
+                                                                          'its '
+                                                                          '`topology.relationships` '
+                                                                          'entry '
+                                                                          'with '
+                                                                          'this '
+                                                                          '`role` '
+                                                                          'to '
+                                                                          'the '
+                                                                          'feature '
+                                                                          'its '
+                                                                          '`href` '
+                                                                          'names '
+                                                                          '(in '
+                                                                          '`source`, '
+                                                                          'default '
+                                                                          'the '
+                                                                          'same '
+                                                                          'collection), '
+                                                                          'e.g. '
+                                                                          'from '
+                                                                          'a '
+                                                                          'strata '
+                                                                          'scheme '
+                                                                          'to '
+                                                                          'its '
+                                                                          'containing '
+                                                                          'primary '
+                                                                          'parcel.\n',
+                                                           'properties': {'role': {'minLength': 1,
+                                                                                   'type': 'string'},
+                                                                          'source': {'minLength': 1,
+                                                                                     'type': 'string'}},
+                                                           'required': ['role'],
+                                                           'type': 'object'},
+                                                'match': {'$ref': '#/$defs/match'},
+                                                'source': {'description': 'Collection '
+                                                                          'to '
+                                                                          'choose '
+                                                                          'from. '
+                                                                          'Default '
+                                                                          '`parcels`.',
+                                                           'minLength': 1,
+                                                           'type': 'string'}},
+                                 'type': 'object'},
+               'elevation': {'description': 'Used by the 3D and globe '
+                                            'views; ignored by the XY '
+                                            'Section view, which always '
+                                            "sections at each floor's "
+                                            'height.\n'
+                                            'Accepted so that shared '
+                                            'configurations validate.\n',
+                             'oneOf': [{'enum': ['preserve', 'flatten']},
+                                       {'additionalProperties': False,
+                                        'properties': {'flattenTo': {'type': 'number'}},
+                                        'required': ['flattenTo'],
+                                        'type': 'object'}]},
+               'levelKey': {'description': 'A level number, as an object '
+                                           'key, e.g. `"1"` or `"-1"`.',
+                            'pattern': '^-?[0-9]+(\\.[0-9]+)?$',
+                            'type': 'string'},
+               'match': {'additionalProperties': False,
+                         'description': 'Restricts to features whose '
+                                        'property value (or any value, for '
+                                        'an array) equals one of '
+                                        '`values`.\n'
+                                        'String values may be literals, '
+                                        'CURIEs expanded against the '
+                                        "document's own `@context`, or "
+                                        'full URIs; both sides are '
+                                        'expanded before comparing.\n'
+                                        'Numbers and booleans compare as '
+                                        'themselves (e.g. '
+                                        '`properties.floors` values).\n',
+                         'properties': {'property': {'description': 'Dot-separated '
+                                                                    'path '
+                                                                    'into '
+                                                                    'the '
+                                                                    'feature, '
+                                                                    'e.g. '
+                                                                    '`properties.parcelState`.',
+                                                     'minLength': 1,
+                                                     'type': 'string'},
+                                        'values': {'items': {'type': ['string',
+                                                                      'number',
+                                                                      'boolean']},
+                                                   'minItems': 1,
+                                                   'type': 'array'}},
+                         'required': ['property', 'values'],
+                         'type': 'object'},
+               'rule': {'additionalProperties': False,
+                        'properties': {'elevation': {'$ref': '#/$defs/elevation'},
+                                       'geometry': {'description': 'How '
+                                                                   'the '
+                                                                   "feature's "
+                                                                   'topology '
+                                                                   'is '
+                                                                   'turned '
+                                                                   'into a '
+                                                                   'shape.\n'
+                                                                   '`solid`, '
+                                                                   '`open-shell` '
+                                                                   'and '
+                                                                   '`face` '
+                                                                   'are '
+                                                                   'sectioned '
+                                                                   'at '
+                                                                   'each '
+                                                                   "floor's "
+                                                                   'height; '
+                                                                   '`polygon` '
+                                                                   '(a '
+                                                                   'Polygon-topology '
+                                                                   'parcel) '
+                                                                   'and '
+                                                                   '`ring` '
+                                                                   'are '
+                                                                   'drawn '
+                                                                   'flat, '
+                                                                   'as '
+                                                                   'outlines, '
+                                                                   'on '
+                                                                   'every '
+                                                                   'floor.\n',
+                                                    'enum': ['solid',
+                                                             'open-shell',
+                                                             'polygon',
+                                                             'face',
+                                                             'ring']},
+                                       'group': {'description': 'Groups '
+                                                                'several '
+                                                                'kinds '
+                                                                'under one '
+                                                                'heading '
+                                                                'and '
+                                                                'select-all. '
+                                                                'Defaults '
+                                                                'to '
+                                                                '`kind`.',
+                                                 'minLength': 1,
+                                                 'type': 'string'},
+                                       'initiallyVisible': {'description': 'Whether '
+                                                                           'the '
+                                                                           'feature '
+                                                                           'is '
+                                                                           'shown '
+                                                                           'when '
+                                                                           'the '
+                                                                           'view '
+                                                                           'opens. '
+                                                                           'Default '
+                                                                           'true.',
+                                                            'type': 'boolean'},
+                                       'kind': {'description': 'Identifier '
+                                                               'grouping '
+                                                               'this '
+                                                               "rule's "
+                                                               'features, '
+                                                               'e.g. '
+                                                               '`unit`.',
+                                                'minLength': 1,
+                                                'type': 'string'},
+                                       'kindLabel': {'description': 'Human-readable '
+                                                                    'name '
+                                                                    'for '
+                                                                    'this '
+                                                                    'kind, '
+                                                                    'e.g. '
+                                                                    '`Principal '
+                                                                    'units`.',
+                                                     'type': 'string'},
+                                       'label': {'additionalProperties': False,
+                                                 'description': 'Where a '
+                                                                "feature's "
+                                                                'label '
+                                                                'comes '
+                                                                'from: the '
+                                                                'first of '
+                                                                '`properties` '
+                                                                '(dot-separated '
+                                                                'paths) '
+                                                                'that '
+                                                                'resolves '
+                                                                'to a '
+                                                                'non-empty '
+                                                                'value or '
+                                                                'to an '
+                                                                'object '
+                                                                'with a '
+                                                                'string '
+                                                                '`label`, '
+                                                                'else '
+                                                                '`fallback` '
+                                                                '(default '
+                                                                '`id`).\n'
+                                                                'Omitted, '
+                                                                'the view '
+                                                                'uses '
+                                                                'appellation, '
+                                                                'description, '
+                                                                'then '
+                                                                'name.\n',
+                                                 'properties': {'fallback': {'type': 'string'},
+                                                                'properties': {'items': {'type': 'string'},
+                                                                               'type': 'array'}},
+                                                 'type': 'object'},
+                                       'match': {'$ref': '#/$defs/match'},
+                                       'source': {'description': 'Top-level '
+                                                                 'collection '
+                                                                 'of the '
+                                                                 'document '
+                                                                 'to '
+                                                                 'classify, '
+                                                                 'e.g. '
+                                                                 '`solids`, '
+                                                                 '`parcels`, '
+                                                                 '`faces`, '
+                                                                 '`rings`, '
+                                                                 'or the '
+                                                                 'derived '
+                                                                 '`surfaces` '
+                                                                 '(shells '
+                                                                 'no solid '
+                                                                 'uses).\n',
+                                                  'minLength': 1,
+                                                  'type': 'string'},
+                                       'style': {'$ref': '#/$defs/style'}},
+                        'required': ['source', 'kind', 'geometry'],
+                        'type': 'object'},
+               'style': {'additionalProperties': False,
+                         'properties': {'color': {'description': 'Fill and '
+                                                                 'outline '
+                                                                 'colour: '
+                                                                 '`#hex`, '
+                                                                 'a CSS '
+                                                                 'colour '
+                                                                 'name, or '
+                                                                 '`rgb()`/`hsl()` '
+                                                                 'notation.\n'
+                                                                 'Default: '
+                                                                 'each '
+                                                                 'feature '
+                                                                 'its own '
+                                                                 'colour '
+                                                                 'from a '
+                                                                 'fixed '
+                                                                 'palette.\n',
+                                                  'type': 'string'},
+                                        'lineColor': {'description': 'Outline '
+                                                                     'colour, '
+                                                                     'as '
+                                                                     'for '
+                                                                     '`color`. '
+                                                                     'Default '
+                                                                     'the '
+                                                                     'fill '
+                                                                     'colour.',
+                                                      'type': 'string'},
+                                        'lineStyle': {'enum': ['solid',
+                                                               'dashed']},
+                                        'opacity': {'description': 'Fill '
+                                                                   'opacity, '
+                                                                   '0 '
+                                                                   '(transparent) '
+                                                                   'to 1 '
+                                                                   '(opaque). '
+                                                                   'Default '
+                                                                   '0.45 '
+                                                                   'for '
+                                                                   'sections.',
+                                                    'maximum': 1,
+                                                    'minimum': 0,
+                                                    'type': 'number'}},
+                         'type': 'object'},
+               'xySectionOptions': {'additionalProperties': False,
+                                    'description': 'Section-only options. '
+                                                   'Every member is '
+                                                   'optional.',
+                                    'properties': {'boundary': {'description': 'Ordered '
+                                                                               'choices '
+                                                                               'for '
+                                                                               'the '
+                                                                               'one '
+                                                                               'boundary '
+                                                                               'parcel '
+                                                                               'drawn '
+                                                                               'on '
+                                                                               'every '
+                                                                               'floor; '
+                                                                               'the '
+                                                                               'first '
+                                                                               'entry '
+                                                                               'that '
+                                                                               'yields '
+                                                                               'an '
+                                                                               'outline '
+                                                                               'wins.\n'
+                                                                               'Default '
+                                                                               '`[{ '
+                                                                               '"source": '
+                                                                               '"parcels" '
+                                                                               '}]` '
+                                                                               '(the '
+                                                                               'first '
+                                                                               'parcel '
+                                                                               'with '
+                                                                               'an '
+                                                                               'outline); '
+                                                                               '`[]` '
+                                                                               'draws '
+                                                                               'no '
+                                                                               'boundary.\n',
+                                                                'items': {'$ref': '#/$defs/boundaryEntry'},
+                                                                'type': 'array'},
+                                                   'exclude': {'description': 'Solids '
+                                                                              'never '
+                                                                              'sectioned: '
+                                                                              'every '
+                                                                              'feature '
+                                                                              'of '
+                                                                              '`source` '
+                                                                              'excludes '
+                                                                              'the '
+                                                                              'solid(s) '
+                                                                              'whose '
+                                                                              'id '
+                                                                              'is '
+                                                                              'the '
+                                                                              'value '
+                                                                              'at '
+                                                                              '`property`.\n'
+                                                                              'Default: '
+                                                                              'the '
+                                                                              'geometry '
+                                                                              'of '
+                                                                              'every '
+                                                                              '`occupationFeatures` '
+                                                                              'item '
+                                                                              '(walls, '
+                                                                              'slabs, '
+                                                                              'ceilings); '
+                                                                              '`[]` '
+                                                                              'excludes '
+                                                                              'nothing.\n',
+                                                               'items': {'additionalProperties': False,
+                                                                         'properties': {'property': {'minLength': 1,
+                                                                                                     'type': 'string'},
+                                                                                        'source': {'minLength': 1,
+                                                                                                   'type': 'string'}},
+                                                                         'required': ['source',
+                                                                                      'property'],
+                                                                         'type': 'object'},
+                                                               'type': 'array'},
+                                                   'grid': {'description': '`true` '
+                                                                           '(default, '
+                                                                           'automatic '
+                                                                           'spacing), '
+                                                                           '`false` '
+                                                                           '(no '
+                                                                           'grid), '
+                                                                           'or '
+                                                                           'a '
+                                                                           'spacing '
+                                                                           'in '
+                                                                           'metres.',
+                                                            'oneOf': [{'type': 'boolean'},
+                                                                      {'exclusiveMinimum': 0,
+                                                                       'type': 'number'}]},
+                                                   'levelLabels': {'additionalProperties': {'minLength': 1,
+                                                                                            'type': 'string'},
+                                                                   'description': 'Tab '
+                                                                                  'label '
+                                                                                  'per '
+                                                                                  'level, '
+                                                                                  'e.g. '
+                                                                                  '`{ '
+                                                                                  '"1": '
+                                                                                  '"Ground '
+                                                                                  'floor" '
+                                                                                  '}`. '
+                                                                                  'Default '
+                                                                                  '`Level '
+                                                                                  '<n>`.',
+                                                                   'propertyNames': {'$ref': '#/$defs/levelKey'},
+                                                                   'type': 'object'},
+                                                   'levelProperty': {'description': 'Dot-separated '
+                                                                                    'path '
+                                                                                    'on '
+                                                                                    'each '
+                                                                                    'solid '
+                                                                                    'giving '
+                                                                                    'the '
+                                                                                    'floor '
+                                                                                    'level '
+                                                                                    'number(s) '
+                                                                                    'it '
+                                                                                    'is '
+                                                                                    'on '
+                                                                                    '— '
+                                                                                    'a '
+                                                                                    'number '
+                                                                                    'or '
+                                                                                    'an '
+                                                                                    'array '
+                                                                                    'of '
+                                                                                    'numbers.\n'
+                                                                                    'Default '
+                                                                                    '`properties.floors`.\n',
+                                                                     'minLength': 1,
+                                                                     'type': 'string'},
+                                                   'padding': {'description': 'Metres '
+                                                                              'of '
+                                                                              'margin '
+                                                                              'around '
+                                                                              'the '
+                                                                              'drawing. '
+                                                                              'Default '
+                                                                              '2.',
+                                                               'minimum': 0,
+                                                               'type': 'number'},
+                                                   'sectionZ': {'additionalProperties': {'type': 'number'},
+                                                                'description': 'Section '
+                                                                               'height '
+                                                                               'in '
+                                                                               'metres '
+                                                                               'per '
+                                                                               'level, '
+                                                                               'on '
+                                                                               'the '
+                                                                               "document's "
+                                                                               'vertical '
+                                                                               'datum.\n'
+                                                                               'Default: '
+                                                                               'the '
+                                                                               'mid-height '
+                                                                               'of '
+                                                                               'the '
+                                                                               'solids '
+                                                                               'listed '
+                                                                               'on '
+                                                                               'that '
+                                                                               'level '
+                                                                               'alone.\n',
+                                                                'propertyNames': {'$ref': '#/$defs/levelKey'},
+                                                                'type': 'object'},
+                                                   'showContext': {'description': 'Whether '
+                                                                                  'lower '
+                                                                                  'floors '
+                                                                                  'are '
+                                                                                  'drawn, '
+                                                                                  'faded, '
+                                                                                  'under '
+                                                                                  'each '
+                                                                                  'section '
+                                                                                  'when '
+                                                                                  'the '
+                                                                                  'view '
+                                                                                  'opens. '
+                                                                                  'Default '
+                                                                                  'false.',
+                                                                   'type': 'boolean'}},
+                                    'type': 'object'}},
+     '$schema': 'https://json-schema.org/draft/2020-12/schema',
+     'additionalProperties': False,
+     'description': 'Per-block configuration for the XYSectionPlugin, the '
+                    'bblocks-viewer "XY Section" view of topo-feature '
+                    'documents (one horizontal section per floor level).\n'
+                    'A block declares it as a `resources` entry in its '
+                    '`bblock.json` with the role '
+                    '`https://github.com/ogcincubator/bblocks-xy-section-viewer/role/viewer-config`.\n'
+                    '\n'
+                    '`rules`, `defaults` and `kindOrder` are the '
+                    'rule-engine configuration shared with the Three.js '
+                    'TopoFeaturePlugin and the Cesium globe view, so a '
+                    'configuration written for either validates here; '
+                    '`xySection` holds the section-only options.\n'
+                    'Every member is optional: an omitted `rules` keeps '
+                    "the plugin's built-in rules (solids and open shells "
+                    'sectioned, no parcels).\n',
+     'properties': {'defaults': {'additionalProperties': False,
+                                 'description': 'Defaults merged under '
+                                                'every rule; `style` is '
+                                                'merged key by key.',
+                                 'properties': {'elevation': {'$ref': '#/$defs/elevation'},
+                                                'style': {'$ref': '#/$defs/style'}},
+                                 'type': 'object'},
+                    'kindOrder': {'description': 'Preferred order of '
+                                                 'kinds, for viewers that '
+                                                 'list them.',
+                                  'items': {'type': 'string'},
+                                  'type': 'array'},
+                    'rules': {'description': 'Ordered rules.\n'
+                                             'For each feature, the first '
+                                             'rule whose `source` is the '
+                                             'collection it came from and '
+                                             'whose `match` (if any) '
+                                             'applies decides how it is '
+                                             'drawn; a feature no rule '
+                                             'claims is not drawn.\n'
+                                             'A non-empty list replaces '
+                                             'the built-in rules '
+                                             'entirely.\n',
+                              'items': {'$ref': '#/$defs/rule'},
+                              'type': 'array'},
+                    'xySection': {'$ref': '#/$defs/xySectionOptions'}},
+     'title': 'XY section viewer configuration',
+     'type': 'object'}
+
+On instance:
+    {'ruls': []}
+=== End JSON Schema ===
+

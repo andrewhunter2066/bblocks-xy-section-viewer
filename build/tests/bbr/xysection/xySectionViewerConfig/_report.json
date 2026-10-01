@@ -1,0 +1,778 @@
+{
+  "title": "Validation report for ogc.bbr.xysection.xySectionViewerConfig - XY section viewer configuration",
+  "bblockName": "XY section viewer configuration",
+  "bblockId": "ogc.bbr.xysection.xySectionViewerConfig",
+  "generated": "2026-10-01T00:47:50.222774+00:00",
+  "result": true,
+  "items": [
+    {
+      "source": {
+        "type": "TEST_RESOURCE",
+        "requireFail": false,
+        "filename": "_sources/xySectionViewerConfig/tests/empty-config.json",
+        "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerConfig/tests/empty-config.json",
+        "language": "json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using empty-config.json from test resources"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "TEST_RESOURCE",
+        "requireFail": true,
+        "filename": "_sources/xySectionViewerConfig/tests/exclude-without-property-fail.json",
+        "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerConfig/tests/exclude-without-property-fail.json",
+        "language": "json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "GENERAL",
+          "title": "General",
+          "entries": [
+            {
+              "op": "require-fail",
+              "isError": false,
+              "message": "Test was expected to fail and it did."
+            }
+          ]
+        },
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using exclude-without-property-fail.json from test resources"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "op": "validation",
+              "result": false,
+              "exception": "ValidationError",
+              "errorMessage": "'property' is a required property",
+              "isError": true,
+              "message": "ValidationError: 'property' is a required property\n\nFailed validating 'required' in schema['properties']['xySection']['properties']['exclude']['items']:\n    {'additionalProperties': False,\n     'properties': {'property': {'minLength': 1, 'type': 'string'},\n                    'source': {'minLength': 1, 'type': 'string'}},\n     'required': ['source', 'property'],\n     'type': 'object'}\n\nOn instance['xySection']['exclude'][0]:\n    {'source': 'occupationFeatures'}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "TEST_RESOURCE",
+        "requireFail": true,
+        "filename": "_sources/xySectionViewerConfig/tests/follow-without-role-fail.json",
+        "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerConfig/tests/follow-without-role-fail.json",
+        "language": "json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "GENERAL",
+          "title": "General",
+          "entries": [
+            {
+              "op": "require-fail",
+              "isError": false,
+              "message": "Test was expected to fail and it did."
+            }
+          ]
+        },
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using follow-without-role-fail.json from test resources"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "op": "validation",
+              "result": false,
+              "exception": "ValidationError",
+              "errorMessage": "'role' is a required property",
+              "isError": true,
+              "message": "ValidationError: 'role' is a required property\n\nFailed validating 'required' in schema['properties']['xySection']['properties']['boundary']['items']['properties']['follow']:\n    {'additionalProperties': False,\n     'description': 'Instead of drawing the matched feature, follow its '\n                    '`topology.relationships` entry with this `role` to '\n                    'the feature its `href` names (in `source`, default '\n                    'the same collection), e.g. from a strata scheme to '\n                    'its containing primary parcel.\\n',\n     'properties': {'role': {'minLength': 1, 'type': 'string'},\n                    'source': {'minLength': 1, 'type': 'string'}},\n     'required': ['role'],\n     'type': 'object'}\n\nOn instance['xySection']['boundary'][0]['follow']:\n    {'source': 'parcels'}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "TEST_RESOURCE",
+        "requireFail": true,
+        "filename": "_sources/xySectionViewerConfig/tests/level-label-key-fail.json",
+        "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerConfig/tests/level-label-key-fail.json",
+        "language": "json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "GENERAL",
+          "title": "General",
+          "entries": [
+            {
+              "op": "require-fail",
+              "isError": false,
+              "message": "Test was expected to fail and it did."
+            }
+          ]
+        },
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using level-label-key-fail.json from test resources"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "op": "validation",
+              "result": false,
+              "exception": "ValidationError",
+              "errorMessage": "'ground' does not match '^-?[0-9]+(\\\\.[0-9]+)?$'",
+              "isError": true,
+              "message": "ValidationError: 'ground' does not match '^-?[0-9]+(\\\\.[0-9]+)?$'\n\nFailed validating 'pattern' in schema['properties']['xySection']['properties']['levelLabels']['propertyNames']:\n    {'description': 'A level number, as an object key, e.g. `\"1\"` or '\n                    '`\"-1\"`.',\n     'pattern': '^-?[0-9]+(\\\\.[0-9]+)?$',\n     'type': 'string'}\n\nOn instance['xySection']['levelLabels']:\n    'ground'"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "TEST_RESOURCE",
+        "requireFail": true,
+        "filename": "_sources/xySectionViewerConfig/tests/negative-padding-fail.json",
+        "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerConfig/tests/negative-padding-fail.json",
+        "language": "json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "GENERAL",
+          "title": "General",
+          "entries": [
+            {
+              "op": "require-fail",
+              "isError": false,
+              "message": "Test was expected to fail and it did."
+            }
+          ]
+        },
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using negative-padding-fail.json from test resources"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "op": "validation",
+              "result": false,
+              "exception": "ValidationError",
+              "errorMessage": "-1 is less than the minimum of 0",
+              "isError": true,
+              "message": "ValidationError: -1 is less than the minimum of 0\n\nFailed validating 'minimum' in schema['properties']['xySection']['properties']['padding']:\n    {'description': 'Metres of margin around the drawing. Default 2.',\n     'minimum': 0,\n     'type': 'number'}\n\nOn instance['xySection']['padding']:\n    -1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "TEST_RESOURCE",
+        "requireFail": false,
+        "filename": "_sources/xySectionViewerConfig/tests/numeric-match.json",
+        "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerConfig/tests/numeric-match.json",
+        "language": "json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using numeric-match.json from test resources"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "TEST_RESOURCE",
+        "requireFail": true,
+        "filename": "_sources/xySectionViewerConfig/tests/rule-missing-kind-fail.json",
+        "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerConfig/tests/rule-missing-kind-fail.json",
+        "language": "json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "GENERAL",
+          "title": "General",
+          "entries": [
+            {
+              "op": "require-fail",
+              "isError": false,
+              "message": "Test was expected to fail and it did."
+            }
+          ]
+        },
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using rule-missing-kind-fail.json from test resources"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "op": "validation",
+              "result": false,
+              "exception": "ValidationError",
+              "errorMessage": "'kind' is a required property",
+              "isError": true,
+              "message": "ValidationError: 'kind' is a required property\n\nFailed validating 'required' in schema['properties']['rules']['items']:\n    {'additionalProperties': False,\n     'properties': {'elevation': {'$ref': '#/$defs/elevation'},\n                    'geometry': {'description': \"How the feature's \"\n                                                'topology is turned into a '\n                                                'shape.\\n'\n                                                '`solid`, `open-shell` and '\n                                                '`face` are sectioned at '\n                                                \"each floor's height; \"\n                                                '`polygon` (a '\n                                                'Polygon-topology parcel) '\n                                                'and `ring` are drawn '\n                                                'flat, as outlines, on '\n                                                'every floor.\\n',\n                                 'enum': ['solid',\n                                          'open-shell',\n                                          'polygon',\n                                          'face',\n                                          'ring']},\n                    'group': {'description': 'Groups several kinds under '\n                                             'one heading and select-all. '\n                                             'Defaults to `kind`.',\n                              'minLength': 1,\n                              'type': 'string'},\n                    'initiallyVisible': {'description': 'Whether the '\n                                                        'feature is shown '\n                                                        'when the view '\n                                                        'opens. Default '\n                                                        'true.',\n                                         'type': 'boolean'},\n                    'kind': {'description': 'Identifier grouping this '\n                                            \"rule's features, e.g. `unit`.\",\n                             'minLength': 1,\n                             'type': 'string'},\n                    'kindLabel': {'description': 'Human-readable name for '\n                                                 'this kind, e.g. '\n                                                 '`Principal units`.',\n                                  'type': 'string'},\n                    'label': {'additionalProperties': False,\n                              'description': \"Where a feature's label \"\n                                             'comes from: the first of '\n                                             '`properties` (dot-separated '\n                                             'paths) that resolves to a '\n                                             'non-empty value or to an '\n                                             'object with a string '\n                                             '`label`, else `fallback` '\n                                             '(default `id`).\\n'\n                                             'Omitted, the view uses '\n                                             'appellation, description, '\n                                             'then name.\\n',\n                              'properties': {'fallback': {'type': 'string'},\n                                             'properties': {'items': {'type': 'string'},\n                                                            'type': 'array'}},\n                              'type': 'object'},\n                    'match': {'$ref': '#/$defs/match'},\n                    'source': {'description': 'Top-level collection of the '\n                                              'document to classify, e.g. '\n                                              '`solids`, `parcels`, '\n                                              '`faces`, `rings`, or the '\n                                              'derived `surfaces` (shells '\n                                              'no solid uses).\\n',\n                               'minLength': 1,\n                               'type': 'string'},\n                    'style': {'$ref': '#/$defs/style'}},\n     'required': ['source', 'kind', 'geometry'],\n     'type': 'object'}\n\nOn instance['rules'][0]:\n    {'geometry': 'solid', 'source': 'solids'}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "TEST_RESOURCE",
+        "requireFail": true,
+        "filename": "_sources/xySectionViewerConfig/tests/section-z-string-fail.json",
+        "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerConfig/tests/section-z-string-fail.json",
+        "language": "json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "GENERAL",
+          "title": "General",
+          "entries": [
+            {
+              "op": "require-fail",
+              "isError": false,
+              "message": "Test was expected to fail and it did."
+            }
+          ]
+        },
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using section-z-string-fail.json from test resources"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "op": "validation",
+              "result": false,
+              "exception": "ValidationError",
+              "errorMessage": "'21.5' is not of type 'number'",
+              "isError": true,
+              "message": "ValidationError: '21.5' is not of type 'number'\n\nFailed validating 'type' in schema['properties']['xySection']['properties']['sectionZ']['additionalProperties']:\n    {'type': 'number'}\n\nOn instance['xySection']['sectionZ']['1']:\n    '21.5'"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "TEST_RESOURCE",
+        "requireFail": true,
+        "filename": "_sources/xySectionViewerConfig/tests/show-context-string-fail.json",
+        "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerConfig/tests/show-context-string-fail.json",
+        "language": "json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "GENERAL",
+          "title": "General",
+          "entries": [
+            {
+              "op": "require-fail",
+              "isError": false,
+              "message": "Test was expected to fail and it did."
+            }
+          ]
+        },
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using show-context-string-fail.json from test resources"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "op": "validation",
+              "result": false,
+              "exception": "ValidationError",
+              "errorMessage": "'yes' is not of type 'boolean'",
+              "isError": true,
+              "message": "ValidationError: 'yes' is not of type 'boolean'\n\nFailed validating 'type' in schema['properties']['xySection']['properties']['showContext']:\n    {'description': 'Whether lower floors are drawn, faded, under each '\n                    'section when the view opens. Default false.',\n     'type': 'boolean'}\n\nOn instance['xySection']['showContext']:\n    'yes'"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "TEST_RESOURCE",
+        "requireFail": false,
+        "filename": "_sources/xySectionViewerConfig/tests/three-js-rules.json",
+        "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerConfig/tests/three-js-rules.json",
+        "language": "json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using three-js-rules.json from test resources"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "TEST_RESOURCE",
+        "requireFail": true,
+        "filename": "_sources/xySectionViewerConfig/tests/unknown-geometry-fail.json",
+        "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerConfig/tests/unknown-geometry-fail.json",
+        "language": "json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "GENERAL",
+          "title": "General",
+          "entries": [
+            {
+              "op": "require-fail",
+              "isError": false,
+              "message": "Test was expected to fail and it did."
+            }
+          ]
+        },
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using unknown-geometry-fail.json from test resources"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "op": "validation",
+              "result": false,
+              "exception": "ValidationError",
+              "errorMessage": "'mesh' is not one of ['solid', 'open-shell', 'polygon', 'face', 'ring']",
+              "isError": true,
+              "message": "ValidationError: 'mesh' is not one of ['solid', 'open-shell', 'polygon', 'face', 'ring']\n\nFailed validating 'enum' in schema['properties']['rules']['items']['properties']['geometry']:\n    {'description': \"How the feature's topology is turned into a shape.\\n\"\n                    '`solid`, `open-shell` and `face` are sectioned at '\n                    \"each floor's height; `polygon` (a Polygon-topology \"\n                    'parcel) and `ring` are drawn flat, as outlines, on '\n                    'every floor.\\n',\n     'enum': ['solid', 'open-shell', 'polygon', 'face', 'ring']}\n\nOn instance['rules'][0]['geometry']:\n    'mesh'"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "TEST_RESOURCE",
+        "requireFail": true,
+        "filename": "_sources/xySectionViewerConfig/tests/unknown-member-fail.json",
+        "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerConfig/tests/unknown-member-fail.json",
+        "language": "json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "GENERAL",
+          "title": "General",
+          "entries": [
+            {
+              "op": "require-fail",
+              "isError": false,
+              "message": "Test was expected to fail and it did."
+            }
+          ]
+        },
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using unknown-member-fail.json from test resources"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "op": "validation",
+              "result": false,
+              "exception": "ValidationError",
+              "errorMessage": "Additional properties are not allowed ('ruls' was unexpected)",
+              "isError": true,
+              "message": "ValidationError: Additional properties are not allowed ('ruls' was unexpected)\n\nFailed validating 'additionalProperties' in schema:\n    {'$defs': {'boundaryEntry': {'additionalProperties': False,\n                                 'properties': {'follow': {'additionalProperties': False,\n                                                           'description': 'Instead '\n                                                                          'of '\n                                                                          'drawing '\n                                                                          'the '\n                                                                          'matched '\n                                                                          'feature, '\n                                                                          'follow '\n                                                                          'its '\n                                                                          '`topology.relationships` '\n                                                                          'entry '\n                                                                          'with '\n                                                                          'this '\n                                                                          '`role` '\n                                                                          'to '\n                                                                          'the '\n                                                                          'feature '\n                                                                          'its '\n                                                                          '`href` '\n                                                                          'names '\n                                                                          '(in '\n                                                                          '`source`, '\n                                                                          'default '\n                                                                          'the '\n                                                                          'same '\n                                                                          'collection), '\n                                                                          'e.g. '\n                                                                          'from '\n                                                                          'a '\n                                                                          'strata '\n                                                                          'scheme '\n                                                                          'to '\n                                                                          'its '\n                                                                          'containing '\n                                                                          'primary '\n                                                                          'parcel.\\n',\n                                                           'properties': {'role': {'minLength': 1,\n                                                                                   'type': 'string'},\n                                                                          'source': {'minLength': 1,\n                                                                                     'type': 'string'}},\n                                                           'required': ['role'],\n                                                           'type': 'object'},\n                                                'match': {'$ref': '#/$defs/match'},\n                                                'source': {'description': 'Collection '\n                                                                          'to '\n                                                                          'choose '\n                                                                          'from. '\n                                                                          'Default '\n                                                                          '`parcels`.',\n                                                           'minLength': 1,\n                                                           'type': 'string'}},\n                                 'type': 'object'},\n               'elevation': {'description': 'Used by the 3D and globe '\n                                            'views; ignored by the XY '\n                                            'Section view, which always '\n                                            \"sections at each floor's \"\n                                            'height.\\n'\n                                            'Accepted so that shared '\n                                            'configurations validate.\\n',\n                             'oneOf': [{'enum': ['preserve', 'flatten']},\n                                       {'additionalProperties': False,\n                                        'properties': {'flattenTo': {'type': 'number'}},\n                                        'required': ['flattenTo'],\n                                        'type': 'object'}]},\n               'levelKey': {'description': 'A level number, as an object '\n                                           'key, e.g. `\"1\"` or `\"-1\"`.',\n                            'pattern': '^-?[0-9]+(\\\\.[0-9]+)?$',\n                            'type': 'string'},\n               'match': {'additionalProperties': False,\n                         'description': 'Restricts to features whose '\n                                        'property value (or any value, for '\n                                        'an array) equals one of '\n                                        '`values`.\\n'\n                                        'String values may be literals, '\n                                        'CURIEs expanded against the '\n                                        \"document's own `@context`, or \"\n                                        'full URIs; both sides are '\n                                        'expanded before comparing.\\n'\n                                        'Numbers and booleans compare as '\n                                        'themselves (e.g. '\n                                        '`properties.floors` values).\\n',\n                         'properties': {'property': {'description': 'Dot-separated '\n                                                                    'path '\n                                                                    'into '\n                                                                    'the '\n                                                                    'feature, '\n                                                                    'e.g. '\n                                                                    '`properties.parcelState`.',\n                                                     'minLength': 1,\n                                                     'type': 'string'},\n                                        'values': {'items': {'type': ['string',\n                                                                      'number',\n                                                                      'boolean']},\n                                                   'minItems': 1,\n                                                   'type': 'array'}},\n                         'required': ['property', 'values'],\n                         'type': 'object'},\n               'rule': {'additionalProperties': False,\n                        'properties': {'elevation': {'$ref': '#/$defs/elevation'},\n                                       'geometry': {'description': 'How '\n                                                                   'the '\n                                                                   \"feature's \"\n                                                                   'topology '\n                                                                   'is '\n                                                                   'turned '\n                                                                   'into a '\n                                                                   'shape.\\n'\n                                                                   '`solid`, '\n                                                                   '`open-shell` '\n                                                                   'and '\n                                                                   '`face` '\n                                                                   'are '\n                                                                   'sectioned '\n                                                                   'at '\n                                                                   'each '\n                                                                   \"floor's \"\n                                                                   'height; '\n                                                                   '`polygon` '\n                                                                   '(a '\n                                                                   'Polygon-topology '\n                                                                   'parcel) '\n                                                                   'and '\n                                                                   '`ring` '\n                                                                   'are '\n                                                                   'drawn '\n                                                                   'flat, '\n                                                                   'as '\n                                                                   'outlines, '\n                                                                   'on '\n                                                                   'every '\n                                                                   'floor.\\n',\n                                                    'enum': ['solid',\n                                                             'open-shell',\n                                                             'polygon',\n                                                             'face',\n                                                             'ring']},\n                                       'group': {'description': 'Groups '\n                                                                'several '\n                                                                'kinds '\n                                                                'under one '\n                                                                'heading '\n                                                                'and '\n                                                                'select-all. '\n                                                                'Defaults '\n                                                                'to '\n                                                                '`kind`.',\n                                                 'minLength': 1,\n                                                 'type': 'string'},\n                                       'initiallyVisible': {'description': 'Whether '\n                                                                           'the '\n                                                                           'feature '\n                                                                           'is '\n                                                                           'shown '\n                                                                           'when '\n                                                                           'the '\n                                                                           'view '\n                                                                           'opens. '\n                                                                           'Default '\n                                                                           'true.',\n                                                            'type': 'boolean'},\n                                       'kind': {'description': 'Identifier '\n                                                               'grouping '\n                                                               'this '\n                                                               \"rule's \"\n                                                               'features, '\n                                                               'e.g. '\n                                                               '`unit`.',\n                                                'minLength': 1,\n                                                'type': 'string'},\n                                       'kindLabel': {'description': 'Human-readable '\n                                                                    'name '\n                                                                    'for '\n                                                                    'this '\n                                                                    'kind, '\n                                                                    'e.g. '\n                                                                    '`Principal '\n                                                                    'units`.',\n                                                     'type': 'string'},\n                                       'label': {'additionalProperties': False,\n                                                 'description': 'Where a '\n                                                                \"feature's \"\n                                                                'label '\n                                                                'comes '\n                                                                'from: the '\n                                                                'first of '\n                                                                '`properties` '\n                                                                '(dot-separated '\n                                                                'paths) '\n                                                                'that '\n                                                                'resolves '\n                                                                'to a '\n                                                                'non-empty '\n                                                                'value or '\n                                                                'to an '\n                                                                'object '\n                                                                'with a '\n                                                                'string '\n                                                                '`label`, '\n                                                                'else '\n                                                                '`fallback` '\n                                                                '(default '\n                                                                '`id`).\\n'\n                                                                'Omitted, '\n                                                                'the view '\n                                                                'uses '\n                                                                'appellation, '\n                                                                'description, '\n                                                                'then '\n                                                                'name.\\n',\n                                                 'properties': {'fallback': {'type': 'string'},\n                                                                'properties': {'items': {'type': 'string'},\n                                                                               'type': 'array'}},\n                                                 'type': 'object'},\n                                       'match': {'$ref': '#/$defs/match'},\n                                       'source': {'description': 'Top-level '\n                                                                 'collection '\n                                                                 'of the '\n                                                                 'document '\n                                                                 'to '\n                                                                 'classify, '\n                                                                 'e.g. '\n                                                                 '`solids`, '\n                                                                 '`parcels`, '\n                                                                 '`faces`, '\n                                                                 '`rings`, '\n                                                                 'or the '\n                                                                 'derived '\n                                                                 '`surfaces` '\n                                                                 '(shells '\n                                                                 'no solid '\n                                                                 'uses).\\n',\n                                                  'minLength': 1,\n                                                  'type': 'string'},\n                                       'style': {'$ref': '#/$defs/style'}},\n                        'required': ['source', 'kind', 'geometry'],\n                        'type': 'object'},\n               'style': {'additionalProperties': False,\n                         'properties': {'color': {'description': 'Fill and '\n                                                                 'outline '\n                                                                 'colour: '\n                                                                 '`#hex`, '\n                                                                 'a CSS '\n                                                                 'colour '\n                                                                 'name, or '\n                                                                 '`rgb()`/`hsl()` '\n                                                                 'notation.\\n'\n                                                                 'Default: '\n                                                                 'each '\n                                                                 'feature '\n                                                                 'its own '\n                                                                 'colour '\n                                                                 'from a '\n                                                                 'fixed '\n                                                                 'palette.\\n',\n                                                  'type': 'string'},\n                                        'lineColor': {'description': 'Outline '\n                                                                     'colour, '\n                                                                     'as '\n                                                                     'for '\n                                                                     '`color`. '\n                                                                     'Default '\n                                                                     'the '\n                                                                     'fill '\n                                                                     'colour.',\n                                                      'type': 'string'},\n                                        'lineStyle': {'enum': ['solid',\n                                                               'dashed']},\n                                        'opacity': {'description': 'Fill '\n                                                                   'opacity, '\n                                                                   '0 '\n                                                                   '(transparent) '\n                                                                   'to 1 '\n                                                                   '(opaque). '\n                                                                   'Default '\n                                                                   '0.45 '\n                                                                   'for '\n                                                                   'sections.',\n                                                    'maximum': 1,\n                                                    'minimum': 0,\n                                                    'type': 'number'}},\n                         'type': 'object'},\n               'xySectionOptions': {'additionalProperties': False,\n                                    'description': 'Section-only options. '\n                                                   'Every member is '\n                                                   'optional.',\n                                    'properties': {'boundary': {'description': 'Ordered '\n                                                                               'choices '\n                                                                               'for '\n                                                                               'the '\n                                                                               'one '\n                                                                               'boundary '\n                                                                               'parcel '\n                                                                               'drawn '\n                                                                               'on '\n                                                                               'every '\n                                                                               'floor; '\n                                                                               'the '\n                                                                               'first '\n                                                                               'entry '\n                                                                               'that '\n                                                                               'yields '\n                                                                               'an '\n                                                                               'outline '\n                                                                               'wins.\\n'\n                                                                               'Default '\n                                                                               '`[{ '\n                                                                               '\"source\": '\n                                                                               '\"parcels\" '\n                                                                               '}]` '\n                                                                               '(the '\n                                                                               'first '\n                                                                               'parcel '\n                                                                               'with '\n                                                                               'an '\n                                                                               'outline); '\n                                                                               '`[]` '\n                                                                               'draws '\n                                                                               'no '\n                                                                               'boundary.\\n',\n                                                                'items': {'$ref': '#/$defs/boundaryEntry'},\n                                                                'type': 'array'},\n                                                   'exclude': {'description': 'Solids '\n                                                                              'never '\n                                                                              'sectioned: '\n                                                                              'every '\n                                                                              'feature '\n                                                                              'of '\n                                                                              '`source` '\n                                                                              'excludes '\n                                                                              'the '\n                                                                              'solid(s) '\n                                                                              'whose '\n                                                                              'id '\n                                                                              'is '\n                                                                              'the '\n                                                                              'value '\n                                                                              'at '\n                                                                              '`property`.\\n'\n                                                                              'Default: '\n                                                                              'the '\n                                                                              'geometry '\n                                                                              'of '\n                                                                              'every '\n                                                                              '`occupationFeatures` '\n                                                                              'item '\n                                                                              '(walls, '\n                                                                              'slabs, '\n                                                                              'ceilings); '\n                                                                              '`[]` '\n                                                                              'excludes '\n                                                                              'nothing.\\n',\n                                                               'items': {'additionalProperties': False,\n                                                                         'properties': {'property': {'minLength': 1,\n                                                                                                     'type': 'string'},\n                                                                                        'source': {'minLength': 1,\n                                                                                                   'type': 'string'}},\n                                                                         'required': ['source',\n                                                                                      'property'],\n                                                                         'type': 'object'},\n                                                               'type': 'array'},\n                                                   'grid': {'description': '`true` '\n                                                                           '(default, '\n                                                                           'automatic '\n                                                                           'spacing), '\n                                                                           '`false` '\n                                                                           '(no '\n                                                                           'grid), '\n                                                                           'or '\n                                                                           'a '\n                                                                           'spacing '\n                                                                           'in '\n                                                                           'metres.',\n                                                            'oneOf': [{'type': 'boolean'},\n                                                                      {'exclusiveMinimum': 0,\n                                                                       'type': 'number'}]},\n                                                   'levelLabels': {'additionalProperties': {'minLength': 1,\n                                                                                            'type': 'string'},\n                                                                   'description': 'Tab '\n                                                                                  'label '\n                                                                                  'per '\n                                                                                  'level, '\n                                                                                  'e.g. '\n                                                                                  '`{ '\n                                                                                  '\"1\": '\n                                                                                  '\"Ground '\n                                                                                  'floor\" '\n                                                                                  '}`. '\n                                                                                  'Default '\n                                                                                  '`Level '\n                                                                                  '<n>`.',\n                                                                   'propertyNames': {'$ref': '#/$defs/levelKey'},\n                                                                   'type': 'object'},\n                                                   'levelProperty': {'description': 'Dot-separated '\n                                                                                    'path '\n                                                                                    'on '\n                                                                                    'each '\n                                                                                    'solid '\n                                                                                    'giving '\n                                                                                    'the '\n                                                                                    'floor '\n                                                                                    'level '\n                                                                                    'number(s) '\n                                                                                    'it '\n                                                                                    'is '\n                                                                                    'on '\n                                                                                    '\u2014 '\n                                                                                    'a '\n                                                                                    'number '\n                                                                                    'or '\n                                                                                    'an '\n                                                                                    'array '\n                                                                                    'of '\n                                                                                    'numbers.\\n'\n                                                                                    'Default '\n                                                                                    '`properties.floors`.\\n',\n                                                                     'minLength': 1,\n                                                                     'type': 'string'},\n                                                   'padding': {'description': 'Metres '\n                                                                              'of '\n                                                                              'margin '\n                                                                              'around '\n                                                                              'the '\n                                                                              'drawing. '\n                                                                              'Default '\n                                                                              '2.',\n                                                               'minimum': 0,\n                                                               'type': 'number'},\n                                                   'sectionZ': {'additionalProperties': {'type': 'number'},\n                                                                'description': 'Section '\n                                                                               'height '\n                                                                               'in '\n                                                                               'metres '\n                                                                               'per '\n                                                                               'level, '\n                                                                               'on '\n                                                                               'the '\n                                                                               \"document's \"\n                                                                               'vertical '\n                                                                               'datum.\\n'\n                                                                               'Default: '\n                                                                               'the '\n                                                                               'mid-height '\n                                                                               'of '\n                                                                               'the '\n                                                                               'solids '\n                                                                               'listed '\n                                                                               'on '\n                                                                               'that '\n                                                                               'level '\n                                                                               'alone.\\n',\n                                                                'propertyNames': {'$ref': '#/$defs/levelKey'},\n                                                                'type': 'object'},\n                                                   'showContext': {'description': 'Whether '\n                                                                                  'lower '\n                                                                                  'floors '\n                                                                                  'are '\n                                                                                  'drawn, '\n                                                                                  'faded, '\n                                                                                  'under '\n                                                                                  'each '\n                                                                                  'section '\n                                                                                  'when '\n                                                                                  'the '\n                                                                                  'view '\n                                                                                  'opens. '\n                                                                                  'Default '\n                                                                                  'false.',\n                                                                   'type': 'boolean'}},\n                                    'type': 'object'}},\n     '$schema': 'https://json-schema.org/draft/2020-12/schema',\n     'additionalProperties': False,\n     'description': 'Per-block configuration for the XYSectionPlugin, the '\n                    'bblocks-viewer \"XY Section\" view of topo-feature '\n                    'documents (one horizontal section per floor level).\\n'\n                    'A block declares it as a `resources` entry in its '\n                    '`bblock.json` with the role '\n                    '`https://github.com/ogcincubator/bblocks-xy-section-viewer/role/viewer-config`.\\n'\n                    '\\n'\n                    '`rules`, `defaults` and `kindOrder` are the '\n                    'rule-engine configuration shared with the Three.js '\n                    'TopoFeaturePlugin and the Cesium globe view, so a '\n                    'configuration written for either validates here; '\n                    '`xySection` holds the section-only options.\\n'\n                    'Every member is optional: an omitted `rules` keeps '\n                    \"the plugin's built-in rules (solids and open shells \"\n                    'sectioned, no parcels).\\n',\n     'properties': {'defaults': {'additionalProperties': False,\n                                 'description': 'Defaults merged under '\n                                                'every rule; `style` is '\n                                                'merged key by key.',\n                                 'properties': {'elevation': {'$ref': '#/$defs/elevation'},\n                                                'style': {'$ref': '#/$defs/style'}},\n                                 'type': 'object'},\n                    'kindOrder': {'description': 'Preferred order of '\n                                                 'kinds, for viewers that '\n                                                 'list them.',\n                                  'items': {'type': 'string'},\n                                  'type': 'array'},\n                    'rules': {'description': 'Ordered rules.\\n'\n                                             'For each feature, the first '\n                                             'rule whose `source` is the '\n                                             'collection it came from and '\n                                             'whose `match` (if any) '\n                                             'applies decides how it is '\n                                             'drawn; a feature no rule '\n                                             'claims is not drawn.\\n'\n                                             'A non-empty list replaces '\n                                             'the built-in rules '\n                                             'entirely.\\n',\n                              'items': {'$ref': '#/$defs/rule'},\n                              'type': 'array'},\n                    'xySection': {'$ref': '#/$defs/xySectionOptions'}},\n     'title': 'XY section viewer configuration',\n     'type': 'object'}\n\nOn instance:\n    {'ruls': []}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "TEST_RESOURCE",
+        "requireFail": true,
+        "filename": "_sources/xySectionViewerConfig/tests/unknown-option-fail.json",
+        "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerConfig/tests/unknown-option-fail.json",
+        "language": "json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "GENERAL",
+          "title": "General",
+          "entries": [
+            {
+              "op": "require-fail",
+              "isError": false,
+              "message": "Test was expected to fail and it did."
+            }
+          ]
+        },
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using unknown-option-fail.json from test resources"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "op": "validation",
+              "result": false,
+              "exception": "ValidationError",
+              "errorMessage": "Additional properties are not allowed ('colour' was unexpected)",
+              "isError": true,
+              "message": "ValidationError: Additional properties are not allowed ('colour' was unexpected)\n\nFailed validating 'additionalProperties' in schema['properties']['xySection']:\n    {'additionalProperties': False,\n     'description': 'Section-only options. Every member is optional.',\n     'properties': {'boundary': {'description': 'Ordered choices for the '\n                                                'one boundary parcel drawn '\n                                                'on every floor; the first '\n                                                'entry that yields an '\n                                                'outline wins.\\n'\n                                                'Default `[{ \"source\": '\n                                                '\"parcels\" }]` (the first '\n                                                'parcel with an outline); '\n                                                '`[]` draws no boundary.\\n',\n                                 'items': {'$ref': '#/$defs/boundaryEntry'},\n                                 'type': 'array'},\n                    'exclude': {'description': 'Solids never sectioned: '\n                                               'every feature of `source` '\n                                               'excludes the solid(s) '\n                                               'whose id is the value at '\n                                               '`property`.\\n'\n                                               'Default: the geometry of '\n                                               'every `occupationFeatures` '\n                                               'item (walls, slabs, '\n                                               'ceilings); `[]` excludes '\n                                               'nothing.\\n',\n                                'items': {'additionalProperties': False,\n                                          'properties': {'property': {'minLength': 1,\n                                                                      'type': 'string'},\n                                                         'source': {'minLength': 1,\n                                                                    'type': 'string'}},\n                                          'required': ['source',\n                                                       'property'],\n                                          'type': 'object'},\n                                'type': 'array'},\n                    'grid': {'description': '`true` (default, automatic '\n                                            'spacing), `false` (no grid), '\n                                            'or a spacing in metres.',\n                             'oneOf': [{'type': 'boolean'},\n                                       {'exclusiveMinimum': 0,\n                                        'type': 'number'}]},\n                    'levelLabels': {'additionalProperties': {'minLength': 1,\n                                                             'type': 'string'},\n                                    'description': 'Tab label per level, '\n                                                   'e.g. `{ \"1\": \"Ground '\n                                                   'floor\" }`. Default '\n                                                   '`Level <n>`.',\n                                    'propertyNames': {'$ref': '#/$defs/levelKey'},\n                                    'type': 'object'},\n                    'levelProperty': {'description': 'Dot-separated path '\n                                                     'on each solid giving '\n                                                     'the floor level '\n                                                     'number(s) it is on \u2014 '\n                                                     'a number or an array '\n                                                     'of numbers.\\n'\n                                                     'Default '\n                                                     '`properties.floors`.\\n',\n                                      'minLength': 1,\n                                      'type': 'string'},\n                    'padding': {'description': 'Metres of margin around '\n                                               'the drawing. Default 2.',\n                                'minimum': 0,\n                                'type': 'number'},\n                    'sectionZ': {'additionalProperties': {'type': 'number'},\n                                 'description': 'Section height in metres '\n                                                'per level, on the '\n                                                \"document's vertical \"\n                                                'datum.\\n'\n                                                'Default: the mid-height '\n                                                'of the solids listed on '\n                                                'that level alone.\\n',\n                                 'propertyNames': {'$ref': '#/$defs/levelKey'},\n                                 'type': 'object'},\n                    'showContext': {'description': 'Whether lower floors '\n                                                   'are drawn, faded, '\n                                                   'under each section '\n                                                   'when the view opens. '\n                                                   'Default false.',\n                                    'type': 'boolean'}},\n     'type': 'object'}\n\nOn instance['xySection']:\n    {'colour': 'red'}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "TEST_RESOURCE",
+        "requireFail": true,
+        "filename": "_sources/xySectionViewerConfig/tests/zero-grid-fail.json",
+        "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerConfig/tests/zero-grid-fail.json",
+        "language": "json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "GENERAL",
+          "title": "General",
+          "entries": [
+            {
+              "op": "require-fail",
+              "isError": false,
+              "message": "Test was expected to fail and it did."
+            }
+          ]
+        },
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using zero-grid-fail.json from test resources"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "op": "validation",
+              "result": false,
+              "exception": "ValidationError",
+              "errorMessage": "0 is less than or equal to the minimum of 0",
+              "isError": true,
+              "message": "ValidationError: 0 is less than or equal to the minimum of 0\n\nFailed validating 'exclusiveMinimum' in schema[1]:\n    {'exclusiveMinimum': 0, 'type': 'number'}\n\nOn instance:\n    0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/bbr/xysection/xySectionViewerConfig/example_1_1.json",
+        "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/tests/bbr/xysection/xySectionViewerConfig/example_1_1.json",
+        "exampleIndex": 1,
+        "snippetIndex": 1,
+        "language": "application/json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using ../xySectionViewerDemo/builtStrata/viewer-config.json from examples"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/bbr/xysection/xySectionViewerConfig/example_2_1.json",
+        "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/tests/bbr/xysection/xySectionViewerConfig/example_2_1.json",
+        "exampleIndex": 2,
+        "snippetIndex": 1,
+        "language": "application/json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using ../xySectionViewerDemo/fourUnit/viewer-config.json from examples"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/bbr/xysection/xySectionViewerConfig/example_3_1.json",
+        "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/tests/bbr/xysection/xySectionViewerConfig/example_3_1.json",
+        "exampleIndex": 3,
+        "snippetIndex": 1,
+        "language": "application/json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using examples/level-options.json from examples"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/bbr/xysection/xySectionViewerConfig/example_4_1.json",
+        "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/tests/bbr/xysection/xySectionViewerConfig/example_4_1.json",
+        "exampleIndex": 4,
+        "snippetIndex": 1,
+        "language": "application/json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using examples/no-exclusions.json from examples"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "globalErrors": {},
+  "counts": {
+    "total": 18,
+    "passed": 18,
+    "failed": 0
+  }
+}

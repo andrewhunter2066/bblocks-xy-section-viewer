@@ -1,0 +1,306 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "XY section viewer configuration",
+  "description": "Per-block configuration for the XYSectionPlugin, the bblocks-viewer \"XY Section\" view of topo-feature documents (one horizontal section per floor level).\nA block declares it as a `resources` entry in its `bblock.json` with the role `https://github.com/ogcincubator/bblocks-xy-section-viewer/role/viewer-config`.\n\n`rules`, `defaults` and `kindOrder` are the rule-engine configuration shared with the Three.js TopoFeaturePlugin and the Cesium globe view, so a configuration written for either validates here; `xySection` holds the section-only options.\nEvery member is optional: an omitted `rules` keeps the plugin's built-in rules (solids and open shells sectioned, no parcels).\n",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "rules": {
+      "description": "Ordered rules.\nFor each feature, the first rule whose `source` is the collection it came from and whose `match` (if any) applies decides how it is drawn; a feature no rule claims is not drawn.\nA non-empty list replaces the built-in rules entirely.\n",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/rule"
+      }
+    },
+    "defaults": {
+      "description": "Defaults merged under every rule; `style` is merged key by key.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "style": {
+          "$ref": "#/$defs/style"
+        },
+        "elevation": {
+          "$ref": "#/$defs/elevation"
+        }
+      }
+    },
+    "kindOrder": {
+      "description": "Preferred order of kinds, for viewers that list them.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "xySection": {
+      "$ref": "#/$defs/xySectionOptions"
+    }
+  },
+  "$defs": {
+    "rule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source",
+        "kind",
+        "geometry"
+      ],
+      "properties": {
+        "source": {
+          "description": "Top-level collection of the document to classify, e.g. `solids`, `parcels`, `faces`, `rings`, or the derived `surfaces` (shells no solid uses).\n",
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "description": "Identifier grouping this rule's features, e.g. `unit`.",
+          "type": "string",
+          "minLength": 1
+        },
+        "group": {
+          "description": "Groups several kinds under one heading and select-all. Defaults to `kind`.",
+          "type": "string",
+          "minLength": 1
+        },
+        "kindLabel": {
+          "description": "Human-readable name for this kind, e.g. `Principal units`.",
+          "type": "string"
+        },
+        "geometry": {
+          "description": "How the feature's topology is turned into a shape.\n`solid`, `open-shell` and `face` are sectioned at each floor's height; `polygon` (a Polygon-topology parcel) and `ring` are drawn flat, as outlines, on every floor.\n",
+          "enum": [
+            "solid",
+            "open-shell",
+            "polygon",
+            "face",
+            "ring"
+          ]
+        },
+        "match": {
+          "$ref": "#/$defs/match"
+        },
+        "label": {
+          "description": "Where a feature's label comes from: the first of `properties` (dot-separated paths) that resolves to a non-empty value or to an object with a string `label`, else `fallback` (default `id`).\nOmitted, the view uses appellation, description, then name.\n",
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "properties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "fallback": {
+              "type": "string"
+            }
+          }
+        },
+        "style": {
+          "$ref": "#/$defs/style"
+        },
+        "initiallyVisible": {
+          "description": "Whether the feature is shown when the view opens. Default true.",
+          "type": "boolean"
+        },
+        "elevation": {
+          "$ref": "#/$defs/elevation"
+        }
+      }
+    },
+    "match": {
+      "description": "Restricts to features whose property value (or any value, for an array) equals one of `values`.\nString values may be literals, CURIEs expanded against the document's own `@context`, or full URIs; both sides are expanded before comparing.\nNumbers and booleans compare as themselves (e.g. `properties.floors` values).\n",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "property",
+        "values"
+      ],
+      "properties": {
+        "property": {
+          "description": "Dot-separated path into the feature, e.g. `properties.parcelState`.",
+          "type": "string",
+          "minLength": 1
+        },
+        "values": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": [
+              "string",
+              "number",
+              "boolean"
+            ]
+          }
+        }
+      }
+    },
+    "style": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "color": {
+          "description": "Fill and outline colour: `#hex`, a CSS colour name, or `rgb()`/`hsl()` notation.\nDefault: each feature its own colour from a fixed palette.\n",
+          "type": "string"
+        },
+        "opacity": {
+          "description": "Fill opacity, 0 (transparent) to 1 (opaque). Default 0.45 for sections.",
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "lineColor": {
+          "description": "Outline colour, as for `color`. Default the fill colour.",
+          "type": "string"
+        },
+        "lineStyle": {
+          "enum": [
+            "solid",
+            "dashed"
+          ]
+        }
+      }
+    },
+    "elevation": {
+      "description": "Used by the 3D and globe views; ignored by the XY Section view, which always sections at each floor's height.\nAccepted so that shared configurations validate.\n",
+      "oneOf": [
+        {
+          "enum": [
+            "preserve",
+            "flatten"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "flattenTo"
+          ],
+          "properties": {
+            "flattenTo": {
+              "type": "number"
+            }
+          }
+        }
+      ]
+    },
+    "levelKey": {
+      "description": "A level number, as an object key, e.g. `\"1\"` or `\"-1\"`.",
+      "type": "string",
+      "pattern": "^-?[0-9]+(\\.[0-9]+)?$"
+    },
+    "xySectionOptions": {
+      "description": "Section-only options. Every member is optional.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "levelProperty": {
+          "description": "Dot-separated path on each solid giving the floor level number(s) it is on \u2014 a number or an array of numbers.\nDefault `properties.floors`.\n",
+          "type": "string",
+          "minLength": 1
+        },
+        "levelLabels": {
+          "description": "Tab label per level, e.g. `{ \"1\": \"Ground floor\" }`. Default `Level <n>`.",
+          "type": "object",
+          "propertyNames": {
+            "$ref": "#/$defs/levelKey"
+          },
+          "additionalProperties": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "sectionZ": {
+          "description": "Section height in metres per level, on the document's vertical datum.\nDefault: the mid-height of the solids listed on that level alone.\n",
+          "type": "object",
+          "propertyNames": {
+            "$ref": "#/$defs/levelKey"
+          },
+          "additionalProperties": {
+            "type": "number"
+          }
+        },
+        "showContext": {
+          "description": "Whether lower floors are drawn, faded, under each section when the view opens. Default false.",
+          "type": "boolean"
+        },
+        "padding": {
+          "description": "Metres of margin around the drawing. Default 2.",
+          "type": "number",
+          "minimum": 0
+        },
+        "grid": {
+          "description": "`true` (default, automatic spacing), `false` (no grid), or a spacing in metres.",
+          "oneOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "number",
+              "exclusiveMinimum": 0
+            }
+          ]
+        },
+        "boundary": {
+          "description": "Ordered choices for the one boundary parcel drawn on every floor; the first entry that yields an outline wins.\nDefault `[{ \"source\": \"parcels\" }]` (the first parcel with an outline); `[]` draws no boundary.\n",
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/boundaryEntry"
+          }
+        },
+        "exclude": {
+          "description": "Solids never sectioned: every feature of `source` excludes the solid(s) whose id is the value at `property`.\nDefault: the geometry of every `occupationFeatures` item (walls, slabs, ceilings); `[]` excludes nothing.\n",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "source",
+              "property"
+            ],
+            "properties": {
+              "source": {
+                "type": "string",
+                "minLength": 1
+              },
+              "property": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "boundaryEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "source": {
+          "description": "Collection to choose from. Default `parcels`.",
+          "type": "string",
+          "minLength": 1
+        },
+        "match": {
+          "$ref": "#/$defs/match"
+        },
+        "follow": {
+          "description": "Instead of drawing the matched feature, follow its `topology.relationships` entry with this `role` to the feature its `href` names (in `source`, default the same collection), e.g. from a strata scheme to its containing primary parcel.\n",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "role"
+          ],
+          "properties": {
+            "role": {
+              "type": "string",
+              "minLength": 1
+            },
+            "source": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    }
+  }
+}

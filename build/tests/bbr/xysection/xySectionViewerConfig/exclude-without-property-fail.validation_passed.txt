@@ -1,0 +1,26 @@
+Validation report for ogc.bbr.xysection.xySectionViewerConfig - XY section viewer configuration
+Generated 2026-10-01T00:47:50.196972+00:00
+=== General ===
+Test was expected to fail and it did.
+=== End General ===
+
+=== Files ===
+Using exclude-without-property-fail.json from test resources
+=== End Files ===
+
+=== JSON Schema ===
+
+** Validation error **
+ValidationError: 'property' is a required property
+
+Failed validating 'required' in schema['properties']['xySection']['properties']['exclude']['items']:
+    {'additionalProperties': False,
+     'properties': {'property': {'minLength': 1, 'type': 'string'},
+                    'source': {'minLength': 1, 'type': 'string'}},
+     'required': ['source', 'property'],
+     'type': 'object'}
+
+On instance['xySection']['exclude'][0]:
+    {'source': 'occupationFeatures'}
+=== End JSON Schema ===
+

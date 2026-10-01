@@ -64,24 +64,24 @@
     <body>
         <div class="container">
             <h1 class="title">Building blocks validation report</h1>
-            <small class="datetime">Generated at 2026-09-30T17:03:49.827956+00:00</small>
+            <small class="datetime">Generated at 2026-10-01T00:47:50.321627+00:00</small>
                 <p class="summary fw-semibold text-success">
-                    Number of passing building blocks: 2 / 2 (100%)
+                    Number of passing building blocks: 3 / 3 (100%)
                 </p>
             <div class="text-end small" id="expand-collapse">
                 <a href="#" class="expand-all">Expand all</a>
                 <a href="#" class="collapse-all">Collapse all</a>
             </div>
                 <div class="accordion mt-2" id="bblock-reports">
-                        <div class="accordion-item bblock-report" data-bblock-id="ogc.bbr.template.mySchema" id="bblock-ogc.bbr.template.mySchema">
+                        <div class="accordion-item bblock-report" data-bblock-id="ogc.bbr.xysection.xySectionViewerConfig" id="bblock-ogc.bbr.xysection.xySectionViewerConfig">
                             <h2 class="accordion-header bblock-title anchor-container">
                                 <button class="accordion-button collapsed" type="button"
                                     data-bs-toggle="collapse"
-                                    data-bs-target="#bblock-collapse-ogc\.bbr\.template\.mySchema">
+                                    data-bs-target="#bblock-collapse-ogc\.bbr\.xysection\.xySectionViewerConfig">
                                     <div class="flex-fill">
-                                        My Schema
-                                        <small class="ms-2 bblock-id">ogc.bbr.template.mySchema</small>
-                                        <a class="anchor" href="#bblock-ogc.bbr.template.mySchema">¶</a>
+                                        XY section viewer configuration
+                                        <small class="ms-2 bblock-id">ogc.bbr.xysection.xySectionViewerConfig</small>
+                                        <a class="anchor" href="#bblock-ogc.bbr.xysection.xySectionViewerConfig">¶</a>
                                     </div>
 
                                     <span class="badge text-bg-success me-2">
@@ -90,12 +90,12 @@
                                     </span>
                                 </button>
                             </h2>
-                            <div class="accordion-collapse collapse " id="bblock-collapse-ogc.bbr.template.mySchema">
+                            <div class="accordion-collapse collapse " id="bblock-collapse-ogc.bbr.xysection.xySectionViewerConfig">
                                 <div class="accordion-body">
                                         <p class="summary fw-semibold text-success">
-                                            Test passed: 2 / 2
+                                            Test passed: 18 / 18
                                         </p>
-                                        <div class="card mb-2 validation-item require-fail" id="item-ogc.bbr.template.mySchema-1">
+                                        <div class="card mb-2 validation-item " id="item-ogc.bbr.xysection.xySectionViewerConfig-1">
                                             <div class="card-body">
                                                 <div class="card-title mb-0 anchor-container">
                                                     <button type="button" class="btn btn-sm btn-primary collapsed"
@@ -105,58 +105,28 @@
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
                                                     </button>
-                                                    <a href="../../_sources/mySchema/tests/rules-fail.json" target="_blank">rules-fail.json</a>
+                                                    <a href="../../_sources/xySectionViewerConfig/tests/empty-config.json" target="_blank">empty-config.json</a>
                                                     <span class="badge bg-secondary test_resource">Test resource</span>
-                                                        <span class="badge text-bg-info">Requires fail</span>
-                                                    <a class="anchor" href="#item-ogc.bbr.template.mySchema-1">¶</a>
+                                                    <a class="anchor" href="#item-ogc.bbr.xysection.xySectionViewerConfig-1">¶</a>
                                                     <div class="float-end">
                                                             <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-1">
                                                     <div class="validation-text-inner">
-                                                                    <div class="font-monospace subsection-title mt-2">General</div>
-                                                                
-                                                                    
-                                                                    <div class="font-monospace entry-message section-general ">Test was expected to fail and it did.</div>
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                 
                                                                     
-                                                                    <div class="font-monospace entry-message section-files ">Using rules-fail.json from test resources</div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-files ">Output JSON-LD rules-fail.jsonld created</div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-files ">Output Turtle rules-fail.ttl created</div>
+                                                                    <div class="font-monospace entry-message section-files ">Using empty-config.json from test resources</div>
                                                                     <div class="font-monospace subsection-title mt-2">JSON Schema</div>
                                                                 
                                                                     
                                                                     <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
-                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
-                                                                
-                                                                    
-                                                                    <div class="font-monospace entry-message section-shacl text-danger">Validation result for _sources/mySchema/shapes.shacl:
-  Validation Report
-  Conforms: False
-  Results (1):
-  Constraint Violation in LessThanConstraintComponent (http://www.w3.org/ns/shacl#LessThanConstraintComponent):
-  	Severity: sh:Violation
-  	Source Shape: [ sh:lessThan ns1:b ; sh:path ns1:c ]
-  	Focus Node: [ ns1:b Literal(&quot;23&quot;, datatype=xsd:integer) ; ns1:c Literal(&quot;25.5&quot;, datatype=xsd:double) ; rdf:type mynamespace:aThing ]
-  	Value Node: Literal(&quot;25.5&quot;, datatype=xsd:double)
-  	Result Path: ns1:c
-  	Message: Value of [ ns1:b Literal(&quot;23&quot;, datatype=xsd:integer) ; ns1:c Literal(&quot;25.5&quot;, datatype=xsd:double) ; rdf:type mynamespace:aThing ]-&gt;ns1:b &lt;= Literal(&quot;25.5&quot;, datatype=xsd:double)
-  </div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/mySchema/shapes.shacl:
- - Shape &lt;https://www.ogc.org/rules/template/#testValues&gt;: _:N0f0e123d20f74dbea83e8abf62fbc6e7
-</div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card mb-2 validation-item " id="item-ogc.bbr.template.mySchema-2">
+                                        <div class="card mb-2 validation-item require-fail" id="item-ogc.bbr.xysection.xySectionViewerConfig-2">
                                             <div class="card-body">
                                                 <div class="card-title mb-0 anchor-container">
                                                     <button type="button" class="btn btn-sm btn-primary collapsed"
@@ -166,70 +136,43 @@
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
                                                     </button>
-                                                    <a href="bbr/template/mySchema/example_1_1.json" target="_blank">example_1_1.json</a>
-                                                    <span class="badge bg-secondary example">Example</span>
-                                                    <a class="anchor" href="#item-ogc.bbr.template.mySchema-2">¶</a>
+                                                    <a href="../../_sources/xySectionViewerConfig/tests/exclude-without-property-fail.json" target="_blank">exclude-without-property-fail.json</a>
+                                                    <span class="badge bg-secondary test_resource">Test resource</span>
+                                                        <span class="badge text-bg-info">Requires fail</span>
+                                                    <a class="anchor" href="#item-ogc.bbr.xysection.xySectionViewerConfig-2">¶</a>
                                                     <div class="float-end">
                                                             <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-2">
                                                     <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">General</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-general ">Test was expected to fail and it did.</div>
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                 
                                                                     
-                                                                    <div class="font-monospace entry-message section-files ">Using example.json from examples</div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-files ">Output JSON-LD example_1_1.jsonld created</div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
+                                                                    <div class="font-monospace entry-message section-files ">Using exclude-without-property-fail.json from test resources</div>
                                                                     <div class="font-monospace subsection-title mt-2">JSON Schema</div>
                                                                 
                                                                     
-                                                                    <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
-                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
-                                                                
-                                                                    
-                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for _sources/mySchema/shapes.shacl:
-  Validation Report
-  Conforms: True
-  </div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/mySchema/shapes.shacl:
- - Shape &lt;https://www.ogc.org/rules/template/#testValues&gt;: *none*
-</div>
+                                                                    <div class="font-monospace entry-message section-json_schema text-danger">ValidationError: &#x27;property&#x27; is a required property
+
+Failed validating &#x27;required&#x27; in schema[&#x27;properties&#x27;][&#x27;xySection&#x27;][&#x27;properties&#x27;][&#x27;exclude&#x27;][&#x27;items&#x27;]:
+    {&#x27;additionalProperties&#x27;: False,
+     &#x27;properties&#x27;: {&#x27;property&#x27;: {&#x27;minLength&#x27;: 1, &#x27;type&#x27;: &#x27;string&#x27;},
+                    &#x27;source&#x27;: {&#x27;minLength&#x27;: 1, &#x27;type&#x27;: &#x27;string&#x27;}},
+     &#x27;required&#x27;: [&#x27;source&#x27;, &#x27;property&#x27;],
+     &#x27;type&#x27;: &#x27;object&#x27;}
+
+On instance[&#x27;xySection&#x27;][&#x27;exclude&#x27;][0]:
+    {&#x27;source&#x27;: &#x27;occupationFeatures&#x27;}</div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item bblock-report" data-bblock-id="ogc.bbr.template.myFeature" id="bblock-ogc.bbr.template.myFeature">
-                            <h2 class="accordion-header bblock-title anchor-container">
-                                <button class="accordion-button collapsed" type="button"
-                                    data-bs-toggle="collapse"
-                                    data-bs-target="#bblock-collapse-ogc\.bbr\.template\.myFeature">
-                                    <div class="flex-fill">
-                                        Custom Feature
-                                        <small class="ms-2 bblock-id">ogc.bbr.template.myFeature</small>
-                                        <a class="anchor" href="#bblock-ogc.bbr.template.myFeature">¶</a>
-                                    </div>
-
-                                    <span class="badge text-bg-success me-2">
-                                            Passed
-                                            (100% passed)
-                                    </span>
-                                </button>
-                            </h2>
-                            <div class="accordion-collapse collapse " id="bblock-collapse-ogc.bbr.template.myFeature">
-                                <div class="accordion-body">
-                                        <p class="summary fw-semibold text-success">
-                                            Test passed: 3 / 3
-                                        </p>
-                                        <div class="card mb-2 validation-item require-fail" id="item-ogc.bbr.template.myFeature-1">
+                                        <div class="card mb-2 validation-item require-fail" id="item-ogc.bbr.xysection.xySectionViewerConfig-3">
                                             <div class="card-body">
                                                 <div class="card-title mb-0 anchor-container">
                                                     <button type="button" class="btn btn-sm btn-primary collapsed"
@@ -239,10 +182,10 @@
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
                                                     </button>
-                                                    <a href="../../_sources/myFeature/tests/feature-fail.json" target="_blank">feature-fail.json</a>
+                                                    <a href="../../_sources/xySectionViewerConfig/tests/follow-without-role-fail.json" target="_blank">follow-without-role-fail.json</a>
                                                     <span class="badge bg-secondary test_resource">Test resource</span>
                                                         <span class="badge text-bg-info">Requires fail</span>
-                                                    <a class="anchor" href="#item-ogc.bbr.template.myFeature-1">¶</a>
+                                                    <a class="anchor" href="#item-ogc.bbr.xysection.xySectionViewerConfig-3">¶</a>
                                                     <div class="float-end">
                                                             <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
@@ -256,61 +199,31 @@
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                 
                                                                     
-                                                                    <div class="font-monospace entry-message section-files ">Using feature-fail.json from test resources</div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-files ">Output JSON-LD feature-fail.jsonld created</div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-files ">Output Turtle feature-fail.ttl created</div>
+                                                                    <div class="font-monospace entry-message section-files ">Using follow-without-role-fail.json from test resources</div>
                                                                     <div class="font-monospace subsection-title mt-2">JSON Schema</div>
                                                                 
                                                                     
-                                                                    <div class="font-monospace entry-message section-json_schema text-danger">ValidationError: {&#x27;id&#x27;: &#x27;f1&#x27;, &#x27;type&#x27;: &#x27;Feature&#x27;, &#x27;geometry&#x27;: {&#x27;type&#x27;: &#x27;LineString&#x27;, &#x27;coordinates&#x27;: [[-111.67183507997295, 40.056709946862874], [-111.71, 40.156709946862875]]}, &#x27;properties&#x27;: {&#x27;notMyProp&#x27;: &#x27;Mandatory property not present example&#x27;}} is not valid under any of the given schemas
+                                                                    <div class="font-monospace entry-message section-json_schema text-danger">ValidationError: &#x27;role&#x27; is a required property
 
-Failed validating &#x27;anyOf&#x27; in schema:
-    {&#x27;$defs&#x27;: {&#x27;MyFeature&#x27;: {&#x27;allOf&#x27;: [{&#x27;$ref&#x27;: &#x27;https://opengeospatial.github.io/bblocks/annotated-schemas/geo/features/feature/schema.yaml&#x27;},
-                                       {&#x27;properties&#x27;: {&#x27;properties&#x27;: {&#x27;$ref&#x27;: &#x27;https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/annotated/bbr/template/mySchema/schema.yaml&#x27;}}}]}},
-     &#x27;$schema&#x27;: &#x27;https://json-schema.org/draft/2020-12/schema&#x27;,
-     &#x27;anyOf&#x27;: [{&#x27;$ref&#x27;: &#x27;#/$defs/MyFeature&#x27;}],
-     &#x27;description&#x27;: &#x27;Example of a simple GeoJSON Feature specialisation&#x27;}
+Failed validating &#x27;required&#x27; in schema[&#x27;properties&#x27;][&#x27;xySection&#x27;][&#x27;properties&#x27;][&#x27;boundary&#x27;][&#x27;items&#x27;][&#x27;properties&#x27;][&#x27;follow&#x27;]:
+    {&#x27;additionalProperties&#x27;: False,
+     &#x27;description&#x27;: &#x27;Instead of drawing the matched feature, follow its &#x27;
+                    &#x27;`topology.relationships` entry with this `role` to &#x27;
+                    &#x27;the feature its `href` names (in `source`, default &#x27;
+                    &#x27;the same collection), e.g. from a strata scheme to &#x27;
+                    &#x27;its containing primary parcel.\n&#x27;,
+     &#x27;properties&#x27;: {&#x27;role&#x27;: {&#x27;minLength&#x27;: 1, &#x27;type&#x27;: &#x27;string&#x27;},
+                    &#x27;source&#x27;: {&#x27;minLength&#x27;: 1, &#x27;type&#x27;: &#x27;string&#x27;}},
+     &#x27;required&#x27;: [&#x27;role&#x27;],
+     &#x27;type&#x27;: &#x27;object&#x27;}
 
-On instance:
-    {&#x27;geometry&#x27;: {&#x27;coordinates&#x27;: [[-111.67183507997295, 40.056709946862874],
-                                  [-111.71, 40.156709946862875]],
-                  &#x27;type&#x27;: &#x27;LineString&#x27;},
-     &#x27;id&#x27;: &#x27;f1&#x27;,
-     &#x27;properties&#x27;: {&#x27;notMyProp&#x27;: &#x27;Mandatory property not present example&#x27;},
-     &#x27;type&#x27;: &#x27;Feature&#x27;}</div>
-                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
-                                                                
-                                                                    
-                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for _sources/mySchema/shapes.shacl:
-  Validation Report
-  Conforms: True
-  </div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/mySchema/shapes.shacl:
- - Shape &lt;https://www.ogc.org/rules/template/#testValues&gt;: *none*
-</div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
-  Validation Report
-  Conforms: True
-  </div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
- - Shape geojson:FeatureShape: &lt;file:///github/workspace/f1&gt;
- - Shape geojson:GeometryShape: *none*
- - Shape geojson:LinkShape: *none*
- - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
- - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
-</div>
+On instance[&#x27;xySection&#x27;][&#x27;boundary&#x27;][0][&#x27;follow&#x27;]:
+    {&#x27;source&#x27;: &#x27;parcels&#x27;}</div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card mb-2 validation-item " id="item-ogc.bbr.template.myFeature-2">
+                                        <div class="card mb-2 validation-item require-fail" id="item-ogc.bbr.xysection.xySectionViewerConfig-4">
                                             <div class="card-body">
                                                 <div class="card-title mb-0 anchor-container">
                                                     <button type="button" class="btn btn-sm btn-primary collapsed"
@@ -320,58 +233,42 @@ On instance:
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
                                                     </button>
-                                                    <a href="bbr/template/myFeature/example_1_1.json" target="_blank">example_1_1.json</a>
-                                                    <span class="badge bg-secondary example">Example</span>
-                                                    <a class="anchor" href="#item-ogc.bbr.template.myFeature-2">¶</a>
+                                                    <a href="../../_sources/xySectionViewerConfig/tests/level-label-key-fail.json" target="_blank">level-label-key-fail.json</a>
+                                                    <span class="badge bg-secondary test_resource">Test resource</span>
+                                                        <span class="badge text-bg-info">Requires fail</span>
+                                                    <a class="anchor" href="#item-ogc.bbr.xysection.xySectionViewerConfig-4">¶</a>
                                                     <div class="float-end">
                                                             <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-4">
                                                     <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">General</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-general ">Test was expected to fail and it did.</div>
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                 
                                                                     
-                                                                    <div class="font-monospace entry-message section-files ">Using examples/feature.json from examples</div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-files ">Output JSON-LD example_1_1.jsonld created</div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
+                                                                    <div class="font-monospace entry-message section-files ">Using level-label-key-fail.json from test resources</div>
                                                                     <div class="font-monospace subsection-title mt-2">JSON Schema</div>
                                                                 
                                                                     
-                                                                    <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
-                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
-                                                                
-                                                                    
-                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for _sources/mySchema/shapes.shacl:
-  Validation Report
-  Conforms: True
-  </div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/mySchema/shapes.shacl:
- - Shape &lt;https://www.ogc.org/rules/template/#testValues&gt;: &lt;http://example.com/features/f1&gt;
-</div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
-  Validation Report
-  Conforms: True
-  </div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
- - Shape geojson:FeatureShape: &lt;http://example.com/features/f1&gt;
- - Shape geojson:GeometryShape: *none*
- - Shape geojson:LinkShape: *none*
- - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
- - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
-</div>
+                                                                    <div class="font-monospace entry-message section-json_schema text-danger">ValidationError: &#x27;ground&#x27; does not match &#x27;^-?[0-9]+(\\.[0-9]+)?$&#x27;
+
+Failed validating &#x27;pattern&#x27; in schema[&#x27;properties&#x27;][&#x27;xySection&#x27;][&#x27;properties&#x27;][&#x27;levelLabels&#x27;][&#x27;propertyNames&#x27;]:
+    {&#x27;description&#x27;: &#x27;A level number, as an object key, e.g. `&quot;1&quot;` or &#x27;
+                    &#x27;`&quot;-1&quot;`.&#x27;,
+     &#x27;pattern&#x27;: &#x27;^-?[0-9]+(\\.[0-9]+)?$&#x27;,
+     &#x27;type&#x27;: &#x27;string&#x27;}
+
+On instance[&#x27;xySection&#x27;][&#x27;levelLabels&#x27;]:
+    &#x27;ground&#x27;</div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card mb-2 validation-item " id="item-ogc.bbr.template.myFeature-3">
+                                        <div class="card mb-2 validation-item require-fail" id="item-ogc.bbr.xysection.xySectionViewerConfig-5">
                                             <div class="card-body">
                                                 <div class="card-title mb-0 anchor-container">
                                                     <button type="button" class="btn btn-sm btn-primary collapsed"
@@ -381,19 +278,1285 @@ On instance:
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
                                                     </button>
-                                                    <a href="bbr/template/myFeature/example_1_2.yaml" target="_blank">example_1_2.yaml</a>
-                                                    <span class="badge bg-secondary example">Example</span>
-                                                    <a class="anchor" href="#item-ogc.bbr.template.myFeature-3">¶</a>
+                                                    <a href="../../_sources/xySectionViewerConfig/tests/negative-padding-fail.json" target="_blank">negative-padding-fail.json</a>
+                                                    <span class="badge bg-secondary test_resource">Test resource</span>
+                                                        <span class="badge text-bg-info">Requires fail</span>
+                                                    <a class="anchor" href="#item-ogc.bbr.xysection.xySectionViewerConfig-5">¶</a>
                                                     <div class="float-end">
                                                             <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-5">
                                                     <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">General</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-general ">Test was expected to fail and it did.</div>
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                 
                                                                     
-                                                                    <div class="font-monospace entry-message section-files ">Using example_1_2.yaml from examples</div>
+                                                                    <div class="font-monospace entry-message section-files ">Using negative-padding-fail.json from test resources</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-json_schema text-danger">ValidationError: -1 is less than the minimum of 0
+
+Failed validating &#x27;minimum&#x27; in schema[&#x27;properties&#x27;][&#x27;xySection&#x27;][&#x27;properties&#x27;][&#x27;padding&#x27;]:
+    {&#x27;description&#x27;: &#x27;Metres of margin around the drawing. Default 2.&#x27;,
+     &#x27;minimum&#x27;: 0,
+     &#x27;type&#x27;: &#x27;number&#x27;}
+
+On instance[&#x27;xySection&#x27;][&#x27;padding&#x27;]:
+    -1</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card mb-2 validation-item " id="item-ogc.bbr.xysection.xySectionViewerConfig-6">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0 anchor-container">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-6"
+                                                            aria-expanded="false" aria-controls="uid-6"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="../../_sources/xySectionViewerConfig/tests/numeric-match.json" target="_blank">numeric-match.json</a>
+                                                    <span class="badge bg-secondary test_resource">Test resource</span>
+                                                    <a class="anchor" href="#item-ogc.bbr.xysection.xySectionViewerConfig-6">¶</a>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-6">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">Using numeric-match.json from test resources</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card mb-2 validation-item require-fail" id="item-ogc.bbr.xysection.xySectionViewerConfig-7">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0 anchor-container">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-7"
+                                                            aria-expanded="false" aria-controls="uid-7"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="../../_sources/xySectionViewerConfig/tests/rule-missing-kind-fail.json" target="_blank">rule-missing-kind-fail.json</a>
+                                                    <span class="badge bg-secondary test_resource">Test resource</span>
+                                                        <span class="badge text-bg-info">Requires fail</span>
+                                                    <a class="anchor" href="#item-ogc.bbr.xysection.xySectionViewerConfig-7">¶</a>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-7">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">General</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-general ">Test was expected to fail and it did.</div>
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">Using rule-missing-kind-fail.json from test resources</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-json_schema text-danger">ValidationError: &#x27;kind&#x27; is a required property
+
+Failed validating &#x27;required&#x27; in schema[&#x27;properties&#x27;][&#x27;rules&#x27;][&#x27;items&#x27;]:
+    {&#x27;additionalProperties&#x27;: False,
+     &#x27;properties&#x27;: {&#x27;elevation&#x27;: {&#x27;$ref&#x27;: &#x27;#/$defs/elevation&#x27;},
+                    &#x27;geometry&#x27;: {&#x27;description&#x27;: &quot;How the feature&#x27;s &quot;
+                                                &#x27;topology is turned into a &#x27;
+                                                &#x27;shape.\n&#x27;
+                                                &#x27;`solid`, `open-shell` and &#x27;
+                                                &#x27;`face` are sectioned at &#x27;
+                                                &quot;each floor&#x27;s height; &quot;
+                                                &#x27;`polygon` (a &#x27;
+                                                &#x27;Polygon-topology parcel) &#x27;
+                                                &#x27;and `ring` are drawn &#x27;
+                                                &#x27;flat, as outlines, on &#x27;
+                                                &#x27;every floor.\n&#x27;,
+                                 &#x27;enum&#x27;: [&#x27;solid&#x27;,
+                                          &#x27;open-shell&#x27;,
+                                          &#x27;polygon&#x27;,
+                                          &#x27;face&#x27;,
+                                          &#x27;ring&#x27;]},
+                    &#x27;group&#x27;: {&#x27;description&#x27;: &#x27;Groups several kinds under &#x27;
+                                             &#x27;one heading and select-all. &#x27;
+                                             &#x27;Defaults to `kind`.&#x27;,
+                              &#x27;minLength&#x27;: 1,
+                              &#x27;type&#x27;: &#x27;string&#x27;},
+                    &#x27;initiallyVisible&#x27;: {&#x27;description&#x27;: &#x27;Whether the &#x27;
+                                                        &#x27;feature is shown &#x27;
+                                                        &#x27;when the view &#x27;
+                                                        &#x27;opens. Default &#x27;
+                                                        &#x27;true.&#x27;,
+                                         &#x27;type&#x27;: &#x27;boolean&#x27;},
+                    &#x27;kind&#x27;: {&#x27;description&#x27;: &#x27;Identifier grouping this &#x27;
+                                            &quot;rule&#x27;s features, e.g. `unit`.&quot;,
+                             &#x27;minLength&#x27;: 1,
+                             &#x27;type&#x27;: &#x27;string&#x27;},
+                    &#x27;kindLabel&#x27;: {&#x27;description&#x27;: &#x27;Human-readable name for &#x27;
+                                                 &#x27;this kind, e.g. &#x27;
+                                                 &#x27;`Principal units`.&#x27;,
+                                  &#x27;type&#x27;: &#x27;string&#x27;},
+                    &#x27;label&#x27;: {&#x27;additionalProperties&#x27;: False,
+                              &#x27;description&#x27;: &quot;Where a feature&#x27;s label &quot;
+                                             &#x27;comes from: the first of &#x27;
+                                             &#x27;`properties` (dot-separated &#x27;
+                                             &#x27;paths) that resolves to a &#x27;
+                                             &#x27;non-empty value or to an &#x27;
+                                             &#x27;object with a string &#x27;
+                                             &#x27;`label`, else `fallback` &#x27;
+                                             &#x27;(default `id`).\n&#x27;
+                                             &#x27;Omitted, the view uses &#x27;
+                                             &#x27;appellation, description, &#x27;
+                                             &#x27;then name.\n&#x27;,
+                              &#x27;properties&#x27;: {&#x27;fallback&#x27;: {&#x27;type&#x27;: &#x27;string&#x27;},
+                                             &#x27;properties&#x27;: {&#x27;items&#x27;: {&#x27;type&#x27;: &#x27;string&#x27;},
+                                                            &#x27;type&#x27;: &#x27;array&#x27;}},
+                              &#x27;type&#x27;: &#x27;object&#x27;},
+                    &#x27;match&#x27;: {&#x27;$ref&#x27;: &#x27;#/$defs/match&#x27;},
+                    &#x27;source&#x27;: {&#x27;description&#x27;: &#x27;Top-level collection of the &#x27;
+                                              &#x27;document to classify, e.g. &#x27;
+                                              &#x27;`solids`, `parcels`, &#x27;
+                                              &#x27;`faces`, `rings`, or the &#x27;
+                                              &#x27;derived `surfaces` (shells &#x27;
+                                              &#x27;no solid uses).\n&#x27;,
+                               &#x27;minLength&#x27;: 1,
+                               &#x27;type&#x27;: &#x27;string&#x27;},
+                    &#x27;style&#x27;: {&#x27;$ref&#x27;: &#x27;#/$defs/style&#x27;}},
+     &#x27;required&#x27;: [&#x27;source&#x27;, &#x27;kind&#x27;, &#x27;geometry&#x27;],
+     &#x27;type&#x27;: &#x27;object&#x27;}
+
+On instance[&#x27;rules&#x27;][0]:
+    {&#x27;geometry&#x27;: &#x27;solid&#x27;, &#x27;source&#x27;: &#x27;solids&#x27;}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card mb-2 validation-item require-fail" id="item-ogc.bbr.xysection.xySectionViewerConfig-8">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0 anchor-container">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-8"
+                                                            aria-expanded="false" aria-controls="uid-8"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="../../_sources/xySectionViewerConfig/tests/section-z-string-fail.json" target="_blank">section-z-string-fail.json</a>
+                                                    <span class="badge bg-secondary test_resource">Test resource</span>
+                                                        <span class="badge text-bg-info">Requires fail</span>
+                                                    <a class="anchor" href="#item-ogc.bbr.xysection.xySectionViewerConfig-8">¶</a>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-8">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">General</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-general ">Test was expected to fail and it did.</div>
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">Using section-z-string-fail.json from test resources</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-json_schema text-danger">ValidationError: &#x27;21.5&#x27; is not of type &#x27;number&#x27;
+
+Failed validating &#x27;type&#x27; in schema[&#x27;properties&#x27;][&#x27;xySection&#x27;][&#x27;properties&#x27;][&#x27;sectionZ&#x27;][&#x27;additionalProperties&#x27;]:
+    {&#x27;type&#x27;: &#x27;number&#x27;}
+
+On instance[&#x27;xySection&#x27;][&#x27;sectionZ&#x27;][&#x27;1&#x27;]:
+    &#x27;21.5&#x27;</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card mb-2 validation-item require-fail" id="item-ogc.bbr.xysection.xySectionViewerConfig-9">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0 anchor-container">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-9"
+                                                            aria-expanded="false" aria-controls="uid-9"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="../../_sources/xySectionViewerConfig/tests/show-context-string-fail.json" target="_blank">show-context-string-fail.json</a>
+                                                    <span class="badge bg-secondary test_resource">Test resource</span>
+                                                        <span class="badge text-bg-info">Requires fail</span>
+                                                    <a class="anchor" href="#item-ogc.bbr.xysection.xySectionViewerConfig-9">¶</a>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-9">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">General</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-general ">Test was expected to fail and it did.</div>
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">Using show-context-string-fail.json from test resources</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-json_schema text-danger">ValidationError: &#x27;yes&#x27; is not of type &#x27;boolean&#x27;
+
+Failed validating &#x27;type&#x27; in schema[&#x27;properties&#x27;][&#x27;xySection&#x27;][&#x27;properties&#x27;][&#x27;showContext&#x27;]:
+    {&#x27;description&#x27;: &#x27;Whether lower floors are drawn, faded, under each &#x27;
+                    &#x27;section when the view opens. Default false.&#x27;,
+     &#x27;type&#x27;: &#x27;boolean&#x27;}
+
+On instance[&#x27;xySection&#x27;][&#x27;showContext&#x27;]:
+    &#x27;yes&#x27;</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card mb-2 validation-item " id="item-ogc.bbr.xysection.xySectionViewerConfig-10">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0 anchor-container">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-10"
+                                                            aria-expanded="false" aria-controls="uid-10"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="../../_sources/xySectionViewerConfig/tests/three-js-rules.json" target="_blank">three-js-rules.json</a>
+                                                    <span class="badge bg-secondary test_resource">Test resource</span>
+                                                    <a class="anchor" href="#item-ogc.bbr.xysection.xySectionViewerConfig-10">¶</a>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-10">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">Using three-js-rules.json from test resources</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card mb-2 validation-item require-fail" id="item-ogc.bbr.xysection.xySectionViewerConfig-11">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0 anchor-container">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-11"
+                                                            aria-expanded="false" aria-controls="uid-11"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="../../_sources/xySectionViewerConfig/tests/unknown-geometry-fail.json" target="_blank">unknown-geometry-fail.json</a>
+                                                    <span class="badge bg-secondary test_resource">Test resource</span>
+                                                        <span class="badge text-bg-info">Requires fail</span>
+                                                    <a class="anchor" href="#item-ogc.bbr.xysection.xySectionViewerConfig-11">¶</a>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-11">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">General</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-general ">Test was expected to fail and it did.</div>
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">Using unknown-geometry-fail.json from test resources</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-json_schema text-danger">ValidationError: &#x27;mesh&#x27; is not one of [&#x27;solid&#x27;, &#x27;open-shell&#x27;, &#x27;polygon&#x27;, &#x27;face&#x27;, &#x27;ring&#x27;]
+
+Failed validating &#x27;enum&#x27; in schema[&#x27;properties&#x27;][&#x27;rules&#x27;][&#x27;items&#x27;][&#x27;properties&#x27;][&#x27;geometry&#x27;]:
+    {&#x27;description&#x27;: &quot;How the feature&#x27;s topology is turned into a shape.\n&quot;
+                    &#x27;`solid`, `open-shell` and `face` are sectioned at &#x27;
+                    &quot;each floor&#x27;s height; `polygon` (a Polygon-topology &quot;
+                    &#x27;parcel) and `ring` are drawn flat, as outlines, on &#x27;
+                    &#x27;every floor.\n&#x27;,
+     &#x27;enum&#x27;: [&#x27;solid&#x27;, &#x27;open-shell&#x27;, &#x27;polygon&#x27;, &#x27;face&#x27;, &#x27;ring&#x27;]}
+
+On instance[&#x27;rules&#x27;][0][&#x27;geometry&#x27;]:
+    &#x27;mesh&#x27;</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card mb-2 validation-item require-fail" id="item-ogc.bbr.xysection.xySectionViewerConfig-12">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0 anchor-container">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-12"
+                                                            aria-expanded="false" aria-controls="uid-12"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="../../_sources/xySectionViewerConfig/tests/unknown-member-fail.json" target="_blank">unknown-member-fail.json</a>
+                                                    <span class="badge bg-secondary test_resource">Test resource</span>
+                                                        <span class="badge text-bg-info">Requires fail</span>
+                                                    <a class="anchor" href="#item-ogc.bbr.xysection.xySectionViewerConfig-12">¶</a>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-12">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">General</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-general ">Test was expected to fail and it did.</div>
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">Using unknown-member-fail.json from test resources</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-json_schema text-danger">ValidationError: Additional properties are not allowed (&#x27;ruls&#x27; was unexpected)
+
+Failed validating &#x27;additionalProperties&#x27; in schema:
+    {&#x27;$defs&#x27;: {&#x27;boundaryEntry&#x27;: {&#x27;additionalProperties&#x27;: False,
+                                 &#x27;properties&#x27;: {&#x27;follow&#x27;: {&#x27;additionalProperties&#x27;: False,
+                                                           &#x27;description&#x27;: &#x27;Instead &#x27;
+                                                                          &#x27;of &#x27;
+                                                                          &#x27;drawing &#x27;
+                                                                          &#x27;the &#x27;
+                                                                          &#x27;matched &#x27;
+                                                                          &#x27;feature, &#x27;
+                                                                          &#x27;follow &#x27;
+                                                                          &#x27;its &#x27;
+                                                                          &#x27;`topology.relationships` &#x27;
+                                                                          &#x27;entry &#x27;
+                                                                          &#x27;with &#x27;
+                                                                          &#x27;this &#x27;
+                                                                          &#x27;`role` &#x27;
+                                                                          &#x27;to &#x27;
+                                                                          &#x27;the &#x27;
+                                                                          &#x27;feature &#x27;
+                                                                          &#x27;its &#x27;
+                                                                          &#x27;`href` &#x27;
+                                                                          &#x27;names &#x27;
+                                                                          &#x27;(in &#x27;
+                                                                          &#x27;`source`, &#x27;
+                                                                          &#x27;default &#x27;
+                                                                          &#x27;the &#x27;
+                                                                          &#x27;same &#x27;
+                                                                          &#x27;collection), &#x27;
+                                                                          &#x27;e.g. &#x27;
+                                                                          &#x27;from &#x27;
+                                                                          &#x27;a &#x27;
+                                                                          &#x27;strata &#x27;
+                                                                          &#x27;scheme &#x27;
+                                                                          &#x27;to &#x27;
+                                                                          &#x27;its &#x27;
+                                                                          &#x27;containing &#x27;
+                                                                          &#x27;primary &#x27;
+                                                                          &#x27;parcel.\n&#x27;,
+                                                           &#x27;properties&#x27;: {&#x27;role&#x27;: {&#x27;minLength&#x27;: 1,
+                                                                                   &#x27;type&#x27;: &#x27;string&#x27;},
+                                                                          &#x27;source&#x27;: {&#x27;minLength&#x27;: 1,
+                                                                                     &#x27;type&#x27;: &#x27;string&#x27;}},
+                                                           &#x27;required&#x27;: [&#x27;role&#x27;],
+                                                           &#x27;type&#x27;: &#x27;object&#x27;},
+                                                &#x27;match&#x27;: {&#x27;$ref&#x27;: &#x27;#/$defs/match&#x27;},
+                                                &#x27;source&#x27;: {&#x27;description&#x27;: &#x27;Collection &#x27;
+                                                                          &#x27;to &#x27;
+                                                                          &#x27;choose &#x27;
+                                                                          &#x27;from. &#x27;
+                                                                          &#x27;Default &#x27;
+                                                                          &#x27;`parcels`.&#x27;,
+                                                           &#x27;minLength&#x27;: 1,
+                                                           &#x27;type&#x27;: &#x27;string&#x27;}},
+                                 &#x27;type&#x27;: &#x27;object&#x27;},
+               &#x27;elevation&#x27;: {&#x27;description&#x27;: &#x27;Used by the 3D and globe &#x27;
+                                            &#x27;views; ignored by the XY &#x27;
+                                            &#x27;Section view, which always &#x27;
+                                            &quot;sections at each floor&#x27;s &quot;
+                                            &#x27;height.\n&#x27;
+                                            &#x27;Accepted so that shared &#x27;
+                                            &#x27;configurations validate.\n&#x27;,
+                             &#x27;oneOf&#x27;: [{&#x27;enum&#x27;: [&#x27;preserve&#x27;, &#x27;flatten&#x27;]},
+                                       {&#x27;additionalProperties&#x27;: False,
+                                        &#x27;properties&#x27;: {&#x27;flattenTo&#x27;: {&#x27;type&#x27;: &#x27;number&#x27;}},
+                                        &#x27;required&#x27;: [&#x27;flattenTo&#x27;],
+                                        &#x27;type&#x27;: &#x27;object&#x27;}]},
+               &#x27;levelKey&#x27;: {&#x27;description&#x27;: &#x27;A level number, as an object &#x27;
+                                           &#x27;key, e.g. `&quot;1&quot;` or `&quot;-1&quot;`.&#x27;,
+                            &#x27;pattern&#x27;: &#x27;^-?[0-9]+(\\.[0-9]+)?$&#x27;,
+                            &#x27;type&#x27;: &#x27;string&#x27;},
+               &#x27;match&#x27;: {&#x27;additionalProperties&#x27;: False,
+                         &#x27;description&#x27;: &#x27;Restricts to features whose &#x27;
+                                        &#x27;property value (or any value, for &#x27;
+                                        &#x27;an array) equals one of &#x27;
+                                        &#x27;`values`.\n&#x27;
+                                        &#x27;String values may be literals, &#x27;
+                                        &#x27;CURIEs expanded against the &#x27;
+                                        &quot;document&#x27;s own `@context`, or &quot;
+                                        &#x27;full URIs; both sides are &#x27;
+                                        &#x27;expanded before comparing.\n&#x27;
+                                        &#x27;Numbers and booleans compare as &#x27;
+                                        &#x27;themselves (e.g. &#x27;
+                                        &#x27;`properties.floors` values).\n&#x27;,
+                         &#x27;properties&#x27;: {&#x27;property&#x27;: {&#x27;description&#x27;: &#x27;Dot-separated &#x27;
+                                                                    &#x27;path &#x27;
+                                                                    &#x27;into &#x27;
+                                                                    &#x27;the &#x27;
+                                                                    &#x27;feature, &#x27;
+                                                                    &#x27;e.g. &#x27;
+                                                                    &#x27;`properties.parcelState`.&#x27;,
+                                                     &#x27;minLength&#x27;: 1,
+                                                     &#x27;type&#x27;: &#x27;string&#x27;},
+                                        &#x27;values&#x27;: {&#x27;items&#x27;: {&#x27;type&#x27;: [&#x27;string&#x27;,
+                                                                      &#x27;number&#x27;,
+                                                                      &#x27;boolean&#x27;]},
+                                                   &#x27;minItems&#x27;: 1,
+                                                   &#x27;type&#x27;: &#x27;array&#x27;}},
+                         &#x27;required&#x27;: [&#x27;property&#x27;, &#x27;values&#x27;],
+                         &#x27;type&#x27;: &#x27;object&#x27;},
+               &#x27;rule&#x27;: {&#x27;additionalProperties&#x27;: False,
+                        &#x27;properties&#x27;: {&#x27;elevation&#x27;: {&#x27;$ref&#x27;: &#x27;#/$defs/elevation&#x27;},
+                                       &#x27;geometry&#x27;: {&#x27;description&#x27;: &#x27;How &#x27;
+                                                                   &#x27;the &#x27;
+                                                                   &quot;feature&#x27;s &quot;
+                                                                   &#x27;topology &#x27;
+                                                                   &#x27;is &#x27;
+                                                                   &#x27;turned &#x27;
+                                                                   &#x27;into a &#x27;
+                                                                   &#x27;shape.\n&#x27;
+                                                                   &#x27;`solid`, &#x27;
+                                                                   &#x27;`open-shell` &#x27;
+                                                                   &#x27;and &#x27;
+                                                                   &#x27;`face` &#x27;
+                                                                   &#x27;are &#x27;
+                                                                   &#x27;sectioned &#x27;
+                                                                   &#x27;at &#x27;
+                                                                   &#x27;each &#x27;
+                                                                   &quot;floor&#x27;s &quot;
+                                                                   &#x27;height; &#x27;
+                                                                   &#x27;`polygon` &#x27;
+                                                                   &#x27;(a &#x27;
+                                                                   &#x27;Polygon-topology &#x27;
+                                                                   &#x27;parcel) &#x27;
+                                                                   &#x27;and &#x27;
+                                                                   &#x27;`ring` &#x27;
+                                                                   &#x27;are &#x27;
+                                                                   &#x27;drawn &#x27;
+                                                                   &#x27;flat, &#x27;
+                                                                   &#x27;as &#x27;
+                                                                   &#x27;outlines, &#x27;
+                                                                   &#x27;on &#x27;
+                                                                   &#x27;every &#x27;
+                                                                   &#x27;floor.\n&#x27;,
+                                                    &#x27;enum&#x27;: [&#x27;solid&#x27;,
+                                                             &#x27;open-shell&#x27;,
+                                                             &#x27;polygon&#x27;,
+                                                             &#x27;face&#x27;,
+                                                             &#x27;ring&#x27;]},
+                                       &#x27;group&#x27;: {&#x27;description&#x27;: &#x27;Groups &#x27;
+                                                                &#x27;several &#x27;
+                                                                &#x27;kinds &#x27;
+                                                                &#x27;under one &#x27;
+                                                                &#x27;heading &#x27;
+                                                                &#x27;and &#x27;
+                                                                &#x27;select-all. &#x27;
+                                                                &#x27;Defaults &#x27;
+                                                                &#x27;to &#x27;
+                                                                &#x27;`kind`.&#x27;,
+                                                 &#x27;minLength&#x27;: 1,
+                                                 &#x27;type&#x27;: &#x27;string&#x27;},
+                                       &#x27;initiallyVisible&#x27;: {&#x27;description&#x27;: &#x27;Whether &#x27;
+                                                                           &#x27;the &#x27;
+                                                                           &#x27;feature &#x27;
+                                                                           &#x27;is &#x27;
+                                                                           &#x27;shown &#x27;
+                                                                           &#x27;when &#x27;
+                                                                           &#x27;the &#x27;
+                                                                           &#x27;view &#x27;
+                                                                           &#x27;opens. &#x27;
+                                                                           &#x27;Default &#x27;
+                                                                           &#x27;true.&#x27;,
+                                                            &#x27;type&#x27;: &#x27;boolean&#x27;},
+                                       &#x27;kind&#x27;: {&#x27;description&#x27;: &#x27;Identifier &#x27;
+                                                               &#x27;grouping &#x27;
+                                                               &#x27;this &#x27;
+                                                               &quot;rule&#x27;s &quot;
+                                                               &#x27;features, &#x27;
+                                                               &#x27;e.g. &#x27;
+                                                               &#x27;`unit`.&#x27;,
+                                                &#x27;minLength&#x27;: 1,
+                                                &#x27;type&#x27;: &#x27;string&#x27;},
+                                       &#x27;kindLabel&#x27;: {&#x27;description&#x27;: &#x27;Human-readable &#x27;
+                                                                    &#x27;name &#x27;
+                                                                    &#x27;for &#x27;
+                                                                    &#x27;this &#x27;
+                                                                    &#x27;kind, &#x27;
+                                                                    &#x27;e.g. &#x27;
+                                                                    &#x27;`Principal &#x27;
+                                                                    &#x27;units`.&#x27;,
+                                                     &#x27;type&#x27;: &#x27;string&#x27;},
+                                       &#x27;label&#x27;: {&#x27;additionalProperties&#x27;: False,
+                                                 &#x27;description&#x27;: &#x27;Where a &#x27;
+                                                                &quot;feature&#x27;s &quot;
+                                                                &#x27;label &#x27;
+                                                                &#x27;comes &#x27;
+                                                                &#x27;from: the &#x27;
+                                                                &#x27;first of &#x27;
+                                                                &#x27;`properties` &#x27;
+                                                                &#x27;(dot-separated &#x27;
+                                                                &#x27;paths) &#x27;
+                                                                &#x27;that &#x27;
+                                                                &#x27;resolves &#x27;
+                                                                &#x27;to a &#x27;
+                                                                &#x27;non-empty &#x27;
+                                                                &#x27;value or &#x27;
+                                                                &#x27;to an &#x27;
+                                                                &#x27;object &#x27;
+                                                                &#x27;with a &#x27;
+                                                                &#x27;string &#x27;
+                                                                &#x27;`label`, &#x27;
+                                                                &#x27;else &#x27;
+                                                                &#x27;`fallback` &#x27;
+                                                                &#x27;(default &#x27;
+                                                                &#x27;`id`).\n&#x27;
+                                                                &#x27;Omitted, &#x27;
+                                                                &#x27;the view &#x27;
+                                                                &#x27;uses &#x27;
+                                                                &#x27;appellation, &#x27;
+                                                                &#x27;description, &#x27;
+                                                                &#x27;then &#x27;
+                                                                &#x27;name.\n&#x27;,
+                                                 &#x27;properties&#x27;: {&#x27;fallback&#x27;: {&#x27;type&#x27;: &#x27;string&#x27;},
+                                                                &#x27;properties&#x27;: {&#x27;items&#x27;: {&#x27;type&#x27;: &#x27;string&#x27;},
+                                                                               &#x27;type&#x27;: &#x27;array&#x27;}},
+                                                 &#x27;type&#x27;: &#x27;object&#x27;},
+                                       &#x27;match&#x27;: {&#x27;$ref&#x27;: &#x27;#/$defs/match&#x27;},
+                                       &#x27;source&#x27;: {&#x27;description&#x27;: &#x27;Top-level &#x27;
+                                                                 &#x27;collection &#x27;
+                                                                 &#x27;of the &#x27;
+                                                                 &#x27;document &#x27;
+                                                                 &#x27;to &#x27;
+                                                                 &#x27;classify, &#x27;
+                                                                 &#x27;e.g. &#x27;
+                                                                 &#x27;`solids`, &#x27;
+                                                                 &#x27;`parcels`, &#x27;
+                                                                 &#x27;`faces`, &#x27;
+                                                                 &#x27;`rings`, &#x27;
+                                                                 &#x27;or the &#x27;
+                                                                 &#x27;derived &#x27;
+                                                                 &#x27;`surfaces` &#x27;
+                                                                 &#x27;(shells &#x27;
+                                                                 &#x27;no solid &#x27;
+                                                                 &#x27;uses).\n&#x27;,
+                                                  &#x27;minLength&#x27;: 1,
+                                                  &#x27;type&#x27;: &#x27;string&#x27;},
+                                       &#x27;style&#x27;: {&#x27;$ref&#x27;: &#x27;#/$defs/style&#x27;}},
+                        &#x27;required&#x27;: [&#x27;source&#x27;, &#x27;kind&#x27;, &#x27;geometry&#x27;],
+                        &#x27;type&#x27;: &#x27;object&#x27;},
+               &#x27;style&#x27;: {&#x27;additionalProperties&#x27;: False,
+                         &#x27;properties&#x27;: {&#x27;color&#x27;: {&#x27;description&#x27;: &#x27;Fill and &#x27;
+                                                                 &#x27;outline &#x27;
+                                                                 &#x27;colour: &#x27;
+                                                                 &#x27;`#hex`, &#x27;
+                                                                 &#x27;a CSS &#x27;
+                                                                 &#x27;colour &#x27;
+                                                                 &#x27;name, or &#x27;
+                                                                 &#x27;`rgb()`/`hsl()` &#x27;
+                                                                 &#x27;notation.\n&#x27;
+                                                                 &#x27;Default: &#x27;
+                                                                 &#x27;each &#x27;
+                                                                 &#x27;feature &#x27;
+                                                                 &#x27;its own &#x27;
+                                                                 &#x27;colour &#x27;
+                                                                 &#x27;from a &#x27;
+                                                                 &#x27;fixed &#x27;
+                                                                 &#x27;palette.\n&#x27;,
+                                                  &#x27;type&#x27;: &#x27;string&#x27;},
+                                        &#x27;lineColor&#x27;: {&#x27;description&#x27;: &#x27;Outline &#x27;
+                                                                     &#x27;colour, &#x27;
+                                                                     &#x27;as &#x27;
+                                                                     &#x27;for &#x27;
+                                                                     &#x27;`color`. &#x27;
+                                                                     &#x27;Default &#x27;
+                                                                     &#x27;the &#x27;
+                                                                     &#x27;fill &#x27;
+                                                                     &#x27;colour.&#x27;,
+                                                      &#x27;type&#x27;: &#x27;string&#x27;},
+                                        &#x27;lineStyle&#x27;: {&#x27;enum&#x27;: [&#x27;solid&#x27;,
+                                                               &#x27;dashed&#x27;]},
+                                        &#x27;opacity&#x27;: {&#x27;description&#x27;: &#x27;Fill &#x27;
+                                                                   &#x27;opacity, &#x27;
+                                                                   &#x27;0 &#x27;
+                                                                   &#x27;(transparent) &#x27;
+                                                                   &#x27;to 1 &#x27;
+                                                                   &#x27;(opaque). &#x27;
+                                                                   &#x27;Default &#x27;
+                                                                   &#x27;0.45 &#x27;
+                                                                   &#x27;for &#x27;
+                                                                   &#x27;sections.&#x27;,
+                                                    &#x27;maximum&#x27;: 1,
+                                                    &#x27;minimum&#x27;: 0,
+                                                    &#x27;type&#x27;: &#x27;number&#x27;}},
+                         &#x27;type&#x27;: &#x27;object&#x27;},
+               &#x27;xySectionOptions&#x27;: {&#x27;additionalProperties&#x27;: False,
+                                    &#x27;description&#x27;: &#x27;Section-only options. &#x27;
+                                                   &#x27;Every member is &#x27;
+                                                   &#x27;optional.&#x27;,
+                                    &#x27;properties&#x27;: {&#x27;boundary&#x27;: {&#x27;description&#x27;: &#x27;Ordered &#x27;
+                                                                               &#x27;choices &#x27;
+                                                                               &#x27;for &#x27;
+                                                                               &#x27;the &#x27;
+                                                                               &#x27;one &#x27;
+                                                                               &#x27;boundary &#x27;
+                                                                               &#x27;parcel &#x27;
+                                                                               &#x27;drawn &#x27;
+                                                                               &#x27;on &#x27;
+                                                                               &#x27;every &#x27;
+                                                                               &#x27;floor; &#x27;
+                                                                               &#x27;the &#x27;
+                                                                               &#x27;first &#x27;
+                                                                               &#x27;entry &#x27;
+                                                                               &#x27;that &#x27;
+                                                                               &#x27;yields &#x27;
+                                                                               &#x27;an &#x27;
+                                                                               &#x27;outline &#x27;
+                                                                               &#x27;wins.\n&#x27;
+                                                                               &#x27;Default &#x27;
+                                                                               &#x27;`[{ &#x27;
+                                                                               &#x27;&quot;source&quot;: &#x27;
+                                                                               &#x27;&quot;parcels&quot; &#x27;
+                                                                               &#x27;}]` &#x27;
+                                                                               &#x27;(the &#x27;
+                                                                               &#x27;first &#x27;
+                                                                               &#x27;parcel &#x27;
+                                                                               &#x27;with &#x27;
+                                                                               &#x27;an &#x27;
+                                                                               &#x27;outline); &#x27;
+                                                                               &#x27;`[]` &#x27;
+                                                                               &#x27;draws &#x27;
+                                                                               &#x27;no &#x27;
+                                                                               &#x27;boundary.\n&#x27;,
+                                                                &#x27;items&#x27;: {&#x27;$ref&#x27;: &#x27;#/$defs/boundaryEntry&#x27;},
+                                                                &#x27;type&#x27;: &#x27;array&#x27;},
+                                                   &#x27;exclude&#x27;: {&#x27;description&#x27;: &#x27;Solids &#x27;
+                                                                              &#x27;never &#x27;
+                                                                              &#x27;sectioned: &#x27;
+                                                                              &#x27;every &#x27;
+                                                                              &#x27;feature &#x27;
+                                                                              &#x27;of &#x27;
+                                                                              &#x27;`source` &#x27;
+                                                                              &#x27;excludes &#x27;
+                                                                              &#x27;the &#x27;
+                                                                              &#x27;solid(s) &#x27;
+                                                                              &#x27;whose &#x27;
+                                                                              &#x27;id &#x27;
+                                                                              &#x27;is &#x27;
+                                                                              &#x27;the &#x27;
+                                                                              &#x27;value &#x27;
+                                                                              &#x27;at &#x27;
+                                                                              &#x27;`property`.\n&#x27;
+                                                                              &#x27;Default: &#x27;
+                                                                              &#x27;the &#x27;
+                                                                              &#x27;geometry &#x27;
+                                                                              &#x27;of &#x27;
+                                                                              &#x27;every &#x27;
+                                                                              &#x27;`occupationFeatures` &#x27;
+                                                                              &#x27;item &#x27;
+                                                                              &#x27;(walls, &#x27;
+                                                                              &#x27;slabs, &#x27;
+                                                                              &#x27;ceilings); &#x27;
+                                                                              &#x27;`[]` &#x27;
+                                                                              &#x27;excludes &#x27;
+                                                                              &#x27;nothing.\n&#x27;,
+                                                               &#x27;items&#x27;: {&#x27;additionalProperties&#x27;: False,
+                                                                         &#x27;properties&#x27;: {&#x27;property&#x27;: {&#x27;minLength&#x27;: 1,
+                                                                                                     &#x27;type&#x27;: &#x27;string&#x27;},
+                                                                                        &#x27;source&#x27;: {&#x27;minLength&#x27;: 1,
+                                                                                                   &#x27;type&#x27;: &#x27;string&#x27;}},
+                                                                         &#x27;required&#x27;: [&#x27;source&#x27;,
+                                                                                      &#x27;property&#x27;],
+                                                                         &#x27;type&#x27;: &#x27;object&#x27;},
+                                                               &#x27;type&#x27;: &#x27;array&#x27;},
+                                                   &#x27;grid&#x27;: {&#x27;description&#x27;: &#x27;`true` &#x27;
+                                                                           &#x27;(default, &#x27;
+                                                                           &#x27;automatic &#x27;
+                                                                           &#x27;spacing), &#x27;
+                                                                           &#x27;`false` &#x27;
+                                                                           &#x27;(no &#x27;
+                                                                           &#x27;grid), &#x27;
+                                                                           &#x27;or &#x27;
+                                                                           &#x27;a &#x27;
+                                                                           &#x27;spacing &#x27;
+                                                                           &#x27;in &#x27;
+                                                                           &#x27;metres.&#x27;,
+                                                            &#x27;oneOf&#x27;: [{&#x27;type&#x27;: &#x27;boolean&#x27;},
+                                                                      {&#x27;exclusiveMinimum&#x27;: 0,
+                                                                       &#x27;type&#x27;: &#x27;number&#x27;}]},
+                                                   &#x27;levelLabels&#x27;: {&#x27;additionalProperties&#x27;: {&#x27;minLength&#x27;: 1,
+                                                                                            &#x27;type&#x27;: &#x27;string&#x27;},
+                                                                   &#x27;description&#x27;: &#x27;Tab &#x27;
+                                                                                  &#x27;label &#x27;
+                                                                                  &#x27;per &#x27;
+                                                                                  &#x27;level, &#x27;
+                                                                                  &#x27;e.g. &#x27;
+                                                                                  &#x27;`{ &#x27;
+                                                                                  &#x27;&quot;1&quot;: &#x27;
+                                                                                  &#x27;&quot;Ground &#x27;
+                                                                                  &#x27;floor&quot; &#x27;
+                                                                                  &#x27;}`. &#x27;
+                                                                                  &#x27;Default &#x27;
+                                                                                  &#x27;`Level &#x27;
+                                                                                  &#x27;&lt;n&gt;`.&#x27;,
+                                                                   &#x27;propertyNames&#x27;: {&#x27;$ref&#x27;: &#x27;#/$defs/levelKey&#x27;},
+                                                                   &#x27;type&#x27;: &#x27;object&#x27;},
+                                                   &#x27;levelProperty&#x27;: {&#x27;description&#x27;: &#x27;Dot-separated &#x27;
+                                                                                    &#x27;path &#x27;
+                                                                                    &#x27;on &#x27;
+                                                                                    &#x27;each &#x27;
+                                                                                    &#x27;solid &#x27;
+                                                                                    &#x27;giving &#x27;
+                                                                                    &#x27;the &#x27;
+                                                                                    &#x27;floor &#x27;
+                                                                                    &#x27;level &#x27;
+                                                                                    &#x27;number(s) &#x27;
+                                                                                    &#x27;it &#x27;
+                                                                                    &#x27;is &#x27;
+                                                                                    &#x27;on &#x27;
+                                                                                    &#x27;— &#x27;
+                                                                                    &#x27;a &#x27;
+                                                                                    &#x27;number &#x27;
+                                                                                    &#x27;or &#x27;
+                                                                                    &#x27;an &#x27;
+                                                                                    &#x27;array &#x27;
+                                                                                    &#x27;of &#x27;
+                                                                                    &#x27;numbers.\n&#x27;
+                                                                                    &#x27;Default &#x27;
+                                                                                    &#x27;`properties.floors`.\n&#x27;,
+                                                                     &#x27;minLength&#x27;: 1,
+                                                                     &#x27;type&#x27;: &#x27;string&#x27;},
+                                                   &#x27;padding&#x27;: {&#x27;description&#x27;: &#x27;Metres &#x27;
+                                                                              &#x27;of &#x27;
+                                                                              &#x27;margin &#x27;
+                                                                              &#x27;around &#x27;
+                                                                              &#x27;the &#x27;
+                                                                              &#x27;drawing. &#x27;
+                                                                              &#x27;Default &#x27;
+                                                                              &#x27;2.&#x27;,
+                                                               &#x27;minimum&#x27;: 0,
+                                                               &#x27;type&#x27;: &#x27;number&#x27;},
+                                                   &#x27;sectionZ&#x27;: {&#x27;additionalProperties&#x27;: {&#x27;type&#x27;: &#x27;number&#x27;},
+                                                                &#x27;description&#x27;: &#x27;Section &#x27;
+                                                                               &#x27;height &#x27;
+                                                                               &#x27;in &#x27;
+                                                                               &#x27;metres &#x27;
+                                                                               &#x27;per &#x27;
+                                                                               &#x27;level, &#x27;
+                                                                               &#x27;on &#x27;
+                                                                               &#x27;the &#x27;
+                                                                               &quot;document&#x27;s &quot;
+                                                                               &#x27;vertical &#x27;
+                                                                               &#x27;datum.\n&#x27;
+                                                                               &#x27;Default: &#x27;
+                                                                               &#x27;the &#x27;
+                                                                               &#x27;mid-height &#x27;
+                                                                               &#x27;of &#x27;
+                                                                               &#x27;the &#x27;
+                                                                               &#x27;solids &#x27;
+                                                                               &#x27;listed &#x27;
+                                                                               &#x27;on &#x27;
+                                                                               &#x27;that &#x27;
+                                                                               &#x27;level &#x27;
+                                                                               &#x27;alone.\n&#x27;,
+                                                                &#x27;propertyNames&#x27;: {&#x27;$ref&#x27;: &#x27;#/$defs/levelKey&#x27;},
+                                                                &#x27;type&#x27;: &#x27;object&#x27;},
+                                                   &#x27;showContext&#x27;: {&#x27;description&#x27;: &#x27;Whether &#x27;
+                                                                                  &#x27;lower &#x27;
+                                                                                  &#x27;floors &#x27;
+                                                                                  &#x27;are &#x27;
+                                                                                  &#x27;drawn, &#x27;
+                                                                                  &#x27;faded, &#x27;
+                                                                                  &#x27;under &#x27;
+                                                                                  &#x27;each &#x27;
+                                                                                  &#x27;section &#x27;
+                                                                                  &#x27;when &#x27;
+                                                                                  &#x27;the &#x27;
+                                                                                  &#x27;view &#x27;
+                                                                                  &#x27;opens. &#x27;
+                                                                                  &#x27;Default &#x27;
+                                                                                  &#x27;false.&#x27;,
+                                                                   &#x27;type&#x27;: &#x27;boolean&#x27;}},
+                                    &#x27;type&#x27;: &#x27;object&#x27;}},
+     &#x27;$schema&#x27;: &#x27;https://json-schema.org/draft/2020-12/schema&#x27;,
+     &#x27;additionalProperties&#x27;: False,
+     &#x27;description&#x27;: &#x27;Per-block configuration for the XYSectionPlugin, the &#x27;
+                    &#x27;bblocks-viewer &quot;XY Section&quot; view of topo-feature &#x27;
+                    &#x27;documents (one horizontal section per floor level).\n&#x27;
+                    &#x27;A block declares it as a `resources` entry in its &#x27;
+                    &#x27;`bblock.json` with the role &#x27;
+                    &#x27;`https://github.com/ogcincubator/bblocks-xy-section-viewer/role/viewer-config`.\n&#x27;
+                    &#x27;\n&#x27;
+                    &#x27;`rules`, `defaults` and `kindOrder` are the &#x27;
+                    &#x27;rule-engine configuration shared with the Three.js &#x27;
+                    &#x27;TopoFeaturePlugin and the Cesium globe view, so a &#x27;
+                    &#x27;configuration written for either validates here; &#x27;
+                    &#x27;`xySection` holds the section-only options.\n&#x27;
+                    &#x27;Every member is optional: an omitted `rules` keeps &#x27;
+                    &quot;the plugin&#x27;s built-in rules (solids and open shells &quot;
+                    &#x27;sectioned, no parcels).\n&#x27;,
+     &#x27;properties&#x27;: {&#x27;defaults&#x27;: {&#x27;additionalProperties&#x27;: False,
+                                 &#x27;description&#x27;: &#x27;Defaults merged under &#x27;
+                                                &#x27;every rule; `style` is &#x27;
+                                                &#x27;merged key by key.&#x27;,
+                                 &#x27;properties&#x27;: {&#x27;elevation&#x27;: {&#x27;$ref&#x27;: &#x27;#/$defs/elevation&#x27;},
+                                                &#x27;style&#x27;: {&#x27;$ref&#x27;: &#x27;#/$defs/style&#x27;}},
+                                 &#x27;type&#x27;: &#x27;object&#x27;},
+                    &#x27;kindOrder&#x27;: {&#x27;description&#x27;: &#x27;Preferred order of &#x27;
+                                                 &#x27;kinds, for viewers that &#x27;
+                                                 &#x27;list them.&#x27;,
+                                  &#x27;items&#x27;: {&#x27;type&#x27;: &#x27;string&#x27;},
+                                  &#x27;type&#x27;: &#x27;array&#x27;},
+                    &#x27;rules&#x27;: {&#x27;description&#x27;: &#x27;Ordered rules.\n&#x27;
+                                             &#x27;For each feature, the first &#x27;
+                                             &#x27;rule whose `source` is the &#x27;
+                                             &#x27;collection it came from and &#x27;
+                                             &#x27;whose `match` (if any) &#x27;
+                                             &#x27;applies decides how it is &#x27;
+                                             &#x27;drawn; a feature no rule &#x27;
+                                             &#x27;claims is not drawn.\n&#x27;
+                                             &#x27;A non-empty list replaces &#x27;
+                                             &#x27;the built-in rules &#x27;
+                                             &#x27;entirely.\n&#x27;,
+                              &#x27;items&#x27;: {&#x27;$ref&#x27;: &#x27;#/$defs/rule&#x27;},
+                              &#x27;type&#x27;: &#x27;array&#x27;},
+                    &#x27;xySection&#x27;: {&#x27;$ref&#x27;: &#x27;#/$defs/xySectionOptions&#x27;}},
+     &#x27;title&#x27;: &#x27;XY section viewer configuration&#x27;,
+     &#x27;type&#x27;: &#x27;object&#x27;}
+
+On instance:
+    {&#x27;ruls&#x27;: []}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card mb-2 validation-item require-fail" id="item-ogc.bbr.xysection.xySectionViewerConfig-13">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0 anchor-container">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-13"
+                                                            aria-expanded="false" aria-controls="uid-13"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="../../_sources/xySectionViewerConfig/tests/unknown-option-fail.json" target="_blank">unknown-option-fail.json</a>
+                                                    <span class="badge bg-secondary test_resource">Test resource</span>
+                                                        <span class="badge text-bg-info">Requires fail</span>
+                                                    <a class="anchor" href="#item-ogc.bbr.xysection.xySectionViewerConfig-13">¶</a>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-13">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">General</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-general ">Test was expected to fail and it did.</div>
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">Using unknown-option-fail.json from test resources</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-json_schema text-danger">ValidationError: Additional properties are not allowed (&#x27;colour&#x27; was unexpected)
+
+Failed validating &#x27;additionalProperties&#x27; in schema[&#x27;properties&#x27;][&#x27;xySection&#x27;]:
+    {&#x27;additionalProperties&#x27;: False,
+     &#x27;description&#x27;: &#x27;Section-only options. Every member is optional.&#x27;,
+     &#x27;properties&#x27;: {&#x27;boundary&#x27;: {&#x27;description&#x27;: &#x27;Ordered choices for the &#x27;
+                                                &#x27;one boundary parcel drawn &#x27;
+                                                &#x27;on every floor; the first &#x27;
+                                                &#x27;entry that yields an &#x27;
+                                                &#x27;outline wins.\n&#x27;
+                                                &#x27;Default `[{ &quot;source&quot;: &#x27;
+                                                &#x27;&quot;parcels&quot; }]` (the first &#x27;
+                                                &#x27;parcel with an outline); &#x27;
+                                                &#x27;`[]` draws no boundary.\n&#x27;,
+                                 &#x27;items&#x27;: {&#x27;$ref&#x27;: &#x27;#/$defs/boundaryEntry&#x27;},
+                                 &#x27;type&#x27;: &#x27;array&#x27;},
+                    &#x27;exclude&#x27;: {&#x27;description&#x27;: &#x27;Solids never sectioned: &#x27;
+                                               &#x27;every feature of `source` &#x27;
+                                               &#x27;excludes the solid(s) &#x27;
+                                               &#x27;whose id is the value at &#x27;
+                                               &#x27;`property`.\n&#x27;
+                                               &#x27;Default: the geometry of &#x27;
+                                               &#x27;every `occupationFeatures` &#x27;
+                                               &#x27;item (walls, slabs, &#x27;
+                                               &#x27;ceilings); `[]` excludes &#x27;
+                                               &#x27;nothing.\n&#x27;,
+                                &#x27;items&#x27;: {&#x27;additionalProperties&#x27;: False,
+                                          &#x27;properties&#x27;: {&#x27;property&#x27;: {&#x27;minLength&#x27;: 1,
+                                                                      &#x27;type&#x27;: &#x27;string&#x27;},
+                                                         &#x27;source&#x27;: {&#x27;minLength&#x27;: 1,
+                                                                    &#x27;type&#x27;: &#x27;string&#x27;}},
+                                          &#x27;required&#x27;: [&#x27;source&#x27;,
+                                                       &#x27;property&#x27;],
+                                          &#x27;type&#x27;: &#x27;object&#x27;},
+                                &#x27;type&#x27;: &#x27;array&#x27;},
+                    &#x27;grid&#x27;: {&#x27;description&#x27;: &#x27;`true` (default, automatic &#x27;
+                                            &#x27;spacing), `false` (no grid), &#x27;
+                                            &#x27;or a spacing in metres.&#x27;,
+                             &#x27;oneOf&#x27;: [{&#x27;type&#x27;: &#x27;boolean&#x27;},
+                                       {&#x27;exclusiveMinimum&#x27;: 0,
+                                        &#x27;type&#x27;: &#x27;number&#x27;}]},
+                    &#x27;levelLabels&#x27;: {&#x27;additionalProperties&#x27;: {&#x27;minLength&#x27;: 1,
+                                                             &#x27;type&#x27;: &#x27;string&#x27;},
+                                    &#x27;description&#x27;: &#x27;Tab label per level, &#x27;
+                                                   &#x27;e.g. `{ &quot;1&quot;: &quot;Ground &#x27;
+                                                   &#x27;floor&quot; }`. Default &#x27;
+                                                   &#x27;`Level &lt;n&gt;`.&#x27;,
+                                    &#x27;propertyNames&#x27;: {&#x27;$ref&#x27;: &#x27;#/$defs/levelKey&#x27;},
+                                    &#x27;type&#x27;: &#x27;object&#x27;},
+                    &#x27;levelProperty&#x27;: {&#x27;description&#x27;: &#x27;Dot-separated path &#x27;
+                                                     &#x27;on each solid giving &#x27;
+                                                     &#x27;the floor level &#x27;
+                                                     &#x27;number(s) it is on — &#x27;
+                                                     &#x27;a number or an array &#x27;
+                                                     &#x27;of numbers.\n&#x27;
+                                                     &#x27;Default &#x27;
+                                                     &#x27;`properties.floors`.\n&#x27;,
+                                      &#x27;minLength&#x27;: 1,
+                                      &#x27;type&#x27;: &#x27;string&#x27;},
+                    &#x27;padding&#x27;: {&#x27;description&#x27;: &#x27;Metres of margin around &#x27;
+                                               &#x27;the drawing. Default 2.&#x27;,
+                                &#x27;minimum&#x27;: 0,
+                                &#x27;type&#x27;: &#x27;number&#x27;},
+                    &#x27;sectionZ&#x27;: {&#x27;additionalProperties&#x27;: {&#x27;type&#x27;: &#x27;number&#x27;},
+                                 &#x27;description&#x27;: &#x27;Section height in metres &#x27;
+                                                &#x27;per level, on the &#x27;
+                                                &quot;document&#x27;s vertical &quot;
+                                                &#x27;datum.\n&#x27;
+                                                &#x27;Default: the mid-height &#x27;
+                                                &#x27;of the solids listed on &#x27;
+                                                &#x27;that level alone.\n&#x27;,
+                                 &#x27;propertyNames&#x27;: {&#x27;$ref&#x27;: &#x27;#/$defs/levelKey&#x27;},
+                                 &#x27;type&#x27;: &#x27;object&#x27;},
+                    &#x27;showContext&#x27;: {&#x27;description&#x27;: &#x27;Whether lower floors &#x27;
+                                                   &#x27;are drawn, faded, &#x27;
+                                                   &#x27;under each section &#x27;
+                                                   &#x27;when the view opens. &#x27;
+                                                   &#x27;Default false.&#x27;,
+                                    &#x27;type&#x27;: &#x27;boolean&#x27;}},
+     &#x27;type&#x27;: &#x27;object&#x27;}
+
+On instance[&#x27;xySection&#x27;]:
+    {&#x27;colour&#x27;: &#x27;red&#x27;}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card mb-2 validation-item require-fail" id="item-ogc.bbr.xysection.xySectionViewerConfig-14">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0 anchor-container">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-14"
+                                                            aria-expanded="false" aria-controls="uid-14"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="../../_sources/xySectionViewerConfig/tests/zero-grid-fail.json" target="_blank">zero-grid-fail.json</a>
+                                                    <span class="badge bg-secondary test_resource">Test resource</span>
+                                                        <span class="badge text-bg-info">Requires fail</span>
+                                                    <a class="anchor" href="#item-ogc.bbr.xysection.xySectionViewerConfig-14">¶</a>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-14">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">General</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-general ">Test was expected to fail and it did.</div>
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">Using zero-grid-fail.json from test resources</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-json_schema text-danger">ValidationError: 0 is less than or equal to the minimum of 0
+
+Failed validating &#x27;exclusiveMinimum&#x27; in schema[1]:
+    {&#x27;exclusiveMinimum&#x27;: 0, &#x27;type&#x27;: &#x27;number&#x27;}
+
+On instance:
+    0</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card mb-2 validation-item " id="item-ogc.bbr.xysection.xySectionViewerConfig-15">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0 anchor-container">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-15"
+                                                            aria-expanded="false" aria-controls="uid-15"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="bbr/xysection/xySectionViewerConfig/example_1_1.json" target="_blank">example_1_1.json</a>
+                                                    <span class="badge bg-secondary example">Example</span>
+                                                    <a class="anchor" href="#item-ogc.bbr.xysection.xySectionViewerConfig-15">¶</a>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-15">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">Using ../xySectionViewerDemo/builtStrata/viewer-config.json from examples</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card mb-2 validation-item " id="item-ogc.bbr.xysection.xySectionViewerConfig-16">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0 anchor-container">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-16"
+                                                            aria-expanded="false" aria-controls="uid-16"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="bbr/xysection/xySectionViewerConfig/example_2_1.json" target="_blank">example_2_1.json</a>
+                                                    <span class="badge bg-secondary example">Example</span>
+                                                    <a class="anchor" href="#item-ogc.bbr.xysection.xySectionViewerConfig-16">¶</a>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-16">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">Using ../xySectionViewerDemo/fourUnit/viewer-config.json from examples</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card mb-2 validation-item " id="item-ogc.bbr.xysection.xySectionViewerConfig-17">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0 anchor-container">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-17"
+                                                            aria-expanded="false" aria-controls="uid-17"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="bbr/xysection/xySectionViewerConfig/example_3_1.json" target="_blank">example_3_1.json</a>
+                                                    <span class="badge bg-secondary example">Example</span>
+                                                    <a class="anchor" href="#item-ogc.bbr.xysection.xySectionViewerConfig-17">¶</a>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-17">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">Using examples/level-options.json from examples</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card mb-2 validation-item " id="item-ogc.bbr.xysection.xySectionViewerConfig-18">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0 anchor-container">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-18"
+                                                            aria-expanded="false" aria-controls="uid-18"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="bbr/xysection/xySectionViewerConfig/example_4_1.json" target="_blank">example_4_1.json</a>
+                                                    <span class="badge bg-secondary example">Example</span>
+                                                    <a class="anchor" href="#item-ogc.bbr.xysection.xySectionViewerConfig-18">¶</a>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-18">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">Using examples/no-exclusions.json from examples</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bblock-report" data-bblock-id="ogc.bbr.xysection.xySectionViewerDemo.builtStrata" id="bblock-ogc.bbr.xysection.xySectionViewerDemo.builtStrata">
+                            <h2 class="accordion-header bblock-title anchor-container">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bblock-collapse-ogc\.bbr\.xysection\.xySectionViewerDemo\.builtStrata">
+                                    <div class="flex-fill">
+                                        XY Section demo: built strata
+                                        <small class="ms-2 bblock-id">ogc.bbr.xysection.xySectionViewerDemo.builtStrata</small>
+                                        <a class="anchor" href="#bblock-ogc.bbr.xysection.xySectionViewerDemo.builtStrata">¶</a>
+                                    </div>
+
+                                    <span class="badge text-bg-success me-2">
+                                            Passed
+                                            (100% passed)
+                                    </span>
+                                </button>
+                            </h2>
+                            <div class="accordion-collapse collapse " id="bblock-collapse-ogc.bbr.xysection.xySectionViewerDemo.builtStrata">
+                                <div class="accordion-body">
+                                        <p class="summary fw-semibold text-success">
+                                            Test passed: 1 / 1
+                                        </p>
+                                        <div class="card mb-2 validation-item " id="item-ogc.bbr.xysection.xySectionViewerDemo.builtStrata-1">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0 anchor-container">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-19"
+                                                            aria-expanded="false" aria-controls="uid-19"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="bbr/xysection/xySectionViewerDemo/builtStrata/example_1_1.json" target="_blank">example_1_1.json</a>
+                                                    <span class="badge bg-secondary example">Example</span>
+                                                    <a class="anchor" href="#item-ogc.bbr.xysection.xySectionViewerDemo.builtStrata-1">¶</a>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-19">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">Using ../../../harness/fixtures/built-strata-example-1.json from examples</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bblock-report" data-bblock-id="ogc.bbr.xysection.xySectionViewerDemo.fourUnit" id="bblock-ogc.bbr.xysection.xySectionViewerDemo.fourUnit">
+                            <h2 class="accordion-header bblock-title anchor-container">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bblock-collapse-ogc\.bbr\.xysection\.xySectionViewerDemo\.fourUnit">
+                                    <div class="flex-fill">
+                                        XY Section demo: four units with a stairwell
+                                        <small class="ms-2 bblock-id">ogc.bbr.xysection.xySectionViewerDemo.fourUnit</small>
+                                        <a class="anchor" href="#bblock-ogc.bbr.xysection.xySectionViewerDemo.fourUnit">¶</a>
+                                    </div>
+
+                                    <span class="badge text-bg-success me-2">
+                                            Passed
+                                            (100% passed)
+                                    </span>
+                                </button>
+                            </h2>
+                            <div class="accordion-collapse collapse " id="bblock-collapse-ogc.bbr.xysection.xySectionViewerDemo.fourUnit">
+                                <div class="accordion-body">
+                                        <p class="summary fw-semibold text-success">
+                                            Test passed: 1 / 1
+                                        </p>
+                                        <div class="card mb-2 validation-item " id="item-ogc.bbr.xysection.xySectionViewerDemo.fourUnit-1">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0 anchor-container">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-20"
+                                                            aria-expanded="false" aria-controls="uid-20"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="bbr/xysection/xySectionViewerDemo/fourUnit/example_1_1.json" target="_blank">example_1_1.json</a>
+                                                    <span class="badge bg-secondary example">Example</span>
+                                                    <a class="anchor" href="#item-ogc.bbr.xysection.xySectionViewerDemo.fourUnit-1">¶</a>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-20">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">Using ../../../harness/fixtures/4-unit-up-down-with-parcel.json from examples</div>
                                                                     <div class="font-monospace subsection-title mt-2">JSON Schema</div>
                                                                 
                                                                     

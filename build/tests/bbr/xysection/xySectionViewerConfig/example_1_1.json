@@ -1,0 +1,40 @@
+{
+  "xySection": {
+    "levelLabels": {
+      "1": "Ground floor",
+      "2": "First floor"
+    },
+    "boundary": [
+      {
+        "source": "parcels",
+        "match": {
+          "property": "properties.parcelPurpose",
+          "values": [
+            "wa-parcel-purpose:strata-scheme"
+          ]
+        },
+        "follow": {
+          "role": "containingPrimaryParcel"
+        }
+      },
+      {
+        "source": "parcels",
+        "match": {
+          "property": "properties.parcelState",
+          "values": [
+            "wa-parcel-state:former-tenure"
+          ]
+        }
+      },
+      {
+        "source": "parcels"
+      }
+    ],
+    "exclude": [
+      {
+        "source": "occupationFeatures",
+        "property": "properties.geometryRef"
+      }
+    ]
+  }
+}

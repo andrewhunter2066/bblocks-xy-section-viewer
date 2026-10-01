@@ -1,0 +1,98 @@
+Validation report for ogc.bbr.xysection.xySectionViewerConfig - XY section viewer configuration
+Generated 2026-10-01T00:47:50.219129+00:00
+=== General ===
+Test was expected to fail and it did.
+=== End General ===
+
+=== Files ===
+Using unknown-option-fail.json from test resources
+=== End Files ===
+
+=== JSON Schema ===
+
+** Validation error **
+ValidationError: Additional properties are not allowed ('colour' was unexpected)
+
+Failed validating 'additionalProperties' in schema['properties']['xySection']:
+    {'additionalProperties': False,
+     'description': 'Section-only options. Every member is optional.',
+     'properties': {'boundary': {'description': 'Ordered choices for the '
+                                                'one boundary parcel drawn '
+                                                'on every floor; the first '
+                                                'entry that yields an '
+                                                'outline wins.\n'
+                                                'Default `[{ "source": '
+                                                '"parcels" }]` (the first '
+                                                'parcel with an outline); '
+                                                '`[]` draws no boundary.\n',
+                                 'items': {'$ref': '#/$defs/boundaryEntry'},
+                                 'type': 'array'},
+                    'exclude': {'description': 'Solids never sectioned: '
+                                               'every feature of `source` '
+                                               'excludes the solid(s) '
+                                               'whose id is the value at '
+                                               '`property`.\n'
+                                               'Default: the geometry of '
+                                               'every `occupationFeatures` '
+                                               'item (walls, slabs, '
+                                               'ceilings); `[]` excludes '
+                                               'nothing.\n',
+                                'items': {'additionalProperties': False,
+                                          'properties': {'property': {'minLength': 1,
+                                                                      'type': 'string'},
+                                                         'source': {'minLength': 1,
+                                                                    'type': 'string'}},
+                                          'required': ['source',
+                                                       'property'],
+                                          'type': 'object'},
+                                'type': 'array'},
+                    'grid': {'description': '`true` (default, automatic '
+                                            'spacing), `false` (no grid), '
+                                            'or a spacing in metres.',
+                             'oneOf': [{'type': 'boolean'},
+                                       {'exclusiveMinimum': 0,
+                                        'type': 'number'}]},
+                    'levelLabels': {'additionalProperties': {'minLength': 1,
+                                                             'type': 'string'},
+                                    'description': 'Tab label per level, '
+                                                   'e.g. `{ "1": "Ground '
+                                                   'floor" }`. Default '
+                                                   '`Level <n>`.',
+                                    'propertyNames': {'$ref': '#/$defs/levelKey'},
+                                    'type': 'object'},
+                    'levelProperty': {'description': 'Dot-separated path '
+                                                     'on each solid giving '
+                                                     'the floor level '
+                                                     'number(s) it is on — '
+                                                     'a number or an array '
+                                                     'of numbers.\n'
+                                                     'Default '
+                                                     '`properties.floors`.\n',
+                                      'minLength': 1,
+                                      'type': 'string'},
+                    'padding': {'description': 'Metres of margin around '
+                                               'the drawing. Default 2.',
+                                'minimum': 0,
+                                'type': 'number'},
+                    'sectionZ': {'additionalProperties': {'type': 'number'},
+                                 'description': 'Section height in metres '
+                                                'per level, on the '
+                                                "document's vertical "
+                                                'datum.\n'
+                                                'Default: the mid-height '
+                                                'of the solids listed on '
+                                                'that level alone.\n',
+                                 'propertyNames': {'$ref': '#/$defs/levelKey'},
+                                 'type': 'object'},
+                    'showContext': {'description': 'Whether lower floors '
+                                                   'are drawn, faded, '
+                                                   'under each section '
+                                                   'when the view opens. '
+                                                   'Default false.',
+                                    'type': 'boolean'}},
+     'type': 'object'}
+
+On instance['xySection']:
+    {'colour': 'red'}
+=== End JSON Schema ===
+
