@@ -1,0 +1,27 @@
+name: CI
+
+# Plugin checks on every push and PR. The building blocks themselves are validated separately by
+# pr-check.yml / process-bblocks.yml.
+on:
+  push:
+    branches-ignore: [dist]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  plugin:
+    name: Test and build plugin
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - run: npm ci
+      - run: npm test
+      - run: npm run typecheck
+      - run: npm run build

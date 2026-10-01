@@ -1,0 +1,29 @@
+{
+  "name": "XY section viewer configuration",
+  "abstract": "Per-block configuration for the bblocks-viewer XY Section view of topo-feature documents: which features are drawn and how (rules shared with the Three.js and globe views), plus floor levels, section heights, the boundary parcel and excluded solids.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-09-30T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "tags": ["viewer", "view-plugin", "xy-section", "floor-plan", "topo-feature", "configuration"],
+  "group": "XY section viewer",
+  "highlighted": true,
+  "links": [
+    {
+      "title": "XYSectionPlugin source",
+      "href": "https://github.com/andrewhunter2066/bblocks-xy-section-viewer"
+    },
+    {
+      "title": "Three.js TopoFeaturePlugin (shares the rule configuration)",
+      "href": "https://github.com/ogcincubator/bblocks-viewer-topo-feature-plugin"
+    },
+    {
+      "title": "Cesium globe viewer (shares the rule configuration)",
+      "href": "https://github.com/ogcincubator/bblocks-cesium-viewer"
+    },
+    {
+      "title": "topo-feature",
+      "href": "https://github.com/ogcincubator/topo-feature"
+    }
+  ]
+}

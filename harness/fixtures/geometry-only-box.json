@@ -1,0 +1,725 @@
+{
+  "type": "FeatureCollection",
+  "points": [
+    {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "id": "box-p000",
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              115,
+              -32,
+              -30
+            ]
+          }
+        },
+        {
+          "id": "box-p001",
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              115,
+              -32,
+              -27
+            ]
+          }
+        },
+        {
+          "id": "box-p010",
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              115,
+              -31.99996,
+              -30
+            ]
+          }
+        },
+        {
+          "id": "box-p011",
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              115,
+              -31.99996,
+              -27
+            ]
+          }
+        },
+        {
+          "id": "box-p100",
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              115.0001,
+              -32,
+              -30
+            ]
+          }
+        },
+        {
+          "id": "box-p101",
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              115.0001,
+              -32,
+              -27
+            ]
+          }
+        },
+        {
+          "id": "box-p110",
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              115.0001,
+              -31.99996,
+              -30
+            ]
+          }
+        },
+        {
+          "id": "box-p111",
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              115.0001,
+              -31.99996,
+              -27
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "id": "box-edge-bottom-0",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Edge",
+            "references": [
+              "box-p000",
+              "box-p010"
+            ]
+          }
+        },
+        {
+          "id": "box-edge-bottom-1",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Edge",
+            "references": [
+              "box-p010",
+              "box-p110"
+            ]
+          }
+        },
+        {
+          "id": "box-edge-bottom-2",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Edge",
+            "references": [
+              "box-p110",
+              "box-p100"
+            ]
+          }
+        },
+        {
+          "id": "box-edge-bottom-3",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Edge",
+            "references": [
+              "box-p100",
+              "box-p000"
+            ]
+          }
+        },
+        {
+          "id": "box-edge-top-0",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Edge",
+            "references": [
+              "box-p001",
+              "box-p101"
+            ]
+          }
+        },
+        {
+          "id": "box-edge-top-1",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Edge",
+            "references": [
+              "box-p101",
+              "box-p111"
+            ]
+          }
+        },
+        {
+          "id": "box-edge-top-2",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Edge",
+            "references": [
+              "box-p111",
+              "box-p011"
+            ]
+          }
+        },
+        {
+          "id": "box-edge-top-3",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Edge",
+            "references": [
+              "box-p011",
+              "box-p001"
+            ]
+          }
+        },
+        {
+          "id": "box-edge-south-0",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Edge",
+            "references": [
+              "box-p000",
+              "box-p100"
+            ]
+          }
+        },
+        {
+          "id": "box-edge-south-1",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Edge",
+            "references": [
+              "box-p100",
+              "box-p101"
+            ]
+          }
+        },
+        {
+          "id": "box-edge-south-2",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Edge",
+            "references": [
+              "box-p101",
+              "box-p001"
+            ]
+          }
+        },
+        {
+          "id": "box-edge-south-3",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Edge",
+            "references": [
+              "box-p001",
+              "box-p000"
+            ]
+          }
+        },
+        {
+          "id": "box-edge-east-0",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Edge",
+            "references": [
+              "box-p100",
+              "box-p110"
+            ]
+          }
+        },
+        {
+          "id": "box-edge-east-1",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Edge",
+            "references": [
+              "box-p110",
+              "box-p111"
+            ]
+          }
+        },
+        {
+          "id": "box-edge-east-2",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Edge",
+            "references": [
+              "box-p111",
+              "box-p101"
+            ]
+          }
+        },
+        {
+          "id": "box-edge-east-3",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Edge",
+            "references": [
+              "box-p101",
+              "box-p100"
+            ]
+          }
+        },
+        {
+          "id": "box-edge-north-0",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Edge",
+            "references": [
+              "box-p110",
+              "box-p010"
+            ]
+          }
+        },
+        {
+          "id": "box-edge-north-1",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Edge",
+            "references": [
+              "box-p010",
+              "box-p011"
+            ]
+          }
+        },
+        {
+          "id": "box-edge-north-2",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Edge",
+            "references": [
+              "box-p011",
+              "box-p111"
+            ]
+          }
+        },
+        {
+          "id": "box-edge-north-3",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Edge",
+            "references": [
+              "box-p111",
+              "box-p110"
+            ]
+          }
+        },
+        {
+          "id": "box-edge-west-0",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Edge",
+            "references": [
+              "box-p010",
+              "box-p000"
+            ]
+          }
+        },
+        {
+          "id": "box-edge-west-1",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Edge",
+            "references": [
+              "box-p000",
+              "box-p001"
+            ]
+          }
+        },
+        {
+          "id": "box-edge-west-2",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Edge",
+            "references": [
+              "box-p001",
+              "box-p011"
+            ]
+          }
+        },
+        {
+          "id": "box-edge-west-3",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Edge",
+            "references": [
+              "box-p011",
+              "box-p010"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "rings": [
+    {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "id": "box-ring-bottom",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Ring",
+            "directed_references": [
+              {
+                "ref": "box-edge-bottom-0",
+                "orientation": "+"
+              },
+              {
+                "ref": "box-edge-bottom-1",
+                "orientation": "+"
+              },
+              {
+                "ref": "box-edge-bottom-2",
+                "orientation": "+"
+              },
+              {
+                "ref": "box-edge-bottom-3",
+                "orientation": "+"
+              }
+            ]
+          }
+        },
+        {
+          "id": "box-ring-top",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Ring",
+            "directed_references": [
+              {
+                "ref": "box-edge-top-0",
+                "orientation": "+"
+              },
+              {
+                "ref": "box-edge-top-1",
+                "orientation": "+"
+              },
+              {
+                "ref": "box-edge-top-2",
+                "orientation": "+"
+              },
+              {
+                "ref": "box-edge-top-3",
+                "orientation": "+"
+              }
+            ]
+          }
+        },
+        {
+          "id": "box-ring-south",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Ring",
+            "directed_references": [
+              {
+                "ref": "box-edge-south-0",
+                "orientation": "+"
+              },
+              {
+                "ref": "box-edge-south-1",
+                "orientation": "+"
+              },
+              {
+                "ref": "box-edge-south-2",
+                "orientation": "+"
+              },
+              {
+                "ref": "box-edge-south-3",
+                "orientation": "+"
+              }
+            ]
+          }
+        },
+        {
+          "id": "box-ring-east",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Ring",
+            "directed_references": [
+              {
+                "ref": "box-edge-east-0",
+                "orientation": "+"
+              },
+              {
+                "ref": "box-edge-east-1",
+                "orientation": "+"
+              },
+              {
+                "ref": "box-edge-east-2",
+                "orientation": "+"
+              },
+              {
+                "ref": "box-edge-east-3",
+                "orientation": "+"
+              }
+            ]
+          }
+        },
+        {
+          "id": "box-ring-north",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Ring",
+            "directed_references": [
+              {
+                "ref": "box-edge-north-0",
+                "orientation": "+"
+              },
+              {
+                "ref": "box-edge-north-1",
+                "orientation": "+"
+              },
+              {
+                "ref": "box-edge-north-2",
+                "orientation": "+"
+              },
+              {
+                "ref": "box-edge-north-3",
+                "orientation": "+"
+              }
+            ]
+          }
+        },
+        {
+          "id": "box-ring-west",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Ring",
+            "directed_references": [
+              {
+                "ref": "box-edge-west-0",
+                "orientation": "+"
+              },
+              {
+                "ref": "box-edge-west-1",
+                "orientation": "+"
+              },
+              {
+                "ref": "box-edge-west-2",
+                "orientation": "+"
+              },
+              {
+                "ref": "box-edge-west-3",
+                "orientation": "+"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "faces": [
+    {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "id": "box-face-bottom",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Face",
+            "directed_references": [
+              {
+                "ref": "box-ring-bottom",
+                "orientation": "+"
+              }
+            ]
+          }
+        },
+        {
+          "id": "box-face-top",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Face",
+            "directed_references": [
+              {
+                "ref": "box-ring-top",
+                "orientation": "+"
+              }
+            ]
+          }
+        },
+        {
+          "id": "box-face-south",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Face",
+            "directed_references": [
+              {
+                "ref": "box-ring-south",
+                "orientation": "+"
+              }
+            ]
+          }
+        },
+        {
+          "id": "box-face-east",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Face",
+            "directed_references": [
+              {
+                "ref": "box-ring-east",
+                "orientation": "+"
+              }
+            ]
+          }
+        },
+        {
+          "id": "box-face-north",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Face",
+            "directed_references": [
+              {
+                "ref": "box-ring-north",
+                "orientation": "+"
+              }
+            ]
+          }
+        },
+        {
+          "id": "box-face-west",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Face",
+            "directed_references": [
+              {
+                "ref": "box-ring-west",
+                "orientation": "+"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "shells": [
+    {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "id": "box-shell",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Shell",
+            "directed_references": [
+              {
+                "ref": "box-face-bottom",
+                "orientation": "+"
+              },
+              {
+                "ref": "box-face-top",
+                "orientation": "+"
+              },
+              {
+                "ref": "box-face-south",
+                "orientation": "+"
+              },
+              {
+                "ref": "box-face-east",
+                "orientation": "+"
+              },
+              {
+                "ref": "box-face-north",
+                "orientation": "+"
+              },
+              {
+                "ref": "box-face-west",
+                "orientation": "+"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "solids": [
+    {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "id": "box",
+          "type": "Feature",
+          "geometry": null,
+          "topology": {
+            "type": "Solid",
+            "directed_references": [
+              {
+                "ref": "box-shell",
+                "orientation": "+"
+              }
+            ]
+          },
+          "properties": {
+            "name": "Box",
+            "floors": [
+              1
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "name": "Geometry-only box (no match expected)",
+  "description": "Points carry only WGS84 geometry, no projected place, so the XY Section view does not match."
+}

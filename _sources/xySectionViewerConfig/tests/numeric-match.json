@@ -1,0 +1,6 @@
+{
+  "rules": [
+    { "source": "solids", "kind": "upper", "geometry": "solid", "match": { "property": "properties.floors", "values": [2] } },
+    { "source": "solids", "kind": "lower", "geometry": "solid" }
+  ]
+}
