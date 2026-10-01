@@ -39,12 +39,12 @@
   "shaclShapes": {},
   "dateOfLastChange": "2026-09-30",
   "schema": {
-    "application/yaml": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/annotated/bbr/xysection/xySectionViewerConfig/schema.yaml",
-    "application/json": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/annotated/bbr/xysection/xySectionViewerConfig/schema.json"
+    "application/yaml": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/annotated/bbr/xysection/xySectionViewerConfig/schema.yaml",
+    "application/json": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/annotated/bbr/xysection/xySectionViewerConfig/schema.json"
   },
-  "sourceSchema": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerConfig/schema.yaml",
-  "resolvedSchemaProperties": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/annotated/bbr/xysection/xySectionViewerConfig/resolvedProperties.json",
-  "sourceFiles": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerConfig/",
+  "sourceSchema": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/_sources/xySectionViewerConfig/schema.yaml",
+  "resolvedSchemaProperties": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/annotated/bbr/xysection/xySectionViewerConfig/resolvedProperties.json",
+  "sourceFiles": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/_sources/xySectionViewerConfig/",
   "validationPassed": true,
   "testOutputs": "https://github.com/andrewhunter2066/bblocks-xy-section-viewer/blob/master/build/tests/bbr/xysection/xySectionViewerConfig/",
   "description": "The **XY Section** view (`XYSectionPlugin`) draws [topo-feature](https://github.com/ogcincubator/topo-feature) documents as horizontal sections \u2014 plan views \u2014 one per floor level, in a tab of the Building Blocks viewer.\nEach point is placed by its projected `place` coordinates (the document's `horizontalCRS`; heights on its `verticalCRS`), and edges, rings, faces, shells, solids and parcels are assembled from their topology references.\nNo coordinates are transformed.\nThis block is the JSON Schema for the optional per-block configuration that tunes that view.\n\nThe view appears for a document that is a topo-feature document, has at least one point with a 3D `place`, and has at least one floor level (by default from each solid's `properties.floors`).\n\n## Attaching a configuration to a block\n\nAdd a `resources` entry to the block's `bblock.json`, next to its examples:\n\n```json\n\"resources\": [\n  {\n    \"role\": \"https://github.com/ogcincubator/bblocks-xy-section-viewer/role/viewer-config\",\n    \"ref\": \"viewer-config.json\",\n    \"format\": \"application/json\",\n    \"title\": \"XY Section view configuration\"\n  }\n]\n```\n\nA block that already has a configuration for the Three.js topology view (role `https://github.com/ogcincubator/bblocks-viewer-topo-feature-plugin/role/viewer-config`) gets the same rules in its sections; an XY-specific resource takes precedence when both are present.\nSee the [demo blocks](bblocks://ogc.bbr.xysection.xySectionViewerDemo.builtStrata) for complete examples.\n\n## Rules\n\n`rules` is an ordered list, shared with the Three.js and globe views.\nFor each feature in a rule's `source` collection (`solids`, `parcels`, `faces`, `rings`, \u2026, or the derived `surfaces` \u2014 shells that no solid uses) the first rule whose `match` applies decides how it is drawn:\n\n| Member | Meaning |\n|---|---|\n| `kind`, `group`, `kindLabel` | How the feature is listed in the view's layers panel. Rules sharing a `group` appear under one heading, with a sub-list per `kind`. |\n| `geometry` | `solid`, `open-shell` and `face` are cut at each floor's height; `polygon` (a Polygon-topology parcel) and `ring` are drawn flat, as outlines, on every floor. |\n| `match` | `{ \"property\": \"properties.x\", \"values\": [...] }`. String values may be literals, CURIEs (expanded against the document's own `@context`) or full URIs; numbers compare as numbers. |\n| `label` | Property paths to take the feature's label from, with a `fallback`. Omitted: appellation, description, then name. |\n| `style` | `color` and `opacity` of the fill; `lineColor` and `lineStyle` (`solid` / `dashed`) of the outline. Without `color`, each feature gets its own colour from a fixed palette, never shared by two features on one floor. |\n| `initiallyVisible` | `false` hides the feature until it is ticked in the layers panel. |\n| `elevation` | Used by the 3D and globe views; ignored here. |\n\nA feature no rule claims is not drawn.\nA non-empty `rules` list replaces the view's built-in rules (solids and open shells sectioned; parcels only as the boundary).\n\n## Section options (`xySection`)\n\n| Member | Default | Meaning |\n|---|---|---|\n| `levelProperty` | `\"properties.floors\"` | Path on each solid to its level number(s). |\n| `levelLabels` | `Level <n>` | Tab label per level, e.g. `{ \"1\": \"Ground floor\" }`. |\n| `sectionZ` | mid-height | Section height per level, in metres on the vertical datum. By default, the mid-height of the solids listed on that level alone. |\n| `showContext` | `false` | Draw lower floors, faded, under each section from the start (there is also a toolbar toggle). |\n| `padding` | `2` | Metres of margin around the drawing. |\n| `grid` | `true` | `true` (automatic spacing), `false`, or a spacing in metres. |\n| `boundary` | first parcel with an outline | Ordered choices for the one boundary parcel drawn on every floor: `{ \"source\", \"match\", \"follow\": { \"role\" } }`. `[]` draws none. |\n| `exclude` | `occupationFeatures` geometry | Solids never sectioned: `{ \"source\", \"property\" }` naming the solid ids to leave out. `[]` excludes nothing. |\n\nNothing in a configuration can break the view: an unreachable or invalid file, or an invalid option, falls back to the defaults with a warning in the browser console.\n",
@@ -55,8 +55,8 @@
       "snippets": [
         {
           "language": "json",
-          "ref": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerDemo/builtStrata/viewer-config.json",
-          "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/tests/bbr/xysection/xySectionViewerConfig/example_1_1.json",
+          "ref": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/_sources/xySectionViewerDemo/builtStrata/viewer-config.json",
+          "url": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/tests/bbr/xysection/xySectionViewerConfig/example_1_1.json",
           "sizeBytes": 605,
           "code": "{\n  \"xySection\": {\n    \"levelLabels\": { \"1\": \"Ground floor\", \"2\": \"First floor\" },\n    \"boundary\": [\n      {\n        \"source\": \"parcels\",\n        \"match\": { \"property\": \"properties.parcelPurpose\", \"values\": [\"wa-parcel-purpose:strata-scheme\"] },\n        \"follow\": { \"role\": \"containingPrimaryParcel\" }\n      },\n      {\n        \"source\": \"parcels\",\n        \"match\": { \"property\": \"properties.parcelState\", \"values\": [\"wa-parcel-state:former-tenure\"] }\n      },\n      { \"source\": \"parcels\" }\n    ],\n    \"exclude\": [\n      { \"source\": \"occupationFeatures\", \"property\": \"properties.geometryRef\" }\n    ]\n  }\n}\n"
         }
@@ -68,8 +68,8 @@
       "snippets": [
         {
           "language": "json",
-          "ref": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerDemo/fourUnit/viewer-config.json",
-          "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/tests/bbr/xysection/xySectionViewerConfig/example_2_1.json",
+          "ref": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/_sources/xySectionViewerDemo/fourUnit/viewer-config.json",
+          "url": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/tests/bbr/xysection/xySectionViewerConfig/example_2_1.json",
           "sizeBytes": 824,
           "code": "{\n  \"rules\": [\n    {\n      \"source\": \"solids\",\n      \"kind\": \"multi-storey\",\n      \"group\": \"solids\",\n      \"kindLabel\": \"Multi-storey\",\n      \"geometry\": \"solid\",\n      \"match\": { \"property\": \"properties.name\", \"values\": [\"Stairwell\"] },\n      \"style\": { \"color\": \"#4a3aa7\", \"opacity\": 0.25, \"lineStyle\": \"dashed\" }\n    },\n    {\n      \"source\": \"solids\",\n      \"kind\": \"unit\",\n      \"group\": \"solids\",\n      \"kindLabel\": \"Units\",\n      \"geometry\": \"solid\"\n    },\n    {\n      \"source\": \"parcels\",\n      \"kind\": \"lot\",\n      \"kindLabel\": \"Lots\",\n      \"geometry\": \"polygon\",\n      \"initiallyVisible\": false,\n      \"style\": { \"color\": \"#898781\", \"opacity\": 0.08 }\n    }\n  ],\n  \"xySection\": {\n    \"levelLabels\": { \"1\": \"Lower\", \"2\": \"Upper\" },\n    \"showContext\": true,\n    \"grid\": 5,\n    \"padding\": 4,\n    \"boundary\": []\n  }\n}\n"
         }
@@ -81,8 +81,8 @@
       "snippets": [
         {
           "language": "json",
-          "ref": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerConfig/examples/level-options.json",
-          "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/tests/bbr/xysection/xySectionViewerConfig/example_3_1.json",
+          "ref": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/_sources/xySectionViewerConfig/examples/level-options.json",
+          "url": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/tests/bbr/xysection/xySectionViewerConfig/example_3_1.json",
           "sizeBytes": 189,
           "code": "{\n  \"xySection\": {\n    \"levelProperty\": \"properties.floors\",\n    \"levelLabels\": { \"1\": \"Ground\", \"2\": \"First\" },\n    \"sectionZ\": { \"1\": 21.2 },\n    \"showContext\": true,\n    \"grid\": 2\n  }\n}\n"
         }
@@ -94,8 +94,8 @@
       "snippets": [
         {
           "language": "json",
-          "ref": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerConfig/examples/no-exclusions.json",
-          "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/tests/bbr/xysection/xySectionViewerConfig/example_4_1.json",
+          "ref": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/_sources/xySectionViewerConfig/examples/no-exclusions.json",
+          "url": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/tests/bbr/xysection/xySectionViewerConfig/example_4_1.json",
           "sizeBytes": 63,
           "code": "{\n  \"xySection\": {\n    \"exclude\": [],\n    \"boundary\": []\n  }\n}\n"
         }

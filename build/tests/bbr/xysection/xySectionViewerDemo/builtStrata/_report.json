@@ -2,7 +2,7 @@
   "title": "Validation report for ogc.bbr.xysection.xySectionViewerDemo.builtStrata - XY Section demo: built strata",
   "bblockName": "XY Section demo: built strata",
   "bblockId": "ogc.bbr.xysection.xySectionViewerDemo.builtStrata",
-  "generated": "2026-10-01T01:08:08.116867+00:00",
+  "generated": "2026-10-01T01:23:49.788700+00:00",
   "result": true,
   "items": [
     {
@@ -10,7 +10,7 @@
         "type": "EXAMPLE",
         "requireFail": false,
         "filename": "build/tests/bbr/xysection/xySectionViewerDemo/builtStrata/example_1_1.json",
-        "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/tests/bbr/xysection/xySectionViewerDemo/builtStrata/example_1_1.json",
+        "url": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/tests/bbr/xysection/xySectionViewerDemo/builtStrata/example_1_1.json",
         "exampleIndex": 1,
         "snippetIndex": 1,
         "language": "application/json"

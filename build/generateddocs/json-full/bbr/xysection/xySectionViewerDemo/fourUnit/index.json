@@ -22,7 +22,7 @@
   "resources": [
     {
       "role": "https://github.com/ogcincubator/bblocks-xy-section-viewer/role/viewer-config",
-      "ref": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerDemo/fourUnit/viewer-config.json",
+      "ref": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/_sources/xySectionViewerDemo/fourUnit/viewer-config.json",
       "format": "application/json",
       "title": "XY Section view configuration"
     }
@@ -30,12 +30,12 @@
   "shaclShapes": {},
   "dateOfLastChange": "2026-09-30",
   "schema": {
-    "application/yaml": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/annotated/bbr/xysection/xySectionViewerDemo/fourUnit/schema.yaml",
-    "application/json": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/annotated/bbr/xysection/xySectionViewerDemo/fourUnit/schema.json"
+    "application/yaml": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/annotated/bbr/xysection/xySectionViewerDemo/fourUnit/schema.yaml",
+    "application/json": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/annotated/bbr/xysection/xySectionViewerDemo/fourUnit/schema.json"
   },
-  "sourceSchema": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerDemo/fourUnit/schema.yaml",
-  "resolvedSchemaProperties": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/annotated/bbr/xysection/xySectionViewerDemo/fourUnit/resolvedProperties.json",
-  "sourceFiles": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerDemo/fourUnit/",
+  "sourceSchema": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/_sources/xySectionViewerDemo/fourUnit/schema.yaml",
+  "resolvedSchemaProperties": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/annotated/bbr/xysection/xySectionViewerDemo/fourUnit/resolvedProperties.json",
+  "sourceFiles": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/_sources/xySectionViewerDemo/fourUnit/",
   "validationPassed": true,
   "testOutputs": "https://github.com/andrewhunter2066/bblocks-xy-section-viewer/blob/master/build/tests/bbr/xysection/xySectionViewerDemo/fourUnit/",
   "description": "Demonstrates the **XY Section** view with rules as well as options.\nOpen the example below and choose its **XY Section** tab: one tab per floor, *Lower* and *Upper*.\n\nThe block's `resources` attach an [XY Section view configuration](bblocks://ogc.bbr.xysection.xySectionViewerConfig) (`viewer-config.json`) that:\n\n- lists the **stairwell**, which spans both floors, as its own kind \u2014 dashed, in a fixed colour \u2014 and every other solid as a unit;\n- draws the **lot parcel** flat as an outline on every floor, initially hidden (tick it in the layers panel);\n- shows **lower floors** faded from the start, uses a **5 m grid**, and draws **no boundary**.\n\nThe document is the `4-unit-up-down-with-parcel.json` test survey, generated in the (private) `waTestData` repository and published here with permission.\nIts lot boundary points have 2D `place` coordinates, which is enough for an outline.\n",
@@ -46,8 +46,8 @@
       "snippets": [
         {
           "language": "json",
-          "ref": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/harness/fixtures/4-unit-up-down-with-parcel.json",
-          "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/tests/bbr/xysection/xySectionViewerDemo/fourUnit/example_1_1.json",
+          "ref": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/harness/fixtures/4-unit-up-down-with-parcel.json",
+          "url": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/tests/bbr/xysection/xySectionViewerDemo/fourUnit/example_1_1.json",
           "sizeBytes": 170407
         }
       ]

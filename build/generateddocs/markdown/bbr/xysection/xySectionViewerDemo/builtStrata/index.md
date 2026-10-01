@@ -33876,8 +33876,8 @@ properties:
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/annotated/bbr/xysection/xySectionViewerDemo/builtStrata/schema.json)
-* JSON version: [schema.json](https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/annotated/bbr/xysection/xySectionViewerDemo/builtStrata/schema.yaml)
+* YAML version: [schema.yaml](https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/annotated/bbr/xysection/xySectionViewerDemo/builtStrata/schema.json)
+* JSON version: [schema.json](https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/annotated/bbr/xysection/xySectionViewerDemo/builtStrata/schema.yaml)
 
 
 # For developers

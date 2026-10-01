@@ -2,7 +2,7 @@
   "title": "Validation report for ogc.bbr.xysection.xySectionViewerConfig - XY section viewer configuration",
   "bblockName": "XY section viewer configuration",
   "bblockId": "ogc.bbr.xysection.xySectionViewerConfig",
-  "generated": "2026-10-01T01:08:08.065676+00:00",
+  "generated": "2026-10-01T01:23:49.726712+00:00",
   "result": true,
   "items": [
     {
@@ -10,7 +10,7 @@
         "type": "TEST_RESOURCE",
         "requireFail": false,
         "filename": "_sources/xySectionViewerConfig/tests/empty-config.json",
-        "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerConfig/tests/empty-config.json",
+        "url": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/_sources/xySectionViewerConfig/tests/empty-config.json",
         "language": "json"
       },
       "result": true,
@@ -44,7 +44,7 @@
         "type": "TEST_RESOURCE",
         "requireFail": true,
         "filename": "_sources/xySectionViewerConfig/tests/exclude-without-property-fail.json",
-        "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerConfig/tests/exclude-without-property-fail.json",
+        "url": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/_sources/xySectionViewerConfig/tests/exclude-without-property-fail.json",
         "language": "json"
       },
       "result": true,
@@ -91,7 +91,7 @@
         "type": "TEST_RESOURCE",
         "requireFail": true,
         "filename": "_sources/xySectionViewerConfig/tests/follow-without-role-fail.json",
-        "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerConfig/tests/follow-without-role-fail.json",
+        "url": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/_sources/xySectionViewerConfig/tests/follow-without-role-fail.json",
         "language": "json"
       },
       "result": true,
@@ -138,7 +138,7 @@
         "type": "TEST_RESOURCE",
         "requireFail": true,
         "filename": "_sources/xySectionViewerConfig/tests/level-label-key-fail.json",
-        "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerConfig/tests/level-label-key-fail.json",
+        "url": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/_sources/xySectionViewerConfig/tests/level-label-key-fail.json",
         "language": "json"
       },
       "result": true,
@@ -185,7 +185,7 @@
         "type": "TEST_RESOURCE",
         "requireFail": true,
         "filename": "_sources/xySectionViewerConfig/tests/negative-padding-fail.json",
-        "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerConfig/tests/negative-padding-fail.json",
+        "url": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/_sources/xySectionViewerConfig/tests/negative-padding-fail.json",
         "language": "json"
       },
       "result": true,
@@ -232,7 +232,7 @@
         "type": "TEST_RESOURCE",
         "requireFail": false,
         "filename": "_sources/xySectionViewerConfig/tests/numeric-match.json",
-        "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerConfig/tests/numeric-match.json",
+        "url": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/_sources/xySectionViewerConfig/tests/numeric-match.json",
         "language": "json"
       },
       "result": true,
@@ -266,7 +266,7 @@
         "type": "TEST_RESOURCE",
         "requireFail": true,
         "filename": "_sources/xySectionViewerConfig/tests/rule-missing-kind-fail.json",
-        "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerConfig/tests/rule-missing-kind-fail.json",
+        "url": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/_sources/xySectionViewerConfig/tests/rule-missing-kind-fail.json",
         "language": "json"
       },
       "result": true,
@@ -313,7 +313,7 @@
         "type": "TEST_RESOURCE",
         "requireFail": true,
         "filename": "_sources/xySectionViewerConfig/tests/section-z-string-fail.json",
-        "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerConfig/tests/section-z-string-fail.json",
+        "url": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/_sources/xySectionViewerConfig/tests/section-z-string-fail.json",
         "language": "json"
       },
       "result": true,
@@ -360,7 +360,7 @@
         "type": "TEST_RESOURCE",
         "requireFail": true,
         "filename": "_sources/xySectionViewerConfig/tests/show-context-string-fail.json",
-        "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerConfig/tests/show-context-string-fail.json",
+        "url": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/_sources/xySectionViewerConfig/tests/show-context-string-fail.json",
         "language": "json"
       },
       "result": true,
@@ -407,7 +407,7 @@
         "type": "TEST_RESOURCE",
         "requireFail": false,
         "filename": "_sources/xySectionViewerConfig/tests/three-js-rules.json",
-        "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerConfig/tests/three-js-rules.json",
+        "url": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/_sources/xySectionViewerConfig/tests/three-js-rules.json",
         "language": "json"
       },
       "result": true,
@@ -441,7 +441,7 @@
         "type": "TEST_RESOURCE",
         "requireFail": true,
         "filename": "_sources/xySectionViewerConfig/tests/unknown-geometry-fail.json",
-        "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerConfig/tests/unknown-geometry-fail.json",
+        "url": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/_sources/xySectionViewerConfig/tests/unknown-geometry-fail.json",
         "language": "json"
       },
       "result": true,
@@ -488,7 +488,7 @@
         "type": "TEST_RESOURCE",
         "requireFail": true,
         "filename": "_sources/xySectionViewerConfig/tests/unknown-member-fail.json",
-        "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerConfig/tests/unknown-member-fail.json",
+        "url": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/_sources/xySectionViewerConfig/tests/unknown-member-fail.json",
         "language": "json"
       },
       "result": true,
@@ -535,7 +535,7 @@
         "type": "TEST_RESOURCE",
         "requireFail": true,
         "filename": "_sources/xySectionViewerConfig/tests/unknown-option-fail.json",
-        "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerConfig/tests/unknown-option-fail.json",
+        "url": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/_sources/xySectionViewerConfig/tests/unknown-option-fail.json",
         "language": "json"
       },
       "result": true,
@@ -582,7 +582,7 @@
         "type": "TEST_RESOURCE",
         "requireFail": true,
         "filename": "_sources/xySectionViewerConfig/tests/zero-grid-fail.json",
-        "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/_sources/xySectionViewerConfig/tests/zero-grid-fail.json",
+        "url": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/_sources/xySectionViewerConfig/tests/zero-grid-fail.json",
         "language": "json"
       },
       "result": true,
@@ -629,7 +629,7 @@
         "type": "EXAMPLE",
         "requireFail": false,
         "filename": "build/tests/bbr/xysection/xySectionViewerConfig/example_1_1.json",
-        "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/tests/bbr/xysection/xySectionViewerConfig/example_1_1.json",
+        "url": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/tests/bbr/xysection/xySectionViewerConfig/example_1_1.json",
         "exampleIndex": 1,
         "snippetIndex": 1,
         "language": "application/json"
@@ -665,7 +665,7 @@
         "type": "EXAMPLE",
         "requireFail": false,
         "filename": "build/tests/bbr/xysection/xySectionViewerConfig/example_2_1.json",
-        "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/tests/bbr/xysection/xySectionViewerConfig/example_2_1.json",
+        "url": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/tests/bbr/xysection/xySectionViewerConfig/example_2_1.json",
         "exampleIndex": 2,
         "snippetIndex": 1,
         "language": "application/json"
@@ -701,7 +701,7 @@
         "type": "EXAMPLE",
         "requireFail": false,
         "filename": "build/tests/bbr/xysection/xySectionViewerConfig/example_3_1.json",
-        "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/tests/bbr/xysection/xySectionViewerConfig/example_3_1.json",
+        "url": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/tests/bbr/xysection/xySectionViewerConfig/example_3_1.json",
         "exampleIndex": 3,
         "snippetIndex": 1,
         "language": "application/json"
@@ -737,7 +737,7 @@
         "type": "EXAMPLE",
         "requireFail": false,
         "filename": "build/tests/bbr/xysection/xySectionViewerConfig/example_4_1.json",
-        "url": "https://raw.githubusercontent.com/andrewhunter2066/bblocks-xy-section-viewer/undefined/build/tests/bbr/xysection/xySectionViewerConfig/example_4_1.json",
+        "url": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/tests/bbr/xysection/xySectionViewerConfig/example_4_1.json",
         "exampleIndex": 4,
         "snippetIndex": 1,
         "language": "application/json"
