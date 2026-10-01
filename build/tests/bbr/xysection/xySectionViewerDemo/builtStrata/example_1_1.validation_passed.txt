@@ -1,5 +1,5 @@
 Validation report for ogc.bbr.xysection.xySectionViewerDemo.builtStrata - XY Section demo: built strata
-Generated 2026-10-01T01:23:49.788619+00:00
+Generated 2026-10-01T01:37:57.717504+00:00
 === Files ===
 Using ../../../harness/fixtures/built-strata-example-1.json from examples
 === End Files ===
