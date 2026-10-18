@@ -36,7 +36,9 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
 {
  "@context": {
   "wa-profile": "https://surroundaustralia.github.io/3d-csdm-profile-wa/build/annotated/profiles/wa/wa-core/context.jsonld",
-  "wa-leg": "https://www.legislation.wa.gov.au/legislation/prod/filestore.nsf/FileURL/$FILE/"
+  "wa-leg": "https://www.legislation.wa.gov.au/legislation/prod/filestore.nsf/FileURL/$FILE/",
+  "wa-title": "https://example.com/title/",
+  "wa-interest": "https://example.com/interest/"
  },
  "id": "SP-83687-1-1-0.00",
  "name": "SP83687",
@@ -73,26 +75,27 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
    "wasAssociatedWith": {
     "agentType": "Person",
     "name": {
-     "firstName": "P. R.",
-     "lastName": "Mattaboni",
-     "formattedName": "P. R. Mattaboni"
+     "firstName": "S.",
+     "lastName": "Example",
+     "formattedName": "S. Example"
     },
     "surveyorReference": null,
     "surveyCertificate": "wa-annotation:r-54",
     "certified": "hereby certify that this plan is accurate and is a correct representation of the (a) survey; and (b) calculations from measurements recorded in the field records, undertaken for the purposes of this plan and that it complies with the relevant written law(s) in relation to which it is lodged",
     "actedOnBehalfOf": {
      "agentType": "Organization",
-     "legalName": "P. R. Mattaboni & Co.",
+     "legalName": "Example Surveying Pty Ltd",
      "Address": {
       "hasPart": [
        {
-        "partType": "apt:numberFirst",
-        "value": 16
+        "partType": "apt:addressNumberFirst",
+        "value": 1
        },
        {
         "partType": "apt:road",
         "value": {
-         "@id": "https://example.com/road/ivory-court"
+         "@id": "https://example.com/road/example-street",
+         "label": "Example Street"
         }
        },
        {
@@ -117,8 +120,8 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
        }
       ]
      },
-     "phone": "61412078872",
-     "email": "pmsurvey@iinet.net.au"
+     "phone": "61400000000",
+     "email": "surveyor@example.com"
     },
     "surveyReference": "",
     "signedTimestamp": "2023-02-06T05:53:32+08"
@@ -131,9 +134,9 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
    "wasAssociatedWith": {
     "agentType": "Person",
     "name": {
-     "firstName": "M.",
-     "lastName": "Radich",
-     "formattedName": "M. Radich"
+     "firstName": "E.",
+     "lastName": "Example",
+     "formattedName": "E. Example"
     },
     "actedOnBehalfOf": {
      "agentType": "Organization",
@@ -149,9 +152,9 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
    "wasAssociatedWith": {
     "agentType": "Person",
     "name": {
-     "firstName": "M.",
-     "lastName": "Radich",
-     "formattedName": "M. Radich"
+     "firstName": "E.",
+     "lastName": "Example",
+     "formattedName": "E. Example"
     },
     "actedOnBehalfOf": {
      "agentType": "Organization",
@@ -172,9 +175,9 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
    "wasAssociatedWith": {
     "agentType": "Person",
     "name": {
-     "firstName": "M.",
-     "lastName": "Hallis",
-     "formattedName": "M. Hallis"
+     "firstName": "I.",
+     "lastName": "Example",
+     "formattedName": "I. Example"
     },
     "actedOnBehalfOf": {
      "agentType": "Organization",
@@ -190,9 +193,9 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
    "wasAssociatedWith": {
     "agentType": "Person",
     "name": {
-     "firstName": "B. G.",
-     "lastName": "Roberts",
-     "formattedName": "B. G. Roberts"
+     "firstName": "R.",
+     "lastName": "Example",
+     "formattedName": "R. Example"
     },
     "actedOnBehalfOf": {
      "agentType": "Organization",
@@ -326,13 +329,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -359,13 +362,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -392,13 +395,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -425,13 +428,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -458,13 +461,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -491,13 +494,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -524,13 +527,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -557,13 +560,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -590,13 +593,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -623,13 +626,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -656,13 +659,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -689,13 +692,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -722,13 +725,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -755,13 +758,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -788,13 +791,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -821,13 +824,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -854,13 +857,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -887,13 +890,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -920,13 +923,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -953,13 +956,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -986,13 +989,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -1019,13 +1022,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -1052,13 +1055,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -1085,13 +1088,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -1118,13 +1121,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -1151,13 +1154,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -1184,13 +1187,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -1217,13 +1220,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -1250,13 +1253,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -1283,13 +1286,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -1316,13 +1319,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -1349,13 +1352,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -1382,13 +1385,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -1415,13 +1418,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -1448,13 +1451,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -1481,13 +1484,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -1514,13 +1517,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -1547,13 +1550,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -1580,13 +1583,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -1613,13 +1616,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -1646,13 +1649,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -1679,13 +1682,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -1712,13 +1715,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -1745,13 +1748,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -1778,13 +1781,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -1811,13 +1814,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -1844,13 +1847,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -1877,13 +1880,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -1910,13 +1913,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -1943,13 +1946,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -1976,13 +1979,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -2009,13 +2012,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -2042,13 +2045,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -2075,13 +2078,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -2108,13 +2111,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -2141,13 +2144,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -2174,13 +2177,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -2207,13 +2210,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -2240,13 +2243,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -2273,13 +2276,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -2306,13 +2309,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -2339,13 +2342,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -2372,13 +2375,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -2405,13 +2408,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -2438,13 +2441,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -2471,13 +2474,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -2504,13 +2507,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -2537,13 +2540,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -2570,13 +2573,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -2603,13 +2606,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -2636,13 +2639,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -2669,13 +2672,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -2702,13 +2705,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -2735,13 +2738,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -2768,13 +2771,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -2801,13 +2804,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -2834,13 +2837,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -2867,13 +2870,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -2900,13 +2903,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -2933,13 +2936,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -2966,13 +2969,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -2999,13 +3002,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -3032,13 +3035,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -3065,13 +3068,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -3098,13 +3101,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -3131,13 +3134,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -3164,13 +3167,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -3197,13 +3200,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -3230,13 +3233,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -3263,13 +3266,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -3296,13 +3299,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -3329,13 +3332,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -3362,13 +3365,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -3395,13 +3398,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -3428,13 +3431,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -3461,13 +3464,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -3494,13 +3497,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -3527,13 +3530,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -3560,13 +3563,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -3593,13 +3596,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -3626,13 +3629,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -3659,13 +3662,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -3692,13 +3695,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -3725,13 +3728,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -3758,13 +3761,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -3791,13 +3794,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -3824,13 +3827,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -3857,13 +3860,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -3890,13 +3893,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -3923,13 +3926,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -3956,13 +3959,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -3989,13 +3992,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -4022,13 +4025,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -4055,13 +4058,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -4088,13 +4091,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -4121,13 +4124,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -4154,13 +4157,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -4187,13 +4190,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -4220,13 +4223,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -4253,13 +4256,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -4286,13 +4289,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -4319,13 +4322,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -4352,13 +4355,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -4385,13 +4388,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -4418,13 +4421,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -4451,13 +4454,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -4484,13 +4487,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -4517,13 +4520,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -4550,13 +4553,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -4583,13 +4586,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -4616,13 +4619,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -4649,13 +4652,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -4682,13 +4685,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -4715,13 +4718,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -4748,13 +4751,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -4781,13 +4784,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -4814,13 +4817,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -4847,13 +4850,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -4880,13 +4883,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -4913,13 +4916,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -4946,13 +4949,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -4979,13 +4982,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -5012,13 +5015,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -5045,13 +5048,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -5078,13 +5081,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -5111,13 +5114,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -5144,13 +5147,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -5177,13 +5180,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -5210,13 +5213,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -5243,13 +5246,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -5276,13 +5279,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -5309,13 +5312,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -5342,13 +5345,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -5375,13 +5378,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -5408,13 +5411,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -5441,13 +5444,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -5474,13 +5477,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -5507,13 +5510,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -5540,13 +5543,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -5573,13 +5576,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -5606,13 +5609,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -5639,13 +5642,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -5672,13 +5675,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -5705,13 +5708,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -5738,13 +5741,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -5771,13 +5774,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -5804,13 +5807,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -5837,13 +5840,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -5870,13 +5873,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -5903,13 +5906,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -5936,13 +5939,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -5969,13 +5972,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -6002,13 +6005,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -6035,13 +6038,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -6068,13 +6071,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -6101,13 +6104,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -6134,13 +6137,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -6167,13 +6170,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -6200,13 +6203,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -6233,13 +6236,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -6266,13 +6269,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -6299,13 +6302,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -6332,13 +6335,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -6365,13 +6368,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -6398,13 +6401,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -6431,13 +6434,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -6464,13 +6467,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -6497,13 +6500,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -6530,13 +6533,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -6563,13 +6566,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -6596,13 +6599,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -6629,13 +6632,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -6662,13 +6665,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -6695,13 +6698,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -6728,13 +6731,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -6761,13 +6764,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -6794,13 +6797,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -6827,13 +6830,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -6860,13 +6863,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -6893,13 +6896,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -6926,13 +6929,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -6959,13 +6962,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -6992,13 +6995,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -7025,13 +7028,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -7058,13 +7061,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -7091,13 +7094,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -7124,13 +7127,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -7157,13 +7160,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -7190,13 +7193,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -7223,13 +7226,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -7256,13 +7259,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -7289,13 +7292,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -7322,13 +7325,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -7355,13 +7358,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -7388,13 +7391,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -7421,13 +7424,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -7454,13 +7457,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -7487,13 +7490,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -7520,13 +7523,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -7553,13 +7556,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -7586,13 +7589,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -7619,13 +7622,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -7652,13 +7655,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -7685,13 +7688,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -7718,13 +7721,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -7751,13 +7754,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -7784,13 +7787,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -7817,13 +7820,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -7850,13 +7853,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -7883,13 +7886,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -7916,13 +7919,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -7949,13 +7952,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -7982,13 +7985,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -8015,13 +8018,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -8048,13 +8051,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -8081,13 +8084,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -8114,13 +8117,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -8147,13 +8150,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -8180,13 +8183,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -8213,13 +8216,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -8246,13 +8249,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -8279,13 +8282,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -8312,13 +8315,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -8345,13 +8348,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -8378,13 +8381,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -8411,13 +8414,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -8444,13 +8447,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -8477,13 +8480,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -8510,13 +8513,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -8543,13 +8546,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -8576,13 +8579,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -8609,13 +8612,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -8642,13 +8645,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -8675,13 +8678,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -8708,13 +8711,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -8741,13 +8744,13 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "purpose": "wa-surveypoint-purpose:derived-boundary",
+      "purpose": "wa-surveypoint-purpose:internal-boundary",
       "ptQualityMeasure": 0.1,
       "comment": null,
       "methodEstablished": "wa-surveypoint-method:G",
       "monumentedBy": {
        "form": "wa-monument-form:cadastral-point-unmarked",
-       "condition": "wa-monument-condition:computed",
+       "condition": "wa-monument-condition:ok",
        "state": "wa-monument-state:unmarked"
       }
      }
@@ -31498,7 +31501,7 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "name": "Unit 1 Courtyard -upper",
+      "name": "Unit 1 Balcony",
       "floors": [
        2
       ],
@@ -31527,7 +31530,7 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       ]
      },
      "properties": {
-      "name": "Unit 2 Courtyard - upper",
+      "name": "Unit 2 Balcony",
       "floors": [
        2
       ],
@@ -31841,36 +31844,38 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       "parcelState": "wa-parcel-state:former-tenure",
       "spatialRepresentationDefinitions": {
        "representationStatus": "representation-status:2d",
-       "geometryLegalStatus": "geometry-legal-status:a2d",
+       "geometryLegalStatus": "geometry-legal-status:authoritative-2d",
        "coordinateRepresentation": {
         "coordinateDimension": 3,
-        "zValueRole": "coordinate-z-role:oh"
+        "zValueRole": "coordinate-z-role:observation-height"
        },
        "verticalExtent": {
-        "status": "vertical-extent-status:und",
+        "status": "vertical-extent-status:undefined",
         "lowerBoundary": {
-         "state": "vertical-boundary-state:und"
+         "state": "vertical-extent-status:undefined"
         },
         "upperBoundary": {
-         "state": "vertical-boundary-state:und"
+         "state": "vertical-extent-status:undefined"
         }
        },
-       "computabilityStatus": "computability-status:nc",
+       "computabilityStatus": "computability-status:not-computable",
        "referenceSurfaces": [
         {
          "id": "surface-ground-1",
-         "surfaceType": "height-reference:gl",
-         "geometryLegalStatus": "geometry-legal-status:obs",
+         "surfaceType": "height-reference:ground-level",
+         "geometryLegalStatus": "geometry-legal-status:observed",
          "ref": "uuid:c223e1d0-018b-4343-ae12-d4a07ff3db6a",
          "boundedByFootprint": true
         }
        ],
        "derivedGeometry": {
-        "status": "icsm-derived-geometry-status:not-generated"
+        "status": "derived-geometry-status:not-generated"
        }
       },
       "interests": [
        {
+        "interestLink": "wa-title:4027-1000",
+        "interestType": "wa-interest-type:ct",
         "titleRefAppellation": {
          "label": "CT 4027/1000",
          "hasPart": [
@@ -31946,13 +31951,14 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       "schemeAddress": {
        "hasPart": [
         {
-         "partType": "apt:numberFirst",
+         "partType": "apt:addressNumberFirst",
          "value": 281
         },
         {
          "partType": "apt:road",
          "value": {
-          "@id": "https://example.com/road/belmont-avenue"
+          "@id": "https://example.com/road/belmont-avenue",
+          "label": "Belmont Avenue"
          }
         },
         {
@@ -31977,16 +31983,25 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
         }
        ]
       },
-      "interests": [
-       {
-        "interestType": "wa-interest-type:strata-scheme",
-        "entitlementTotal": 1000
-       }
-      ],
+      "entitlementTotal": 1000,
       "floors": [
        1,
        2
-      ]
+      ],
+      "members": [
+       "uuid:8e5ca9ad-b00d-4871-a723-19b6456480f9",
+       "uuid:e62621ed-1334-4890-964f-608ff68f7a17"
+      ],
+      "spatialRepresentationSummary": {
+       "memberRepresentationStatuses": [
+        "representation-status:derived-3d"
+       ],
+       "memberParcelCount": 2,
+       "geometryTypes": [
+        "AggregateSolid"
+       ],
+       "allMemberParcelsSpatiallyResolved": true
+      }
      }
     },
     {
@@ -32019,133 +32034,128 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       "parcelType": "wa-parcel-type:freehold",
       "parcelPurpose": "wa-parcel-purpose:strata-lot",
       "parcelState": "wa-parcel-state:created",
-      "interests": [
-       {
-        "interestType": "wa-interest-type:strata-lot",
-        "entitlementPortion": 117
-       }
-      ],
+      "entitlementPortion": 117,
       "spatialRepresentationDefinitions": {
-       "representationStatus": "representation-status:d3d",
-       "geometryLegalStatus": "geometry-legal-status:dfld",
+       "representationStatus": "representation-status:derived-3d",
+       "geometryLegalStatus": "geometry-legal-status:derived-from-legal-description",
        "coordinateRepresentation": {
         "coordinateDimension": 3,
-        "zValueRole": "coordinate-z-role:dbg"
+        "zValueRole": "coordinate-z-role:derived-boundary-geometry"
        },
        "verticalExtent": {
-        "status": "vertical-extent-status:ld",
+        "status": "vertical-extent-status:legally-defined",
         "lowerBoundary": {
-         "state": "vertical-boundary-state:drv",
+         "state": "vertical-extent-status:derived",
          "definitionRef": "bd-lot1-pu-lower",
          "limitRef": "limit-pu1-lower-floor",
          "geometryRef": "uuid:5d042830-e722-44d6-bdd3-3fc58aef7643"
         },
         "upperBoundary": {
-         "state": "vertical-boundary-state:drv",
+         "state": "vertical-extent-status:derived",
          "definitionRef": "bd-lot1-pu-upper",
          "limitRef": "limit-pu1-upper-ceiling",
          "geometryRef": "uuid:41e3a60e-b95b-480e-8555-e44609c4aa35"
         }
        },
-       "computabilityStatus": "computability-status:cd",
+       "computabilityStatus": "computability-status:computed",
        "verticalBoundaryDefinitions": [
         {
          "id": "bd-lot1-pu-lower",
-         "definitionType": "vertical-definition-type:brb",
+         "definitionType": "vertical-definition-type:building-referenced-boundary",
          "limits": [
           {
            "id": "limit-pu1-lower-inner-wall-lot2",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:innerSurface",
+           "relationship": "boundary-reference:inner-surface",
            "referenceFeatureRef": "uuid:95f9e6b2-cd10-47b3-a3b9-af363b0bcdf0",
            "boundaryFaceRef": "uuid:781403df-d6db-45b6-9b1f-b9edee97ed19",
-           "buildingElementType": "wa-occ:wall",
+           "buildingElementType": "occupation-feature:wall",
            "description": "Boundary with Lot 2 at ground level is the face of 'Ground floor inner wall - Units 1 and 2' itself (not its centre plane, per correction) -- mechanically derivable: exactly one Face is shared between this wall's Solid and Principal Unit 1 - lower.",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-pu1-lower-outer-wall-1",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:innerSurface",
+           "relationship": "boundary-reference:inner-surface",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:1dad652f-6d55-43a4-a6ed-3f1701f12e35",
-           "buildingElementType": "wa-occ:wall",
+           "buildingElementType": "occupation-feature:wall",
            "description": "Occupation feature is 'Ground floor outer wall' (external wall), but the legal boundary of an enclosed principal unit component against an external wall is the wall's INNER surface, per Schedule 2A Clause 3AB, applied consistently with the courtyard clause's own explicit inner/outer distinction -- corrected from an earlier mislabelled 'outerSurface' (the wall's role/name never determines relationship on its own).",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-pu1-lower-outer-wall-2",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:innerSurface",
+           "relationship": "boundary-reference:inner-surface",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:97accf15-0b5c-4644-9a88-3d9a7cea96c0",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-pu1-lower-outer-wall-3",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:innerSurface",
+           "relationship": "boundary-reference:inner-surface",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:a782cb8b-b5ce-4d31-8112-936078af749d",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-pu1-lower-outer-wall-4",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:innerSurface",
+           "relationship": "boundary-reference:inner-surface",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:ab00bf89-ef93-4dfe-8b7c-66e5ed9b3e4c",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-pu1-lower-outer-wall-5",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:innerSurface",
+           "relationship": "boundary-reference:inner-surface",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:b4767ed3-c339-453e-be0d-eb362d2c6bce",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-pu1-lower-outer-wall-6",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:innerSurface",
+           "relationship": "boundary-reference:inner-surface",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:b5fded73-5385-4f0c-9062-b24eb3e76ffb",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-pu1-lower-outer-wall-7",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:innerSurface",
+           "relationship": "boundary-reference:inner-surface",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:c197245c-43a4-4ce2-91a5-f278173613d7",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-pu1-lower-ceiling",
            "boundaryRole": "boundary-role:upper",
-           "relationship": "building-boundary-reference:underSurface",
+           "relationship": "boundary-reference:lower-surface",
            "referenceFeatureRef": "uuid:32e41321-a7f6-4773-bd22-d593f46ef2f7",
            "boundaryFaceRef": "uuid:8beff6eb-e114-4cbf-8310-fb90553b7b7c",
-           "buildingElementType": "wa-occ:slab",
+           "buildingElementType": "occupation-feature:slab",
            "description": "Underside of the intermediate slab (First floor slab), internal to Lot 1 (separates this component from lot-1-principal-upper); boundaryFaceRef intentionally omitted -- mechanically derivable.",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-pu1-lower-floor",
            "boundaryRole": "boundary-role:lower",
-           "relationship": "building-boundary-reference:upperSurface",
+           "relationship": "boundary-reference:upper-surface",
            "referenceFeatureRef": "uuid:fa6de8a9-af10-4d94-9d93-57fc3929e8f8",
            "boundaryFaceRef": "uuid:5d042830-e722-44d6-bdd3-3fc58aef7643",
-           "buildingElementType": "wa-occ:slab",
+           "buildingElementType": "occupation-feature:slab",
            "description": "Upper surface of the Ground floor slab -- boundaryFaceRef intentionally omitted, mechanically derivable.",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "referenceKind": "reference-kind:occupation-feature"
           }
          ],
          "source": {
@@ -32155,128 +32165,128 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
           "sourceLocation": {
            "planReference": "SP83687"
           },
-          "scope": "icsm-scope:parcel",
+          "scope": "source-scope:scheme",
           "appliesTo": [
            "uuid:e62621ed-1334-4890-964f-608ff68f7a17"
           ]
          },
-         "resolutionStatus": "wa-resolution-status:resolved"
+         "resolutionStatus": "computability-status:computable"
         },
         {
          "id": "bd-lot1-pu-upper",
-         "definitionType": "vertical-definition-type:brb",
+         "definitionType": "vertical-definition-type:building-referenced-boundary",
          "limits": [
           {
            "id": "limit-pu1-upper-inner-wall-lot2",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:innerSurface",
+           "relationship": "boundary-reference:inner-surface",
            "referenceFeatureRef": "uuid:50d1497e-afbd-41a7-aa94-6a5c76d392d9",
            "boundaryFaceRef": "uuid:2361fd90-93ba-41fa-b858-96ed01054510",
-           "buildingElementType": "wa-occ:wall",
+           "buildingElementType": "occupation-feature:wall",
            "description": "Boundary with Lot 2 at first-floor level is the face of 'First floor inner wall - Units 1 and 2' itself -- mechanically derivable.",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-pu1-upper-outer-wall-1",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:innerSurface",
+           "relationship": "boundary-reference:inner-surface",
            "referenceFeatureRef": "uuid:a47c7ea5-ade2-42e3-9abb-84141bb924cc",
            "boundaryFaceRef": "uuid:15ddccd1-71dc-4281-b3ba-139a2a094bdd",
-           "buildingElementType": "wa-occ:wall",
+           "buildingElementType": "occupation-feature:wall",
            "description": "Occupation feature is 'First floor outer wall' (external wall), but the legal boundary of an enclosed principal unit component against an external wall is the wall's INNER surface, per Schedule 2A Clause 3AB, applied consistently with the courtyard clause's own explicit inner/outer distinction -- corrected from an earlier mislabelled 'outerSurface' (the wall's role/name never determines relationship on its own).",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-pu1-upper-outer-wall-2",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:innerSurface",
+           "relationship": "boundary-reference:inner-surface",
            "referenceFeatureRef": "uuid:a47c7ea5-ade2-42e3-9abb-84141bb924cc",
            "boundaryFaceRef": "uuid:32d8edc1-2634-4e21-afe8-2d79627ce2ff",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-pu1-upper-outer-wall-3",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:innerSurface",
+           "relationship": "boundary-reference:inner-surface",
            "referenceFeatureRef": "uuid:a47c7ea5-ade2-42e3-9abb-84141bb924cc",
            "boundaryFaceRef": "uuid:42bd9b8d-c8e1-474f-8307-f3202d25b16d",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-pu1-upper-outer-wall-4",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:innerSurface",
+           "relationship": "boundary-reference:inner-surface",
            "referenceFeatureRef": "uuid:a47c7ea5-ade2-42e3-9abb-84141bb924cc",
            "boundaryFaceRef": "uuid:96ce3492-5434-467f-97fa-e74f2f0e36b1",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-pu1-upper-outer-wall-5",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:innerSurface",
+           "relationship": "boundary-reference:inner-surface",
            "referenceFeatureRef": "uuid:a47c7ea5-ade2-42e3-9abb-84141bb924cc",
            "boundaryFaceRef": "uuid:e33bf50a-950b-48a7-a181-5ac1e7a6c6b9",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-pu1-upper-ceiling",
            "boundaryRole": "boundary-role:upper",
-           "relationship": "building-boundary-reference:underSurface",
+           "relationship": "boundary-reference:lower-surface",
            "referenceFeatureRef": "uuid:2a7eb875-d6c6-463a-9579-1af2ed0edc36",
            "boundaryFaceRef": "uuid:41e3a60e-b95b-480e-8555-e44609c4aa35",
-           "buildingElementType": "wa-occ:ceiling",
+           "buildingElementType": "occupation-feature:ceiling",
            "description": "Underside of the First floor ceiling (true top of the building) -- boundaryFaceRef intentionally omitted, mechanically derivable.",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-pu1-upper-floor",
            "boundaryRole": "boundary-role:lower",
-           "relationship": "building-boundary-reference:upperSurface",
+           "relationship": "boundary-reference:upper-surface",
            "referenceFeatureRef": "uuid:32e41321-a7f6-4773-bd22-d593f46ef2f7",
            "boundaryFaceRef": "uuid:60209d69-b604-4199-a75f-ea79b57044cf",
-           "buildingElementType": "wa-occ:slab",
+           "buildingElementType": "occupation-feature:slab",
            "description": "Upper surface of the intermediate slab (First floor slab), internal to Lot 1 -- boundaryFaceRef intentionally omitted, mechanically derivable.",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-pu1-upper-mechanical-wall-1",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:innerSurface",
+           "relationship": "boundary-reference:inner-surface",
            "referenceFeatureRef": "uuid:6db98d07-7a98-432b-9b44-0c9d7fd07298",
            "boundaryFaceRef": "uuid:3c6f4144-ca90-47d3-b26f-b85ee0e530e7",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-pu1-upper-mechanical-wall-2",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:innerSurface",
+           "relationship": "boundary-reference:inner-surface",
            "referenceFeatureRef": "uuid:6db98d07-7a98-432b-9b44-0c9d7fd07298",
            "boundaryFaceRef": "uuid:420e31df-05b1-4692-bcb4-4d9b51bc89bd",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-pu1-upper-mechanical-wall-3",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:innerSurface",
+           "relationship": "boundary-reference:inner-surface",
            "referenceFeatureRef": "uuid:6db98d07-7a98-432b-9b44-0c9d7fd07298",
            "boundaryFaceRef": "uuid:4630cb9c-eff9-40fa-a2ce-e629be8d2552",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-pu1-upper-mechanical-wall-4",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:innerSurface",
+           "relationship": "boundary-reference:inner-surface",
            "referenceFeatureRef": "uuid:6db98d07-7a98-432b-9b44-0c9d7fd07298",
            "boundaryFaceRef": "uuid:5f88d8c9-3435-4410-a124-86666258f35f",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           }
          ],
          "source": {
@@ -32286,74 +32296,74 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
           "sourceLocation": {
            "planReference": "SP83687"
           },
-          "scope": "icsm-scope:parcel",
+          "scope": "source-scope:scheme",
           "appliesTo": [
            "uuid:e62621ed-1334-4890-964f-608ff68f7a17"
           ]
          },
-         "resolutionStatus": "wa-resolution-status:resolved"
+         "resolutionStatus": "computability-status:computable"
         },
         {
          "id": "bd-lot1-balcony-upper",
-         "definitionType": "vertical-definition-type:brb",
+         "definitionType": "vertical-definition-type:building-referenced-boundary",
          "limits": [
           {
            "id": "limit-c1-upper-outer-wall-1",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:outerSurface",
+           "relationship": "boundary-reference:external-surface",
            "referenceFeatureRef": "uuid:a47c7ea5-ade2-42e3-9abb-84141bb924cc",
            "boundaryFaceRef": "uuid:bf39d1f8-2c0b-4c5b-aa5f-bcf1d1ec71a2",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-c1-upper-outer-wall-2",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:outerSurface",
+           "relationship": "boundary-reference:external-surface",
            "referenceFeatureRef": "uuid:a47c7ea5-ade2-42e3-9abb-84141bb924cc",
            "boundaryFaceRef": "uuid:d9d0686c-40ed-486d-b9d1-301ddca53b58",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-c1-upper-floor",
            "boundaryRole": "boundary-role:lower",
-           "relationship": "building-boundary-reference:upperSurface",
+           "relationship": "boundary-reference:upper-surface",
            "referenceFeatureRef": "uuid:32e41321-a7f6-4773-bd22-d593f46ef2f7",
            "boundaryFaceRef": "uuid:7c53d6f5-6885-471d-b680-f1e3e859444a",
-           "buildingElementType": "wa-occ:slab",
+           "buildingElementType": "occupation-feature:slab",
            "description": "Upper surface of First floor slab -- boundaryFaceRef intentionally omitted, mechanically derivable.",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-c1-upper-ceiling",
            "boundaryRole": "boundary-role:upper",
-           "relationship": "building-boundary-reference:projection",
+           "relationship": "boundary-reference:projection",
            "referenceFeatureRef": "uuid:2a7eb875-d6c6-463a-9579-1af2ed0edc36",
            "boundaryFaceRef": "uuid:f68cf23e-56aa-4091-9a51-c7ea6d00f185",
-           "buildingElementType": "wa-occ:ceiling",
+           "buildingElementType": "occupation-feature:ceiling",
            "description": "Bottom surface of the First floor ceiling, per correction. This courtyard's own top face (uuid:f68cf23e-...) shares no topology with the ceiling's Solid (it is not literally 'covered'), but lies on the same plane -- confirmed via inspect_csdm.faces_are_coplanar() against uuid:63007394-ae2a-4bf0-aeeb-7ab443e1c61d ('Bottom boundary face, [Ceiling]'), so boundaryFaceRef is supplied explicitly (projection relationships are never mechanically derived) and independently verified by validate_spatial_representation.py's limit.projection.coplanarWithReference check.",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-c1-upper-other-wall-1",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:projection",
+           "relationship": "boundary-reference:projection",
            "referenceFeatureRef": "uuid:a47c7ea5-ade2-42e3-9abb-84141bb924cc",
            "boundaryFaceRef": "uuid:6c0da309-c362-4b4f-a8ef-fdcd5631c532",
-           "buildingElementType": "wa-occ:wall",
+           "buildingElementType": "occupation-feature:wall",
            "description": "South-facing perimeter face of this courtyard's own Solid -- checked against every occupationFeature's own faces for coplanarity before deciding this was a single-wall projection rather than a corner formed by two intersecting wall planes: it is coplanar only with 'First floor outer wall - Units 1 and 2' (uuid:a47c7ea5-..., its own face uuid:5dcb7af4-...) and NOT with the adjacent west-facing face limit-c1-upper-other-wall-2 (their normals are ~perpendicular, ruling out a shared corner plane). Same occupation feature already cited for limit-c1-upper-outer-wall-1/2 and limit-pu1-upper-outer-wall-1..5; this face is simply a segment of that same wall's plane the courtyard doesn't directly touch.",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-c1-upper-other-wall-2",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:projection",
+           "relationship": "boundary-reference:projection",
            "referenceFeatureRef": "uuid:a47c7ea5-ade2-42e3-9abb-84141bb924cc",
            "boundaryFaceRef": "uuid:8f2f0bab-13fc-4032-b5bb-2e07e3716ecd",
-           "buildingElementType": "wa-occ:wall",
+           "buildingElementType": "occupation-feature:wall",
            "description": "West-facing perimeter face of this courtyard's own Solid -- same finding as limit-c1-upper-other-wall-1: coplanar only with 'First floor outer wall - Units 1 and 2' (uuid:a47c7ea5-..., its own face uuid:dc140e18-...), a single-wall projection, not a corner intersection.",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "referenceKind": "reference-kind:occupation-feature"
           }
          ],
          "source": {
@@ -32363,270 +32373,269 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
           "sourceLocation": {
            "planReference": "SP83687"
           },
-          "scope": "icsm-scope:parcel",
+          "scope": "source-scope:scheme",
           "appliesTo": [
            "uuid:e62621ed-1334-4890-964f-608ff68f7a17"
           ]
          },
-         "resolutionStatus": "wa-resolution-status:resolved"
+         "resolutionStatus": "computability-status:computable"
         },
         {
          "id": "bd-lot1-courtyard-lower",
-         "definitionType": "vertical-definition-type:brb",
+         "definitionType": "vertical-definition-type:building-referenced-boundary",
          "limits": [
           {
            "id": "limit-c1-lower-outer-wall-1",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:outerSurface",
+           "relationship": "boundary-reference:external-surface",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:2afad022-d13f-4e1b-9741-4b9e9b8970f0",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-c1-lower-outer-wall-2",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:outerSurface",
+           "relationship": "boundary-reference:external-surface",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:85195f1a-cc48-4cd8-addc-fdc21edeaf96",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-c1-lower-outer-wall-3",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:outerSurface",
+           "relationship": "boundary-reference:external-surface",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:eae2e288-9529-4a98-838d-dd8a9ea47a52",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-c1-lower-floor",
            "boundaryRole": "boundary-role:lower",
-           "relationship": "relative-height-reference:below-surface",
+           "relationship": "boundary-reference:offset-from-surface",
            "referenceFeatureRef": "uuid:c223e1d0-018b-4343-ae12-d4a07ff3db6a",
            "boundaryFaceRef": "uuid:ba5896fd-9032-479e-97a9-9c5984dadef9",
-           "buildingElementType": "height-reference:ns",
            "description": "Per correction: 1m below existing ground level, averaged at each corner. referenceFeatureRef is 'Surface Shell of Ground' (uuid:c223e1d0-...), a standalone reference-surface Shell, not an occupationFeature -- resolved via the new referenceKind: referenceSurface mechanism. This skill never computes the offset geometry itself; the courtyard's own existing floor Face (31.23 m2, previously reported unresolved for lack of a shared-face candidate) is supplied explicitly as the already-modelled result, with heightOffset carried through as descriptive/audit content only.",
-           "referenceKind": "icsm-reference-kind:reference-surface",
+           "referenceKind": "reference-kind:reference-surface",
            "heightOffset": {
             "offsetValue": -1,
             "offsetUnit": "uom:m",
-            "offsetDirection": "icsm-vertical-direction:blw",
+            "offsetDirection": "vertical-direction:below",
             "basis": "approximately, averaged at each of the courtyard's 4 corners"
            }
           },
           {
            "id": "limit-c1-lower-ceiling",
            "boundaryRole": "boundary-role:upper",
-           "relationship": "building-boundary-reference:projection",
+           "relationship": "boundary-reference:projection",
            "referenceFeatureRef": "uuid:32e41321-a7f6-4773-bd22-d593f46ef2f7",
            "boundaryFaceRef": "uuid:79b1ff48-75ea-4b69-a73c-50697703d836",
-           "buildingElementType": "wa-occ:slab",
+           "buildingElementType": "occupation-feature:slab",
            "description": "Per correction: bottom surface of the First floor slab (not a ceiling -- this is the ground-floor courtyard, directly under the first-floor slab). This courtyard's own top face (uuid:79b1ff48-..., 31.23 m2) shares no topology with the slab's Solid, but lies on the same plane -- confirmed via inspect_csdm.faces_are_coplanar() against uuid:e9c36250-... / uuid:230553fc-... / uuid:720fc88b-... (all 'Bottom boundary face, [Floor 1]'), so boundaryFaceRef is supplied explicitly and independently verified by validate_spatial_representation.py's limit.projection.coplanarWithReference check.",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-c1-lower-outer-wall-projection-1",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:projection",
+           "relationship": "boundary-reference:projection",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:e896a6f4-69ad-40c4-aa2b-8554d026d852",
-           "buildingElementType": "wa-occ:wall",
+           "buildingElementType": "occupation-feature:wall",
            "description": "Lateral perimeter face with no direct occupationFeature match -- coplanar with Ground floor outer wall (single-wall projection). Identified during the full-shell-coverage reconciliation refactor.",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-c1-lower-outer-wall-projection-2",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:projection",
+           "relationship": "boundary-reference:projection",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:1e84822a-b9d3-46ab-8333-0d39e2436217",
-           "buildingElementType": "wa-occ:wall",
+           "buildingElementType": "occupation-feature:wall",
            "description": "Lateral perimeter face with no direct occupationFeature match -- coplanar with Ground floor outer wall (single-wall projection). Identified during the full-shell-coverage reconciliation refactor.",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-c1-lower-outer-wall-projection-3",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:projection",
+           "relationship": "boundary-reference:projection",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:0bcb268e-19a6-49ee-bb9d-5db261de6bc1",
-           "buildingElementType": "wa-occ:wall",
+           "buildingElementType": "occupation-feature:wall",
            "description": "Lateral perimeter face with no direct occupationFeature match -- coplanar with Ground floor outer wall (single-wall projection). Identified during the full-shell-coverage reconciliation refactor.",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-c1-lower-outer-wall-projection-4",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:projection",
+           "relationship": "boundary-reference:projection",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:f5c6d1ad-3a4c-43e8-aba1-490702fc1235",
-           "buildingElementType": "wa-occ:wall",
+           "buildingElementType": "occupation-feature:wall",
            "description": "Lateral perimeter face with no direct occupationFeature match -- coplanar with Ground floor outer wall (single-wall projection). Identified during the full-shell-coverage reconciliation refactor.",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-c1-lower-outer-wall-projection-5",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:projection",
+           "relationship": "boundary-reference:projection",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:a5b240a4-0cae-4c80-82b3-e30f75dddb88",
-           "buildingElementType": "wa-occ:wall",
+           "buildingElementType": "occupation-feature:wall",
            "description": "Lateral perimeter face with no direct occupationFeature match -- coplanar with Ground floor outer wall (single-wall projection). Identified during the full-shell-coverage reconciliation refactor.",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-c1-lower-outer-wall-projection-6",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:projection",
+           "relationship": "boundary-reference:projection",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:30b2de20-3e7c-4943-bef1-9f4e9df63fda",
-           "buildingElementType": "wa-occ:wall",
+           "buildingElementType": "occupation-feature:wall",
            "description": "Lateral perimeter face with no direct occupationFeature match -- coplanar with Ground floor outer wall (single-wall projection). Identified during the full-shell-coverage reconciliation refactor.",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-c1-lower-outer-wall-projection-7",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:projection",
+           "relationship": "boundary-reference:projection",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:08ce1e21-7dee-4bf5-882b-eb90ca6b822b",
-           "buildingElementType": "wa-occ:wall",
+           "buildingElementType": "occupation-feature:wall",
            "description": "Lateral perimeter face with no direct occupationFeature match -- coplanar with Ground floor outer wall (single-wall projection). Identified during the full-shell-coverage reconciliation refactor.",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-c1-lower-outer-wall-projection-8",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:projection",
+           "relationship": "boundary-reference:projection",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:a9f9583c-0c06-4a87-93a5-c8d853a1f15d",
-           "buildingElementType": "wa-occ:wall",
+           "buildingElementType": "occupation-feature:wall",
            "description": "Lateral perimeter face with no direct occupationFeature match -- coplanar with Ground floor outer wall (single-wall projection). Identified during the full-shell-coverage reconciliation refactor.",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-c1-lower-outer-wall-projection-9",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:projection",
+           "relationship": "boundary-reference:projection",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:6c2dd872-ac54-42bb-82da-6156c5c5bb0f",
-           "buildingElementType": "wa-occ:wall",
+           "buildingElementType": "occupation-feature:wall",
            "description": "Lateral perimeter face with no direct occupationFeature match -- coplanar with Ground floor outer wall (single-wall projection). Identified during the full-shell-coverage reconciliation refactor.",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-c1-lower-outer-wall-projection-10",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:projection",
+           "relationship": "boundary-reference:projection",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:a4d11f51-570f-46ef-933f-21e5bb93c539",
-           "buildingElementType": "wa-occ:wall",
+           "buildingElementType": "occupation-feature:wall",
            "description": "Lateral perimeter face with no direct occupationFeature match -- coplanar with Ground floor outer wall (single-wall projection). Identified during the full-shell-coverage reconciliation refactor.",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-c1-lower-outer-wall-projection-11",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:projection",
+           "relationship": "boundary-reference:projection",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:993fc3c7-c951-45ca-8415-b0f257880f1b",
-           "buildingElementType": "wa-occ:wall",
+           "buildingElementType": "occupation-feature:wall",
            "description": "Lateral perimeter face with no direct occupationFeature match -- coplanar with Ground floor outer wall (single-wall projection). Identified during the full-shell-coverage reconciliation refactor.",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-c1-lower-outer-wall-projection-12",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:projection",
+           "relationship": "boundary-reference:projection",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:b14417c6-5c84-44ec-8ea2-3e5326571f64",
-           "buildingElementType": "wa-occ:wall",
+           "buildingElementType": "occupation-feature:wall",
            "description": "Lateral perimeter face with no direct occupationFeature match -- coplanar with Ground floor outer wall (single-wall projection). Identified during the full-shell-coverage reconciliation refactor.",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-c1-lower-outer-wall-projection-13",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:projection",
+           "relationship": "boundary-reference:projection",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:846cd984-87d0-4d9e-a82a-42f6437367e2",
-           "buildingElementType": "wa-occ:wall",
+           "buildingElementType": "occupation-feature:wall",
            "description": "Lateral perimeter face with no direct occupationFeature match -- coplanar with Ground floor outer wall (single-wall projection). Identified during the full-shell-coverage reconciliation refactor.",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-c1-lower-outer-wall-projection-14",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:projection",
+           "relationship": "boundary-reference:projection",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:08581952-eb96-47c3-bc08-b75dd15c5a8c",
-           "buildingElementType": "wa-occ:wall",
+           "buildingElementType": "occupation-feature:wall",
            "description": "Lateral perimeter face with no direct occupationFeature match -- coplanar with Ground floor outer wall (single-wall projection). Identified during the full-shell-coverage reconciliation refactor.",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-c1-lower-outer-wall-projection-15",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:projection",
+           "relationship": "boundary-reference:projection",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:0bc4685c-f9bc-41d5-a564-14c88643dbed",
-           "buildingElementType": "wa-occ:wall",
+           "buildingElementType": "occupation-feature:wall",
            "description": "Lateral perimeter face with no direct occupationFeature match -- coplanar with Ground floor outer wall (single-wall projection). Identified during the full-shell-coverage reconciliation refactor.",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-c1-lower-site-boundary-1",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "cadastral-boundary-reference:title-boundary",
+           "relationship": "boundary-reference:title-boundary",
            "referenceFeatureRef": "uuid:5090f295-249f-4d10-83d1-0068646e484a",
            "boundaryFaceRef": "uuid:610f82db-406d-427b-850b-1d157955fc90",
            "description": "Lateral perimeter face with no building-element evidence -- verified via face_matches_vertical_plane_through_edge to lie on the vertical plane through this former-tenure parcel footprint edge. Identified during the full-shell-coverage reconciliation refactor.",
-           "referenceKind": "icsm-reference-kind:parcel",
+           "referenceKind": "reference-kind:parcel",
            "referenceEdgeRef": "uuid:25d28050-fdf0-4868-a071-98eef410194f"
           },
           {
            "id": "limit-c1-lower-site-boundary-2",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "cadastral-boundary-reference:title-boundary",
+           "relationship": "boundary-reference:title-boundary",
            "referenceFeatureRef": "uuid:5090f295-249f-4d10-83d1-0068646e484a",
            "boundaryFaceRef": "uuid:7e7b240a-a9d8-44c8-a2d0-9f2f42d52bce",
            "description": "Lateral perimeter face with no building-element evidence -- verified via face_matches_vertical_plane_through_edge to lie on the vertical plane through this former-tenure parcel footprint edge. Identified during the full-shell-coverage reconciliation refactor.",
-           "referenceKind": "icsm-reference-kind:parcel",
+           "referenceKind": "reference-kind:parcel",
            "referenceEdgeRef": "uuid:25d28050-fdf0-4868-a071-98eef410194f"
           },
           {
            "id": "limit-c1-lower-site-boundary-3",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "cadastral-boundary-reference:title-boundary",
+           "relationship": "boundary-reference:title-boundary",
            "referenceFeatureRef": "uuid:5090f295-249f-4d10-83d1-0068646e484a",
            "boundaryFaceRef": "uuid:2302e08b-b5c2-4afa-abfb-d6b496254dea",
            "description": "Lateral perimeter face with no building-element evidence -- verified via face_matches_vertical_plane_through_edge to lie on the vertical plane through this former-tenure parcel footprint edge. Identified during the full-shell-coverage reconciliation refactor.",
-           "referenceKind": "icsm-reference-kind:parcel",
+           "referenceKind": "reference-kind:parcel",
            "referenceEdgeRef": "uuid:d14bfccb-00dd-4305-80df-0de7e4b20825"
           },
           {
            "id": "limit-c1-lower-site-boundary-4",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "cadastral-boundary-reference:title-boundary",
+           "relationship": "boundary-reference:title-boundary",
            "referenceFeatureRef": "uuid:5090f295-249f-4d10-83d1-0068646e484a",
            "boundaryFaceRef": "uuid:72a74a57-64df-4dcb-b263-abe3d7ed396b",
            "description": "Lateral perimeter face with no building-element evidence -- verified via face_matches_vertical_plane_through_edge to lie on the vertical plane through this former-tenure parcel footprint edge. Identified during the full-shell-coverage reconciliation refactor.",
-           "referenceKind": "icsm-reference-kind:parcel",
+           "referenceKind": "reference-kind:parcel",
            "referenceEdgeRef": "uuid:d14bfccb-00dd-4305-80df-0de7e4b20825"
           },
           {
            "id": "limit-c1-lower-centre-plane-1",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:centrePlane",
+           "relationship": "boundary-reference:centre-plane",
            "referenceFeatureRef": "uuid:95f9e6b2-cd10-47b3-a3b9-af363b0bcdf0",
            "boundaryFaceRef": "uuid:a199e02e-9ed1-44f8-84bb-ce61619e3a52",
            "description": "Small lateral sliver face on the extension of the centre plane of the Ground floor inner wall - Units 1 and 2 (Central Wall - Ground), beyond the wall's own modelled footprint -- confirmed geometrically via resolve_wall_centre_plane (separation 0.29992m between the wall's two opposing major faces; sub-micron residual against this face's own plane). Identified during the wall-centre-plane derivation extension to the full-shell-coverage reconciliation refactor.",
-           "referenceKind": "icsm-reference-kind:occupation-feature",
+           "referenceKind": "reference-kind:occupation-feature",
            "geometricDerivation": {
-            "mechanism": "icsm-mechanism:wall-centre-plane",
+            "mechanism": "derivation-mechanism:wall-centre-plane",
             "occupationFeatureRef": "uuid:95f9e6b2-cd10-47b3-a3b9-af363b0bcdf0",
             "sideAFaceRefs": [
              "uuid:781403df-d6db-45b6-9b1f-b9edee97ed19"
@@ -32635,19 +32644,19 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
              "uuid:5bff8d4d-733a-4bbb-8c38-d33b208f2b2a",
              "uuid:ae446229-6a99-4635-8072-3a39137bfd08"
             ],
-            "separation": 0.29991611279547215
+            "separation": 0.29991612397134304
            }
           },
           {
            "id": "limit-c1-lower-centre-plane-2",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:centrePlane",
+           "relationship": "boundary-reference:centre-plane",
            "referenceFeatureRef": "uuid:95f9e6b2-cd10-47b3-a3b9-af363b0bcdf0",
            "boundaryFaceRef": "uuid:31881a42-71f2-4dd0-a10c-0ca79e3d8f23",
            "description": "Small lateral sliver face on the extension of the centre plane of the Ground floor inner wall - Units 1 and 2 (Central Wall - Ground), beyond the wall's own modelled footprint -- confirmed geometrically via resolve_wall_centre_plane (separation 0.29992m between the wall's two opposing major faces; sub-micron residual against this face's own plane). Identified during the wall-centre-plane derivation extension to the full-shell-coverage reconciliation refactor.",
-           "referenceKind": "icsm-reference-kind:occupation-feature",
+           "referenceKind": "reference-kind:occupation-feature",
            "geometricDerivation": {
-            "mechanism": "icsm-mechanism:wall-centre-plane",
+            "mechanism": "derivation-mechanism:wall-centre-plane",
             "occupationFeatureRef": "uuid:95f9e6b2-cd10-47b3-a3b9-af363b0bcdf0",
             "sideAFaceRefs": [
              "uuid:781403df-d6db-45b6-9b1f-b9edee97ed19"
@@ -32656,7 +32665,7 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
              "uuid:5bff8d4d-733a-4bbb-8c38-d33b208f2b2a",
              "uuid:ae446229-6a99-4635-8072-3a39137bfd08"
             ],
-            "separation": 0.29991611279547215
+            "separation": 0.29991612397134304
            }
           }
          ],
@@ -32667,23 +32676,23 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
           "sourceLocation": {
            "planReference": "SP83687"
           },
-          "scope": "icsm-scope:parcel",
+          "scope": "source-scope:scheme",
           "appliesTo": [
            "uuid:e62621ed-1334-4890-964f-608ff68f7a17"
           ]
          },
-         "resolutionStatus": "wa-resolution-status:resolved"
+         "resolutionStatus": "computability-status:computable"
         }
        ],
        "referenceSurfaces": [],
        "derivedGeometry": {
-        "status": "icsm-derived-geometry-status:solid-generated",
+        "status": "derived-geometry-status:generated",
         "geometryType": "AggregateSolid",
         "components": [
          {
           "componentId": "lot-1-principal-lower",
           "solidRef": "uuid:bebe0853-7b46-4ee0-a2d2-b60a445f6b2d",
-          "componentRole": "wa-strata-component-role:principal-unit",
+          "componentRole": "component-role:principal-unit",
           "inputDefinitionRefs": [
            "bd-lot1-pu-lower"
           ]
@@ -32691,7 +32700,7 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
          {
           "componentId": "lot-1-principal-upper",
           "solidRef": "uuid:93f32e94-6a66-4405-9763-bf9d9771e654",
-          "componentRole": "wa-strata-component-role:principal-unit",
+          "componentRole": "component-role:principal-unit",
           "inputDefinitionRefs": [
            "bd-lot1-pu-upper"
           ]
@@ -32699,7 +32708,7 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
          {
           "componentId": "lot-1-balcony-upper",
           "solidRef": "uuid:8834fa5e-529b-4258-9537-a01bea709001",
-          "componentRole": "wa-strata-component-role:balcony",
+          "componentRole": "component-role:balcony",
           "inputDefinitionRefs": [
            "bd-lot1-balcony-upper"
           ]
@@ -32707,12 +32716,12 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
          {
           "componentId": "lot-1-courtyard-lower",
           "solidRef": "uuid:e1102530-0aae-4a27-87a1-ad9dbe7372e9",
-          "componentRole": "wa-strata-component-role:courtyard",
+          "componentRole": "component-role:courtyard",
           "inputDefinitionRefs": [
            "bd-lot1-courtyard-lower"
           ],
           "boundaryCoverage": {
-           "mode": "icsm-boundary-coverage:full-boundary-coverage",
+           "fullBoundaryCoverage": true,
            "lowerCardinality": 1,
            "upperCardinality": 1,
            "excludedFaceRefs": []
@@ -32777,135 +32786,130 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
       "parcelType": "wa-parcel-type:freehold",
       "parcelPurpose": "wa-parcel-purpose:strata-lot",
       "parcelState": "wa-parcel-state:created",
-      "interests": [
-       {
-        "interestType": "wa-interest-type:strata-lot",
-        "entitlementPortion": 108
-       }
-      ],
+      "entitlementPortion": 108,
       "spatialRepresentationDefinitions": {
-       "representationStatus": "representation-status:d3d",
-       "geometryLegalStatus": "geometry-legal-status:dfld",
+       "representationStatus": "representation-status:derived-3d",
+       "geometryLegalStatus": "geometry-legal-status:derived-from-legal-description",
        "coordinateRepresentation": {
         "coordinateDimension": 3,
-        "zValueRole": "coordinate-z-role:dbg"
+        "zValueRole": "coordinate-z-role:derived-boundary-geometry"
        },
        "verticalExtent": {
-        "status": "vertical-extent-status:ld",
+        "status": "vertical-extent-status:legally-defined",
         "lowerBoundary": {
-         "state": "vertical-boundary-state:drv",
+         "state": "vertical-extent-status:derived",
          "definitionRef": "bd-lot2-pu-lower",
          "limitRef": "limit-pu2-lower-floor",
          "geometryRef": "uuid:c6f514c0-4e61-4c5a-bac1-70ee4de15454"
         },
         "upperBoundary": {
-         "state": "vertical-boundary-state:drv",
+         "state": "vertical-extent-status:derived",
          "definitionRef": "bd-lot2-pu-upper",
          "limitRef": "limit-pu2-upper-ceiling",
          "geometryRef": "uuid:6cbdca30-ea09-49ac-9cc1-f4f8f23d2425"
         }
        },
-       "computabilityStatus": "computability-status:cd",
+       "computabilityStatus": "computability-status:computed",
        "verticalBoundaryDefinitions": [
         {
          "id": "bd-lot2-pu-lower",
-         "definitionType": "vertical-definition-type:brb",
+         "definitionType": "vertical-definition-type:building-referenced-boundary",
          "limits": [
           {
            "id": "limit-pu2-lower-inner-wall-lot1a",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:projection",
+           "relationship": "boundary-reference:projection",
            "referenceFeatureRef": "uuid:95f9e6b2-cd10-47b3-a3b9-af363b0bcdf0",
            "boundaryFaceRef": "uuid:1add3b2f-b083-4e97-b8e2-2756a1c10ae6",
-           "buildingElementType": "wa-occ:wall",
+           "buildingElementType": "occupation-feature:wall",
            "description": "Boundary with Lot 1 at ground level. Unlike Lot 1's own side, this wall's solid does not share a face with Principal Unit 2 - lower (topologically asymmetric) -- this component's own South-facing face is coplanar with the wall's North-facing face (confirmed via faces_are_coplanar), so relationship is projection, boundaryFaceRef supplied explicitly.",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-pu2-lower-inner-wall-lot1b",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:projection",
+           "relationship": "boundary-reference:projection",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:8f8e1def-8178-4c0c-9411-6ba4ad994a42",
-           "buildingElementType": "wa-occ:wall",
+           "buildingElementType": "occupation-feature:wall",
            "description": "Small corner return where the party wall meets the outer wall (East side) -- coplanar with, and the same size as, the outer wall's own face (Ground floor outer wall - Units 1 and 2).",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-pu2-lower-inner-wall-lot1c",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:projection",
+           "relationship": "boundary-reference:projection",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:f8ee61ca-1ddb-4b0a-b0a7-4e139c6f89b5",
-           "buildingElementType": "wa-occ:wall",
+           "buildingElementType": "occupation-feature:wall",
            "description": "Small corner return where the party wall meets the outer wall (West side) -- coplanar with, and the same size as, the outer wall's own face (Ground floor outer wall - Units 1 and 2).",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-pu2-lower-outer-wall-1",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:innerSurface",
+           "relationship": "boundary-reference:inner-surface",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:4bd3ffd1-5bcd-4688-b385-9f4e4da1ecba",
-           "buildingElementType": "wa-occ:wall",
+           "buildingElementType": "occupation-feature:wall",
            "description": "Occupation feature is 'Ground floor outer wall' (external wall), but the legal boundary of an enclosed principal unit component against an external wall is the wall's INNER surface, per Schedule 2A Clause 3AB, applied consistently with the courtyard clause's own explicit inner/outer distinction -- corrected from an earlier mislabelled 'outerSurface' (the wall's role/name never determines relationship on its own).",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-pu2-lower-outer-wall-2",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:innerSurface",
+           "relationship": "boundary-reference:inner-surface",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:a7bd8253-cc43-41da-82a4-9e5eaeff476e",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-pu2-lower-outer-wall-3",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:innerSurface",
+           "relationship": "boundary-reference:inner-surface",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:ca9ea243-2f00-4787-b2bb-431e7ba5c387",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-pu2-lower-outer-wall-4",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:innerSurface",
+           "relationship": "boundary-reference:inner-surface",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:e2d1c2f6-d54b-4dbc-97c3-b7b33cda1c47",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-pu2-lower-outer-wall-5",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:innerSurface",
+           "relationship": "boundary-reference:inner-surface",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:ea157871-b60d-49dd-b5dc-7c13e002f602",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-pu2-lower-ceiling",
            "boundaryRole": "boundary-role:upper",
-           "relationship": "building-boundary-reference:underSurface",
+           "relationship": "boundary-reference:lower-surface",
            "referenceFeatureRef": "uuid:32e41321-a7f6-4773-bd22-d593f46ef2f7",
            "boundaryFaceRef": "uuid:ed404dbe-68a7-4147-b3a8-ae0c2c00e56d",
-           "buildingElementType": "wa-occ:slab",
+           "buildingElementType": "occupation-feature:slab",
            "description": "Underside of the intermediate slab (First floor slab), internal to Lot 2 -- mechanically derivable.",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-pu2-lower-floor",
            "boundaryRole": "boundary-role:lower",
-           "relationship": "building-boundary-reference:upperSurface",
+           "relationship": "boundary-reference:upper-surface",
            "referenceFeatureRef": "uuid:fa6de8a9-af10-4d94-9d93-57fc3929e8f8",
            "boundaryFaceRef": "uuid:c6f514c0-4e61-4c5a-bac1-70ee4de15454",
-           "buildingElementType": "wa-occ:slab",
+           "buildingElementType": "occupation-feature:slab",
            "description": "Upper surface of the Ground floor slab -- mechanically derivable.",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "referenceKind": "reference-kind:occupation-feature"
           }
          ],
          "source": {
@@ -32915,128 +32919,128 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
           "sourceLocation": {
            "planReference": "SP83687"
           },
-          "scope": "icsm-scope:parcel",
+          "scope": "source-scope:scheme",
           "appliesTo": [
            "uuid:8e5ca9ad-b00d-4871-a723-19b6456480f9"
           ]
          },
-         "resolutionStatus": "wa-resolution-status:resolved"
+         "resolutionStatus": "computability-status:computable"
         },
         {
          "id": "bd-lot2-pu-upper",
-         "definitionType": "vertical-definition-type:brb",
+         "definitionType": "vertical-definition-type:building-referenced-boundary",
          "limits": [
           {
            "id": "limit-pu2-upper-inner-wall-lot1",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:innerSurface",
+           "relationship": "boundary-reference:inner-surface",
            "referenceFeatureRef": "uuid:50d1497e-afbd-41a7-aa94-6a5c76d392d9",
            "boundaryFaceRef": "uuid:015758b0-db12-45bb-9459-c5659dc71a58",
-           "buildingElementType": "wa-occ:wall",
+           "buildingElementType": "occupation-feature:wall",
            "description": "Boundary with Lot 1 at first-floor level -- mechanically derivable (real party-wall thickness, distinct face on this side).",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-pu2-upper-outer-wall-1",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:innerSurface",
+           "relationship": "boundary-reference:inner-surface",
            "referenceFeatureRef": "uuid:a47c7ea5-ade2-42e3-9abb-84141bb924cc",
            "boundaryFaceRef": "uuid:616c6f94-732f-4c2c-a153-991f2b116613",
-           "buildingElementType": "wa-occ:wall",
+           "buildingElementType": "occupation-feature:wall",
            "description": "Occupation feature is 'First floor outer wall' (external wall), but the legal boundary of an enclosed principal unit component against an external wall is the wall's INNER surface, per Schedule 2A Clause 3AB, applied consistently with the courtyard clause's own explicit inner/outer distinction -- corrected from an earlier mislabelled 'outerSurface' (the wall's role/name never determines relationship on its own).",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-pu2-upper-outer-wall-2",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:innerSurface",
+           "relationship": "boundary-reference:inner-surface",
            "referenceFeatureRef": "uuid:a47c7ea5-ade2-42e3-9abb-84141bb924cc",
            "boundaryFaceRef": "uuid:a2a3b488-1bd7-4e02-bbe9-c66d5e3a514b",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-pu2-upper-outer-wall-3",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:innerSurface",
+           "relationship": "boundary-reference:inner-surface",
            "referenceFeatureRef": "uuid:a47c7ea5-ade2-42e3-9abb-84141bb924cc",
            "boundaryFaceRef": "uuid:b6fb92c1-5c70-4a4a-8a97-c8a42b6ebdb0",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-pu2-upper-outer-wall-4",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:innerSurface",
+           "relationship": "boundary-reference:inner-surface",
            "referenceFeatureRef": "uuid:a47c7ea5-ade2-42e3-9abb-84141bb924cc",
            "boundaryFaceRef": "uuid:cd6896c8-0dfe-4417-9461-69dce976b2ef",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-pu2-upper-outer-wall-5",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:innerSurface",
+           "relationship": "boundary-reference:inner-surface",
            "referenceFeatureRef": "uuid:a47c7ea5-ade2-42e3-9abb-84141bb924cc",
            "boundaryFaceRef": "uuid:ecb43c46-339e-4ad1-a5ba-2120c8c4ea9a",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-pu2-upper-mechanical-wall-1",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:innerSurface",
+           "relationship": "boundary-reference:inner-surface",
            "referenceFeatureRef": "uuid:d1aa527e-81de-4d61-b720-467ef95163db",
            "boundaryFaceRef": "uuid:6e751e94-95c9-42b4-8b5e-abc1521dad55",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-pu2-upper-mechanical-wall-2",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:innerSurface",
+           "relationship": "boundary-reference:inner-surface",
            "referenceFeatureRef": "uuid:d1aa527e-81de-4d61-b720-467ef95163db",
            "boundaryFaceRef": "uuid:a41fe275-6d9a-406e-870f-f4ff58d4209f",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-pu2-upper-mechanical-wall-3",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:innerSurface",
+           "relationship": "boundary-reference:inner-surface",
            "referenceFeatureRef": "uuid:d1aa527e-81de-4d61-b720-467ef95163db",
            "boundaryFaceRef": "uuid:d4cfe308-454a-4339-b6c5-abc8f730617d",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-pu2-upper-mechanical-wall-4",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:innerSurface",
+           "relationship": "boundary-reference:inner-surface",
            "referenceFeatureRef": "uuid:d1aa527e-81de-4d61-b720-467ef95163db",
            "boundaryFaceRef": "uuid:eb015d21-479a-49c9-8327-a697316a293f",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-pu2-upper-ceiling",
            "boundaryRole": "boundary-role:upper",
-           "relationship": "building-boundary-reference:underSurface",
+           "relationship": "boundary-reference:lower-surface",
            "referenceFeatureRef": "uuid:2a7eb875-d6c6-463a-9579-1af2ed0edc36",
            "boundaryFaceRef": "uuid:6cbdca30-ea09-49ac-9cc1-f4f8f23d2425",
-           "buildingElementType": "wa-occ:ceiling",
+           "buildingElementType": "occupation-feature:ceiling",
            "description": "Underside of the First floor ceiling (true top of the building) -- mechanically derivable.",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-pu2-upper-floor",
            "boundaryRole": "boundary-role:lower",
-           "relationship": "building-boundary-reference:upperSurface",
+           "relationship": "boundary-reference:upper-surface",
            "referenceFeatureRef": "uuid:32e41321-a7f6-4773-bd22-d593f46ef2f7",
            "boundaryFaceRef": "uuid:2ea25bd6-aeb8-4d70-8015-a207f7e9b3ae",
-           "buildingElementType": "wa-occ:slab",
+           "buildingElementType": "occupation-feature:slab",
            "description": "Upper surface of the intermediate slab (First floor slab), internal to Lot 2 -- mechanically derivable.",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "referenceKind": "reference-kind:occupation-feature"
           }
          ],
          "source": {
@@ -33046,74 +33050,74 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
           "sourceLocation": {
            "planReference": "SP83687"
           },
-          "scope": "icsm-scope:parcel",
+          "scope": "source-scope:scheme",
           "appliesTo": [
            "uuid:8e5ca9ad-b00d-4871-a723-19b6456480f9"
           ]
          },
-         "resolutionStatus": "wa-resolution-status:resolved"
+         "resolutionStatus": "computability-status:computable"
         },
         {
          "id": "bd-lot2-balcony-upper",
-         "definitionType": "vertical-definition-type:brb",
+         "definitionType": "vertical-definition-type:building-referenced-boundary",
          "limits": [
           {
            "id": "limit-cy2u-floor",
            "boundaryRole": "boundary-role:lower",
-           "relationship": "building-boundary-reference:upperSurface",
+           "relationship": "boundary-reference:upper-surface",
            "referenceFeatureRef": "uuid:32e41321-a7f6-4773-bd22-d593f46ef2f7",
            "boundaryFaceRef": "uuid:3de77ed5-3636-4006-a85c-290b513f00fc",
-           "buildingElementType": "wa-occ:slab",
+           "buildingElementType": "occupation-feature:slab",
            "description": "Upper surface of First floor slab -- mechanically derivable.",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-cy2u-outer-wall-1",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:outerSurface",
+           "relationship": "boundary-reference:external-surface",
            "referenceFeatureRef": "uuid:a47c7ea5-ade2-42e3-9abb-84141bb924cc",
            "boundaryFaceRef": "uuid:bbbed5ad-831a-4931-b6ba-3d459a3eed18",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-cy2u-outer-wall-2",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:outerSurface",
+           "relationship": "boundary-reference:external-surface",
            "referenceFeatureRef": "uuid:a47c7ea5-ade2-42e3-9abb-84141bb924cc",
            "boundaryFaceRef": "uuid:a2283977-88e5-439b-9656-6205c19eaf9e",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-cy2u-other-wall-1",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:projection",
+           "relationship": "boundary-reference:projection",
            "referenceFeatureRef": "uuid:a47c7ea5-ade2-42e3-9abb-84141bb924cc",
            "boundaryFaceRef": "uuid:74918093-0502-4c00-beea-cdea732432b8",
-           "buildingElementType": "wa-occ:wall",
+           "buildingElementType": "occupation-feature:wall",
            "description": "West-facing perimeter face with no direct occupationFeature match -- coplanar with First floor outer wall (single-wall projection, matching Lot 1's precedent for equivalent unmatched courtyard faces).",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-cy2u-other-wall-2",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:projection",
+           "relationship": "boundary-reference:projection",
            "referenceFeatureRef": "uuid:a47c7ea5-ade2-42e3-9abb-84141bb924cc",
            "boundaryFaceRef": "uuid:22a8b66c-f9ba-4e6c-a4d2-5af3a514107a",
-           "buildingElementType": "wa-occ:wall",
+           "buildingElementType": "occupation-feature:wall",
            "description": "North-facing perimeter face with no direct occupationFeature match -- coplanar with First floor outer wall.",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-cy2u-ceiling",
            "boundaryRole": "boundary-role:upper",
-           "relationship": "building-boundary-reference:projection",
+           "relationship": "boundary-reference:projection",
            "referenceFeatureRef": "uuid:2a7eb875-d6c6-463a-9579-1af2ed0edc36",
            "boundaryFaceRef": "uuid:dea5822b-7d77-4f2e-a46b-b6ce0eddf879",
-           "buildingElementType": "wa-occ:ceiling",
+           "buildingElementType": "occupation-feature:ceiling",
            "description": "Bottom surface of the First floor ceiling -- this courtyard's own top face shares no topology with the ceiling's Solid, but is coplanar with it (verified).",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "referenceKind": "reference-kind:occupation-feature"
           }
          ],
          "source": {
@@ -33123,202 +33127,201 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
           "sourceLocation": {
            "planReference": "SP83687"
           },
-          "scope": "icsm-scope:scheme",
+          "scope": "source-scope:scheme",
           "appliesTo": [
            "uuid:8e5ca9ad-b00d-4871-a723-19b6456480f9"
           ]
          },
-         "resolutionStatus": "wa-resolution-status:resolved"
+         "resolutionStatus": "computability-status:computable"
         },
         {
          "id": "bd-lot2-courtyard-a-lower",
-         "definitionType": "vertical-definition-type:brb",
+         "definitionType": "vertical-definition-type:building-referenced-boundary",
          "limits": [
           {
            "id": "limit-cya-outer-wall-1",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:outerSurface",
+           "relationship": "boundary-reference:external-surface",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:df36d3d3-b4bc-4f95-909e-6bde177dec2c",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-cya-outer-wall-2",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:outerSurface",
+           "relationship": "boundary-reference:external-surface",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:052779e3-04f2-4262-b5a2-890ab364e411",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-cya-floor-1",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:surface",
+           "relationship": "boundary-reference:surface",
            "referenceFeatureRef": "uuid:fa6de8a9-af10-4d94-9d93-57fc3929e8f8",
            "boundaryFaceRef": "uuid:e174892f-8067-4a9e-9a86-915fb3aea532",
-           "buildingElementType": "wa-occ:slab",
+           "buildingElementType": "occupation-feature:slab",
            "description": "Reclassified during the full-shell-coverage reconciliation refactor: this face shares direct topology with 'Ground floor slab' (an irregular slab edge condition), but is not the courtyard's legal lower boundary -- that is the single relative-height face (limit-cya-ground-below). This face is a lateral perimeter face that happens to touch the slab's own edge.",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-cya-floor-2",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:surface",
+           "relationship": "boundary-reference:surface",
            "referenceFeatureRef": "uuid:fa6de8a9-af10-4d94-9d93-57fc3929e8f8",
            "boundaryFaceRef": "uuid:5ea8abb2-bf7f-4aea-a597-49b3286d36a3",
-           "buildingElementType": "wa-occ:slab",
+           "buildingElementType": "occupation-feature:slab",
            "description": "Reclassified during the full-shell-coverage reconciliation refactor: this face shares direct topology with 'Ground floor slab' (an irregular slab edge condition), but is not the courtyard's legal lower boundary -- that is the single relative-height face (limit-cya-ground-below). This face is a lateral perimeter face that happens to touch the slab's own edge.",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-cya-floor-3",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:surface",
+           "relationship": "boundary-reference:surface",
            "referenceFeatureRef": "uuid:fa6de8a9-af10-4d94-9d93-57fc3929e8f8",
            "boundaryFaceRef": "uuid:e7defdc8-8d10-4990-82d2-88d83140cf19",
-           "buildingElementType": "wa-occ:slab",
+           "buildingElementType": "occupation-feature:slab",
            "description": "Reclassified during the full-shell-coverage reconciliation refactor: this face shares direct topology with 'Ground floor slab' (an irregular slab edge condition), but is not the courtyard's legal lower boundary -- that is the single relative-height face (limit-cya-ground-below). This face is a lateral perimeter face that happens to touch the slab's own edge.",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-cya-floor-4",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:surface",
+           "relationship": "boundary-reference:surface",
            "referenceFeatureRef": "uuid:fa6de8a9-af10-4d94-9d93-57fc3929e8f8",
            "boundaryFaceRef": "uuid:558bbbd5-69d1-4f7d-89a3-97b69ec59069",
-           "buildingElementType": "wa-occ:slab",
+           "buildingElementType": "occupation-feature:slab",
            "description": "Reclassified during the full-shell-coverage reconciliation refactor: this face shares direct topology with 'Ground floor slab' (an irregular slab edge condition), but is not the courtyard's legal lower boundary -- that is the single relative-height face (limit-cya-ground-below). This face is a lateral perimeter face that happens to touch the slab's own edge.",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-cya-ground-below",
            "boundaryRole": "boundary-role:lower",
-           "relationship": "relative-height-reference:below-surface",
+           "relationship": "boundary-reference:offset-from-surface",
            "referenceFeatureRef": "uuid:c223e1d0-018b-4343-ae12-d4a07ff3db6a",
            "boundaryFaceRef": "uuid:16ce7617-9014-4451-8c0c-4efacd6ae066",
-           "buildingElementType": "height-reference:ns",
            "description": "1m below existing ground level, averaged at corners -- same mechanism as Lot 1's ground courtyard.",
-           "referenceKind": "icsm-reference-kind:reference-surface",
+           "referenceKind": "reference-kind:reference-surface",
            "heightOffset": {
             "offsetValue": -1,
             "offsetUnit": "uom:m",
-            "offsetDirection": "icsm-vertical-direction:blw",
+            "offsetDirection": "vertical-direction:below",
             "basis": "approximately, averaged at the courtyard's corners"
            }
           },
           {
            "id": "limit-cya-first-floor-slab",
            "boundaryRole": "boundary-role:upper",
-           "relationship": "building-boundary-reference:projection",
+           "relationship": "boundary-reference:projection",
            "referenceFeatureRef": "uuid:32e41321-a7f6-4773-bd22-d593f46ef2f7",
            "boundaryFaceRef": "uuid:6a31df84-74d0-4dcd-abc6-2f7f27f41ab0",
-           "buildingElementType": "wa-occ:slab",
+           "buildingElementType": "occupation-feature:slab",
            "description": "Bottom surface of First floor slab -- projection, matching Lot 1's ground-courtyard-upper mechanism.",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-cya-other-wall-1",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:projection",
+           "relationship": "boundary-reference:projection",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:db6da6e1-6788-4e9b-bbb0-55c503e750a3",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-cya-other-wall-2",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:projection",
+           "relationship": "boundary-reference:projection",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:c06ff7bb-3d98-43e5-96a7-26a5efef2594",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-cya-other-wall-3",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:projection",
+           "relationship": "boundary-reference:projection",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:e2532b78-0164-4ca5-a600-29bce477cb43",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-cya-other-wall-4",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:projection",
+           "relationship": "boundary-reference:projection",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:808c221e-7cad-44d4-a111-63ee3949d08e",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-cya-other-wall-5",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:projection",
+           "relationship": "boundary-reference:projection",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:b6ac1277-caf3-4245-babb-d53de62d7af3",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-cya-other-wall-6",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:projection",
+           "relationship": "boundary-reference:projection",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:ccb9f8fb-4fff-4fd5-a4a5-05653b8ea0f6",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-cya-other-wall-7",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:projection",
+           "relationship": "boundary-reference:projection",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:624ee075-0b43-4c3a-8145-65d08cd2c810",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-cya-other-wall-8",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:projection",
+           "relationship": "boundary-reference:projection",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:440b62ff-cff2-4802-93fd-e5eaa17f247a",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-cya-other-wall-9",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:projection",
+           "relationship": "boundary-reference:projection",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:3a9c9f17-5cc9-49a6-a4fe-8c89a317b533",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-cya-site-boundary-1",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "cadastral-boundary-reference:title-boundary",
+           "relationship": "boundary-reference:title-boundary",
            "referenceFeatureRef": "uuid:5090f295-249f-4d10-83d1-0068646e484a",
            "boundaryFaceRef": "uuid:0a2ceb39-9d99-4a6b-9afb-9a5a0f11bbae",
            "description": "No occupationFeature evidence found for this perimeter face (checked outer wall and party wall) -- treated as a site/title-boundary reference, matching the mechanism established for Lot 1's large ground courtyards. The face lies on the vertical plane through the former-tenure parcel footprint edge recorded in referenceEdgeRef (the only footprint edge whose plane contains it, via face_matches_vertical_plane_through_edge).",
-           "referenceKind": "icsm-reference-kind:parcel",
+           "referenceKind": "reference-kind:parcel",
            "referenceEdgeRef": "uuid:d14bfccb-00dd-4305-80df-0de7e4b20825"
           },
           {
            "id": "limit-cya-centre-plane-1",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:centrePlane",
+           "relationship": "boundary-reference:centre-plane",
            "referenceFeatureRef": "uuid:95f9e6b2-cd10-47b3-a3b9-af363b0bcdf0",
            "boundaryFaceRef": "uuid:c5ace6c4-28db-4d63-81c9-b9b43570c80d",
            "description": "Small lateral sliver face on the extension of the centre plane of the Ground floor inner wall - Units 1 and 2 (Central Wall - Ground), beyond the wall's own modelled footprint -- confirmed geometrically via resolve_wall_centre_plane (separation 0.29992m between the wall's two opposing major faces; sub-micron residual against this face's own plane). This face was previously (incorrectly, unverified) assigned to the parcel-footprint mechanism; corrected during the wall-centre-plane derivation extension to the full-shell-coverage reconciliation refactor.",
-           "referenceKind": "icsm-reference-kind:occupation-feature",
+           "referenceKind": "reference-kind:occupation-feature",
            "geometricDerivation": {
-            "mechanism": "icsm-mechanism:wall-centre-plane",
+            "mechanism": "derivation-mechanism:wall-centre-plane",
             "occupationFeatureRef": "uuid:95f9e6b2-cd10-47b3-a3b9-af363b0bcdf0",
             "sideAFaceRefs": [
              "uuid:5bff8d4d-733a-4bbb-8c38-d33b208f2b2a",
@@ -33333,23 +33336,23 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
           {
            "id": "limit-cya-site-boundary-3",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "cadastral-boundary-reference:title-boundary",
+           "relationship": "boundary-reference:title-boundary",
            "referenceFeatureRef": "uuid:5090f295-249f-4d10-83d1-0068646e484a",
            "boundaryFaceRef": "uuid:e015d924-0a8f-4e02-8304-f36a673147b5",
            "description": "Lateral perimeter face with no building-element evidence -- lies on the vertical plane through the former-tenure parcel footprint edge recorded in referenceEdgeRef (the only footprint edge whose plane contains it, via face_matches_vertical_plane_through_edge), the same edge as Lot 1's limit-c1-lower-site-boundary-4.",
-           "referenceKind": "icsm-reference-kind:parcel",
+           "referenceKind": "reference-kind:parcel",
            "referenceEdgeRef": "uuid:d14bfccb-00dd-4305-80df-0de7e4b20825"
           },
           {
            "id": "limit-cya-centre-plane-2",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:centrePlane",
+           "relationship": "boundary-reference:centre-plane",
            "referenceFeatureRef": "uuid:95f9e6b2-cd10-47b3-a3b9-af363b0bcdf0",
            "boundaryFaceRef": "uuid:bea9e5f2-72e9-40c8-b6af-2adcb34b00d2",
            "description": "Small lateral sliver face on the extension of the centre plane of the Ground floor inner wall - Units 1 and 2 (Central Wall - Ground), beyond the wall's own modelled footprint -- confirmed geometrically via resolve_wall_centre_plane (separation 0.29992m between the wall's two opposing major faces; sub-micron residual against this face's own plane). This face was previously (incorrectly, unverified) assigned to the parcel-footprint mechanism; corrected during the wall-centre-plane derivation extension to the full-shell-coverage reconciliation refactor.",
-           "referenceKind": "icsm-reference-kind:occupation-feature",
+           "referenceKind": "reference-kind:occupation-feature",
            "geometricDerivation": {
-            "mechanism": "icsm-mechanism:wall-centre-plane",
+            "mechanism": "derivation-mechanism:wall-centre-plane",
             "occupationFeatureRef": "uuid:95f9e6b2-cd10-47b3-a3b9-af363b0bcdf0",
             "sideAFaceRefs": [
              "uuid:5bff8d4d-733a-4bbb-8c38-d33b208f2b2a",
@@ -33369,114 +33372,113 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
           "sourceLocation": {
            "planReference": "SP83687"
           },
-          "scope": "icsm-scope:parcel",
+          "scope": "source-scope:scheme",
           "appliesTo": [
            "uuid:8e5ca9ad-b00d-4871-a723-19b6456480f9"
           ]
          },
-         "resolutionStatus": "wa-resolution-status:resolved"
+         "resolutionStatus": "computability-status:computable"
         },
         {
          "id": "bd-lot2-courtyard-b-lower",
-         "definitionType": "vertical-definition-type:brb",
+         "definitionType": "vertical-definition-type:building-referenced-boundary",
          "limits": [
           {
            "id": "limit-cyb-first-floor-slab",
            "boundaryRole": "boundary-role:upper",
-           "relationship": "building-boundary-reference:underSurface",
+           "relationship": "boundary-reference:lower-surface",
            "referenceFeatureRef": "uuid:32e41321-a7f6-4773-bd22-d593f46ef2f7",
            "boundaryFaceRef": "uuid:adaff838-0161-4652-901d-b7084c9d6262",
-           "buildingElementType": "wa-occ:slab",
+           "buildingElementType": "occupation-feature:slab",
            "description": "Underside of First floor slab, which directly overhangs this small courtyard -- mechanically derivable (real shared face, despite the source face's own 'Bottom boundary face' label -- verified geometrically, see Stage A report).",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-cyb-ground-below",
            "boundaryRole": "boundary-role:lower",
-           "relationship": "relative-height-reference:below-surface",
+           "relationship": "boundary-reference:offset-from-surface",
            "referenceFeatureRef": "uuid:c223e1d0-018b-4343-ae12-d4a07ff3db6a",
            "boundaryFaceRef": "uuid:761cd65d-e453-4ae1-a664-ca46e8cfa23d",
-           "buildingElementType": "height-reference:ns",
            "description": "1m below existing ground level, averaged at corners -- same mechanism as Lot 1's ground courtyard.",
-           "referenceKind": "icsm-reference-kind:reference-surface",
+           "referenceKind": "reference-kind:reference-surface",
            "heightOffset": {
             "offsetValue": -1,
             "offsetUnit": "uom:m",
-            "offsetDirection": "icsm-vertical-direction:blw",
+            "offsetDirection": "vertical-direction:below",
             "basis": "approximately, averaged at the courtyard's corners"
            }
           },
           {
            "id": "limit-cyb-lateral-1",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:projection",
+           "relationship": "boundary-reference:projection",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:7579434f-8c9c-4cca-9b26-d84f3ef0274d",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-cyb-lateral-2",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:projection",
+           "relationship": "boundary-reference:projection",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:8b4c02a9-3bd2-4df7-b097-0c3fd222b242",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-cyb-lateral-3",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:projection",
+           "relationship": "boundary-reference:projection",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:13a48e8f-c8af-44dc-9d86-46cabc668437",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-cyb-lateral-4",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:projection",
+           "relationship": "boundary-reference:projection",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:77c3c62d-f147-40a8-8e4f-f76c949897c7",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-cyb-lateral-5",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:projection",
+           "relationship": "boundary-reference:projection",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:c81f93b2-002a-441a-ac67-6dd7bb74bc86",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-cyb-lateral-6",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:projection",
+           "relationship": "boundary-reference:projection",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:6e0633c0-7549-4df4-857b-761236d07bff",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-cyb-lateral-7",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:projection",
+           "relationship": "boundary-reference:projection",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:ec8912f5-4628-44f0-95f7-3aca3d9457b2",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           },
           {
            "id": "limit-cyb-lateral-8",
            "boundaryRole": "boundary-role:lateral",
-           "relationship": "building-boundary-reference:projection",
+           "relationship": "boundary-reference:projection",
            "referenceFeatureRef": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
            "boundaryFaceRef": "uuid:402e4328-2fa4-4063-92a8-7ab5f9717575",
-           "buildingElementType": "wa-occ:wall",
-           "referenceKind": "icsm-reference-kind:occupation-feature"
+           "buildingElementType": "occupation-feature:wall",
+           "referenceKind": "reference-kind:occupation-feature"
           }
          ],
          "source": {
@@ -33486,23 +33488,23 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
           "sourceLocation": {
            "planReference": "SP83687"
           },
-          "scope": "icsm-scope:parcel",
+          "scope": "source-scope:scheme",
           "appliesTo": [
            "uuid:8e5ca9ad-b00d-4871-a723-19b6456480f9"
           ]
          },
-         "resolutionStatus": "wa-resolution-status:resolved"
+         "resolutionStatus": "computability-status:computable"
         }
        ],
        "referenceSurfaces": [],
        "derivedGeometry": {
-        "status": "icsm-derived-geometry-status:solid-generated",
+        "status": "derived-geometry-status:generated",
         "geometryType": "AggregateSolid",
         "components": [
          {
           "componentId": "lot-2-principal-lower",
           "solidRef": "uuid:720d46e0-f6b3-4348-a932-da6191a5efa3",
-          "componentRole": "wa-strata-component-role:principal-unit",
+          "componentRole": "component-role:principal-unit",
           "inputDefinitionRefs": [
            "bd-lot2-pu-lower"
           ]
@@ -33510,7 +33512,7 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
          {
           "componentId": "lot-2-principal-upper",
           "solidRef": "uuid:ab63e7a8-93a3-4f90-848f-4f247ab771fe",
-          "componentRole": "wa-strata-component-role:principal-unit",
+          "componentRole": "component-role:principal-unit",
           "inputDefinitionRefs": [
            "bd-lot2-pu-upper"
           ]
@@ -33518,12 +33520,12 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
          {
           "componentId": "lot-2-balcony-upper",
           "solidRef": "uuid:fa342e93-b1c6-4254-ad40-45f1d756702d",
-          "componentRole": "wa-strata-component-role:balcony",
+          "componentRole": "component-role:balcony",
           "inputDefinitionRefs": [
            "bd-lot2-balcony-upper"
           ],
           "boundaryCoverage": {
-           "mode": "icsm-boundary-coverage:full-boundary-coverage",
+           "fullBoundaryCoverage": true,
            "lowerCardinality": 1,
            "upperCardinality": 1,
            "excludedFaceRefs": []
@@ -33532,12 +33534,12 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
          {
           "componentId": "lot-2-courtyard-a-lower",
           "solidRef": "uuid:6077a08d-0df0-46c4-90a7-ef94a5daebd2",
-          "componentRole": "wa-strata-component-role:courtyard",
+          "componentRole": "component-role:courtyard",
           "inputDefinitionRefs": [
            "bd-lot2-courtyard-a-lower"
           ],
           "boundaryCoverage": {
-           "mode": "icsm-boundary-coverage:full-boundary-coverage",
+           "fullBoundaryCoverage": true,
            "lowerCardinality": 1,
            "upperCardinality": 1,
            "excludedFaceRefs": []
@@ -33546,12 +33548,12 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
          {
           "componentId": "lot-2-courtyard-b-lower",
           "solidRef": "uuid:c6cc1caf-1246-4ac1-aee6-a9980a93b393",
-          "componentRole": "wa-strata-component-role:courtyard",
+          "componentRole": "component-role:courtyard",
           "inputDefinitionRefs": [
            "bd-lot2-courtyard-b-lower"
           ],
           "boundaryCoverage": {
-           "mode": "icsm-boundary-coverage:full-boundary-coverage",
+           "fullBoundaryCoverage": true,
            "lowerCardinality": 1,
            "upperCardinality": 1,
            "excludedFaceRefs": []
@@ -33598,7 +33600,7 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
     {
      "id": "uuid:95f9e6b2-cd10-47b3-a3b9-af363b0bcdf0",
      "type": "Feature",
-     "featureType": "wa-occ:wall",
+     "featureType": "occupation-feature:wall",
      "geometry": null,
      "properties": {
       "name": "Ground floor inner wall - Units 1 and 2",
@@ -33615,7 +33617,7 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
     {
      "id": "uuid:50d1497e-afbd-41a7-aa94-6a5c76d392d9",
      "type": "Feature",
-     "featureType": "wa-occ:wall",
+     "featureType": "occupation-feature:wall",
      "geometry": null,
      "properties": {
       "name": "First floor inner wall - Units 1 and 2",
@@ -33632,7 +33634,7 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
     {
      "id": "uuid:6db98d07-7a98-432b-9b44-0c9d7fd07298",
      "type": "Feature",
-     "featureType": "wa-occ:wall",
+     "featureType": "occupation-feature:wall",
      "geometry": null,
      "properties": {
       "name": "First floor inner wall - Unit 1",
@@ -33649,7 +33651,7 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
     {
      "id": "uuid:d1aa527e-81de-4d61-b720-467ef95163db",
      "type": "Feature",
-     "featureType": "wa-occ:wall",
+     "featureType": "occupation-feature:wall",
      "geometry": null,
      "properties": {
       "name": "First floor inner wall - Unit 2",
@@ -33666,7 +33668,7 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
     {
      "id": "uuid:a47c7ea5-ade2-42e3-9abb-84141bb924cc",
      "type": "Feature",
-     "featureType": "wa-occ:wall",
+     "featureType": "occupation-feature:wall",
      "geometry": null,
      "properties": {
       "name": "First floor outer wall - Units 1 and 2",
@@ -33683,7 +33685,7 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
     {
      "id": "uuid:a8b11924-ba25-4b17-b6ec-47c5415cc126",
      "type": "Feature",
-     "featureType": "wa-occ:wall",
+     "featureType": "occupation-feature:wall",
      "geometry": null,
      "properties": {
       "name": "Ground floor outer wall - Units 1 and 2",
@@ -33700,7 +33702,7 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
     {
      "id": "uuid:2a7eb875-d6c6-463a-9579-1af2ed0edc36",
      "type": "Feature",
-     "featureType": "wa-occ:ceiling",
+     "featureType": "occupation-feature:ceiling",
      "geometry": null,
      "properties": {
       "name": "First floor ceiling",
@@ -33716,7 +33718,7 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
     {
      "id": "uuid:32e41321-a7f6-4773-bd22-d593f46ef2f7",
      "type": "Feature",
-     "featureType": "wa-occ:slab",
+     "featureType": "occupation-feature:slab",
      "geometry": null,
      "properties": {
       "name": "First floor slab",
@@ -33732,7 +33734,7 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
     {
      "id": "uuid:fa6de8a9-af10-4d94-9d93-57fc3929e8f8",
      "type": "Feature",
-     "featureType": "wa-occ:slab",
+     "featureType": "occupation-feature:slab",
      "geometry": null,
      "properties": {
       "name": "Ground floor slab",
@@ -33752,7 +33754,7 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
   {
    "title": "SP 83687",
    "href": "https://wa.gov.au/deposited-plans/SP83687.pdf",
-   "role": "wa-survey-documentation-type:built-strata-plan",
+   "role": "wa-survey-documentation-type:2d-plan",
    "rel": "related"
   },
   {
@@ -33770,7 +33772,7 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
   {
    "href": "documents/SP83687-unit-entitlement-schedule.pdf",
    "rel": "related",
-   "role": "wa-survey-documentation-type:unitEntitlementSchedule",
+   "role": "wa-survey-documentation-type:scheme-ue",
    "type": "application/pdf",
    "title": "Schedule of Unit Entitlements - SP83687",
    "conformsTo": "wa-approved-form:2021-47738"
@@ -33778,7 +33780,7 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
   {
    "href": "documents/SP83687-building-approval-certificate.pdf",
    "rel": "related",
-   "role": "wa-survey-documentation-type:buildingApprovalCertificate",
+   "role": "wa-survey-documentation-type:building-approval-certificate",
    "type": "application/pdf",
    "title": "Building Approval Certificate BA14 - Certificate 545/2022",
    "conformsTo": "wa-approved-form:BA14"
@@ -33786,7 +33788,7 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
   {
    "href": "documents/SP83687-endorsement-certificate.pdf",
    "rel": "related",
-   "role": "wa-survey-documentation-type:strataPlanEndorsementCertificate",
+   "role": "wa-survey-documentation-type:strata-plan-endorsement-certificate",
    "type": "application/pdf",
    "title": "Endorsement Certificate - LG Ref 467/2022 - SP83687",
    "conformsTo": "wa-approved-form:15c"
@@ -33794,7 +33796,7 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
   {
    "href": "documents/SP83687-record-of-strata-titles-scheme.pdf",
    "rel": "related",
-   "role": "wa-survey-documentation-type:recordOfStrataTitlesScheme",
+   "role": "wa-survey-documentation-type:scheme-record-form",
    "type": "application/pdf",
    "title": "Record of Strata Titles Scheme - SP83687",
    "conformsTo": "wa-approved-form:2020-27588-v3"
@@ -33802,14 +33804,14 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
   {
    "href": "documents/P361938-scheme-by-laws.pdf",
    "rel": "related",
-   "role": "wa-survey-documentation-type:schemeByLaws",
+   "role": "wa-survey-documentation-type:scheme-by-laws",
    "type": "application/pdf",
    "title": "Scheme By-Laws - P361938"
   },
   {
    "href": "documents/P361939-scheme-notices.pdf",
    "rel": "related",
-   "role": "wa-survey-documentation-type:schemeNotices",
+   "role": "wa-survey-documentation-type:scheme-notice",
    "type": "application/pdf",
    "title": "Scheme Notices - P361939"
   }
@@ -33818,28 +33820,84 @@ The document is the harness fixture `built-strata-example-1.json`, shared with t
   {
    "description": "Survey carried out in accordance with Regulation 54 of the Licensed Surveyors (General Surveying Practice) Regulations 1961",
    "href": "wa-leg:Licensed%20Surveyors%20(General%20Surveying%20Practice)%20Regulations%201961%20-%20%5B05-a0-05%5D.pdf",
-   "role": "wa-annotation-role:r-54"
+   "rel": "related",
+   "type": "application/pdf",
+   "title": "Section 54 Certification - SP83687",
+   "role": "wa-annotation:r-54"
   },
   {
    "description": "THE BOUNDARIES OF THE PARTS OF LOTS WHICH ARE COURTYARDS SHOWN ON THE STRATA PLAN ARE TO THE OUTER SURFACE OF THE BUILDING WALL, THE INNER SURFACE OF ALL OTHER WALLS OR PIERS OR WHERE SHOWN DESIGNATED DIMENSIONS, THE UPPER SURFACE OF THEIR FLOOR AND THE PROLONGATION OF THE UNDER SURFACE OF THE CEILING OF THE RESPECTIVE BUILDING PART LOT EXCEPT WHERE COVERED. UNDER SCHEDULE 2A, CLAUSE 3AB OF THE STRATA TITLES ACT 1985, THE BOUNDARIES OF THE LOTS OR PART LOTS WHICH ARE BUILDINGS SHOWN ON THE STRATA PLAN ARE THE EXTERNAL SURFACES OF THOSE BUILDINGS. WHERE 2 LOTS HAVE A COMMON OR PARTY WALL OR HAVE BUILDINGS ON THEM WHICH ARE JOINED, THE CENTRE PLANE OF THAT WALL, OR THE PLANE AT WHICH THEY ARE JOINED, IS THE BOUNDARY. DISTANCES ARE FROM BOUNDARIES OR EXTERNAL FACES OF WALLS UNLESS SHOWN OTHERWISE. ALL ANGLES ARE 90 DEGREES UNLESS SHOWN OTHERWISE",
    "href": "wa-leg:Strata%20Titles%20Act%201985%20-%20%5B08-a0-00%5D.pdf",
-   "role": "wa-annotation-role:boundary-definition-statement"
+   "rel": "related",
+   "type": "application/pdf",
+   "title": "Boundary Definition Statement - SP83687",
+   "role": "wa-annotation:boundary-definition-statement"
   },
   {
-   "role": "wa-annotation-role:licensed-valuer-certification",
-   "description": "Schedule of Unit Entitlements certified by Darren Starcevich AAPI, Licensed Valuer No. 44415, dated 17 May 2022."
+   "role": "wa-annotation:licensed-valuer-certification",
+   "description": "Schedule of Unit Entitlements certified by Jordan Example AAPI, Licensed Valuer No. 00000, dated 17 May 2022.",
+   "href": "documents/SP83687-unit-entitlement-schedule.pdf",
+   "rel": "via",
+   "type": "application/pdf",
+   "title": "Schedule of Unit Entitlements - SP83687",
+   "certifier": {
+    "firstName": "Jordan",
+    "lastName": "Example",
+    "licensedValuerNumber": "00000"
+   },
+   "dateCertified": "2022-05-17"
   },
   {
-   "role": "wa-annotation-role:building-approval-certification",
-   "description": "Building Approval Certificate 545/2022; whole of building; grouped dwellings and garages; Building Act 2011 section 52; indefinite validity; issued by David Maher, Building Surveying Coordinator, City of Belmont, 9 December 2022."
+   "role": "wa-annotation:building-approval-certification",
+   "description": "Building Approval Certificate 545/2022; whole of building; grouped dwellings and garages; Building Act 2011 section 52; indefinite validity; issued by Casey Example, Building Surveying Coordinator, City of Belmont, 9 December 2022.",
+   "href": "documents/SP83687-building-approval-certificate.pdf",
+   "rel": "via",
+   "type": "application/pdf",
+   "title": "Building Approval Certificate",
+   "certifier": {
+    "firstName": "Casey",
+    "lastName": "Example",
+    "jobTitle": "Building Surveying Coordinator"
+   },
+   "dateCertified": "2022-12-09",
+   "authority": {
+    "permitAuthority": "wa-local-government:city-of-belmont",
+    "rel": "related",
+    "role": "icsm-admin-unit-type:localGovernmentArea"
+   }
   },
   {
-   "role": "wa-annotation-role:strata-plan-endorsement",
-   "description": "LG Ref 467/2022; approval pursuant to section 15(4) of the Strata Titles Act 1985; endorsed 2 February 2023."
+   "role": "wa-annotation:strata-plan-endorsement",
+   "description": "LG Ref 467/2022; approval pursuant to section 15(4) of the Strata Titles Act 1985; endorsed 2 February 2023.",
+   "href": "documents/SP83687-endorsement-certificate.pdf",
+   "rel": "via",
+   "type": "application/pdf",
+   "title": "Certificate Endorsing Strata Plan or Amendment to a Strata Plan by Western Australian Planning Commission",
+   "certifier": {
+    "firstName": "Illegiable",
+    "lastName": "Name",
+    "delegatedAuthority": "wa-leg:planning-and-development-act-2005:16(3)(e)"
+   },
+   "dateCertified": "2023-02-02",
+   "authority": {
+    "permitAuthority": "wa-local-government:city-of-belmont",
+    "rel": "related",
+    "role": "icsm-admin-unit-type:localGovernmentArea"
+   }
   },
   {
-   "role": "wa-annotation-role:record-of-strata-titles-scheme",
-   "description": "Annex A, Strata Plan 83687 Scheme Bylaws (P361938) and Scheme Notice (P361939) endorsed 23 February 2023 by B. G. Roberts, Registrar of Titles."
+   "role": "wa-annotation:record-of-strata-titles-scheme",
+   "description": "Annex A, Strata Plan 83687 Scheme Bylaws (P361938) and Scheme Notice (P361939) endorsed 23 February 2023 by R. Example, Registrar of Titles.",
+   "href": "documents/SP83687-record-of-strata-titles-scheme.pdf",
+   "rel": "via",
+   "type": "application/pdf",
+   "title": "Record of Strata Title Scheme Limitations, Interests, Encumbrances and Notifications",
+   "certifier": {
+    "firstName": "R.",
+    "lastName": "Example",
+    "jobTitle": "Registrar of Titles"
+   },
+   "dateCertified": "2023-02-23"
   }
  ]
 }
