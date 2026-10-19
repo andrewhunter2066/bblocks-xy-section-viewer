@@ -2,8 +2,8 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { DEFAULT_LOCAL_URL, isThisPlugin, useLocalPlugin } from '../../scripts/lib/local-register.mjs';
 
-const PUBLISHED = 'https://cdn.jsdelivr.net/gh/andrewhunter2066/bblocks-xy-section-viewer@dist/index.js';
-const CESIUM = { url: 'https://cdn.jsdelivr.net/gh/andrewhunter2066/bblocks-cesium-viewer@dist/index.js', export: 'TopoFeatureCesiumPlugin' };
+const PUBLISHED = 'https://cdn.jsdelivr.net/gh//ogcincubator/bblocks-xy-section-viewer@dist/index.js';
+const CESIUM = { url: 'https://cdn.jsdelivr.net/gh//ogcincubator/bblocks-cesium-viewer@dist/index.js', export: 'TopoFeatureCesiumPlugin' };
 
 test('redirects this plugin\'s published entry to the local build, leaving other plugins alone', () => {
   const register = { viewer: { viewPlugins: [CESIUM, { url: PUBLISHED, export: 'XYSectionPlugin' }] } };
