@@ -1,0 +1,191 @@
+@prefix bblocks: <https://www.opengis.net/def/bblocks/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://www.iana.org/assignments/> .
+@prefix ns2: <http://www.w3.org/ns/oa#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix role: <http://www.w3.org/ns/dx/prof/role/> .
+@prefix schema: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<bblocks://ogc.bbr.xysection.xySectionViewerDemo.builtStrata> a skos:Concept,
+        dcat:Dataset,
+        bblocks:BBlock,
+        bblocks:Schema ;
+    rdfs:label "XY Section demo: built strata" ;
+    dct:abstract "A Western Australian built-strata survey (strata plan SP83687) as a topo-feature document — two floors of units and courtyards with walls, slabs and ceiling as occupation features — shown as one plan section per floor with WA level names and the former-tenure lot as the boundary."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+    dct:created "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
+    dct:description [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://andrewhunter2066.github.io/bblocks-xy-section-viewer/bblock/ogc.bbr.xysection.xySectionViewerDemo.builtStrata> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/generateddocs/markdown/bbr/xysection/xySectionViewerDemo/builtStrata/index.md> ],
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/generateddocs/json-full/bbr/xysection/xySectionViewerDemo/builtStrata/index.json> ] ;
+    dct:hasVersion "0.1" ;
+    dct:modified "2026-09-30"^^xsd:date ;
+    rdfs:seeAlso <bblocks://ogc.bbr.xysection.xySectionViewerConfig> ;
+    skos:inScheme <https://andrewhunter2066.github.io/bblocks-xy-section-viewer/> ;
+    skos:prefLabel "XY Section demo: built strata" ;
+    skos:topConceptOf <https://andrewhunter2066.github.io/bblocks-xy-section-viewer/> ;
+    dcat:keyword "cadastre",
+        "demo",
+        "floor-plan",
+        "strata",
+        "topo-feature",
+        "viewer",
+        "xy-section" ;
+    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/annotated/bbr/xysection/xySectionViewerDemo/builtStrata/schema.json> ;
+            prof:hasRole role:schema ],
+        [ dct:format "application/json" ;
+            prof:hasArtifact <https://andrewhunter2066.github.io/bblocks-xy-section-viewer/_sources/xySectionViewerDemo/builtStrata/viewer-config.json> ;
+            prof:hasRole <https://github.com/ogcincubator/bblocks-xy-section-viewer/role/viewer-config> ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/annotated/bbr/xysection/xySectionViewerDemo/builtStrata/schema.yaml> ;
+            prof:hasRole role:schema ] ;
+    bblocks:status <http://www.opengis.net/def/status/under-development> ;
+    bblocks:validationPassed true .
+
+<bblocks://ogc.bbr.xysection.xySectionViewerDemo.fourUnit> a skos:Concept,
+        dcat:Dataset,
+        bblocks:BBlock,
+        bblocks:Schema ;
+    rdfs:label "XY Section demo: four units with a stairwell" ;
+    dct:abstract "A small test survey — four units on two floors with a stairwell spanning both, inside a lot parcel — shown as one plan section per floor, with rules that single out the stairwell and draw the lot as an outline."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+    dct:created "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
+    dct:description [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/generateddocs/markdown/bbr/xysection/xySectionViewerDemo/fourUnit/index.md> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://andrewhunter2066.github.io/bblocks-xy-section-viewer/bblock/ogc.bbr.xysection.xySectionViewerDemo.fourUnit> ],
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/generateddocs/json-full/bbr/xysection/xySectionViewerDemo/fourUnit/index.json> ] ;
+    dct:hasVersion "0.1" ;
+    dct:modified "2026-09-30"^^xsd:date ;
+    rdfs:seeAlso <bblocks://ogc.bbr.xysection.xySectionViewerConfig> ;
+    skos:inScheme <https://andrewhunter2066.github.io/bblocks-xy-section-viewer/> ;
+    skos:prefLabel "XY Section demo: four units with a stairwell" ;
+    skos:topConceptOf <https://andrewhunter2066.github.io/bblocks-xy-section-viewer/> ;
+    dcat:keyword "demo",
+        "floor-plan",
+        "topo-feature",
+        "viewer",
+        "xy-section" ;
+    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/annotated/bbr/xysection/xySectionViewerDemo/fourUnit/schema.json> ;
+            prof:hasRole role:schema ],
+        [ dct:format "application/json" ;
+            prof:hasArtifact <https://andrewhunter2066.github.io/bblocks-xy-section-viewer/_sources/xySectionViewerDemo/fourUnit/viewer-config.json> ;
+            prof:hasRole <https://github.com/ogcincubator/bblocks-xy-section-viewer/role/viewer-config> ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/annotated/bbr/xysection/xySectionViewerDemo/fourUnit/schema.yaml> ;
+            prof:hasRole role:schema ] ;
+    bblocks:status <http://www.opengis.net/def/status/under-development> ;
+    bblocks:validationPassed true .
+
+<https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/bblocks.ttl> a prov:Entity ;
+    dct:format "text/turtle" ;
+    prov:wasAttributedTo _:N65dc5a68ac894646807215778fb397b4 ;
+    prov:wasGeneratedBy [ a prov:Activity ;
+            prov:endedAtTime "2026-10-18T23:47:24.970551"^^xsd:dateTime ;
+            prov:startedAtTime "2026-10-18T23:47:24.819351"^^xsd:dateTime ;
+            prov:used [ a prov:Entity ;
+                    dct:format "application/yaml" ;
+                    rdfs:seeAlso <file:///src/ogc/bblocks/register-context.yaml> ],
+                [ a prov:Entity ;
+                    dct:format "application/json" ;
+                    dct:hasVersion "git:91be18d1eb010c75ba93b359736c1f399f29a003" ;
+                    rdfs:seeAlso <https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/register.json> ] ;
+            prov:wasAssociatedWith _:N65dc5a68ac894646807215778fb397b4 ] .
+
+<bblocks://ogc.bbr.xysection.xySectionViewerConfig> a skos:Concept,
+        dcat:Dataset,
+        bblocks:BBlock,
+        bblocks:Schema ;
+    rdfs:label "XY section viewer configuration" ;
+    dct:abstract "Per-block configuration for the bblocks-viewer XY Section view of topo-feature documents: which features are drawn and how (rules shared with the Three.js and globe views), plus floor levels, section heights, the boundary parcel and excluded solids."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+    dct:created "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
+    dct:description [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/generateddocs/markdown/bbr/xysection/xySectionViewerConfig/index.md> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://andrewhunter2066.github.io/bblocks-xy-section-viewer/bblock/ogc.bbr.xysection.xySectionViewerConfig> ],
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/generateddocs/json-full/bbr/xysection/xySectionViewerConfig/index.json> ] ;
+    dct:hasVersion "0.1" ;
+    dct:modified "2026-09-30"^^xsd:date ;
+    skos:inScheme <https://andrewhunter2066.github.io/bblocks-xy-section-viewer/> ;
+    skos:prefLabel "XY section viewer configuration" ;
+    skos:topConceptOf <https://andrewhunter2066.github.io/bblocks-xy-section-viewer/> ;
+    dcat:keyword "configuration",
+        "floor-plan",
+        "topo-feature",
+        "view-plugin",
+        "viewer",
+        "xy-section" ;
+    prof:hasResource [ rdfs:label "topo-feature" ;
+            ns2:hasTarget <https://github.com/ogcincubator/topo-feature> ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/annotated/bbr/xysection/xySectionViewerConfig/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/annotated/bbr/xysection/xySectionViewerConfig/schema.json> ;
+            prof:hasRole role:schema ],
+        [ rdfs:label "XYSectionPlugin source" ;
+            ns2:hasTarget <https://github.com/andrewhunter2066/bblocks-xy-section-viewer> ],
+        [ rdfs:label "Cesium globe viewer (shares the rule configuration)" ;
+            ns2:hasTarget <https://github.com/ogcincubator/bblocks-cesium-viewer> ],
+        [ rdfs:label "Three.js TopoFeaturePlugin (shares the rule configuration)" ;
+            ns2:hasTarget <https://github.com/ogcincubator/bblocks-viewer-topo-feature-plugin> ] ;
+    bblocks:status <http://www.opengis.net/def/status/under-development> ;
+    bblocks:validationPassed true .
+
+<https://andrewhunter2066.github.io/bblocks-xy-section-viewer/> a skos:ConceptScheme,
+        dcat:Catalog,
+        bblocks:BBlocksRegister ;
+    rdfs:label "Building Blocks - XY section viewer for topo-feature documents" ;
+    dct:abstract """An **XY Section** view for topo-feature topology documents in the Building Blocks viewer — one horizontal section (plan view) per floor level — the JSON Schema for its per-block configuration, and demo blocks that use it.
+"""^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+    dct:description """The `XYSectionPlugin` is a [bblocks-viewer](https://github.com/opengeospatial/bblocks-viewer) view plugin.
+It adds an **XY Section** tab to any example or transform output that is a [topo-feature](https://github.com/ogcincubator/topo-feature) document whose points carry projected `place` coordinates and whose solids carry floor levels.
+Inside the tab there is one tab per floor, each showing the solids cut at that floor's height, drawn from `place` exactly as surveyed (no coordinate transformation), inside a chosen boundary parcel.
+Which features are drawn and how is set by rules shared with the Three.js topology view ([bblocks-viewer-topo-feature-plugin](https://github.com/ogcincubator/bblocks-viewer-topo-feature-plugin)) and the [Cesium globe view](https://github.com/ogcincubator/bblocks-cesium-viewer), optionally configured per block; see the *XY section viewer configuration* block.
+This register declares the plugin itself, so the demo blocks' examples open in the XY Section tab here.
+Source, harness and instructions for adding the plugin to another register: [bblocks-xy-section-viewer](https://github.com/andrewhunter2066/bblocks-xy-section-viewer).
+"""^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+    dct:modified "2026-10-18T23:47:24.461866"^^xsd:dateTime ;
+    owl:imports <https://opengeospatial.github.io/bblocks/register.json> ;
+    skos:hasTopConcept <bblocks://ogc.bbr.xysection.xySectionViewerConfig>,
+        <bblocks://ogc.bbr.xysection.xySectionViewerDemo.builtStrata>,
+        <bblocks://ogc.bbr.xysection.xySectionViewerDemo.fourUnit> ;
+    skos:prefLabel "Building Blocks - XY section viewer for topo-feature documents" ;
+    prof:hasResource [ rdfs:label "This Building Blocks Register in RDF Turtle format" ;
+            dct:type "text/turtle" ;
+            ns1:relation <http://www.iana.org/assignments/relation/self> ;
+            ns2:hasTarget <https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/bblocks.ttl> ],
+        [ rdfs:label "This Building Blocks Register in JSON format" ;
+            dct:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/self> ;
+            ns2:hasTarget <https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/register.json> ],
+        [ rdfs:label "This Building Blocks Register in JSON-LD format" ;
+            dct:type "application/ld+json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/self> ;
+            ns2:hasTarget <https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/bblocks.jsonld> ] ;
+    foaf:homepage <https://andrewhunter2066.github.io/bblocks-xy-section-viewer/> ;
+    bblocks:hasValidationReport <https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/tests/report.html> .
+
+_:N65dc5a68ac894646807215778fb397b4 a prov:Agent,
+        schema:SoftwareApplication ;
+    rdfs:label "OGC-NA tools" ;
+    dct:hasVersion "0.5.36" ;
+    rdfs:seeAlso <https://github.com/opengeospatial/ogc-na-tools> .
+

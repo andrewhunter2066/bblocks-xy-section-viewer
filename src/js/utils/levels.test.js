@@ -28,7 +28,7 @@ test('built-strata: levels 1 and 2, cut at the mid-height of their non-excluded 
     'Unit 2 Courtyard a - lower', 'Unit 2 Courtyard b - lower',
   ]);
   assert.deepEqual(names(levels[1].solids), [
-    'Principal Unit 1 - upper', 'Principal Unit 2 - upper', 'Unit 1 Courtyard -upper', 'Unit 2 Courtyard - upper',
+    'Principal Unit 1 - upper', 'Principal Unit 2 - upper', 'Unit 1 Balcony', 'Unit 2 Balcony',
   ]);
 });
 

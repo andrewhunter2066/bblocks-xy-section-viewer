@@ -175,7 +175,7 @@ Checked in the real bblocks-viewer (`ghcr.io/ogcincubator/bblocks-viewer`, revis
   Inside it the floor tabs, drawing, legend, and caption render with the demo configs applied; the host's ~300 px tab gives the compact layout, and the host's own *Full screen* dialog (titled "XY Section") gives the expanded one with the legend docked.
   No exceptions and no plugin warnings in the console.
 - **Relative `resources[].ref`.** The postprocessor rewrites a demo block's `viewer-config.json` to an absolute URL under `--base-url` (`…/register/_sources/xySectionViewerDemo/<block>/viewer-config.json`) in `register.json` and the document the viewer passes as `context.bblock`; the plugin fetched it (HTTP 200) and applied it.
-  Whether a *published* register serves `_sources/` at that URL is to be confirmed after the first publish.
+  Whether a *published* register serves `_sources/` at that URL is confirmed on the published register.
 - **Preview size limit.** The viewer neither fetches nor previews an example snippet larger than 1 MiB (1,048,576 bytes; `BuildingBlockExamples.js`/`ExampleViewer.js`), it shows "This file is too large to preview" and a download button, so no view plugin sees it.
   The built-strata example was 1.1 MB as copied; it is re-indented (one space) to 898 KB with identical content, and `block-schema.test.js` keeps demo examples under the limit.
   Registers adding this plugin should keep topo-feature examples under 1 MiB too.

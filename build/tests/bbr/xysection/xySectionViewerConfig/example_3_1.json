@@ -1,0 +1,14 @@
+{
+  "xySection": {
+    "levelProperty": "properties.floors",
+    "levelLabels": {
+      "1": "Ground",
+      "2": "First"
+    },
+    "sectionZ": {
+      "1": 21.2
+    },
+    "showContext": true,
+    "grid": 2
+  }
+}

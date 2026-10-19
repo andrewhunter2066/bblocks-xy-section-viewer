@@ -1,0 +1,224 @@
+{
+  "metaRegistry": "https://w3id.org/ogc/bblocks/meta-register.json",
+  "name": "XY section viewer for topo-feature documents",
+  "abstract": "An **XY Section** view for topo-feature topology documents in the Building Blocks viewer \u2014 one horizontal section (plan view) per floor level \u2014 the JSON Schema for its per-block configuration, and demo blocks that use it.\n",
+  "description": "The `XYSectionPlugin` is a [bblocks-viewer](https://github.com/opengeospatial/bblocks-viewer) view plugin.\nIt adds an **XY Section** tab to any example or transform output that is a [topo-feature](https://github.com/ogcincubator/topo-feature) document whose points carry projected `place` coordinates and whose solids carry floor levels.\nInside the tab there is one tab per floor, each showing the solids cut at that floor's height, drawn from `place` exactly as surveyed (no coordinate transformation), inside a chosen boundary parcel.\nWhich features are drawn and how is set by rules shared with the Three.js topology view ([bblocks-viewer-topo-feature-plugin](https://github.com/ogcincubator/bblocks-viewer-topo-feature-plugin)) and the [Cesium globe view](https://github.com/ogcincubator/bblocks-cesium-viewer), optionally configured per block; see the *XY section viewer configuration* block.\nThis register declares the plugin itself, so the demo blocks' examples open in the XY Section tab here.\nSource, harness and instructions for adding the plugin to another register: [bblocks-xy-section-viewer](https://github.com/andrewhunter2066/bblocks-xy-section-viewer).\n",
+  "modified": "2026-10-18T23:47:24.461866",
+  "tooling": {
+    "bblocks-postprocess": {
+      "commitId": "\"f470eb472692ab3e5845074dc94405af89b2f182",
+      "shortCommitId": "\"f470eb",
+      "date": "2026-10-14T12:20:08+00:00\""
+    }
+  },
+  "gitRepository": "https://github.com/andrewhunter2066/bblocks-xy-section-viewer",
+  "gitHubRepository": "https://github.com/andrewhunter2066/bblocks-xy-section-viewer/blob/master/",
+  "baseURL": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/",
+  "viewerURL": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/",
+  "validationReport": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/tests/report.html",
+  "validationReportJson": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/tests/report.json",
+  "imports": [
+    "https://opengeospatial.github.io/bblocks/register.json"
+  ],
+  "bblocks": [
+    {
+      "itemIdentifier": "ogc.bbr.xysection.xySectionViewerConfig",
+      "name": "XY section viewer configuration",
+      "abstract": "Per-block configuration for the bblocks-viewer XY Section view of topo-feature documents: which features are drawn and how (rules shared with the Three.js and globe views), plus floor levels, section heights, the boundary parcel and excluded solids.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-09-30T00:00:00Z",
+      "itemClass": "schema",
+      "version": "0.1",
+      "tags": [
+        "viewer",
+        "view-plugin",
+        "xy-section",
+        "floor-plan",
+        "topo-feature",
+        "configuration"
+      ],
+      "group": "XY section viewer",
+      "highlighted": true,
+      "links": [
+        {
+          "title": "XYSectionPlugin source",
+          "href": "https://github.com/andrewhunter2066/bblocks-xy-section-viewer"
+        },
+        {
+          "title": "Three.js TopoFeaturePlugin (shares the rule configuration)",
+          "href": "https://github.com/ogcincubator/bblocks-viewer-topo-feature-plugin"
+        },
+        {
+          "title": "Cesium globe viewer (shares the rule configuration)",
+          "href": "https://github.com/ogcincubator/bblocks-cesium-viewer"
+        },
+        {
+          "title": "topo-feature",
+          "href": "https://github.com/ogcincubator/topo-feature"
+        }
+      ],
+      "shaclShapes": {},
+      "dateOfLastChange": "2026-09-30",
+      "schema": {
+        "application/yaml": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/annotated/bbr/xysection/xySectionViewerConfig/schema.yaml",
+        "application/json": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/annotated/bbr/xysection/xySectionViewerConfig/schema.json"
+      },
+      "sourceSchema": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/_sources/xySectionViewerConfig/schema.yaml",
+      "resolvedSchemaProperties": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/annotated/bbr/xysection/xySectionViewerConfig/resolvedProperties.json",
+      "sourceFiles": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/_sources/xySectionViewerConfig/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/andrewhunter2066/bblocks-xy-section-viewer/blob/master/build/tests/bbr/xysection/xySectionViewerConfig/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/generateddocs/markdown/bbr/xysection/xySectionViewerConfig/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/generateddocs/json-full/bbr/xysection/xySectionViewerConfig/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/bblock/ogc.bbr.xysection.xySectionViewerConfig"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.bbr.xysection.xySectionViewerDemo.builtStrata",
+      "name": "XY Section demo: built strata",
+      "abstract": "A Western Australian built-strata survey (strata plan SP83687) as a topo-feature document \u2014 two floors of units and courtyards with walls, slabs and ceiling as occupation features \u2014 shown as one plan section per floor with WA level names and the former-tenure lot as the boundary.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-09-30T00:00:00Z",
+      "itemClass": "schema",
+      "version": "0.1",
+      "tags": [
+        "viewer",
+        "xy-section",
+        "floor-plan",
+        "topo-feature",
+        "cadastre",
+        "strata",
+        "demo"
+      ],
+      "group": "XY section viewer",
+      "seeAlso": [
+        "bblocks://ogc.bbr.xysection.xySectionViewerConfig"
+      ],
+      "resources": [
+        {
+          "role": "https://github.com/ogcincubator/bblocks-xy-section-viewer/role/viewer-config",
+          "ref": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/_sources/xySectionViewerDemo/builtStrata/viewer-config.json",
+          "format": "application/json",
+          "title": "XY Section view configuration"
+        }
+      ],
+      "shaclShapes": {},
+      "dateOfLastChange": "2026-09-30",
+      "schema": {
+        "application/yaml": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/annotated/bbr/xysection/xySectionViewerDemo/builtStrata/schema.yaml",
+        "application/json": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/annotated/bbr/xysection/xySectionViewerDemo/builtStrata/schema.json"
+      },
+      "sourceSchema": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/_sources/xySectionViewerDemo/builtStrata/schema.yaml",
+      "resolvedSchemaProperties": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/annotated/bbr/xysection/xySectionViewerDemo/builtStrata/resolvedProperties.json",
+      "sourceFiles": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/_sources/xySectionViewerDemo/builtStrata/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/andrewhunter2066/bblocks-xy-section-viewer/blob/master/build/tests/bbr/xysection/xySectionViewerDemo/builtStrata/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/generateddocs/markdown/bbr/xysection/xySectionViewerDemo/builtStrata/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/generateddocs/json-full/bbr/xysection/xySectionViewerDemo/builtStrata/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/bblock/ogc.bbr.xysection.xySectionViewerDemo.builtStrata"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.bbr.xysection.xySectionViewerDemo.fourUnit",
+      "name": "XY Section demo: four units with a stairwell",
+      "abstract": "A small test survey \u2014 four units on two floors with a stairwell spanning both, inside a lot parcel \u2014 shown as one plan section per floor, with rules that single out the stairwell and draw the lot as an outline.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-09-30T00:00:00Z",
+      "itemClass": "schema",
+      "version": "0.1",
+      "tags": [
+        "viewer",
+        "xy-section",
+        "floor-plan",
+        "topo-feature",
+        "demo"
+      ],
+      "group": "XY section viewer",
+      "seeAlso": [
+        "bblocks://ogc.bbr.xysection.xySectionViewerConfig"
+      ],
+      "resources": [
+        {
+          "role": "https://github.com/ogcincubator/bblocks-xy-section-viewer/role/viewer-config",
+          "ref": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/_sources/xySectionViewerDemo/fourUnit/viewer-config.json",
+          "format": "application/json",
+          "title": "XY Section view configuration"
+        }
+      ],
+      "shaclShapes": {},
+      "dateOfLastChange": "2026-09-30",
+      "schema": {
+        "application/yaml": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/annotated/bbr/xysection/xySectionViewerDemo/fourUnit/schema.yaml",
+        "application/json": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/annotated/bbr/xysection/xySectionViewerDemo/fourUnit/schema.json"
+      },
+      "sourceSchema": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/_sources/xySectionViewerDemo/fourUnit/schema.yaml",
+      "resolvedSchemaProperties": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/annotated/bbr/xysection/xySectionViewerDemo/fourUnit/resolvedProperties.json",
+      "sourceFiles": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/_sources/xySectionViewerDemo/fourUnit/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/andrewhunter2066/bblocks-xy-section-viewer/blob/master/build/tests/bbr/xysection/xySectionViewerDemo/fourUnit/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/generateddocs/markdown/bbr/xysection/xySectionViewerDemo/fourUnit/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/generateddocs/json-full/bbr/xysection/xySectionViewerDemo/fourUnit/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/bblock/ogc.bbr.xysection.xySectionViewerDemo.fourUnit"
+        }
+      }
+    }
+  ],
+  "viewer": {
+    "viewPlugins": [
+      {
+        "url": "https://cdn.jsdelivr.net/gh/andrewhunter2066/bblocks-xy-section-viewer@dist/index.js",
+        "export": "XYSectionPlugin"
+      }
+    ]
+  },
+  "remoteCacheDir": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/annotated/_cache",
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/register.json",
+      "type": "application/json",
+      "title": "This Building Blocks Register in JSON format"
+    },
+    {
+      "rel": "self",
+      "href": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/bblocks.ttl",
+      "type": "text/turtle",
+      "title": "This Building Blocks Register in RDF Turtle format"
+    },
+    {
+      "rel": "self",
+      "href": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/bblocks.jsonld",
+      "type": "application/ld+json",
+      "title": "This Building Blocks Register in JSON-LD format"
+    }
+  ]
+}

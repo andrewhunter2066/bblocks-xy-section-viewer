@@ -1,0 +1,50 @@
+{
+  "rules": [
+    {
+      "source": "solids",
+      "kind": "multi-storey",
+      "group": "solids",
+      "kindLabel": "Multi-storey",
+      "geometry": "solid",
+      "match": {
+        "property": "properties.name",
+        "values": [
+          "Stairwell"
+        ]
+      },
+      "style": {
+        "color": "#4a3aa7",
+        "opacity": 0.25,
+        "lineStyle": "dashed"
+      }
+    },
+    {
+      "source": "solids",
+      "kind": "unit",
+      "group": "solids",
+      "kindLabel": "Units",
+      "geometry": "solid"
+    },
+    {
+      "source": "parcels",
+      "kind": "lot",
+      "kindLabel": "Lots",
+      "geometry": "polygon",
+      "initiallyVisible": false,
+      "style": {
+        "color": "#898781",
+        "opacity": 0.08
+      }
+    }
+  ],
+  "xySection": {
+    "levelLabels": {
+      "1": "Lower",
+      "2": "Upper"
+    },
+    "showContext": true,
+    "grid": 5,
+    "padding": 4,
+    "boundary": []
+  }
+}
