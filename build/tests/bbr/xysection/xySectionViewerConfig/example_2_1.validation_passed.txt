@@ -1,5 +1,5 @@
 Validation report for ogc.bbr.xysection.xySectionViewerConfig - XY section viewer configuration
-Generated 2026-10-19T03:56:41.330237+00:00
+Generated 2026-10-19T05:08:44.195324+00:00
 === Files ===
 Using ../xySectionViewerDemo/fourUnit/viewer-config.json from examples
 === End Files ===
