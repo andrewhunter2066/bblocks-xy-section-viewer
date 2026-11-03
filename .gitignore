@@ -14,8 +14,7 @@ dist/
 .env.*
 !.env.example
 
-# Local AI-assistant tooling and instructions, not part of the project
+# Local AI-assistant tooling, not part of the project (CLAUDE.md is committed: decision D-09)
 .agents/
 .claude/
 skills-lock.json
-CLAUDE.md
