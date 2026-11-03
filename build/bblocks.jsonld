@@ -213,12 +213,12 @@
   "name": "Building Blocks - XY section viewer for topo-feature documents",
   "abstract": "An **XY Section** view for topo-feature topology documents in the Building Blocks viewer \u2014 one horizontal section (plan view) per floor level \u2014 the JSON Schema for its per-block configuration, and demo blocks that use it.\n",
   "description": "The `XYSectionPlugin` is a [bblocks-viewer](https://github.com/opengeospatial/bblocks-viewer) view plugin.\nIt adds an **XY Section** tab to any example or transform output that is a [topo-feature](https://github.com/ogcincubator/topo-feature) document whose points carry projected `place` coordinates and whose solids carry floor levels.\nInside the tab there is one tab per floor, each showing the solids cut at that floor's height, drawn from `place` exactly as surveyed (no coordinate transformation), inside a chosen boundary parcel.\nWhich features are drawn and how is set by rules shared with the Three.js topology view ([bblocks-viewer-topo-feature-plugin](https://github.com/ogcincubator/bblocks-viewer-topo-feature-plugin)) and the [Cesium globe view](https://github.com/ogcincubator/bblocks-cesium-viewer), optionally configured per block; see the *XY section viewer configuration* block.\nThis register declares the plugin itself, so the demo blocks' examples open in the XY Section tab here.\nSource, harness and instructions for adding the plugin to another register: [bblocks-xy-section-viewer](https://github.com/andrewhunter2066/bblocks-xy-section-viewer).\n",
-  "modified": "2026-10-19T05:08:43.709402",
+  "modified": "2026-11-03T09:55:15.008259",
   "tooling": {
     "bblocks-postprocess": {
-      "commitId": "\"f470eb472692ab3e5845074dc94405af89b2f182",
-      "shortCommitId": "\"f470eb",
-      "date": "2026-10-14T12:20:08+00:00\""
+      "commitId": "\"862052921203373f8136e6f464e0dfdd693e79f5",
+      "shortCommitId": "\"862052",
+      "date": "2026-10-26T21:53:11+00:00\""
     }
   },
   "gitRepository": "https://github.com/andrewhunter2066/bblocks-xy-section-viewer",
@@ -303,7 +303,7 @@
         }
       ],
       "shaclShapes": null,
-      "dateOfLastChange": "2026-09-30",
+      "dateOfLastChange": "2026-11-03",
       "schema": [
         {
           "prof:hasArtifact": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/annotated/bbr/xysection/xySectionViewerConfig/schema.yaml",
@@ -385,7 +385,7 @@
         }
       ],
       "shaclShapes": null,
-      "dateOfLastChange": "2026-09-30",
+      "dateOfLastChange": "2026-11-03",
       "schema": [
         {
           "prof:hasArtifact": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/annotated/bbr/xysection/xySectionViewerDemo/builtStrata/schema.yaml",
@@ -465,7 +465,7 @@
         }
       ],
       "shaclShapes": null,
-      "dateOfLastChange": "2026-09-30",
+      "dateOfLastChange": "2026-11-03",
       "schema": [
         {
           "prof:hasArtifact": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/annotated/bbr/xysection/xySectionViewerDemo/fourUnit/schema.yaml",

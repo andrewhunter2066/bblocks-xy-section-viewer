@@ -1,5 +1,5 @@
 Validation report for ogc.bbr.xysection.xySectionViewerConfig - XY section viewer configuration
-Generated 2026-10-19T05:08:44.174581+00:00
+Generated 2026-11-03T09:55:15.255403+00:00
 === Files ===
 Using empty-config.json from test resources
 === End Files ===

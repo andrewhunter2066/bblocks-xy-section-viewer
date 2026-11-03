@@ -28,7 +28,7 @@
     }
   ],
   "shaclShapes": {},
-  "dateOfLastChange": "2026-09-30",
+  "dateOfLastChange": "2026-11-03",
   "schema": {
     "application/yaml": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/annotated/bbr/xysection/xySectionViewerDemo/fourUnit/schema.yaml",
     "application/json": "https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/annotated/bbr/xysection/xySectionViewerDemo/fourUnit/schema.json"
@@ -53,7 +53,7 @@
       ]
     }
   ],
-  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ntitle: Topo-feature document with floor levels\ndescription: 'The minimum the XY Section view needs: `points` (with projected `place`\n  coordinates) and\n\n  `solids` (with floor levels). This is a demo block for the view, not a topo-feature\n  schema; see\n\n  https://github.com/ogcincubator/topo-feature for the data model itself.\n\n  '\ntype: object\nrequired:\n- points\n- solids\nproperties:\n  points:\n    type: array\n    minItems: 1\n  solids:\n    type: array\n    minItems: 1\n",
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ntitle: Topo-feature document with floor levels\ndescription: 'The minimum the XY Section view needs: `points` (with projected `place`\n  coordinates) and\n\n  `solids` (with floor levels). This is a demo block for the view, not a topo-feature\n  schema; see\n\n  https://github.com/ogcincubator/topo-feature for the data model itself.\n\n  '\ntype: object\nrequired:\n- points\n- solids\nproperties:\n  points:\n    type: array\n    minItems: 1\n  solids:\n    type: array\n    minItems: 1\nx-bblocks-metadata:\n  itemIdentifier: ogc.bbr.xysection.xySectionViewerDemo.fourUnit\n  register: https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/register.json\n  version: '0.1'\n  dateOfLastChange: '2026-09-30'\n",
   "gitRepository": "https://github.com/andrewhunter2066/bblocks-xy-section-viewer",
   "gitPath": "_sources/xySectionViewerDemo/fourUnit"
 }

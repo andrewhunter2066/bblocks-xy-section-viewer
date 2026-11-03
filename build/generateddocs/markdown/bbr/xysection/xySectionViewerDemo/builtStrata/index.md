@@ -33929,6 +33929,11 @@ properties:
   solids:
     type: array
     minItems: 1
+x-bblocks-metadata:
+  itemIdentifier: ogc.bbr.xysection.xySectionViewerDemo.builtStrata
+  register: https://andrewhunter2066.github.io/bblocks-xy-section-viewer/build/register.json
+  version: '0.1'
+  dateOfLastChange: '2026-09-30'
 
 ```
 
